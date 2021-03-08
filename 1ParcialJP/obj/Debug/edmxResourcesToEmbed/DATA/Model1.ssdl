@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PARCIALJPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MARCA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="ID_MARCA" />
+    </Key>
+    <Property Name="ID_MARCA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MEDICAMENTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MEDICAMENTO">
+    <Key>
+      <PropertyRef Name="ID_MEDICAMENTO" />
+    </Key>
+    <Property Name="ID_MEDICAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+    <Property Name="ID_TF" Type="varchar" MaxLength="20" />
+    <Property Name="ID_MARCA" Type="varchar" MaxLength="20" />
+    <Property Name="ID_UBBICACION" Type="varchar" MaxLength="20" />
+    <Property Name="DOSIS" Type="varchar" MaxLength="20" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MEDICO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MEDICO">
+    <Key>
+      <PropertyRef Name="ID_MEDICO" />
+    </Key>
+    <Property Name="ID_MEDICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="char" MaxLength="30" />
+    <Property Name="CEDULA" Type="varchar" MaxLength="11" />
+    <Property Name="TANDA_LABOR" Type="varchar" MaxLength="200" />
+    <Property Name="ESPECIALIDAD" Type="varchar" MaxLength="200" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.PACIENTE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_PACIENTE" />
+    </Key>
+    <Property Name="ID_PACIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="30" />
+    <Property Name="CEDULA" Type="numeric" Precision="11" Scale="11" />
+    <Property Name="NUM_CARNET" Type="int" />
+    <Property Name="TIPO_PACIENTE" Type="varchar" MaxLength="20" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.TIPO_FARMACO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TIPO_FARMACO">
+    <Key>
+      <PropertyRef Name="ID_TF" />
+    </Key>
+    <Property Name="ID_TF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.UBICACION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UBICACION">
+    <Key>
+      <PropertyRef Name="ID_UBICACION" />
+    </Key>
+    <Property Name="ID_UBICACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+    <Property Name="ESTANTE" Type="varchar" MaxLength="20" />
+    <Property Name="TRAMO" Type="varchar" MaxLength="20" />
+    <Property Name="CELDA" Type="varchar" MaxLength="20" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.VISITA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VISITA">
+    <Key>
+      <PropertyRef Name="ID_VISITA" />
+    </Key>
+    <Property Name="ID_VISITA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_MEDICO" Type="varchar" MaxLength="20" />
+    <Property Name="NOMBRE_PACIENTE" Type="varchar" MaxLength="20" />
+    <Property Name="FECHA" Type="date" />
+    <Property Name="HORA" Type="time" Precision="7" />
+    <Property Name="SINTOMAS" Type="varchar" MaxLength="2000" />
+    <Property Name="MEDICAMENTOS" Type="varchar" MaxLength="200" />
+    <Property Name="RECOMENDACIONES" Type="varchar" MaxLength="200" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="PARCIALJPModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MARCA" EntityType="Self.MARCA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MARCA].[ID_MARCA] AS [ID_MARCA], 
+    [MARCA].[DESCRIPCION] AS [DESCRIPCION], 
+    [MARCA].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MARCA] AS [MARCA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MEDICAMENTO" EntityType="Self.MEDICAMENTO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MEDICAMENTO].[ID_MEDICAMENTO] AS [ID_MEDICAMENTO], 
+    [MEDICAMENTO].[DESCRIPCION] AS [DESCRIPCION], 
+    [MEDICAMENTO].[ID_TF] AS [ID_TF], 
+    [MEDICAMENTO].[ID_MARCA] AS [ID_MARCA], 
+    [MEDICAMENTO].[ID_UBBICACION] AS [ID_UBBICACION], 
+    [MEDICAMENTO].[DOSIS] AS [DOSIS], 
+    [MEDICAMENTO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MEDICAMENTO] AS [MEDICAMENTO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MEDICO" EntityType="Self.MEDICO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MEDICO].[ID_MEDICO] AS [ID_MEDICO], 
+    [MEDICO].[NOMBRE] AS [NOMBRE], 
+    [MEDICO].[CEDULA] AS [CEDULA], 
+    [MEDICO].[TANDA_LABOR] AS [TANDA_LABOR], 
+    [MEDICO].[ESPECIALIDAD] AS [ESPECIALIDAD], 
+    [MEDICO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MEDICO] AS [MEDICO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PACIENTE" EntityType="Self.PACIENTE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PACIENTE].[ID_PACIENTE] AS [ID_PACIENTE], 
+    [PACIENTE].[NOMBRE] AS [NOMBRE], 
+    [PACIENTE].[CEDULA] AS [CEDULA], 
+    [PACIENTE].[NUM_CARNET] AS [NUM_CARNET], 
+    [PACIENTE].[TIPO_PACIENTE] AS [TIPO_PACIENTE], 
+    [PACIENTE].[ESTADO] AS [ESTADO]
+    FROM [dbo].[PACIENTE] AS [PACIENTE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TIPO_FARMACO" EntityType="Self.TIPO_FARMACO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TIPO_FARMACO].[ID_TF] AS [ID_TF], 
+    [TIPO_FARMACO].[DESCRIPCION] AS [DESCRIPCION], 
+    [TIPO_FARMACO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[TIPO_FARMACO] AS [TIPO_FARMACO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UBICACION" EntityType="Self.UBICACION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UBICACION].[ID_UBICACION] AS [ID_UBICACION], 
+    [UBICACION].[DESCRIPCION] AS [DESCRIPCION], 
+    [UBICACION].[ESTANTE] AS [ESTANTE], 
+    [UBICACION].[TRAMO] AS [TRAMO], 
+    [UBICACION].[CELDA] AS [CELDA], 
+    [UBICACION].[ESTADO] AS [ESTADO]
+    FROM [dbo].[UBICACION] AS [UBICACION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VISITA" EntityType="Self.VISITA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VISITA].[ID_VISITA] AS [ID_VISITA], 
+    [VISITA].[NOMBRE_MEDICO] AS [NOMBRE_MEDICO], 
+    [VISITA].[NOMBRE_PACIENTE] AS [NOMBRE_PACIENTE], 
+    [VISITA].[FECHA] AS [FECHA], 
+    [VISITA].[HORA] AS [HORA], 
+    [VISITA].[SINTOMAS] AS [SINTOMAS], 
+    [VISITA].[MEDICAMENTOS] AS [MEDICAMENTOS], 
+    [VISITA].[RECOMENDACIONES] AS [RECOMENDACIONES], 
+    [VISITA].[ESTADO] AS [ESTADO]
+    FROM [dbo].[VISITA] AS [VISITA]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

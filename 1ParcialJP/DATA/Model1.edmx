@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PARCIALJPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MARCA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MARCA">
+          <Key>
+            <PropertyRef Name="ID_MARCA" />
+          </Key>
+          <Property Name="ID_MARCA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MEDICAMENTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MEDICAMENTO">
+          <Key>
+            <PropertyRef Name="ID_MEDICAMENTO" />
+          </Key>
+          <Property Name="ID_MEDICAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="ID_TF" Type="varchar" MaxLength="20" />
+          <Property Name="ID_MARCA" Type="varchar" MaxLength="20" />
+          <Property Name="ID_UBBICACION" Type="varchar" MaxLength="20" />
+          <Property Name="DOSIS" Type="varchar" MaxLength="20" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.MEDICO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="ID_MEDICO" />
+          </Key>
+          <Property Name="ID_MEDICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="char" MaxLength="30" />
+          <Property Name="CEDULA" Type="varchar" MaxLength="11" />
+          <Property Name="TANDA_LABOR" Type="varchar" MaxLength="200" />
+          <Property Name="ESPECIALIDAD" Type="varchar" MaxLength="200" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.PACIENTE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PACIENTE">
+          <Key>
+            <PropertyRef Name="ID_PACIENTE" />
+          </Key>
+          <Property Name="ID_PACIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="30" />
+          <Property Name="CEDULA" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="NUM_CARNET" Type="int" />
+          <Property Name="TIPO_PACIENTE" Type="varchar" MaxLength="20" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.TIPO_FARMACO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TIPO_FARMACO">
+          <Key>
+            <PropertyRef Name="ID_TF" />
+          </Key>
+          <Property Name="ID_TF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.UBICACION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UBICACION">
+          <Key>
+            <PropertyRef Name="ID_UBICACION" />
+          </Key>
+          <Property Name="ID_UBICACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="ESTANTE" Type="varchar" MaxLength="20" />
+          <Property Name="TRAMO" Type="varchar" MaxLength="20" />
+          <Property Name="CELDA" Type="varchar" MaxLength="20" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PARCIALJP.dbo.VISITA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VISITA">
+          <Key>
+            <PropertyRef Name="ID_VISITA" />
+          </Key>
+          <Property Name="ID_VISITA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_MEDICO" Type="varchar" MaxLength="20" />
+          <Property Name="NOMBRE_PACIENTE" Type="varchar" MaxLength="20" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="HORA" Type="time" Precision="7" />
+          <Property Name="SINTOMAS" Type="varchar" MaxLength="2000" />
+          <Property Name="MEDICAMENTOS" Type="varchar" MaxLength="200" />
+          <Property Name="RECOMENDACIONES" Type="varchar" MaxLength="200" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="PARCIALJPModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MARCA" EntityType="Self.MARCA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MARCA].[ID_MARCA] AS [ID_MARCA], 
+    [MARCA].[DESCRIPCION] AS [DESCRIPCION], 
+    [MARCA].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MARCA] AS [MARCA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MEDICAMENTO" EntityType="Self.MEDICAMENTO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MEDICAMENTO].[ID_MEDICAMENTO] AS [ID_MEDICAMENTO], 
+    [MEDICAMENTO].[DESCRIPCION] AS [DESCRIPCION], 
+    [MEDICAMENTO].[ID_TF] AS [ID_TF], 
+    [MEDICAMENTO].[ID_MARCA] AS [ID_MARCA], 
+    [MEDICAMENTO].[ID_UBBICACION] AS [ID_UBBICACION], 
+    [MEDICAMENTO].[DOSIS] AS [DOSIS], 
+    [MEDICAMENTO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MEDICAMENTO] AS [MEDICAMENTO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MEDICO" EntityType="Self.MEDICO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MEDICO].[ID_MEDICO] AS [ID_MEDICO], 
+    [MEDICO].[NOMBRE] AS [NOMBRE], 
+    [MEDICO].[CEDULA] AS [CEDULA], 
+    [MEDICO].[TANDA_LABOR] AS [TANDA_LABOR], 
+    [MEDICO].[ESPECIALIDAD] AS [ESPECIALIDAD], 
+    [MEDICO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[MEDICO] AS [MEDICO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PACIENTE" EntityType="Self.PACIENTE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PACIENTE].[ID_PACIENTE] AS [ID_PACIENTE], 
+    [PACIENTE].[NOMBRE] AS [NOMBRE], 
+    [PACIENTE].[CEDULA] AS [CEDULA], 
+    [PACIENTE].[NUM_CARNET] AS [NUM_CARNET], 
+    [PACIENTE].[TIPO_PACIENTE] AS [TIPO_PACIENTE], 
+    [PACIENTE].[ESTADO] AS [ESTADO]
+    FROM [dbo].[PACIENTE] AS [PACIENTE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TIPO_FARMACO" EntityType="Self.TIPO_FARMACO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TIPO_FARMACO].[ID_TF] AS [ID_TF], 
+    [TIPO_FARMACO].[DESCRIPCION] AS [DESCRIPCION], 
+    [TIPO_FARMACO].[ESTADO] AS [ESTADO]
+    FROM [dbo].[TIPO_FARMACO] AS [TIPO_FARMACO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UBICACION" EntityType="Self.UBICACION" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UBICACION].[ID_UBICACION] AS [ID_UBICACION], 
+    [UBICACION].[DESCRIPCION] AS [DESCRIPCION], 
+    [UBICACION].[ESTANTE] AS [ESTANTE], 
+    [UBICACION].[TRAMO] AS [TRAMO], 
+    [UBICACION].[CELDA] AS [CELDA], 
+    [UBICACION].[ESTADO] AS [ESTADO]
+    FROM [dbo].[UBICACION] AS [UBICACION]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VISITA" EntityType="Self.VISITA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VISITA].[ID_VISITA] AS [ID_VISITA], 
+    [VISITA].[NOMBRE_MEDICO] AS [NOMBRE_MEDICO], 
+    [VISITA].[NOMBRE_PACIENTE] AS [NOMBRE_PACIENTE], 
+    [VISITA].[FECHA] AS [FECHA], 
+    [VISITA].[HORA] AS [HORA], 
+    [VISITA].[SINTOMAS] AS [SINTOMAS], 
+    [VISITA].[MEDICAMENTOS] AS [MEDICAMENTOS], 
+    [VISITA].[RECOMENDACIONES] AS [RECOMENDACIONES], 
+    [VISITA].[ESTADO] AS [ESTADO]
+    FROM [dbo].[VISITA] AS [VISITA]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PARCIALJPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MARCA">
+          <Key>
+            <PropertyRef Name="ID_MARCA" />
+          </Key>
+          <Property Name="ID_MARCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MEDICAMENTO">
+          <Key>
+            <PropertyRef Name="ID_MEDICAMENTO" />
+          </Key>
+          <Property Name="ID_MEDICAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ID_TF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ID_MARCA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ID_UBBICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DOSIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MEDICO">
+          <Key>
+            <PropertyRef Name="ID_MEDICO" />
+          </Key>
+          <Property Name="ID_MEDICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="CEDULA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TANDA_LABOR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESPECIALIDAD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PACIENTE">
+          <Key>
+            <PropertyRef Name="ID_PACIENTE" />
+          </Key>
+          <Property Name="ID_PACIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CEDULA" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="NUM_CARNET" Type="Int32" />
+          <Property Name="TIPO_PACIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPO_FARMACO">
+          <Key>
+            <PropertyRef Name="ID_TF" />
+          </Key>
+          <Property Name="ID_TF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UBICACION">
+          <Key>
+            <PropertyRef Name="ID_UBICACION" />
+          </Key>
+          <Property Name="ID_UBICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTANTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TRAMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CELDA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VISITA">
+          <Key>
+            <PropertyRef Name="ID_VISITA" />
+          </Key>
+          <Property Name="ID_VISITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_MEDICO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_PACIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA" Type="DateTime" Precision="0" />
+          <Property Name="HORA" Type="Time" Precision="7" />
+          <Property Name="SINTOMAS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="MEDICAMENTOS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RECOMENDACIONES" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="PARCIALJPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="MARCAs" EntityType="Self.MARCA" />
+          <EntitySet Name="MEDICAMENTOes" EntityType="Self.MEDICAMENTO" />
+          <EntitySet Name="Medicos" EntityType="Self.MEDICO" />
+          <EntitySet Name="PACIENTEs" EntityType="Self.PACIENTE" />
+          <EntitySet Name="TIPO_FARMACO" EntityType="Self.TIPO_FARMACO" />
+          <EntitySet Name="UBICACIONs" EntityType="Self.UBICACION" />
+          <EntitySet Name="VISITAs" EntityType="Self.VISITA" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PARCIALJPModelStoreContainer" CdmEntityContainer="PARCIALJPEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PARCIALJPModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARCAs">
+            <EntityTypeMapping TypeName="PARCIALJPModel.MARCA">
+              <MappingFragment StoreEntitySet="MARCA">
+                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICAMENTOes">
+            <EntityTypeMapping TypeName="PARCIALJPModel.MEDICAMENTO">
+              <MappingFragment StoreEntitySet="MEDICAMENTO">
+                <ScalarProperty Name="ID_MEDICAMENTO" ColumnName="ID_MEDICAMENTO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID_TF" ColumnName="ID_TF" />
+                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+                <ScalarProperty Name="ID_UBBICACION" ColumnName="ID_UBBICACION" />
+                <ScalarProperty Name="DOSIS" ColumnName="DOSIS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicos">
+            <EntityTypeMapping TypeName="PARCIALJPModel.MEDICO">
+              <MappingFragment StoreEntitySet="MEDICO">
+                <ScalarProperty Name="ID_MEDICO" ColumnName="ID_MEDICO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="TANDA_LABOR" ColumnName="TANDA_LABOR" />
+                <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PACIENTEs">
+            <EntityTypeMapping TypeName="PARCIALJPModel.PACIENTE">
+              <MappingFragment StoreEntitySet="PACIENTE">
+                <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="NUM_CARNET" ColumnName="NUM_CARNET" />
+                <ScalarProperty Name="TIPO_PACIENTE" ColumnName="TIPO_PACIENTE" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_FARMACO">
+            <EntityTypeMapping TypeName="PARCIALJPModel.TIPO_FARMACO">
+              <MappingFragment StoreEntitySet="TIPO_FARMACO">
+                <ScalarProperty Name="ID_TF" ColumnName="ID_TF" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UBICACIONs">
+            <EntityTypeMapping TypeName="PARCIALJPModel.UBICACION">
+              <MappingFragment StoreEntitySet="UBICACION">
+                <ScalarProperty Name="ID_UBICACION" ColumnName="ID_UBICACION" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTANTE" ColumnName="ESTANTE" />
+                <ScalarProperty Name="TRAMO" ColumnName="TRAMO" />
+                <ScalarProperty Name="CELDA" ColumnName="CELDA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VISITAs">
+            <EntityTypeMapping TypeName="PARCIALJPModel.VISITA">
+              <MappingFragment StoreEntitySet="VISITA">
+                <ScalarProperty Name="ID_VISITA" ColumnName="ID_VISITA" />
+                <ScalarProperty Name="NOMBRE_MEDICO" ColumnName="NOMBRE_MEDICO" />
+                <ScalarProperty Name="NOMBRE_PACIENTE" ColumnName="NOMBRE_PACIENTE" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="SINTOMAS" ColumnName="SINTOMAS" />
+                <ScalarProperty Name="MEDICAMENTOS" ColumnName="MEDICAMENTOS" />
+                <ScalarProperty Name="RECOMENDACIONES" ColumnName="RECOMENDACIONES" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

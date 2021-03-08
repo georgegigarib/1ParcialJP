@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PARCIALJPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="ID_MARCA" />
+    </Key>
+    <Property Name="ID_MARCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MEDICAMENTO">
+    <Key>
+      <PropertyRef Name="ID_MEDICAMENTO" />
+    </Key>
+    <Property Name="ID_MEDICAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ID_TF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ID_MARCA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ID_UBBICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DOSIS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MEDICO">
+    <Key>
+      <PropertyRef Name="ID_MEDICO" />
+    </Key>
+    <Property Name="ID_MEDICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="CEDULA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="TANDA_LABOR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESPECIALIDAD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_PACIENTE" />
+    </Key>
+    <Property Name="ID_PACIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CEDULA" Type="Decimal" Precision="11" Scale="11" />
+    <Property Name="NUM_CARNET" Type="Int32" />
+    <Property Name="TIPO_PACIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TIPO_FARMACO">
+    <Key>
+      <PropertyRef Name="ID_TF" />
+    </Key>
+    <Property Name="ID_TF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UBICACION">
+    <Key>
+      <PropertyRef Name="ID_UBICACION" />
+    </Key>
+    <Property Name="ID_UBICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTANTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TRAMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CELDA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VISITA">
+    <Key>
+      <PropertyRef Name="ID_VISITA" />
+    </Key>
+    <Property Name="ID_VISITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_MEDICO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRE_PACIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Precision="0" />
+    <Property Name="HORA" Type="Time" Precision="7" />
+    <Property Name="SINTOMAS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MEDICAMENTOS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RECOMENDACIONES" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PARCIALJPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="MARCAs" EntityType="Self.MARCA" />
+    <EntitySet Name="MEDICAMENTOes" EntityType="Self.MEDICAMENTO" />
+    <EntitySet Name="Medicos" EntityType="Self.MEDICO" />
+    <EntitySet Name="PACIENTEs" EntityType="Self.PACIENTE" />
+    <EntitySet Name="TIPO_FARMACO" EntityType="Self.TIPO_FARMACO" />
+    <EntitySet Name="UBICACIONs" EntityType="Self.UBICACION" />
+    <EntitySet Name="VISITAs" EntityType="Self.VISITA" />
+  </EntityContainer>
+</Schema>
