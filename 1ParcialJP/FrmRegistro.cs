@@ -18,6 +18,7 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
+        public object Session { get; private set; }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -48,6 +49,7 @@ namespace _1ParcialJP
                             {
                                 Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A')");
                                 MessageBox.Show("Bienvenido " + txtusername.Text);
+                                
                                 FrmMenu fmMenu = new FrmMenu();
                                 fmMenu.Show();
                                 this.Hide();

@@ -85,7 +85,37 @@ namespace _1ParcialJP
                 return "";
             }
         }
+        public static string lafila(string columnas, string tabla)
+        {
+            SqlConnection con = new SqlConnection();
+            con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
+            con.Open();
+            try
+            {
 
+                Session objS = new Session();
+                SqlCommand elcomando = con.CreateCommand();
+                elcomando.CommandText = "SELECT TIPO FROM USUARIO WHERE USERNAME = '175CD98CBE4A6E3507C38A3C83C030B6A6CB78EEC099F24ED3F522738350E066436A966658FFA07EF62A7E8E5487341D64A19E7D196CED990D94AC5CFAAF562F'";
+
+                SqlDataReader reader = elcomando.ExecuteReader();
+
+                // objS.tipo = "";
+                while (reader.Read())
+                {
+                    MessageBox.Show(reader[0].ToString());
+                }
+                return reader;
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("no se pudo " + er);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
 
     }
 }

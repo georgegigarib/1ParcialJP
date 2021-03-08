@@ -22,8 +22,8 @@ namespace _1ParcialJP
         private void FrmMenu_Load(object sender, EventArgs e)
         {
         }
-
        
+
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
