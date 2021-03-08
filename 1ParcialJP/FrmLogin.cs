@@ -18,10 +18,7 @@ namespace _1ParcialJP
         {
             InitializeComponent();
         }
-
-        
-       
-        
+ 
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
@@ -75,10 +72,7 @@ namespace _1ParcialJP
             this.Hide();
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {

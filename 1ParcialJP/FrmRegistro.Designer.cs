@@ -57,13 +57,14 @@ namespace _1ParcialJP
             this.groupBox1.Size = new System.Drawing.Size(522, 193);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtpassword2
             // 
             this.txtpassword2.Location = new System.Drawing.Point(167, 126);
             this.txtpassword2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpassword2.MaxLength = 30;
             this.txtpassword2.Name = "txtpassword2";
+            this.txtpassword2.PasswordChar = '*';
             this.txtpassword2.Size = new System.Drawing.Size(208, 22);
             this.txtpassword2.TabIndex = 10;
             // 
@@ -76,13 +77,14 @@ namespace _1ParcialJP
             this.label3.Size = new System.Drawing.Size(124, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Repetir Contraseña";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtpassword
             // 
             this.txtpassword.Location = new System.Drawing.Point(167, 87);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpassword.MaxLength = 30;
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(208, 22);
             this.txtpassword.TabIndex = 5;
             // 
@@ -102,6 +104,7 @@ namespace _1ParcialJP
             // 
             this.txtusername.Location = new System.Drawing.Point(167, 47);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtusername.MaxLength = 20;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(208, 22);
             this.txtusername.TabIndex = 4;
@@ -139,7 +142,6 @@ namespace _1ParcialJP
             this.Name = "FrmRegistro";
             this.Text = "Registro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRegistro_FormClosed);
-            this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

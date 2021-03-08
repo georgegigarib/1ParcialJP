@@ -18,10 +18,6 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
-        private void FrmRegistro_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -31,7 +27,7 @@ namespace _1ParcialJP
 
             if (txtusername.Text != "" || txtpassword.Text != "" || txtpassword2.Text != "")
             {
-                if (txtpassword2.Text != txtpassword2.Text)
+                if (txtpassword2.Text != txtpassword.Text)
                 {
                     MessageBox.Show("Las Contraseñas no coinciden");
                 }
@@ -42,7 +38,7 @@ namespace _1ParcialJP
                     try
                     {
 
-                        string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}' AND PASSWORD = '{password}'";
+                        string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}'";
 
                         SqlCommand cmd = new SqlCommand(query, con);
                         Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -51,19 +47,20 @@ namespace _1ParcialJP
                             try
                             {
                                 Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A')");
+                                MessageBox.Show("Bienvenido " + txtusername.Text);
+                                FrmMenu fmMenu = new FrmMenu();
+                                fmMenu.Show();
+                                this.Hide();
                             }
                             catch(Exception er)
                             {
                                 MessageBox.Show("No se pudo registrar " + er);
                             }
-                            MessageBox.Show("Bienvenido " + txtusername.Text);
-                            FrmMenu fmMenu = new FrmMenu();
-                            fmMenu.Show();
-                            this.Hide();
+                            
                         }
                         else
                         {
-                            MessageBox.Show("Datos incorrectos");
+                            MessageBox.Show("Usuario no Disponible");
                         }
 
                     }
@@ -82,20 +79,10 @@ namespace _1ParcialJP
                 MessageBox.Show("Datos incompletos");
             }
 
-
         }
 
         
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmRegistro_FormClosed(object sender, FormClosedEventArgs e)
         {
