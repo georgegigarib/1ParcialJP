@@ -27,3 +27,5 @@ C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmAUbi
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmUbicacion.resources
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmVisitas.resources
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmAVisita.resources
+C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmLogin.resources
+C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmRegistro.resources

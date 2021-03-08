@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace _1ParcialJP
 {
@@ -67,7 +68,24 @@ namespace _1ParcialJP
 
 
         }
-        
+        public static string GetSha3Hash(string texto)
+        {
+            try
+            {
+                using (SHA512 sha512Hash = SHA512.Create())
+                {
+                    byte[] sourceBytes = Encoding.UTF8.GetBytes(texto);
+                    byte[] hashBytes = sha512Hash.ComputeHash(sourceBytes);
+                    string hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+                    return hash;
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
 
     }
 }
