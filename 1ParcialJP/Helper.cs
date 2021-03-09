@@ -67,7 +67,9 @@ namespace _1ParcialJP
             
 
 
+
         }
+
         public static string GetSha3Hash(string texto)
         {
             try
@@ -111,6 +113,36 @@ namespace _1ParcialJP
             }
 
            
+
+
+        }
+        public static void DoQueryExecuterLimpio(SqlCommand query)
+        {
+
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
+                con.Open();
+                //query
+
+                query.Connection = con;
+                query.ExecuteNonQuery();
+
+            }
+
+            catch (Exception er)
+            {
+
+                MessageBox.Show("Error al conectar con la base de datos: " + er);
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
 
 
         }

@@ -70,17 +70,24 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
+
+            // prueba de sanitizacion
+
             try
             {
-                string sql = $"UPDATE MARCA SET ESTADO ='{eSTADOComboBox.Text}', DESCRIPCION ='{dESCRIPCIONTextBox.Text}' WHERE ID_MARCA ='{iD_MARCATextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
-                MessageBox.Show("Registro Guardado con exito");
-                refrescargrid();
+                string sql = $"UPDATE MARCA SET ESTADO = '{eSTADOComboBox.Text}', DESCRIPCION = @descripcion WHERE ID_MARCA ='{iD_MARCATextBox.Text}'";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+            Helper.DoQueryExecuterLimpio(command);
             }
             catch (Exception er)
             {
-                MessageBox.Show("Error al Eliminar registro: " + er);
+                MessageBox.Show("Error al Guardar Cambios: " + er);
             }
+            
+
+
         }
 
         private void FrmMarca_FormClosed(object sender, FormClosedEventArgs e)

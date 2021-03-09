@@ -464,8 +464,7 @@ namespace _1ParcialJP
             "RECOMENDACIONES",
             "MEDICAMENTOS",
             "ESTADO",
-            "FECHA",
-            "HORA"});
+            "FECHA"});
             this.selectsearch.Location = new System.Drawing.Point(15, 192);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(254, 23);
