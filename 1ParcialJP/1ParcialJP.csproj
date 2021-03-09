@@ -73,7 +73,6 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Session.cs" />
     <Compile Include="ValidacionCedula.cs" />
     <Compile Include="DATA\MARCA.cs">
       <DependentUpon>Model1.tt</DependentUpon>

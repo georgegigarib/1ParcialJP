@@ -156,12 +156,38 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            string query;
+            switch (selectsearch.SelectedIndex)
+            {
+               
+                case 6:
+                    query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} >= '{txtfecha.Text}'";
+                    break;
+            default:
+                    query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+                    break;
+            }
+
             SqlDataAdapter da = Helper.DoQueryReceiver(query);
             DataTable dt = new DataTable();
             da.Fill(dt);
             vISITADataGridView.DataSource = dt;
             vISITADataGridView.Refresh();
+        }
+
+        private void selectsearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtsearch.Clear();
+            if(selectsearch.SelectedIndex == 6)
+            {
+                txtfecha.Visible = true;
+                txtsearch.Visible = false;
+            }
+            else
+            {
+                txtfecha.Visible = false;
+                txtsearch.Visible = true;
+            }
         }
     }
 }

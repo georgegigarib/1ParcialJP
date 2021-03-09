@@ -39,9 +39,9 @@ namespace _1ParcialJP
             System.Windows.Forms.Label mEDICAMENTOSLabel;
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.vISITABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vISITATableAdapter = new _1ParcialJP.PARCIALJPDataSetTableAdapters.VISITATableAdapter();
@@ -72,6 +72,7 @@ namespace _1ParcialJP
             this.button2 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
+            this.txtfecha = new System.Windows.Forms.DateTimePicker();
             iD_VISITALabel = new System.Windows.Forms.Label();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
@@ -169,6 +170,15 @@ namespace _1ParcialJP
             eSTADOLabel.TabIndex = 18;
             eSTADOLabel.Text = "ESTADO:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(21, 174);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 20;
+            label1.Text = "Realizar Consulta";
+            // 
             // pARCIALJPDataSet
             // 
             this.pARCIALJPDataSet.DataSetName = "PARCIALJPDataSet";
@@ -216,8 +226,8 @@ namespace _1ParcialJP
             this.vISITADataGridView.Location = new System.Drawing.Point(0, 0);
             this.vISITADataGridView.Name = "vISITADataGridView";
             this.vISITADataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.vISITADataGridView.Size = new System.Drawing.Size(1132, 275);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick_1);
@@ -385,6 +395,7 @@ namespace _1ParcialJP
             // 
             // CBXPACIENTE
             // 
+            this.CBXPACIENTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXPACIENTE.FormattingEnabled = true;
             this.CBXPACIENTE.Location = new System.Drawing.Point(159, 93);
             this.CBXPACIENTE.Name = "CBXPACIENTE";
@@ -393,6 +404,7 @@ namespace _1ParcialJP
             // 
             // nOMBRE_MEDICOComboBox
             // 
+            this.nOMBRE_MEDICOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nOMBRE_MEDICOComboBox.FormattingEnabled = true;
             this.nOMBRE_MEDICOComboBox.Location = new System.Drawing.Point(159, 60);
             this.nOMBRE_MEDICOComboBox.Name = "nOMBRE_MEDICOComboBox";
@@ -423,29 +435,20 @@ namespace _1ParcialJP
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(21, 174);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
-            label1.TabIndex = 20;
-            label1.Text = "Realizar Consulta";
-            // 
             // button2
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(706, 164);
+            this.button2.Location = new System.Drawing.Point(849, 179);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 51);
+            this.button2.Size = new System.Drawing.Size(32, 36);
             this.button2.TabIndex = 19;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(275, 193);
+            this.txtsearch.Location = new System.Drawing.Point(421, 192);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(421, 22);
             this.txtsearch.TabIndex = 18;
@@ -460,11 +463,27 @@ namespace _1ParcialJP
             "SINTOMAS",
             "RECOMENDACIONES",
             "MEDICAMENTOS",
-            "ESTADO"});
+            "ESTADO",
+            "FECHA",
+            "HORA"});
             this.selectsearch.Location = new System.Drawing.Point(15, 192);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(254, 23);
             this.selectsearch.TabIndex = 17;
+            this.selectsearch.SelectedIndexChanged += new System.EventHandler(this.selectsearch_SelectedIndexChanged);
+            // 
+            // txtfecha
+            // 
+            this.txtfecha.Checked = false;
+            this.txtfecha.CustomFormat = "dd-MM-yyyy";
+            this.txtfecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "FECHA", true));
+            this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha.Location = new System.Drawing.Point(275, 192);
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.Size = new System.Drawing.Size(140, 22);
+            this.txtfecha.TabIndex = 28;
+            this.txtfecha.Value = new System.DateTime(2021, 2, 13, 0, 0, 0, 0);
+            this.txtfecha.Visible = false;
             // 
             // FrmVisitas
             // 
@@ -472,6 +491,7 @@ namespace _1ParcialJP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1170, 508);
+            this.Controls.Add(this.txtfecha);
             this.Controls.Add(label1);
             this.Controls.Add(this.nOMBRE_MEDICOComboBox);
             this.Controls.Add(this.button2);
@@ -545,5 +565,6 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.DateTimePicker txtfecha;
     }
 }
