@@ -29,3 +29,4 @@ C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmVisi
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmAVisita.resources
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmLogin.resources
 C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmRegistro.resources
+C:\Users\George\source\repos\1ParcialJP\1ParcialJP\obj\Debug\_1ParcialJP.FrmUsuario.resources

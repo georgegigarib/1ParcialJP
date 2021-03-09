@@ -145,6 +145,15 @@ namespace _1ParcialJP
             eSTADOLabel.TabIndex = 14;
             eSTADOLabel.Text = "ESTADO:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 174);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 27;
+            label1.Text = "Realizar Consulta";
+            // 
             // mEDICAMENTODataGridView
             // 
             this.mEDICAMENTODataGridView.AutoGenerateColumns = false;
@@ -392,15 +401,6 @@ namespace _1ParcialJP
             this.button2.TabIndex = 26;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 174);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
-            label1.TabIndex = 27;
-            label1.Text = "Realizar Consulta";
             // 
             // FrmMedicamento
             // 

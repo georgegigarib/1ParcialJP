@@ -33,6 +33,7 @@ namespace _1ParcialJP
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Program.tipo = "";
             FrmLogin fmLogin = new FrmLogin();
             fmLogin.Show();
             this.Hide();
@@ -92,7 +93,9 @@ namespace _1ParcialJP
 
         private void btnAU_Click(object sender, EventArgs e)
         {
-
+            FrmUsuario fmusuario = new FrmUsuario();
+            fmusuario.Show();
+            this.Hide();
         }
     }
 }

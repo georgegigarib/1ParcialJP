@@ -165,5 +165,7 @@ namespace _1ParcialJP
             mEDICAMENTODataGridView.DataSource = dt;
             mEDICAMENTODataGridView.Refresh();
         }
+
+        
     }
 }

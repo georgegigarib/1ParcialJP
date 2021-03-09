@@ -89,7 +89,7 @@ namespace _1ParcialJP
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            
+            Program.tipo = "";
             
 
         }

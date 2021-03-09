@@ -48,11 +48,22 @@ namespace _1ParcialJP
                             try
                             {
                                 Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A', '{txtnombre.Text}')");
-                                MessageBox.Show("Bienvenido " + txtusername.Text);
                                 
-                                FrmMenu fmMenu = new FrmMenu();
-                                fmMenu.Show();
-                                this.Hide();
+
+                                if (Program.tipo != "")
+                                {
+                                    FrmUsuario fmusuario = new FrmUsuario();
+                                    MessageBox.Show("Usuario registrado con exito ");
+                                    fmusuario.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Bienvenido " + txtusername.Text);
+                                    FrmMenu fmMenu = new FrmMenu();
+                                    fmMenu.Show();
+                                    this.Hide();
+                                }
                             }
                             catch(Exception er)
                             {
@@ -83,19 +94,34 @@ namespace _1ParcialJP
 
         }
 
-        
+
 
 
         private void FrmRegistro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmLogin fmLogin = new FrmLogin();
-            fmLogin.Show();
-            this.Hide();
+            if (Program.tipo != "")
+            {
+                FrmUsuario fmusuario = new FrmUsuario();
+                fmusuario.Show();
+            }
+            else
+            {
+                FrmLogin fmLogin = new FrmLogin();
+                fmLogin.Show();
+                this.Hide();
+            }
+           
         }
 
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
-
+            if (Program.tipo != "A")
+            {
+                GBTCU.Visible = false;
+            }
         }
     }
-}
+
+    
+    }
+
