@@ -19,14 +19,21 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
+        
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            if(Program.tipo != "A")
+            {
+                lblAU.Visible = false;
+                btnAU.Visible = false;
+            }
         }
-
        
+
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Program.tipo = "";
             FrmLogin fmLogin = new FrmLogin();
             fmLogin.Show();
             this.Hide();
@@ -82,6 +89,13 @@ namespace _1ParcialJP
             fmvisitas.Show();
             this.Hide();
 
+        }
+
+        private void btnAU_Click(object sender, EventArgs e)
+        {
+            FrmUsuario fmusuario = new FrmUsuario();
+            fmusuario.Show();
+            this.Hide();
         }
     }
 }

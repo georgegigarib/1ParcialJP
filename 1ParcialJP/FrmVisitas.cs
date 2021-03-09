@@ -44,7 +44,7 @@ namespace _1ParcialJP
 
         private void FrmVisitas_Load(object sender, EventArgs e)
         {
-           
+            selectsearch.SelectedIndex = 0;
 
             try
             {
@@ -152,6 +152,16 @@ namespace _1ParcialJP
             mEDICAMENTOSTextBox.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
             rECOMENDACIONESTextBox.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
             eSTADOTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            SqlDataAdapter da = Helper.DoQueryReceiver(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            vISITADataGridView.DataSource = dt;
+            vISITADataGridView.Refresh();
         }
     }
 }

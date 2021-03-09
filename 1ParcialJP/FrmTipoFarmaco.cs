@@ -45,7 +45,7 @@ namespace _1ParcialJP
         {
             // TODO: This line of code loads data into the 'pARCIALJPDataSet.TIPO_FARMACO' table. You can move, or remove it, as needed.
             refrescargrid();
-
+            selectsearch.SelectedIndex = 0;
         }
 
         private void tIPO_FARMACODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -102,6 +102,23 @@ namespace _1ParcialJP
             catch (Exception er)
             {
                 MessageBox.Show("Error al Eliminar registro: " + er);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM TIPOFARMACO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            if (txtsearch.Text != "")
+            {
+                SqlDataAdapter da = Helper.DoQueryReceiver(query);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                tIPO_FARMACODataGridView.DataSource = dt;
+                tIPO_FARMACODataGridView.Refresh();
+            }
+            else
+            {
+                refrescargrid();
             }
         }
     }

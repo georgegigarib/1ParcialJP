@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="unnamed (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1024px-Search_Icon.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024px-Search_Icon.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pngjoy.com_medicamentos-salud-a-nivel-mundial-transparent-png_6610358" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngjoy.com_medicamentos-salud-a-nivel-mundial-transparent-png_6610358.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unnamed (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unnamed (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="d1f3ccc7e836617fb6e5db7fed1ae90b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\d1f3ccc7e836617fb6e5db7fed1ae90b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unnamed (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,6 +145,9 @@
   <data name="add-1-icon--flatastic-1-iconset--custom-icon-design-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-1-icon--flatastic-1-iconset--custom-icon-design-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user_no_photo_300x3001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_no_photo_300x3001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="234735" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\234735.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +160,8 @@
   <data name="unnamed (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="d1f3ccc7e836617fb6e5db7fed1ae90b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\d1f3ccc7e836617fb6e5db7fed1ae90b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_no_photo_300x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_no_photo_300x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngkey.com-location-png-104244" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngkey.com-location-png-104244.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,10 +169,13 @@
   <data name="unnamed (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add-1-icon--flatastic-1-iconset--custom-icon-design-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-1-icon--flatastic-1-iconset--custom-icon-design-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_no_photo_300x3002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_no_photo_300x3002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

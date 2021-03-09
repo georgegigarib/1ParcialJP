@@ -30,14 +30,22 @@ namespace _1ParcialJP
                 try
                 {
                     
-                    string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}' AND PASSWORD = '{password}'";
+                    string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}' AND PASSWORD = '{password}' AND ESTADO = 'A'";
                     
                     SqlCommand cmd = new SqlCommand(query, con);
                     Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
                     if (count > 0)
                     {
-                        MessageBox.Show("Bienvenido " +  txtusername.Text);
-                        FrmMenu fmMenu = new FrmMenu();
+                       //  MessageBox.Show("Bienvenido " +  txtusername.Text);
+                        
+                      
+                        
+                        //seteando variable de sesion
+                      
+                        query = $"SELECT TIPO FROM USUARIO WHERE USERNAME = '{username}'";
+                        Helper.soloFila(query);
+                       
+                       FrmMenu fmMenu = new FrmMenu();
                         fmMenu.Show();
                         this.Hide();
                     }
@@ -78,5 +86,14 @@ namespace _1ParcialJP
         {
             Environment.Exit(1);
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            Program.tipo = "";
+            
+
+        }
+
+        }
     }
-}
+

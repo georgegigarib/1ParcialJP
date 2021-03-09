@@ -45,7 +45,9 @@ namespace _1ParcialJP
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnMedico = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblAU = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnAU = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +116,7 @@ namespace _1ParcialJP
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(480, 216);
+            this.label7.Location = new System.Drawing.Point(379, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 19);
             this.label7.TabIndex = 13;
@@ -217,16 +219,37 @@ namespace _1ParcialJP
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblAU
+            // 
+            this.lblAU.AutoSize = true;
+            this.lblAU.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAU.Location = new System.Drawing.Point(470, 216);
+            this.lblAU.Name = "lblAU";
+            this.lblAU.Size = new System.Drawing.Size(109, 19);
+            this.lblAU.TabIndex = 17;
+            this.lblAU.Text = "Agregar Usuario";
+            // 
             // button4
             // 
             this.button4.BackgroundImage = global::_1ParcialJP.Properties.Resources._172ddc045ae1707a415adeae0543a5f0_icono_de_trazo_de_color_del_paciente_by_vexels;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(464, 247);
+            this.button4.Location = new System.Drawing.Point(363, 247);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 76);
+            this.button4.Size = new System.Drawing.Size(78, 76);
             this.button4.TabIndex = 6;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnAU
+            // 
+            this.btnAU.BackgroundImage = global::_1ParcialJP.Properties.Resources.user_no_photo_300x3002;
+            this.btnAU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAU.Location = new System.Drawing.Point(489, 247);
+            this.btnAU.Name = "btnAU";
+            this.btnAU.Size = new System.Drawing.Size(77, 76);
+            this.btnAU.TabIndex = 18;
+            this.btnAU.UseVisualStyleBackColor = true;
+            this.btnAU.Click += new System.EventHandler(this.btnAU_Click);
             // 
             // FrmMenu
             // 
@@ -234,6 +257,8 @@ namespace _1ParcialJP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(591, 346);
+            this.Controls.Add(this.btnAU);
+            this.Controls.Add(this.lblAU);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
@@ -271,5 +296,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblAU;
+        private System.Windows.Forms.Button btnAU;
     }
 }

@@ -39,8 +39,9 @@ namespace _1ParcialJP
             System.Windows.Forms.Label mEDICAMENTOSLabel;
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
+            System.Windows.Forms.Label label1;
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.vISITABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vISITATableAdapter = new _1ParcialJP.PARCIALJPDataSetTableAdapters.VISITATableAdapter();
@@ -68,6 +69,9 @@ namespace _1ParcialJP
             this.nOMBRE_MEDICOComboBox = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGguardar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
             iD_VISITALabel = new System.Windows.Forms.Label();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
@@ -77,6 +81,7 @@ namespace _1ParcialJP
             mEDICAMENTOSLabel = new System.Windows.Forms.Label();
             rECOMENDACIONESLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vISITABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vISITADataGridView)).BeginInit();
@@ -194,8 +199,6 @@ namespace _1ParcialJP
             // 
             this.vISITADataGridView.AllowUserToAddRows = false;
             this.vISITADataGridView.AllowUserToDeleteRows = false;
-            this.vISITADataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.vISITADataGridView.AutoGenerateColumns = false;
             this.vISITADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vISITADataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -209,12 +212,13 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.vISITADataGridView.DataSource = this.vISITABindingSource;
+            this.vISITADataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vISITADataGridView.Location = new System.Drawing.Point(0, 0);
             this.vISITADataGridView.Name = "vISITADataGridView";
             this.vISITADataGridView.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.vISITADataGridView.Size = new System.Drawing.Size(1133, 280);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.vISITADataGridView.Size = new System.Drawing.Size(1132, 275);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick_1);
             // 
@@ -352,9 +356,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.vISITADataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 174);
+            this.panel1.Location = new System.Drawing.Point(14, 221);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1133, 280);
+            this.panel1.Size = new System.Drawing.Size(1132, 275);
             this.panel1.TabIndex = 20;
             // 
             // hORADateTimePicker
@@ -419,14 +423,61 @@ namespace _1ParcialJP
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(21, 174);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 20;
+            label1.Text = "Realizar Consulta";
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(706, 164);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 51);
+            this.button2.TabIndex = 19;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(275, 193);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(421, 22);
+            this.txtsearch.TabIndex = 18;
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "NOMBRE_MEDICO",
+            "NOMBRE_PACIENTE",
+            "SINTOMAS",
+            "RECOMENDACIONES",
+            "MEDICAMENTOS",
+            "ESTADO"});
+            this.selectsearch.Location = new System.Drawing.Point(15, 192);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(254, 23);
+            this.selectsearch.TabIndex = 17;
+            // 
             // FrmVisitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1170, 478);
+            this.ClientSize = new System.Drawing.Size(1170, 508);
+            this.Controls.Add(label1);
             this.Controls.Add(this.nOMBRE_MEDICOComboBox);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.CBXPACIENTE);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(this.btnAgregar);
@@ -491,5 +542,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
     }
 }

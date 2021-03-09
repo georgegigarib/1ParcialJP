@@ -33,6 +33,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label iD_TFLabel;
             System.Windows.Forms.Label dESCRIPCIONLabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoFarmaco));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.tIPO_FARMACOBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,9 +50,13 @@ namespace _1ParcialJP
             this.btnGguardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
             iD_TFLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIPO_FARMACOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIPO_FARMACODataGridView)).BeginInit();
@@ -126,7 +131,7 @@ namespace _1ParcialJP
             this.tIPO_FARMACODataGridView.Location = new System.Drawing.Point(0, 0);
             this.tIPO_FARMACODataGridView.Name = "tIPO_FARMACODataGridView";
             this.tIPO_FARMACODataGridView.ReadOnly = true;
-            this.tIPO_FARMACODataGridView.Size = new System.Drawing.Size(418, 255);
+            this.tIPO_FARMACODataGridView.Size = new System.Drawing.Size(425, 268);
             this.tIPO_FARMACODataGridView.TabIndex = 1;
             this.tIPO_FARMACODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tIPO_FARMACODataGridView_CellContentClick);
             this.tIPO_FARMACODataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tIPO_FARMACODataGridView_CellContentClick_1);
@@ -175,9 +180,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.tIPO_FARMACODataGridView);
-            this.panel1.Location = new System.Drawing.Point(8, 162);
+            this.panel1.Location = new System.Drawing.Point(8, 204);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 255);
+            this.panel1.Size = new System.Drawing.Size(425, 268);
             this.panel1.TabIndex = 8;
             // 
             // btnEliminar
@@ -228,12 +233,55 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Size = new System.Drawing.Size(122, 23);
             this.eSTADOComboBox.TabIndex = 20;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(379, 160);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(43, 38);
+            this.button2.TabIndex = 35;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(165, 176);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(195, 22);
+            this.txtsearch.TabIndex = 34;
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "DESCRIPCION",
+            "ESTADO"});
+            this.selectsearch.Location = new System.Drawing.Point(8, 175);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(151, 23);
+            this.selectsearch.TabIndex = 33;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(14, 157);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(97, 15);
+            label1.TabIndex = 36;
+            label1.Text = "Realizar consulta";
+            // 
             // FrmTipoFarmaco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(445, 440);
+            this.ClientSize = new System.Drawing.Size(445, 484);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.selectsearch);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGguardar);
@@ -276,5 +324,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
     }
 }

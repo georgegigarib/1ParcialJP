@@ -36,6 +36,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label tRAMOLabel;
             System.Windows.Forms.Label cELDALabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUbicacion));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.uBICACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,12 +59,16 @@ namespace _1ParcialJP
             this.btnGguardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
             iD_UBICACIONLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTANTELabel = new System.Windows.Forms.Label();
             tRAMOLabel = new System.Windows.Forms.Label();
             cELDALabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBICACIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBICACIONDataGridView)).BeginInit();
@@ -168,7 +173,7 @@ namespace _1ParcialJP
             this.uBICACIONDataGridView.Location = new System.Drawing.Point(0, 0);
             this.uBICACIONDataGridView.Name = "uBICACIONDataGridView";
             this.uBICACIONDataGridView.ReadOnly = true;
-            this.uBICACIONDataGridView.Size = new System.Drawing.Size(777, 265);
+            this.uBICACIONDataGridView.Size = new System.Drawing.Size(777, 260);
             this.uBICACIONDataGridView.TabIndex = 1;
             this.uBICACIONDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick);
             this.uBICACIONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick_1);
@@ -222,9 +227,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.uBICACIONDataGridView);
-            this.panel1.Location = new System.Drawing.Point(15, 167);
+            this.panel1.Location = new System.Drawing.Point(15, 197);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 265);
+            this.panel1.Size = new System.Drawing.Size(777, 260);
             this.panel1.TabIndex = 2;
             // 
             // dESCRIPCIONTextBox
@@ -321,12 +326,59 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Size = new System.Drawing.Size(210, 23);
             this.eSTADOComboBox.TabIndex = 20;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(24, 150);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(111, 17);
+            label1.TabIndex = 24;
+            label1.Text = "Realizar Consulta";
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(597, 143);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 48);
+            this.button2.TabIndex = 23;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(242, 169);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(349, 22);
+            this.txtsearch.TabIndex = 22;
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "ESTANTE",
+            "TRAMO",
+            "CELDA",
+            "ESTADO",
+            "DESCRIPCION"});
+            this.selectsearch.Location = new System.Drawing.Point(18, 168);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(218, 23);
+            this.selectsearch.TabIndex = 21;
+            // 
             // FrmUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(815, 460);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGguardar);
@@ -381,5 +433,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
     }
 }

@@ -58,6 +58,9 @@ namespace _1ParcialJP
             this.btnGguardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tANDA_LABORTextBox = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
             iD_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRELabel = new System.Windows.Forms.Label();
             cEDULALabel = new System.Windows.Forms.Label();
@@ -169,7 +172,7 @@ namespace _1ParcialJP
             this.mEDICODataGridView.Location = new System.Drawing.Point(0, 0);
             this.mEDICODataGridView.Name = "mEDICODataGridView";
             this.mEDICODataGridView.ReadOnly = true;
-            this.mEDICODataGridView.Size = new System.Drawing.Size(766, 312);
+            this.mEDICODataGridView.Size = new System.Drawing.Size(766, 254);
             this.mEDICODataGridView.TabIndex = 1;
             this.mEDICODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICODataGridView_CellContentClick);
             // 
@@ -222,9 +225,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.mEDICODataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 197);
+            this.panel1.Location = new System.Drawing.Point(14, 255);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 312);
+            this.panel1.Size = new System.Drawing.Size(766, 254);
             this.panel1.TabIndex = 2;
             // 
             // iD_MEDICOTextBox
@@ -325,12 +328,48 @@ namespace _1ParcialJP
             this.tANDA_LABORTextBox.Size = new System.Drawing.Size(220, 23);
             this.tANDA_LABORTextBox.TabIndex = 17;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(656, 182);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.TabIndex = 29;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(281, 215);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(369, 22);
+            this.txtsearch.TabIndex = 28;
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CEDULA",
+            "ESTADO",
+            "ESPECIALIDAD",
+            "TANDA_LABOR"});
+            this.selectsearch.Location = new System.Drawing.Point(11, 214);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(251, 23);
+            this.selectsearch.TabIndex = 27;
+            // 
             // FrmMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(797, 532);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.tANDA_LABORTextBox);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGguardar);
@@ -385,5 +424,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.ComboBox tANDA_LABORTextBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
     }
 }

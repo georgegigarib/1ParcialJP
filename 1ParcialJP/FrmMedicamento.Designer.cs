@@ -37,6 +37,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label iD_UBBICACIONLabel;
             System.Windows.Forms.Label dOSISLabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedicamento));
             this.mEDICAMENTODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +52,6 @@ namespace _1ParcialJP
             this.iD_MEDICAMENTOTextBox = new System.Windows.Forms.TextBox();
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.dOSISTextBox = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGguardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CBXUbicacion = new System.Windows.Forms.ComboBox();
@@ -63,6 +61,12 @@ namespace _1ParcialJP
             this.uBICACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CBXMarca = new System.Windows.Forms.ComboBox();
             this.CBXtipoFarmaco = new System.Windows.Forms.ComboBox();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGguardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             iD_MEDICAMENTOLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
@@ -70,6 +74,7 @@ namespace _1ParcialJP
             iD_UBBICACIONLabel = new System.Windows.Forms.Label();
             dOSISLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICAMENTODataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICAMENTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
@@ -103,7 +108,6 @@ namespace _1ParcialJP
             iD_TFLabel.Size = new System.Drawing.Size(104, 15);
             iD_TFLabel.TabIndex = 6;
             iD_TFLabel.Text = "TIPO FARMACO:";
-            iD_TFLabel.Click += new System.EventHandler(this.iD_TFLabel_Click);
             // 
             // iD_MARCALabel
             // 
@@ -131,7 +135,6 @@ namespace _1ParcialJP
             dOSISLabel.Size = new System.Drawing.Size(46, 15);
             dOSISLabel.TabIndex = 12;
             dOSISLabel.Text = "DOSIS:";
-            dOSISLabel.Click += new System.EventHandler(this.dOSISLabel_Click);
             // 
             // eSTADOLabel
             // 
@@ -141,6 +144,15 @@ namespace _1ParcialJP
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 14;
             eSTADOLabel.Text = "ESTADO:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 174);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 27;
+            label1.Text = "Realizar Consulta";
             // 
             // mEDICAMENTODataGridView
             // 
@@ -158,9 +170,10 @@ namespace _1ParcialJP
             this.mEDICAMENTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mEDICAMENTODataGridView.Location = new System.Drawing.Point(0, 0);
             this.mEDICAMENTODataGridView.Name = "mEDICAMENTODataGridView";
-            this.mEDICAMENTODataGridView.Size = new System.Drawing.Size(887, 327);
+            this.mEDICAMENTODataGridView.Size = new System.Drawing.Size(888, 312);
             this.mEDICAMENTODataGridView.TabIndex = 1;
-            this.mEDICAMENTODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICAMENTODataGridView_CellContentClick_1); // 
+            this.mEDICAMENTODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICAMENTODataGridView_CellContentClick_1);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -246,40 +259,6 @@ namespace _1ParcialJP
             this.dOSISTextBox.Name = "dOSISTextBox";
             this.dOSISTextBox.Size = new System.Drawing.Size(226, 22);
             this.dOSISTextBox.TabIndex = 13;
-            this.dOSISTextBox.TextChanged += new System.EventHandler(this.dOSISTextBox_TextChanged);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(858, 8);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(54, 61);
-            this.btnEliminar.TabIndex = 18;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGguardar
-            // 
-            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
-            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(790, 7);
-            this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(62, 62);
-            this.btnGguardar.TabIndex = 17;
-            this.btnGguardar.UseVisualStyleBackColor = true;
-            this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(824, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 62);
-            this.button1.TabIndex = 16;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // eSTADOComboBox
             // 
@@ -299,9 +278,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.mEDICAMENTODataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 179);
+            this.panel1.Location = new System.Drawing.Point(11, 232);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(887, 327);
+            this.panel1.Size = new System.Drawing.Size(888, 312);
             this.panel1.TabIndex = 20;
             // 
             // CBXUbicacion
@@ -356,12 +335,83 @@ namespace _1ParcialJP
             this.CBXtipoFarmaco.Size = new System.Drawing.Size(230, 23);
             this.CBXtipoFarmaco.TabIndex = 23;
             // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(279, 193);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(369, 22);
+            this.txtsearch.TabIndex = 25;
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "DESCRIPCION",
+            "DOSIS",
+            "ESTADO",
+            "ID_TF",
+            "ID_MARCA",
+            "ID_UBICACION"});
+            this.selectsearch.Location = new System.Drawing.Point(9, 192);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(251, 23);
+            this.selectsearch.TabIndex = 24;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(858, 8);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(54, 61);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGguardar
+            // 
+            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
+            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGguardar.Location = new System.Drawing.Point(790, 7);
+            this.btnGguardar.Name = "btnGguardar";
+            this.btnGguardar.Size = new System.Drawing.Size(62, 62);
+            this.btnGguardar.TabIndex = 17;
+            this.btnGguardar.UseVisualStyleBackColor = true;
+            this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(824, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 62);
+            this.button1.TabIndex = 16;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(654, 160);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.TabIndex = 26;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FrmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(924, 530);
+            this.ClientSize = new System.Drawing.Size(924, 556);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.CBXtipoFarmaco);
             this.Controls.Add(this.CBXMarca);
             this.Controls.Add(this.CBXUbicacion);
@@ -423,5 +473,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.Button button2;
     }
 }

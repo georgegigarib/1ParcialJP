@@ -18,6 +18,7 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
+        public object Session { get; private set; }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -25,7 +26,7 @@ namespace _1ParcialJP
             con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
             con.Open();
 
-            if (txtusername.Text != "" || txtpassword.Text != "" || txtpassword2.Text != "")
+            if (txtusername.Text != "" && txtpassword.Text != "" && txtpassword2.Text != "" && txtnombre.Text != "")
             {
                 if (txtpassword2.Text != txtpassword.Text)
                 {
@@ -46,11 +47,23 @@ namespace _1ParcialJP
                         {
                             try
                             {
-                                Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A')");
-                                MessageBox.Show("Bienvenido " + txtusername.Text);
-                                FrmMenu fmMenu = new FrmMenu();
-                                fmMenu.Show();
-                                this.Hide();
+                                Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A', '{txtnombre.Text}')");
+                                
+
+                                if (Program.tipo != "")
+                                {
+                                    FrmUsuario fmusuario = new FrmUsuario();
+                                    MessageBox.Show("Usuario registrado con exito ");
+                                    fmusuario.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Bienvenido " + txtusername.Text);
+                                    FrmMenu fmMenu = new FrmMenu();
+                                    fmMenu.Show();
+                                    this.Hide();
+                                }
                             }
                             catch(Exception er)
                             {
@@ -81,14 +94,34 @@ namespace _1ParcialJP
 
         }
 
-        
+
 
 
         private void FrmRegistro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmLogin fmLogin = new FrmLogin();
-            fmLogin.Show();
-            this.Hide();
+            if (Program.tipo != "")
+            {
+                FrmUsuario fmusuario = new FrmUsuario();
+                fmusuario.Show();
+            }
+            else
+            {
+                FrmLogin fmLogin = new FrmLogin();
+                fmLogin.Show();
+                this.Hide();
+            }
+           
+        }
+
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+            if (Program.tipo != "A")
+            {
+                GBTCU.Visible = false;
+            }
         }
     }
-}
+
+    
+    }
+

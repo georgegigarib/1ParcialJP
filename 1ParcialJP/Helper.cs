@@ -85,7 +85,35 @@ namespace _1ParcialJP
                 return "";
             }
         }
+        public static void soloFila(string query)
+        {
 
+            SqlConnection con = new SqlConnection();
+            con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
+            con.Open();
+            try
+            {
+                
+                SqlCommand elcomando = con.CreateCommand();
+                elcomando.CommandText = query;
+                SqlDataReader reader = elcomando.ExecuteReader();
+                reader.Read();
+                //seteando variable en session
+                Program.tipo = reader[0].ToString();
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show("no" + er);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+           
+
+
+        }
 
     }
 }

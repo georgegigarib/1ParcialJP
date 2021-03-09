@@ -36,7 +36,7 @@ namespace _1ParcialJP
         private void FrmPaciente_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'pARCIALJPDataSet.PACIENTE' table. You can move, or remove it, as needed.
-           
+            selectsearch.SelectedIndex = 0;
             refrescargrid();
         }
 
@@ -114,6 +114,26 @@ namespace _1ParcialJP
             nUM_CARNETTextBox.Text = pACIENTEDataGridView[3, e.RowIndex].Value.ToString();
             tIPO_PACIENTEComboBox.Text = pACIENTEDataGridView[4, e.RowIndex].Value.ToString();
             eSTADOComboBox.Text = pACIENTEDataGridView[5, e.RowIndex].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM PACIENTE WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            SqlDataAdapter da = Helper.DoQueryReceiver(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            pACIENTEDataGridView.DataSource = dt;
+            pACIENTEDataGridView.Refresh();
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectsearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

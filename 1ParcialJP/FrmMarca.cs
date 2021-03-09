@@ -34,6 +34,8 @@ namespace _1ParcialJP
         {
             // TODO: This line of code loads data into the 'pARCIALJPDataSet.MARCA' table. You can move, or remove it, as needed.
             refrescargrid();
+            selectsearch.SelectedIndex = 0;
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -100,6 +102,31 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Error al Eliminar registro: " + er);
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            SqlDataAdapter da = Helper.DoQueryReceiver(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mARCADataGridView.DataSource = dt;
+            mARCADataGridView.Refresh();
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectsearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
