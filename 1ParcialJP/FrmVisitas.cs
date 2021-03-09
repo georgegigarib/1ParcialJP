@@ -156,7 +156,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dstring query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            string query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
             SqlDataAdapter da = Helper.DoQueryReceiver(query);
             DataTable dt = new DataTable();
             da.Fill(dt);
