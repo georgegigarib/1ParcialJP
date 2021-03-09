@@ -46,6 +46,7 @@ namespace _1ParcialJP
         {
             // TODO: This line of code loads data into the 'pARCIALJPDataSet.UBICACION' table. You can move, or remove it, as needed.
             refrescargrid();
+            selectsearch.SelectedIndex = 0;
         }
 
         private void FrmUbicacion_FormClosed(object sender, FormClosedEventArgs e)
@@ -112,6 +113,16 @@ namespace _1ParcialJP
             FrmAUbicacion fmAUbicacion = new FrmAUbicacion();
             fmAUbicacion.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM UBICACION WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            SqlDataAdapter da = Helper.DoQueryReceiver(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            uBICACIONDataGridView.DataSource = dt;
+            uBICACIONDataGridView.Refresh();
         }
     }
 }

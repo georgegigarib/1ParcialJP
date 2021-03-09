@@ -8,6 +8,12 @@ namespace _1ParcialJP
 {
     static class Program
     {
+        public static string _tipo;
+        public static string tipo
+        {
+            get { return _tipo; }
+            set { _tipo = value; }
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

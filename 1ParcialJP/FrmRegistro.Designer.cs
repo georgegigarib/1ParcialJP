@@ -38,11 +38,15 @@ namespace _1ParcialJP
             this.txtusername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtnombre);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtpassword2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtpassword);
@@ -54,7 +58,7 @@ namespace _1ParcialJP
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(522, 193);
+            this.groupBox1.Size = new System.Drawing.Size(529, 235);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -91,7 +95,7 @@ namespace _1ParcialJP
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(398, 152);
+            this.button2.Location = new System.Drawing.Point(403, 194);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 33);
@@ -129,12 +133,32 @@ namespace _1ParcialJP
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario: ";
             // 
+            // txtnombre
+            // 
+            this.txtnombre.Location = new System.Drawing.Point(167, 168);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnombre.MaxLength = 30;
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.PasswordChar = '*';
+            this.txtnombre.Size = new System.Drawing.Size(228, 22);
+            this.txtnombre.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 173);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Nombre Completo";
+            // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(530, 197);
+            this.ClientSize = new System.Drawing.Size(536, 246);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -142,6 +166,7 @@ namespace _1ParcialJP
             this.Name = "FrmRegistro";
             this.Text = "Registro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRegistro_FormClosed);
+            this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -158,5 +183,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -19,8 +19,14 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
+        
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            if(Program.tipo != "A")
+            {
+                lblAU.Visible = false;
+                btnAU.Visible = false;
+            }
         }
        
 
@@ -81,6 +87,11 @@ namespace _1ParcialJP
             FrmVisitas fmvisitas = new FrmVisitas();
             fmvisitas.Show();
             this.Hide();
+
+        }
+
+        private void btnAU_Click(object sender, EventArgs e)
+        {
 
         }
     }

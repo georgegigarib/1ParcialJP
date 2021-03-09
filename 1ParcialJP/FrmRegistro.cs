@@ -26,7 +26,7 @@ namespace _1ParcialJP
             con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
             con.Open();
 
-            if (txtusername.Text != "" || txtpassword.Text != "" || txtpassword2.Text != "")
+            if (txtusername.Text != "" && txtpassword.Text != "" && txtpassword2.Text != "" && txtnombre.Text != "")
             {
                 if (txtpassword2.Text != txtpassword.Text)
                 {
@@ -47,7 +47,7 @@ namespace _1ParcialJP
                         {
                             try
                             {
-                                Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A')");
+                                Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A', '{txtnombre.Text}')");
                                 MessageBox.Show("Bienvenido " + txtusername.Text);
                                 
                                 FrmMenu fmMenu = new FrmMenu();
@@ -91,6 +91,11 @@ namespace _1ParcialJP
             FrmLogin fmLogin = new FrmLogin();
             fmLogin.Show();
             this.Hide();
+        }
+
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

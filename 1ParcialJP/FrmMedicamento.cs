@@ -19,7 +19,7 @@ namespace _1ParcialJP
         
         public void refrescargrid()
         {
-
+            selectsearch.SelectedIndex = 0;
             try
             {
                 string sql = "SELECT * FROM MEDICAMENTO";
@@ -86,25 +86,7 @@ namespace _1ParcialJP
 
         }
 
-        private void iD_TFTextBox_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void iD_TFLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dOSISTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dOSISLabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmMedicamento_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -174,6 +156,14 @@ namespace _1ParcialJP
             eSTADOComboBox.Text = mEDICAMENTODataGridView[6, e.RowIndex].Value.ToString();
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+            SqlDataAdapter da = Helper.DoQueryReceiver(query);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mEDICAMENTODataGridView.DataSource = dt;
+            mEDICAMENTODataGridView.Refresh();
+        }
     }
 }

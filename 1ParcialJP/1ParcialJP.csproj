@@ -67,6 +67,12 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="ValidacionCedula.cs" />
     <Compile Include="DATA\MARCA.cs">
@@ -257,6 +263,9 @@
     <EmbeddedResource Include="FrmUbicacion.resx">
       <DependentUpon>FrmUbicacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVisitas.resx">
       <DependentUpon>FrmVisitas.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +322,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\user_no_photo_300x3002.png" />
+    <None Include="Resources\user_no_photo_300x3001.png" />
+    <None Include="Resources\user_no_photo_300x300.png" />
+    <None Include="Resources\1024px-Search_Icon.svg.png" />
     <None Include="Resources\172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels.png" />
     <None Include="Resources\d1f3ccc7e836617fb6e5db7fed1ae90b.png" />
     <None Include="Resources\medico.png" />

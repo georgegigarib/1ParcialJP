@@ -33,6 +33,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label dESCRIPCIONLabel;
             System.Windows.Forms.Label eSTADOLabel;
             System.Windows.Forms.Label iD_MARCALabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMarca));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.mARCABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,15 +44,19 @@ namespace _1ParcialJP
             this.iDMARCADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dESCRIPCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnGguardar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
             this.iD_MARCATextBox = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGguardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,9 +119,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.mARCADataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 220);
+            this.panel1.Location = new System.Drawing.Point(14, 269);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 264);
+            this.panel1.Size = new System.Drawing.Size(419, 231);
             this.panel1.TabIndex = 8;
             // 
             // mARCADataGridView
@@ -134,7 +139,7 @@ namespace _1ParcialJP
             this.mARCADataGridView.Location = new System.Drawing.Point(0, 0);
             this.mARCADataGridView.Name = "mARCADataGridView";
             this.mARCADataGridView.ReadOnly = true;
-            this.mARCADataGridView.Size = new System.Drawing.Size(419, 264);
+            this.mARCADataGridView.Size = new System.Drawing.Size(419, 231);
             this.mARCADataGridView.TabIndex = 0;
             this.mARCADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mARCADataGridView_CellContentClick_1);
             // 
@@ -160,39 +165,6 @@ namespace _1ParcialJP
             this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
             this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
             this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(359, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 56);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnGguardar
-            // 
-            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
-            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(359, 75);
-            this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(61, 57);
-            this.btnGguardar.TabIndex = 10;
-            this.btnGguardar.UseVisualStyleBackColor = true;
-            this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(359, 138);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(61, 55);
-            this.btnEliminar.TabIndex = 11;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dESCRIPCIONTextBox
             // 
@@ -227,12 +199,91 @@ namespace _1ParcialJP
             this.iD_MARCATextBox.Size = new System.Drawing.Size(182, 22);
             this.iD_MARCATextBox.TabIndex = 7;
             // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "ESTADO",
+            "DESCRIPCION"});
+            this.selectsearch.Location = new System.Drawing.Point(17, 235);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(132, 23);
+            this.selectsearch.TabIndex = 13;
+            this.selectsearch.SelectedIndexChanged += new System.EventHandler(this.selectsearch_SelectedIndexChanged);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(155, 236);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(239, 22);
+            this.txtsearch.TabIndex = 14;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(400, 223);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 34);
+            this.button2.TabIndex = 15;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(359, 138);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(61, 55);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGguardar
+            // 
+            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
+            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGguardar.Location = new System.Drawing.Point(359, 75);
+            this.btnGguardar.Name = "btnGguardar";
+            this.btnGguardar.Size = new System.Drawing.Size(61, 57);
+            this.btnGguardar.TabIndex = 10;
+            this.btnGguardar.UseVisualStyleBackColor = true;
+            this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(359, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 56);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(23, 217);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 16;
+            label1.Text = "Realizar Consulta";
+            label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FrmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(450, 501);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGguardar);
@@ -275,6 +326,9 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn iDMARCADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -36,6 +36,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label nUM_CARNETLabel;
             System.Windows.Forms.Label tIPO_PACIENTELabel;
             System.Windows.Forms.Label eSTADOLabel1;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaciente));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.pACIENTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,12 +59,16 @@ namespace _1ParcialJP
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tIPO_PACIENTEComboBox = new System.Windows.Forms.ComboBox();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.selectsearch = new System.Windows.Forms.ComboBox();
             iD_PACIENTELabel = new System.Windows.Forms.Label();
             nOMBRELabel = new System.Windows.Forms.Label();
             cEDULALabel = new System.Windows.Forms.Label();
             nUM_CARNETLabel = new System.Windows.Forms.Label();
             tIPO_PACIENTELabel = new System.Windows.Forms.Label();
             eSTADOLabel1 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEDataGridView)).BeginInit();
@@ -168,7 +173,7 @@ namespace _1ParcialJP
             this.pACIENTEDataGridView.Location = new System.Drawing.Point(0, 0);
             this.pACIENTEDataGridView.Name = "pACIENTEDataGridView";
             this.pACIENTEDataGridView.ReadOnly = true;
-            this.pACIENTEDataGridView.Size = new System.Drawing.Size(791, 300);
+            this.pACIENTEDataGridView.Size = new System.Drawing.Size(791, 268);
             this.pACIENTEDataGridView.TabIndex = 1;
             this.pACIENTEDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pACIENTEDataGridView_CellContentClick_1);
             // 
@@ -225,9 +230,9 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.pACIENTEDataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 164);
+            this.panel1.Location = new System.Drawing.Point(12, 207);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(791, 300);
+            this.panel1.Size = new System.Drawing.Size(791, 268);
             this.panel1.TabIndex = 2;
             // 
             // iD_PACIENTETextBox
@@ -325,13 +330,61 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Size = new System.Drawing.Size(201, 23);
             this.eSTADOComboBox.TabIndex = 21;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(669, 146);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.TabIndex = 32;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(294, 179);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(369, 22);
+            this.txtsearch.TabIndex = 31;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // selectsearch
+            // 
+            this.selectsearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.selectsearch.FormattingEnabled = true;
+            this.selectsearch.Items.AddRange(new object[] {
+            "NOMBRE",
+            "CEDULA",
+            "NUM_CARNET",
+            "TIPO_PACIENTE",
+            "ESTADO"});
+            this.selectsearch.Location = new System.Drawing.Point(24, 178);
+            this.selectsearch.Name = "selectsearch";
+            this.selectsearch.Size = new System.Drawing.Size(251, 23);
+            this.selectsearch.TabIndex = 30;
+            this.selectsearch.SelectedIndexChanged += new System.EventHandler(this.selectsearch_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(21, 160);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(99, 15);
+            label1.TabIndex = 33;
+            label1.Text = "Realizar Consulta";
+            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(828, 487);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(eSTADOLabel1);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.selectsearch);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.tIPO_PACIENTEComboBox);
             this.Controls.Add(this.btnEliminar);
@@ -385,5 +438,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
     }
 }
