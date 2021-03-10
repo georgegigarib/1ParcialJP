@@ -22,9 +22,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = "SELECT * FROM VISITA";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = Helper.DoQueryReceiver(sql);
                 vISITADataGridView.DataSource = dt;
                 vISITADataGridView.Refresh();
             }
@@ -86,9 +84,7 @@ namespace _1ParcialJP
         private DataTable combolista(string id, string tabla)
         {
             string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = Helper.DoQueryReceiver(sql);
 
             return dt;
         }
@@ -156,21 +152,23 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query;
+            string sql;
             switch (selectsearch.SelectedIndex)
             {
                
                 case 6:
-                    query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} >= '{txtfecha.Text}'";
+                    sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} >= @search";
                     break;
             default:
-                    query = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
+                    sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
                     break;
             }
 
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+           
+            SqlCommand command = new SqlCommand();
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            DataTable dt = Helper.DoQueryReceiverLimpio(command);
             vISITADataGridView.DataSource = dt;
             vISITADataGridView.Refresh();
         }

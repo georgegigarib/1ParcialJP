@@ -14,8 +14,10 @@ namespace _1ParcialJP
     public partial class FrmMarca : Form
 
     {
+
         public SqlConnection con { get; set; }
         FrmAMarca aMarca = new FrmAMarca();
+
         public FrmMarca()
         {
             InitializeComponent();
@@ -48,9 +50,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = "SELECT * FROM MARCA";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = Helper.DoQueryReceiver(sql);
                 mARCADataGridView.DataSource = dt;
                 mARCADataGridView.Refresh();
             }
@@ -71,23 +71,21 @@ namespace _1ParcialJP
         private void button2_Click(object sender, EventArgs e)
         {
            
-
             // prueba de sanitizacion
-
             try
             {
-                string sql = $"UPDATE MARCA SET ESTADO = '{eSTADOComboBox.Text}', DESCRIPCION = @descripcion WHERE ID_MARCA ='{iD_MARCATextBox.Text}'";
-            SqlCommand command = new SqlCommand(sql);
+            string sql = $"UPDATE MARCA SET ESTADO = '{eSTADOComboBox.Text}', DESCRIPCION = @descripcion WHERE ID_MARCA ='{iD_MARCATextBox.Text}'";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = sql;
             command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
             Helper.DoQueryExecuterLimpio(command);
+            MessageBox.Show("Registro Guardado con exito");
+            refrescargrid();
             }
             catch (Exception er)
             {
                 MessageBox.Show("Error al Guardar Cambios: " + er);
             }
-            
-
-
         }
 
         private void FrmMarca_FormClosed(object sender, FormClosedEventArgs e)
@@ -113,10 +111,11 @@ namespace _1ParcialJP
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%" );
+            DataTable dt = Helper.DoQueryReceiverLimpio(command);
             mARCADataGridView.DataSource = dt;
             mARCADataGridView.Refresh();
         }

@@ -23,9 +23,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = "SELECT * FROM MEDICAMENTO";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = Helper.DoQueryReceiver(sql);
                 mEDICAMENTODataGridView.DataSource = dt;
                 mEDICAMENTODataGridView.Refresh();
             }
@@ -44,9 +42,6 @@ namespace _1ParcialJP
 
         private void FrmMedicamento_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.UBICACION' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.MEDICAMENTO' table. You can move, or remove it, as needed.
            
             try
             {
@@ -97,10 +92,7 @@ namespace _1ParcialJP
         private DataTable combolista(string id, string tabla)
         {
             string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
+            DataTable dt = Helper.DoQueryReceiver(sql);
             return dt;
         }
 
@@ -125,11 +117,19 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"UPDATE MEDICAMENTO SET DESCRIPCION ='{dESCRIPCIONTextBox.Text}', ID_TF ='{CBXtipoFarmaco.Text}', " +
-                    $"ESTADO='{eSTADOComboBox.Text}', ID_UBBICACION ='{CBXUbicacion.Text}', DOSIS='{dOSISTextBox.Text}', ID_MARCA='{CBXMarca.Text}'" +
+                string sql = $"UPDATE MEDICAMENTO SET DESCRIPCION = @descripcion, ID_TF = @tipoF, " +
+                    $"ESTADO= @estado, ID_UBBICACION = @ubicacion, DOSIS= @dosis, ID_MARCA = @marca " +
                     $"WHERE ID_MEDICAMENTO ='{iD_MEDICAMENTOTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
-                MessageBox.Show("Registro Guardado con exito");
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
+                command.Parameters.AddWithValue("@marca", CBXMarca.Text);
+                command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
+                command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
+                MessageBox.Show("Registro guardado con exito");
                 refrescargrid();
             }
             catch (Exception er)
@@ -158,10 +158,11 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            DataTable dt = Helper.DoQueryReceiverLimpio(command);
             mEDICAMENTODataGridView.DataSource = dt;
             mEDICAMENTODataGridView.Refresh();
         }

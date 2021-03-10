@@ -42,8 +42,15 @@ namespace _1ParcialJP
 
                 try
                 {
-                    string sql = $"INSERT INTO MEDICO VALUES ('{nOMBRETextBox.Text}', '{cEDULATextBox.Text}','{tANDA_LABORTextBox.Text}','{eSPECIALIDADTextBox.Text}','{eSTADOComboBox.Text}')";
-                    Helper.DoQueryExecuter(sql);
+                    string sql = $"INSERT INTO MEDICO VALUES ( @nombre , @cedula, @tanda , @especialidad, @estado)";
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
+                    command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
+                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);
+                    command.Parameters.AddWithValue("@especialidad", eSPECIALIDADTextBox.Text);
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro guardado con exito");
                     this.Close();
                 }

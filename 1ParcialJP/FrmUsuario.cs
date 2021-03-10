@@ -28,9 +28,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = "SELECT ID_USUARIO, NOMBRE, TIPO, ESTADO FROM USUARIO";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = Helper.DoQueryReceiver(sql);
                 dataGridViewUsuario.DataSource = dt;
                 dataGridViewUsuario.Refresh();
             }
@@ -100,10 +98,11 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT ID_USUARIO, NOMBRE, TIPO, ESTADO FROM USUARIO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            DataTable dt = Helper.DoQueryReceiverLimpio(command);
             dataGridViewUsuario.DataSource = dt;
             dataGridViewUsuario.Refresh();
         }

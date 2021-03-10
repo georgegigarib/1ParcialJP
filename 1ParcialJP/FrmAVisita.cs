@@ -20,9 +20,7 @@ namespace _1ParcialJP
         private DataTable combolista(string id, string tabla)
         {
             string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = Helper.DoQueryReceiver(sql);
 
             return dt;
         }

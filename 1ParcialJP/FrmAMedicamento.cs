@@ -21,9 +21,17 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"INSERT INTO MEDICAMENTO VALUES ('{dESCRIPCIONTextBox.Text}', '{CBXtipoFarmaco.Text}', '{CBXMarca.Text}', '{CBXUbicacion.Text}'" +
-                    $", '{dOSISTextBox.Text}', '{eSTADOComboBox.Text}')" ;
-                Helper.DoQueryExecuter(sql);
+                string sql = $"INSERT INTO MEDICAMENTO VALUES ( @descripcion, @tipoF, @marca, @ubicacion" +
+                    $", @dosis , @estado)" ;
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
+                command.Parameters.AddWithValue("@marca", CBXMarca.Text);
+                command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
+                command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
             }
@@ -75,9 +83,7 @@ namespace _1ParcialJP
             private DataTable combolista(string id, string tabla)
         {
             string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = Helper.DoQueryReceiver(sql);
 
             return dt;
         }

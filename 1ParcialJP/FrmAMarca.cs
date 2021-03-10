@@ -34,14 +34,17 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"INSERT INTO MARCA VALUES ('{dESCRIPCIONTextBox.Text}', '{eSTADOComboBox.Text}')";
-                Helper.DoQueryExecuter(sql);
-                MessageBox.Show("Registro guardado con exito");
+                string sql = $"INSERT INTO MARCA VALUES (@descripcion, '{eSTADOComboBox.Text}' ) ";
+                SqlCommand command = new SqlCommand();
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
+                MessageBox.Show("Registro Guardado con exito");
                 this.Close();
             }
             catch (Exception er)
             {
-                MessageBox.Show("Error al guardar registro: " + er);
+                MessageBox.Show("Error al Guardar Cambios: " + er);
             }
         }
         private void FrmAMarca_FormClosed(object sender, FormClosedEventArgs e)
