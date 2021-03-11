@@ -175,9 +175,9 @@ namespace _1ParcialJP
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(21, 174);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
+            label1.Size = new System.Drawing.Size(137, 15);
             label1.TabIndex = 20;
-            label1.Text = "Realizar Consulta";
+            label1.Text = "REALIZAR CONSULTA";
             // 
             // pARCIALJPDataSet
             // 
@@ -230,7 +230,7 @@ namespace _1ParcialJP
             this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.vISITADataGridView.Size = new System.Drawing.Size(1132, 275);
             this.vISITADataGridView.TabIndex = 1;
-            this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick_1);
+            this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -386,7 +386,7 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(1086, 93);
+            this.btnAgregar.Location = new System.Drawing.Point(1086, 12);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(60, 60);
             this.btnAgregar.TabIndex = 22;
@@ -416,9 +416,9 @@ namespace _1ParcialJP
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(1111, 20);
+            this.btnEliminar.Location = new System.Drawing.Point(1086, 143);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(56, 54);
+            this.btnEliminar.Size = new System.Drawing.Size(60, 60);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -428,9 +428,9 @@ namespace _1ParcialJP
             this.btnGguardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGguardar.BackgroundImage")));
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGguardar.Enabled = false;
-            this.btnGguardar.Location = new System.Drawing.Point(1046, 20);
+            this.btnGguardar.Location = new System.Drawing.Point(1086, 78);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(57, 54);
+            this.btnGguardar.Size = new System.Drawing.Size(60, 59);
             this.btnGguardar.TabIndex = 23;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
@@ -439,16 +439,16 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(849, 179);
+            this.button2.Location = new System.Drawing.Point(849, 170);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 36);
+            this.button2.Size = new System.Drawing.Size(45, 45);
             this.button2.TabIndex = 19;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(421, 192);
+            this.txtsearch.Location = new System.Drawing.Point(275, 192);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(421, 22);
             this.txtsearch.TabIndex = 18;
@@ -464,8 +464,7 @@ namespace _1ParcialJP
             "RECOMENDACIONES",
             "MEDICAMENTOS",
             "ESTADO",
-            "FECHA",
-            "HORA"});
+            "FECHA"});
             this.selectsearch.Location = new System.Drawing.Point(15, 192);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(254, 23);
@@ -478,7 +477,7 @@ namespace _1ParcialJP
             this.txtfecha.CustomFormat = "dd-MM-yyyy";
             this.txtfecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "FECHA", true));
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha.Location = new System.Drawing.Point(275, 192);
+            this.txtfecha.Location = new System.Drawing.Point(702, 192);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(140, 22);
             this.txtfecha.TabIndex = 28;
@@ -489,8 +488,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1170, 508);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1170, 510);
             this.Controls.Add(this.txtfecha);
             this.Controls.Add(label1);
             this.Controls.Add(this.nOMBRE_MEDICOComboBox);

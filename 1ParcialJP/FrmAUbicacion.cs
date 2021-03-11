@@ -28,14 +28,19 @@ namespace _1ParcialJP
             fmUbicacion.Show();
         }
 
-        
-
         private void btnGguardar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"INSERT INTO UBICACION VALUES ('{iD_UBICACIONTextBox.Text}' ,'{dESCRIPCIONTextBox.Text}', '{eSTANTETextBox.Text}', '{tRAMOTextBox.Text}', '{cELDATextBox.Text}', '{eSTADOComboBox.Text}')";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"INSERT INTO UBICACION VALUES (@id , @descripcion , @estante, @tramo, @celda, @estado)";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_UBICACIONTextBox.Text);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@estante", eSTANTETextBox.Text);
+                command.Parameters.AddWithValue("@tramo", tRAMOTextBox.Text);
+                command.Parameters.AddWithValue("@celda", cELDATextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
             }

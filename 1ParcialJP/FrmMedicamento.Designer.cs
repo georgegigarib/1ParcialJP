@@ -103,7 +103,7 @@ namespace _1ParcialJP
             // iD_TFLabel
             // 
             iD_TFLabel.AutoSize = true;
-            iD_TFLabel.Location = new System.Drawing.Point(414, 20);
+            iD_TFLabel.Location = new System.Drawing.Point(403, 18);
             iD_TFLabel.Name = "iD_TFLabel";
             iD_TFLabel.Size = new System.Drawing.Size(104, 15);
             iD_TFLabel.TabIndex = 6;
@@ -112,7 +112,7 @@ namespace _1ParcialJP
             // iD_MARCALabel
             // 
             iD_MARCALabel.AutoSize = true;
-            iD_MARCALabel.Location = new System.Drawing.Point(414, 50);
+            iD_MARCALabel.Location = new System.Drawing.Point(403, 56);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(58, 15);
             iD_MARCALabel.TabIndex = 8;
@@ -121,7 +121,7 @@ namespace _1ParcialJP
             // iD_UBBICACIONLabel
             // 
             iD_UBBICACIONLabel.AutoSize = true;
-            iD_UBBICACIONLabel.Location = new System.Drawing.Point(414, 80);
+            iD_UBBICACIONLabel.Location = new System.Drawing.Point(403, 96);
             iD_UBBICACIONLabel.Name = "iD_UBBICACIONLabel";
             iD_UBBICACIONLabel.Size = new System.Drawing.Size(79, 15);
             iD_UBBICACIONLabel.TabIndex = 10;
@@ -148,11 +148,11 @@ namespace _1ParcialJP
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 174);
+            label1.Location = new System.Drawing.Point(19, 173);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
+            label1.Size = new System.Drawing.Size(140, 15);
             label1.TabIndex = 27;
-            label1.Text = "Realizar Consulta";
+            label1.Text = "REALIZAR CONSULTA:";
             // 
             // mEDICAMENTODataGridView
             // 
@@ -287,7 +287,7 @@ namespace _1ParcialJP
             // 
             this.CBXUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXUbicacion.FormattingEnabled = true;
-            this.CBXUbicacion.Location = new System.Drawing.Point(542, 76);
+            this.CBXUbicacion.Location = new System.Drawing.Point(531, 92);
             this.CBXUbicacion.Name = "CBXUbicacion";
             this.CBXUbicacion.Size = new System.Drawing.Size(230, 23);
             this.CBXUbicacion.TabIndex = 21;
@@ -321,7 +321,7 @@ namespace _1ParcialJP
             // 
             this.CBXMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXMarca.FormattingEnabled = true;
-            this.CBXMarca.Location = new System.Drawing.Point(542, 45);
+            this.CBXMarca.Location = new System.Drawing.Point(531, 51);
             this.CBXMarca.Name = "CBXMarca";
             this.CBXMarca.Size = new System.Drawing.Size(230, 23);
             this.CBXMarca.TabIndex = 22;
@@ -330,7 +330,7 @@ namespace _1ParcialJP
             // 
             this.CBXtipoFarmaco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXtipoFarmaco.FormattingEnabled = true;
-            this.CBXtipoFarmaco.Location = new System.Drawing.Point(542, 14);
+            this.CBXtipoFarmaco.Location = new System.Drawing.Point(531, 12);
             this.CBXtipoFarmaco.Name = "CBXtipoFarmaco";
             this.CBXtipoFarmaco.Size = new System.Drawing.Size(230, 23);
             this.CBXtipoFarmaco.TabIndex = 23;
@@ -362,9 +362,9 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(858, 8);
+            this.btnEliminar.Location = new System.Drawing.Point(837, 151);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(54, 61);
+            this.btnEliminar.Size = new System.Drawing.Size(62, 58);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -373,9 +373,9 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(790, 7);
+            this.btnGguardar.Location = new System.Drawing.Point(837, 86);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(62, 62);
+            this.btnGguardar.Size = new System.Drawing.Size(62, 59);
             this.btnGguardar.TabIndex = 17;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
@@ -384,9 +384,9 @@ namespace _1ParcialJP
             // 
             this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(824, 80);
+            this.button1.Location = new System.Drawing.Point(837, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 62);
+            this.button1.Size = new System.Drawing.Size(62, 59);
             this.button1.TabIndex = 16;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -395,9 +395,9 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(654, 160);
+            this.button2.Location = new System.Drawing.Point(654, 173);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.Size = new System.Drawing.Size(43, 42);
             this.button2.TabIndex = 26;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -406,8 +406,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(924, 556);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(910, 556);
             this.Controls.Add(label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtsearch);

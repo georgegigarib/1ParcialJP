@@ -21,9 +21,16 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"INSERT INTO MEDICAMENTO VALUES ('{dESCRIPCIONTextBox.Text}', '{CBXtipoFarmaco.Text}', '{CBXMarca.Text}', '{CBXUbicacion.Text}'" +
-                    $", '{dOSISTextBox.Text}', '{eSTADOComboBox.Text}')" ;
-                Helper.DoQueryExecuter(sql);
+                string sql = $"INSERT INTO MEDICAMENTO VALUES ( @descripcion, @tipoF, @marca, @ubicacion" +
+                    $", @dosis , @estado)" ;
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
+                command.Parameters.AddWithValue("@marca", CBXMarca.Text);
+                command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
+                command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
             }
@@ -64,7 +71,8 @@ namespace _1ParcialJP
                 }
                 CBXUbicacion.SelectedIndex = 0;
                 CBXMarca.SelectedIndex = 0;
-                CBXtipoFarmaco.SelectedIndex = 0; 
+                CBXtipoFarmaco.SelectedIndex = 0;
+                eSTADOComboBox.SelectedIndex = 0;
             }
             catch (Exception er)
             {
@@ -74,12 +82,8 @@ namespace _1ParcialJP
         }
             private DataTable combolista(string id, string tabla)
         {
-            string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
+            SqlCommand command = new SqlCommand($"SELECT {id} FROM {tabla}");
+            return Helper.DoQueryReceiverLimpio(command);
         }
 
         private void FrmAMedicamento_FormClosed(object sender, FormClosedEventArgs e)

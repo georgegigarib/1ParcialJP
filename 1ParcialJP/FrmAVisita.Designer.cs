@@ -96,7 +96,7 @@ namespace _1ParcialJP
             // sINTOMASLabel
             // 
             sINTOMASLabel.AutoSize = true;
-            sINTOMASLabel.Location = new System.Drawing.Point(19, 211);
+            sINTOMASLabel.Location = new System.Drawing.Point(19, 199);
             sINTOMASLabel.Name = "sINTOMASLabel";
             sINTOMASLabel.Size = new System.Drawing.Size(76, 15);
             sINTOMASLabel.TabIndex = 35;
@@ -105,7 +105,7 @@ namespace _1ParcialJP
             // mEDICAMENTOSLabel
             // 
             mEDICAMENTOSLabel.AutoSize = true;
-            mEDICAMENTOSLabel.Location = new System.Drawing.Point(21, 406);
+            mEDICAMENTOSLabel.Location = new System.Drawing.Point(21, 370);
             mEDICAMENTOSLabel.Name = "mEDICAMENTOSLabel";
             mEDICAMENTOSLabel.Size = new System.Drawing.Size(112, 15);
             mEDICAMENTOSLabel.TabIndex = 37;
@@ -114,7 +114,7 @@ namespace _1ParcialJP
             // rECOMENDACIONESLabel
             // 
             rECOMENDACIONESLabel.AutoSize = true;
-            rECOMENDACIONESLabel.Location = new System.Drawing.Point(19, 306);
+            rECOMENDACIONESLabel.Location = new System.Drawing.Point(19, 283);
             rECOMENDACIONESLabel.Name = "rECOMENDACIONESLabel";
             rECOMENDACIONESLabel.Size = new System.Drawing.Size(133, 15);
             rECOMENDACIONESLabel.TabIndex = 39;
@@ -169,7 +169,7 @@ namespace _1ParcialJP
             // 
             // sINTOMASTextBox
             // 
-            this.sINTOMASTextBox.Location = new System.Drawing.Point(164, 208);
+            this.sINTOMASTextBox.Location = new System.Drawing.Point(164, 196);
             this.sINTOMASTextBox.MaxLength = 2000;
             this.sINTOMASTextBox.Multiline = true;
             this.sINTOMASTextBox.Name = "sINTOMASTextBox";
@@ -178,7 +178,7 @@ namespace _1ParcialJP
             // 
             // mEDICAMENTOSTextBox
             // 
-            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(164, 403);
+            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(164, 367);
             this.mEDICAMENTOSTextBox.MaxLength = 200;
             this.mEDICAMENTOSTextBox.Multiline = true;
             this.mEDICAMENTOSTextBox.Name = "mEDICAMENTOSTextBox";
@@ -187,7 +187,7 @@ namespace _1ParcialJP
             // 
             // rECOMENDACIONESTextBox
             // 
-            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(164, 302);
+            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(164, 279);
             this.rECOMENDACIONESTextBox.MaxLength = 200;
             this.rECOMENDACIONESTextBox.Multiline = true;
             this.rECOMENDACIONESTextBox.Name = "rECOMENDACIONESTextBox";
@@ -206,9 +206,9 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(405, 415);
+            this.btnGguardar.Location = new System.Drawing.Point(421, 393);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(85, 84);
+            this.btnGguardar.Size = new System.Drawing.Size(69, 68);
             this.btnGguardar.TabIndex = 47;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
@@ -217,8 +217,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(502, 511);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(502, 473);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(this.nOMBRE_MEDICOComboBox);
             this.Controls.Add(this.CBXPACIENTE);

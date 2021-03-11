@@ -60,7 +60,7 @@ namespace _1ParcialJP
             // cEDULALabel
             // 
             cEDULALabel.AutoSize = true;
-            cEDULALabel.Location = new System.Drawing.Point(19, 67);
+            cEDULALabel.Location = new System.Drawing.Point(19, 59);
             cEDULALabel.Name = "cEDULALabel";
             cEDULALabel.Size = new System.Drawing.Size(60, 15);
             cEDULALabel.TabIndex = 18;
@@ -69,7 +69,7 @@ namespace _1ParcialJP
             // tANDA_LABORLabel
             // 
             tANDA_LABORLabel.AutoSize = true;
-            tANDA_LABORLabel.Location = new System.Drawing.Point(370, 21);
+            tANDA_LABORLabel.Location = new System.Drawing.Point(19, 172);
             tANDA_LABORLabel.Name = "tANDA_LABORLabel";
             tANDA_LABORLabel.Size = new System.Drawing.Size(99, 15);
             tANDA_LABORLabel.TabIndex = 20;
@@ -78,7 +78,7 @@ namespace _1ParcialJP
             // eSPECIALIDADLabel
             // 
             eSPECIALIDADLabel.AutoSize = true;
-            eSPECIALIDADLabel.Location = new System.Drawing.Point(19, 157);
+            eSPECIALIDADLabel.Location = new System.Drawing.Point(19, 136);
             eSPECIALIDADLabel.Name = "eSPECIALIDADLabel";
             eSPECIALIDADLabel.Size = new System.Drawing.Size(99, 15);
             eSPECIALIDADLabel.TabIndex = 22;
@@ -87,7 +87,7 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(19, 107);
+            eSTADOLabel.Location = new System.Drawing.Point(19, 96);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 24;
@@ -102,7 +102,7 @@ namespace _1ParcialJP
             "NO DISPONIBLE",
             "VACACIONES",
             "LICENCIA"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(127, 104);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(127, 93);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(223, 23);
             this.eSTADOComboBox.TabIndex = 25;
@@ -117,7 +117,7 @@ namespace _1ParcialJP
             // 
             // cEDULATextBox
             // 
-            this.cEDULATextBox.Location = new System.Drawing.Point(127, 63);
+            this.cEDULATextBox.Location = new System.Drawing.Point(127, 55);
             this.cEDULATextBox.MaxLength = 11;
             this.cEDULATextBox.Name = "cEDULATextBox";
             this.cEDULATextBox.Size = new System.Drawing.Size(223, 22);
@@ -125,17 +125,17 @@ namespace _1ParcialJP
             // 
             // eSPECIALIDADTextBox
             // 
-            this.eSPECIALIDADTextBox.Location = new System.Drawing.Point(127, 153);
+            this.eSPECIALIDADTextBox.Location = new System.Drawing.Point(127, 132);
             this.eSPECIALIDADTextBox.MaxLength = 200;
             this.eSPECIALIDADTextBox.Name = "eSPECIALIDADTextBox";
-            this.eSPECIALIDADTextBox.Size = new System.Drawing.Size(220, 22);
+            this.eSPECIALIDADTextBox.Size = new System.Drawing.Size(223, 22);
             this.eSPECIALIDADTextBox.TabIndex = 23;
             // 
             // btnGguardar
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(631, 132);
+            this.btnGguardar.Location = new System.Drawing.Point(441, 128);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(67, 64);
             this.btnGguardar.TabIndex = 26;
@@ -150,17 +150,17 @@ namespace _1ParcialJP
             "MATUTINO",
             "VESPERTINO",
             "NOCTURNO"});
-            this.tANDA_LABORTextBox.Location = new System.Drawing.Point(487, 19);
+            this.tANDA_LABORTextBox.Location = new System.Drawing.Point(127, 169);
             this.tANDA_LABORTextBox.Name = "tANDA_LABORTextBox";
-            this.tANDA_LABORTextBox.Size = new System.Drawing.Size(190, 23);
+            this.tANDA_LABORTextBox.Size = new System.Drawing.Size(223, 23);
             this.tANDA_LABORTextBox.TabIndex = 27;
             // 
             // FrmAMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(709, 204);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(509, 201);
             this.Controls.Add(this.tANDA_LABORTextBox);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(this.eSTADOComboBox);

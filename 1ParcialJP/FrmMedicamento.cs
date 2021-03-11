@@ -22,11 +22,7 @@ namespace _1ParcialJP
             selectsearch.SelectedIndex = 0;
             try
             {
-                string sql = "SELECT * FROM MEDICAMENTO";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                mEDICAMENTODataGridView.DataSource = dt;
+                mEDICAMENTODataGridView.DataSource = Helper.QueryTraerTabla("MEDICAMENTO");
                 mEDICAMENTODataGridView.Refresh();
             }
             catch (Exception er)
@@ -39,14 +35,9 @@ namespace _1ParcialJP
             this.Validate();
             this.mEDICAMENTOBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
         }
-
         private void FrmMedicamento_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.UBICACION' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.MEDICAMENTO' table. You can move, or remove it, as needed.
            
             try
             {
@@ -85,9 +76,6 @@ namespace _1ParcialJP
             refrescargrid();
 
         }
-
-
-
         private void FrmMedicamento_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMenu menu = new FrmMenu();
@@ -96,12 +84,8 @@ namespace _1ParcialJP
 
         private DataTable combolista(string id, string tabla)
         {
-            string sql = $"SELECT {id} FROM {tabla}";
-            SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
+            SqlCommand command = new SqlCommand($"SELECT {id} FROM {tabla}");
+            return Helper.DoQueryReceiverLimpio(command);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -109,7 +93,8 @@ namespace _1ParcialJP
             try
             {
                 string sql = $"DELETE FROM MEDICAMENTO WHERE ID_MEDICAMENTO = '{iD_MEDICAMENTOTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                SqlCommand command = new SqlCommand(sql);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -118,18 +103,23 @@ namespace _1ParcialJP
                 MessageBox.Show("Error al Eliminar registro: " + er);
             }
         }
-
-       
-
         private void btnGguardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"UPDATE MEDICAMENTO SET DESCRIPCION ='{dESCRIPCIONTextBox.Text}', ID_TF ='{CBXtipoFarmaco.Text}', " +
-                    $"ESTADO='{eSTADOComboBox.Text}', ID_UBBICACION ='{CBXUbicacion.Text}', DOSIS='{dOSISTextBox.Text}', ID_MARCA='{CBXMarca.Text}'" +
-                    $"WHERE ID_MEDICAMENTO ='{iD_MEDICAMENTOTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
-                MessageBox.Show("Registro Guardado con exito");
+                string sql = $"UPDATE MEDICAMENTO SET DESCRIPCION = @descripcion, ID_TF = @tipoF, " +
+                    $"ESTADO= @estado, ID_UBBICACION = @ubicacion, DOSIS= @dosis, ID_MARCA = @marca " +
+                    $"WHERE ID_MEDICAMENTO = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
+                command.Parameters.AddWithValue("@marca", CBXMarca.Text);
+                command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
+                command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@id", iD_MEDICAMENTOTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
+                MessageBox.Show("Registro guardado con exito");
                 refrescargrid();
             }
             catch (Exception er)
@@ -158,11 +148,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mEDICAMENTODataGridView.DataSource = dt;
+            string sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICAMENTODataGridView.Refresh();
         }
 

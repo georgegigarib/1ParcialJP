@@ -13,18 +13,19 @@ namespace _1ParcialJP
    public class Helper
     {
         
-        public static SqlDataAdapter DoQueryReceiver(string query)
+        public static DataTable DoQueryReceiver(string query)
         {
 
             SqlConnection con = new SqlConnection();
             SqlDataAdapter da = new SqlDataAdapter();
-
+            DataTable dt = new DataTable();
             try
             {
                 con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
                 con.Open();
                 //query
                 da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
             }
 
             catch (Exception er)
@@ -36,7 +37,7 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
-            return da;
+            return dt;
         }
 
         public static void DoQueryExecuter(string query)
@@ -64,10 +65,8 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
-            
-
-
         }
+
         public static string GetSha3Hash(string texto)
         {
             try
@@ -109,10 +108,62 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
+        }
+        public static void DoQueryExecuterLimpio(SqlCommand query)
+        {
 
-           
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
+                con.Open();
+                //query
 
+                query.Connection = con;
+                query.ExecuteNonQuery();
 
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error al conectar con la base de datos: " + er);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public static DataTable DoQueryReceiverLimpio(SqlCommand query)
+        {
+
+            SqlConnection con = new SqlConnection();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            try
+            {
+                con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
+                con.Open();
+                query.Connection = con;
+                //query
+                da.SelectCommand = query;
+                da.Fill(dt);
+            }
+
+            catch (Exception er)
+            {
+                MessageBox.Show("Error al conectar con la base de datos: " + er);
+            }
+
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+        public static DataTable QueryTraerTabla(string tabla)
+        {
+            SqlCommand command = new SqlCommand($"SELECT * FROM {tabla}");
+            DataTable dt = DoQueryReceiverLimpio(command);
+            return dt;
         }
 
     }

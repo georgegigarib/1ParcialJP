@@ -51,7 +51,7 @@ namespace _1ParcialJP
             // eSTADOLabel1
             // 
             eSTADOLabel1.AutoSize = true;
-            eSTADOLabel1.Location = new System.Drawing.Point(380, 23);
+            eSTADOLabel1.Location = new System.Drawing.Point(26, 189);
             eSTADOLabel1.Name = "eSTADOLabel1";
             eSTADOLabel1.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel1.TabIndex = 32;
@@ -78,7 +78,7 @@ namespace _1ParcialJP
             // nUM_CARNETLabel
             // 
             nUM_CARNETLabel.AutoSize = true;
-            nUM_CARNETLabel.Location = new System.Drawing.Point(26, 106);
+            nUM_CARNETLabel.Location = new System.Drawing.Point(26, 107);
             nUM_CARNETLabel.Name = "nUM_CARNETLabel";
             nUM_CARNETLabel.Size = new System.Drawing.Size(92, 15);
             nUM_CARNETLabel.TabIndex = 28;
@@ -87,7 +87,7 @@ namespace _1ParcialJP
             // tIPO_PACIENTELabel
             // 
             tIPO_PACIENTELabel.AutoSize = true;
-            tIPO_PACIENTELabel.Location = new System.Drawing.Point(26, 152);
+            tIPO_PACIENTELabel.Location = new System.Drawing.Point(26, 147);
             tIPO_PACIENTELabel.Name = "tIPO_PACIENTELabel";
             tIPO_PACIENTELabel.Size = new System.Drawing.Size(100, 15);
             tIPO_PACIENTELabel.TabIndex = 30;
@@ -100,7 +100,7 @@ namespace _1ParcialJP
             this.tIPO_PACIENTEComboBox.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(139, 149);
+            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(139, 144);
             this.tIPO_PACIENTEComboBox.Name = "tIPO_PACIENTEComboBox";
             this.tIPO_PACIENTEComboBox.Size = new System.Drawing.Size(219, 23);
             this.tIPO_PACIENTEComboBox.TabIndex = 33;
@@ -115,7 +115,7 @@ namespace _1ParcialJP
             // 
             // cEDULATextBox
             // 
-            this.cEDULATextBox.Location = new System.Drawing.Point(139, 63);
+            this.cEDULATextBox.Location = new System.Drawing.Point(139, 64);
             this.cEDULATextBox.MaxLength = 11;
             this.cEDULATextBox.Name = "cEDULATextBox";
             this.cEDULATextBox.Size = new System.Drawing.Size(219, 22);
@@ -123,7 +123,7 @@ namespace _1ParcialJP
             // 
             // nUM_CARNETTextBox
             // 
-            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(139, 103);
+            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(139, 104);
             this.nUM_CARNETTextBox.Name = "nUM_CARNETTextBox";
             this.nUM_CARNETTextBox.Size = new System.Drawing.Size(219, 22);
             this.nUM_CARNETTextBox.TabIndex = 29;
@@ -132,7 +132,7 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(535, 93);
+            this.btnGguardar.Location = new System.Drawing.Point(406, 143);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(81, 79);
             this.btnGguardar.TabIndex = 35;
@@ -147,7 +147,7 @@ namespace _1ParcialJP
             "SALUDABLE",
             "ESTABLE",
             "GRAVE"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(445, 20);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(139, 186);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(171, 23);
             this.eSTADOComboBox.TabIndex = 36;
@@ -156,8 +156,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(628, 204);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(498, 234);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(eSTADOLabel1);

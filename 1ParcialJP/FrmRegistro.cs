@@ -40,16 +40,20 @@ namespace _1ParcialJP
                     {
 
                         string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}'";
-
                         SqlCommand cmd = new SqlCommand(query, con);
                         Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
                         if (count == 0)
                         {
                             try
                             {
-                                Helper.DoQueryExecuter($"INSERT INTO USUARIO VALUES ('{username}', '{password}', 'U', 'A', '{txtnombre.Text}')");
-                                
 
+                                string sql = $"INSERT INTO USUARIO VALUES ('{username}', '{password}', @tipo, @estado, @nombre)";
+
+                                SqlCommand command = new SqlCommand(sql);
+                                command.Parameters.AddWithValue("@nombre", txtnombre.Text);
+                                command.Parameters.AddWithValue("@tipo", cbxtipo.Text);
+                                command.Parameters.AddWithValue("@estado", cbxestado.Text);
+                                Helper.DoQueryExecuterLimpio(command);
                                 if (Program.tipo != "")
                                 {
                                     FrmUsuario fmusuario = new FrmUsuario();
@@ -69,7 +73,6 @@ namespace _1ParcialJP
                             {
                                 MessageBox.Show("No se pudo registrar " + er);
                             }
-                            
                         }
                         else
                         {
@@ -91,11 +94,7 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Datos incompletos");
             }
-
         }
-
-
-
 
         private void FrmRegistro_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -119,6 +118,13 @@ namespace _1ParcialJP
             {
                 GBTCU.Visible = false;
             }
+            cbxtipo.SelectedIndex = 0;
+            cbxestado.SelectedIndex = 0;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

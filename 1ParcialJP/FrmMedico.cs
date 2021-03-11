@@ -22,11 +22,7 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM MEDICO";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                mEDICODataGridView.DataSource = dt;
+                mEDICODataGridView.DataSource = Helper.QueryTraerTabla("MEDICO");
                 mEDICODataGridView.Refresh();
             }
             catch (Exception er)
@@ -41,37 +37,20 @@ namespace _1ParcialJP
             menu.Show();
         }
 
-        private void mEDICOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mEDICOBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
-        }
-
         private void FrmMedico_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.MEDICO' table. You can move, or remove it, as needed.
             refrescargrid();
             selectsearch.SelectedIndex = 0;
-        }
-
-        private void iD_MEDICOLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iD_MEDICOTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"DELETE FROM MEDICO WHERE ID_MEDICO = '{iD_MEDICOTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM MEDICO WHERE ID_MEDICO = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_MEDICOTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -90,10 +69,17 @@ namespace _1ParcialJP
                 
                 try
                 {
-                    string sql = $"UPDATE MEDICO SET NOMBRE ='{nOMBRETextBox.Text}', CEDULA ='{cEDULATextBox.Text}', " +
-                        $"ESTADO='{eSTADOComboBox.Text}', ESPECIALIDAD ='{eSPECIALIDADTextBox.Text}', TANDA_LABOR='{tANDA_LABORTextBox.Text}' " +
-                        $"WHERE ID_MEDICO ='{iD_MEDICOTextBox.Text}'";
-                    Helper.DoQueryExecuter(sql);
+                    string sql = $"UPDATE MEDICO SET NOMBRE = @nombre , CEDULA = @cedula , " +
+                        $"ESTADO= @estado , ESPECIALIDAD = @especialidad , TANDA_LABOR = @tanda " +
+                        $"WHERE ID_MEDICO = @id";
+                    SqlCommand command = new SqlCommand(sql);
+                    command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
+                    command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
+                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);
+                    command.Parameters.AddWithValue("@especialidad", eSPECIALIDADTextBox.Text);
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@id", iD_MEDICOTextBox.Text);
+                    Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro Guardado con exito");
                     refrescargrid();
                 }
@@ -101,16 +87,12 @@ namespace _1ParcialJP
                 {
                     MessageBox.Show("Error al Eliminar registro: " + er);
                 }
-
             }
             else
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
-           
         }
-
-
         private void mEDICODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             iD_MEDICOTextBox.Text = mEDICODataGridView[0, e.RowIndex].Value.ToString();
@@ -130,11 +112,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM MEDICO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mEDICODataGridView.DataSource = dt;
+            string sql = $"SELECT * FROM MEDICO WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            mEDICODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICODataGridView.Refresh();
         }
     }

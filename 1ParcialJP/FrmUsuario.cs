@@ -18,20 +18,15 @@ namespace _1ParcialJP
             InitializeComponent();
         }
 
-        private void txtsearch_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         public void refrescargrid()
         {
 
             try
             {
                 string sql = "SELECT ID_USUARIO, NOMBRE, TIPO, ESTADO FROM USUARIO";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridViewUsuario.DataSource = dt;
+                SqlCommand command = new SqlCommand(sql);
+                dataGridViewUsuario.DataSource = Helper.DoQueryReceiverLimpio(command);
                 dataGridViewUsuario.Refresh();
             }
             catch (Exception er)
@@ -55,7 +50,7 @@ namespace _1ParcialJP
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             refrescargrid();
-
+            selectsearch.SelectedIndex = 0;
         }
 
         private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,15 +59,16 @@ namespace _1ParcialJP
             txtNombreU.Text = dataGridViewUsuario[1, e.RowIndex].Value.ToString();
             txtTU.Text = dataGridViewUsuario[2, e.RowIndex].Value.ToString();
             txtEC.Text = dataGridViewUsuario[3, e.RowIndex].Value.ToString();
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"DELETE FROM USUARIO WHERE ID_USUARIO = '{txtIdU.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM USUARIO WHERE ID_USUARIO = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", txtIdU.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -86,9 +82,13 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"UPDATE USUARIO SET NOMBRE ='{txtNombreU.Text}', TIPO ='{txtTU.Text}', " +
-                    $"ESTADO='{txtEC.Text}' WHERE ID_USUARIO ='{txtIdU.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"UPDATE USUARIO SET NOMBRE = @nombre, TIPO = @tipo, ESTADO= @estado WHERE ID_USUARIO = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@nombre", txtNombreU.Text);
+                command.Parameters.AddWithValue("@tipo", txtTU.Text);
+                command.Parameters.AddWithValue("@estado", txtEC.Text);
+                command.Parameters.AddWithValue("@id", txtIdU.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 refrescargrid();
             }
@@ -100,12 +100,13 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT ID_USUARIO, NOMBRE, TIPO, ESTADO FROM USUARIO WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridViewUsuario.DataSource = dt;
+            string sql = $"SELECT * FROM USUARIO WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            dataGridViewUsuario.DataSource = Helper.DoQueryReceiverLimpio(command);
             dataGridViewUsuario.Refresh();
         }
+
+      
     }
 }

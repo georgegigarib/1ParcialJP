@@ -36,6 +36,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label tANDA_LABORLabel;
             System.Windows.Forms.Label eSPECIALIDADLabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedico));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.mEDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,19 +55,20 @@ namespace _1ParcialJP
             this.cEDULATextBox = new System.Windows.Forms.TextBox();
             this.eSPECIALIDADTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGguardar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.tANDA_LABORTextBox = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnGguardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             iD_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRELabel = new System.Windows.Forms.Label();
             cEDULALabel = new System.Windows.Forms.Label();
             tANDA_LABORLabel = new System.Windows.Forms.Label();
             eSPECIALIDADLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICODataGridView)).BeginInit();
@@ -76,17 +78,16 @@ namespace _1ParcialJP
             // iD_MEDICOLabel
             // 
             iD_MEDICOLabel.AutoSize = true;
-            iD_MEDICOLabel.Location = new System.Drawing.Point(19, 29);
+            iD_MEDICOLabel.Location = new System.Drawing.Point(13, 20);
             iD_MEDICOLabel.Name = "iD_MEDICOLabel";
             iD_MEDICOLabel.Size = new System.Drawing.Size(75, 15);
             iD_MEDICOLabel.TabIndex = 2;
             iD_MEDICOLabel.Text = "ID MEDICO:";
-            iD_MEDICOLabel.Click += new System.EventHandler(this.iD_MEDICOLabel_Click);
             // 
             // nOMBRELabel
             // 
             nOMBRELabel.AutoSize = true;
-            nOMBRELabel.Location = new System.Drawing.Point(19, 72);
+            nOMBRELabel.Location = new System.Drawing.Point(13, 63);
             nOMBRELabel.Name = "nOMBRELabel";
             nOMBRELabel.Size = new System.Drawing.Size(63, 15);
             nOMBRELabel.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace _1ParcialJP
             // cEDULALabel
             // 
             cEDULALabel.AutoSize = true;
-            cEDULALabel.Location = new System.Drawing.Point(19, 117);
+            cEDULALabel.Location = new System.Drawing.Point(13, 108);
             cEDULALabel.Name = "cEDULALabel";
             cEDULALabel.Size = new System.Drawing.Size(60, 15);
             cEDULALabel.TabIndex = 6;
@@ -104,7 +105,7 @@ namespace _1ParcialJP
             // tANDA_LABORLabel
             // 
             tANDA_LABORLabel.AutoSize = true;
-            tANDA_LABORLabel.Location = new System.Drawing.Point(367, 72);
+            tANDA_LABORLabel.Location = new System.Drawing.Point(361, 63);
             tANDA_LABORLabel.Name = "tANDA_LABORLabel";
             tANDA_LABORLabel.Size = new System.Drawing.Size(99, 15);
             tANDA_LABORLabel.TabIndex = 8;
@@ -113,7 +114,7 @@ namespace _1ParcialJP
             // eSPECIALIDADLabel
             // 
             eSPECIALIDADLabel.AutoSize = true;
-            eSPECIALIDADLabel.Location = new System.Drawing.Point(367, 29);
+            eSPECIALIDADLabel.Location = new System.Drawing.Point(361, 21);
             eSPECIALIDADLabel.Name = "eSPECIALIDADLabel";
             eSPECIALIDADLabel.Size = new System.Drawing.Size(99, 15);
             eSPECIALIDADLabel.TabIndex = 10;
@@ -122,11 +123,20 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(19, 157);
+            eSTADOLabel.Location = new System.Drawing.Point(13, 157);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 12;
             eSTADOLabel.Text = "ESTADO:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 196);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(140, 15);
+            label1.TabIndex = 30;
+            label1.Text = "REALIZAR CONSULTA:";
             // 
             // pARCIALJPDataSet
             // 
@@ -233,17 +243,16 @@ namespace _1ParcialJP
             // iD_MEDICOTextBox
             // 
             this.iD_MEDICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICOBindingSource, "ID_MEDICO", true));
-            this.iD_MEDICOTextBox.Location = new System.Drawing.Point(127, 25);
+            this.iD_MEDICOTextBox.Location = new System.Drawing.Point(121, 16);
             this.iD_MEDICOTextBox.Name = "iD_MEDICOTextBox";
             this.iD_MEDICOTextBox.ReadOnly = true;
             this.iD_MEDICOTextBox.Size = new System.Drawing.Size(223, 22);
             this.iD_MEDICOTextBox.TabIndex = 3;
-            this.iD_MEDICOTextBox.TextChanged += new System.EventHandler(this.iD_MEDICOTextBox_TextChanged);
             // 
             // nOMBRETextBox
             // 
             this.nOMBRETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICOBindingSource, "NOMBRE", true));
-            this.nOMBRETextBox.Location = new System.Drawing.Point(127, 68);
+            this.nOMBRETextBox.Location = new System.Drawing.Point(121, 59);
             this.nOMBRETextBox.MaxLength = 30;
             this.nOMBRETextBox.Name = "nOMBRETextBox";
             this.nOMBRETextBox.Size = new System.Drawing.Size(223, 22);
@@ -252,7 +261,7 @@ namespace _1ParcialJP
             // cEDULATextBox
             // 
             this.cEDULATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICOBindingSource, "CEDULA", true));
-            this.cEDULATextBox.Location = new System.Drawing.Point(127, 113);
+            this.cEDULATextBox.Location = new System.Drawing.Point(121, 104);
             this.cEDULATextBox.MaxLength = 11;
             this.cEDULATextBox.Name = "cEDULATextBox";
             this.cEDULATextBox.Size = new System.Drawing.Size(223, 22);
@@ -261,7 +270,7 @@ namespace _1ParcialJP
             // eSPECIALIDADTextBox
             // 
             this.eSPECIALIDADTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICOBindingSource, "ESPECIALIDAD", true));
-            this.eSPECIALIDADTextBox.Location = new System.Drawing.Point(476, 25);
+            this.eSPECIALIDADTextBox.Location = new System.Drawing.Point(470, 17);
             this.eSPECIALIDADTextBox.MaxLength = 200;
             this.eSPECIALIDADTextBox.Name = "eSPECIALIDADTextBox";
             this.eSPECIALIDADTextBox.Size = new System.Drawing.Size(220, 22);
@@ -277,43 +286,10 @@ namespace _1ParcialJP
             "NO DISPONIBLE",
             "VACACIONES",
             "LICENCIA"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(127, 153);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(121, 153);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(223, 23);
             this.eSTADOComboBox.TabIndex = 13;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(715, 128);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(56, 54);
-            this.btnEliminar.TabIndex = 16;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGguardar
-            // 
-            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
-            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(715, 74);
-            this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(56, 48);
-            this.btnGguardar.TabIndex = 15;
-            this.btnGguardar.UseVisualStyleBackColor = true;
-            this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(715, 10);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(56, 58);
-            this.btnAgregar.TabIndex = 14;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // tANDA_LABORTextBox
             // 
@@ -323,7 +299,7 @@ namespace _1ParcialJP
             "MATUTINO",
             "VESPERTINO",
             "NOCTURNO"});
-            this.tANDA_LABORTextBox.Location = new System.Drawing.Point(476, 69);
+            this.tANDA_LABORTextBox.Location = new System.Drawing.Point(470, 60);
             this.tANDA_LABORTextBox.Name = "tANDA_LABORTextBox";
             this.tANDA_LABORTextBox.Size = new System.Drawing.Size(220, 23);
             this.tANDA_LABORTextBox.TabIndex = 17;
@@ -332,9 +308,9 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(656, 182);
+            this.button2.Location = new System.Drawing.Point(656, 190);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.Size = new System.Drawing.Size(46, 47);
             this.button2.TabIndex = 29;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -361,12 +337,46 @@ namespace _1ParcialJP
             this.selectsearch.Size = new System.Drawing.Size(251, 23);
             this.selectsearch.TabIndex = 27;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregar.Location = new System.Drawing.Point(724, 25);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(61, 58);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnGguardar
+            // 
+            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
+            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGguardar.Location = new System.Drawing.Point(724, 89);
+            this.btnGguardar.Name = "btnGguardar";
+            this.btnGguardar.Size = new System.Drawing.Size(61, 58);
+            this.btnGguardar.TabIndex = 15;
+            this.btnGguardar.UseVisualStyleBackColor = true;
+            this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(724, 153);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(61, 58);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FrmMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(797, 532);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(797, 519);
+            this.Controls.Add(label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.selectsearch);
@@ -414,9 +424,6 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox cEDULATextBox;
         private System.Windows.Forms.TextBox eSPECIALIDADTextBox;
         private System.Windows.Forms.ComboBox eSTADOComboBox;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGguardar;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -427,5 +434,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnGguardar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

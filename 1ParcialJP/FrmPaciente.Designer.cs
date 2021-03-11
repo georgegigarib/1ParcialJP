@@ -105,7 +105,7 @@ namespace _1ParcialJP
             // nUM_CARNETLabel
             // 
             nUM_CARNETLabel.AutoSize = true;
-            nUM_CARNETLabel.Location = new System.Drawing.Point(377, 24);
+            nUM_CARNETLabel.Location = new System.Drawing.Point(30, 140);
             nUM_CARNETLabel.Name = "nUM_CARNETLabel";
             nUM_CARNETLabel.Size = new System.Drawing.Size(92, 15);
             nUM_CARNETLabel.TabIndex = 8;
@@ -114,7 +114,7 @@ namespace _1ParcialJP
             // tIPO_PACIENTELabel
             // 
             tIPO_PACIENTELabel.AutoSize = true;
-            tIPO_PACIENTELabel.Location = new System.Drawing.Point(377, 65);
+            tIPO_PACIENTELabel.Location = new System.Drawing.Point(378, 65);
             tIPO_PACIENTELabel.Name = "tIPO_PACIENTELabel";
             tIPO_PACIENTELabel.Size = new System.Drawing.Size(100, 15);
             tIPO_PACIENTELabel.TabIndex = 10;
@@ -123,7 +123,7 @@ namespace _1ParcialJP
             // eSTADOLabel1
             // 
             eSTADOLabel1.AutoSize = true;
-            eSTADOLabel1.Location = new System.Drawing.Point(377, 98);
+            eSTADOLabel1.Location = new System.Drawing.Point(383, 24);
             eSTADOLabel1.Name = "eSTADOLabel1";
             eSTADOLabel1.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel1.TabIndex = 20;
@@ -230,7 +230,7 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.pACIENTEDataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 207);
+            this.panel1.Location = new System.Drawing.Point(12, 237);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(791, 268);
             this.panel1.TabIndex = 2;
@@ -265,18 +265,18 @@ namespace _1ParcialJP
             // nUM_CARNETTextBox
             // 
             this.nUM_CARNETTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pACIENTEBindingSource, "NUM_CARNET", true));
-            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(490, 21);
+            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(143, 137);
             this.nUM_CARNETTextBox.Name = "nUM_CARNETTextBox";
-            this.nUM_CARNETTextBox.Size = new System.Drawing.Size(201, 22);
+            this.nUM_CARNETTextBox.Size = new System.Drawing.Size(219, 22);
             this.nUM_CARNETTextBox.TabIndex = 9;
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(764, 22);
+            this.btnEliminar.Location = new System.Drawing.Point(740, 155);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(58, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(63, 64);
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -285,9 +285,9 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(703, 22);
+            this.btnGguardar.Location = new System.Drawing.Point(740, 82);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(55, 55);
+            this.btnGguardar.Size = new System.Drawing.Size(63, 64);
             this.btnGguardar.TabIndex = 18;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
@@ -296,9 +296,9 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(732, 83);
+            this.btnAgregar.Location = new System.Drawing.Point(740, 12);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(58, 52);
+            this.btnAgregar.Size = new System.Drawing.Size(63, 64);
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -311,9 +311,9 @@ namespace _1ParcialJP
             this.tIPO_PACIENTEComboBox.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(490, 61);
+            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(491, 61);
             this.tIPO_PACIENTEComboBox.Name = "tIPO_PACIENTEComboBox";
-            this.tIPO_PACIENTEComboBox.Size = new System.Drawing.Size(201, 23);
+            this.tIPO_PACIENTEComboBox.Size = new System.Drawing.Size(219, 23);
             this.tIPO_PACIENTEComboBox.TabIndex = 20;
             // 
             // eSTADOComboBox
@@ -325,29 +325,28 @@ namespace _1ParcialJP
             "SALUDABLE",
             "ESTABLE",
             "GRAVE"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(490, 98);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(491, 24);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
-            this.eSTADOComboBox.Size = new System.Drawing.Size(201, 23);
+            this.eSTADOComboBox.Size = new System.Drawing.Size(219, 23);
             this.eSTADOComboBox.TabIndex = 21;
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(669, 146);
+            this.button2.Location = new System.Drawing.Point(664, 174);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 55);
+            this.button2.Size = new System.Drawing.Size(46, 47);
             this.button2.TabIndex = 32;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(294, 179);
+            this.txtsearch.Location = new System.Drawing.Point(289, 199);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(369, 22);
             this.txtsearch.TabIndex = 31;
-            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // selectsearch
             // 
@@ -359,27 +358,26 @@ namespace _1ParcialJP
             "NUM_CARNET",
             "TIPO_PACIENTE",
             "ESTADO"});
-            this.selectsearch.Location = new System.Drawing.Point(24, 178);
+            this.selectsearch.Location = new System.Drawing.Point(19, 198);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(251, 23);
             this.selectsearch.TabIndex = 30;
-            this.selectsearch.SelectedIndexChanged += new System.EventHandler(this.selectsearch_SelectedIndexChanged);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(21, 160);
+            label1.Location = new System.Drawing.Point(16, 174);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
+            label1.Size = new System.Drawing.Size(140, 15);
             label1.TabIndex = 33;
-            label1.Text = "Realizar Consulta";
+            label1.Text = "REALIZAR CONSULTA:";
             // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(828, 487);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(813, 513);
             this.Controls.Add(label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(eSTADOLabel1);

@@ -22,11 +22,7 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM UBICACION";
-                SqlDataAdapter da = Helper.DoQueryReceiver(sql);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                uBICACIONDataGridView.DataSource = dt;
+                uBICACIONDataGridView.DataSource = Helper.QueryTraerTabla("UBICACION");
                 uBICACIONDataGridView.Refresh();
             }
             catch (Exception er)
@@ -34,17 +30,9 @@ namespace _1ParcialJP
                 MessageBox.Show("Error al obtener registros de la base de datos: " + er);
             }
         }
-        private void uBICACIONBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.uBICACIONBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
-        }
 
         private void FrmUbicacion_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.UBICACION' table. You can move, or remove it, as needed.
             refrescargrid();
             selectsearch.SelectedIndex = 0;
         }
@@ -55,17 +43,14 @@ namespace _1ParcialJP
             menu.Show();
         }
 
-        private void uBICACIONDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"DELETE FROM UBICACION WHERE ID_UBICACION = '{iD_UBICACIONTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM UBICACION WHERE ID_UBICACION = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_UBICACIONTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -75,12 +60,8 @@ namespace _1ParcialJP
             }
         }
 
-        
-
-        
         private void uBICACIONDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
             iD_UBICACIONTextBox.Text = uBICACIONDataGridView[0, e.RowIndex].Value.ToString();
             dESCRIPCIONTextBox.Text = uBICACIONDataGridView[1, e.RowIndex].Value.ToString();
             eSTANTETextBox.Text = uBICACIONDataGridView[2, e.RowIndex].Value.ToString();
@@ -91,14 +72,19 @@ namespace _1ParcialJP
 
         private void btnGguardar_Click(object sender, EventArgs e)
         {
-            
-
             try
             {
-                string sql = $"UPDATE UBICACION SET DESCRIPCION ='{dESCRIPCIONTextBox.Text}', ESTANTE ='{eSTANTETextBox.Text}', " +
-                    $"TRAMO='{tRAMOTextBox.Text}', CELDA ='{cELDATextBox.Text}', ESTADO='{eSTADOComboBox.Text}' " +
-                    $"WHERE ID_UBICACION ='{iD_UBICACIONTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"UPDATE UBICACION SET DESCRIPCION = @descripcion, ESTANTE = @estante, " +
+                    $"TRAMO= @tramo , CELDA = @celda , ESTADO= @estado " +
+                    $"WHERE ID_UBICACION = @id ";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estante", eSTANTETextBox.Text);
+                command.Parameters.AddWithValue("@tramo", tRAMOTextBox.Text);
+                command.Parameters.AddWithValue("@celda", cELDATextBox.Text);
+                command.Parameters.AddWithValue("@id", iD_UBICACIONTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 refrescargrid();
             }
@@ -117,10 +103,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = $"SELECT * FROM UBICACION WHERE {selectsearch.Text} LIKE '%{txtsearch.Text}%'";
-            SqlDataAdapter da = Helper.DoQueryReceiver(query);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            string sql = $"SELECT * FROM UBICACION WHERE {selectsearch.Text} LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            DataTable dt = Helper.DoQueryReceiverLimpio(command);
             uBICACIONDataGridView.DataSource = dt;
             uBICACIONDataGridView.Refresh();
         }

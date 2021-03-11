@@ -83,7 +83,7 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(287, 17);
+            this.btnGguardar.Location = new System.Drawing.Point(287, 113);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(70, 68);
             this.btnGguardar.TabIndex = 26;
@@ -94,8 +94,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(369, 212);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(369, 189);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(dESCRIPCIONLabel);
