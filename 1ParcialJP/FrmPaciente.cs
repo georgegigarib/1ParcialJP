@@ -21,9 +21,7 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM PACIENTE";
-                DataTable dt = Helper.DoQueryReceiver(sql);
-                pACIENTEDataGridView.DataSource = dt;
+                pACIENTEDataGridView.DataSource = Helper.QueryTraerTabla("PACIENTE");
                 pACIENTEDataGridView.Refresh();
             }
             catch (Exception er)
@@ -33,17 +31,8 @@ namespace _1ParcialJP
         }
         private void FrmPaciente_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.PACIENTE' table. You can move, or remove it, as needed.
             selectsearch.SelectedIndex = 0;
             refrescargrid();
-        }
-
-        private void pACIENTEBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.pACIENTEBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -71,13 +60,14 @@ namespace _1ParcialJP
                 {
                     string sql = $"UPDATE PACIENTE SET NOMBRE = @nombre , CEDULA = @cedula , " +
                         $"ESTADO = @estado , NUM_CARNET = @carnet , TIPO_PACIENTE= @tipo " +
-                        $"WHERE ID_PACIENTE ='{iD_PACIENTETextBox.Text}'";
+                        $"WHERE ID_PACIENTE = @id ";
                     SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@carnet", nUM_CARNETTextBox.Text);
                     command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.Text);
                     command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@id", iD_PACIENTETextBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro Guardado con exito");
                     refrescargrid();
@@ -91,16 +81,16 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
-
-           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"DELETE FROM PACIENTE WHERE ID_PACIENTE = '{iD_PACIENTETextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM PACIENTE WHERE ID_PACIENTE = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_PACIENTETextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -122,22 +112,13 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM PACIENTE WHERE {selectsearch.Text} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            DataTable dt = Helper.DoQueryReceiverLimpio(command);
-            pACIENTEDataGridView.DataSource = dt;
+            pACIENTEDataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             pACIENTEDataGridView.Refresh();
         }
 
-        private void txtsearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void selectsearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

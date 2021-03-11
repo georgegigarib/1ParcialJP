@@ -54,7 +54,7 @@ namespace _1ParcialJP
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(281, 18);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(16, 174);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 19;
@@ -107,7 +107,7 @@ namespace _1ParcialJP
             // 
             // dESCRIPCIONTextBox
             // 
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(385, 15);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(120, 171);
             this.dESCRIPCIONTextBox.MaxLength = 200;
             this.dESCRIPCIONTextBox.Multiline = true;
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
@@ -119,7 +119,7 @@ namespace _1ParcialJP
             this.eSTANTETextBox.Location = new System.Drawing.Point(120, 45);
             this.eSTANTETextBox.MaxLength = 20;
             this.eSTANTETextBox.Name = "eSTANTETextBox";
-            this.eSTANTETextBox.Size = new System.Drawing.Size(140, 22);
+            this.eSTANTETextBox.Size = new System.Drawing.Size(187, 22);
             this.eSTANTETextBox.TabIndex = 22;
             // 
             // tRAMOTextBox
@@ -127,7 +127,7 @@ namespace _1ParcialJP
             this.tRAMOTextBox.Location = new System.Drawing.Point(120, 75);
             this.tRAMOTextBox.MaxLength = 20;
             this.tRAMOTextBox.Name = "tRAMOTextBox";
-            this.tRAMOTextBox.Size = new System.Drawing.Size(140, 22);
+            this.tRAMOTextBox.Size = new System.Drawing.Size(187, 22);
             this.tRAMOTextBox.TabIndex = 24;
             // 
             // cELDATextBox
@@ -135,14 +135,14 @@ namespace _1ParcialJP
             this.cELDATextBox.Location = new System.Drawing.Point(120, 105);
             this.cELDATextBox.MaxLength = 20;
             this.cELDATextBox.Name = "cELDATextBox";
-            this.cELDATextBox.Size = new System.Drawing.Size(140, 22);
+            this.cELDATextBox.Size = new System.Drawing.Size(187, 22);
             this.cELDATextBox.TabIndex = 26;
             // 
             // iD_UBICACIONTextBox
             // 
             this.iD_UBICACIONTextBox.Location = new System.Drawing.Point(120, 15);
             this.iD_UBICACIONTextBox.Name = "iD_UBICACIONTextBox";
-            this.iD_UBICACIONTextBox.Size = new System.Drawing.Size(140, 22);
+            this.iD_UBICACIONTextBox.Size = new System.Drawing.Size(187, 22);
             this.iD_UBICACIONTextBox.TabIndex = 32;
             // 
             // eSTADOComboBox
@@ -154,18 +154,18 @@ namespace _1ParcialJP
             "NO DISPONIBLE",
             "LLENO",
             "VACIO"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(120, 142);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(120, 139);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
-            this.eSTADOComboBox.Size = new System.Drawing.Size(140, 23);
+            this.eSTADOComboBox.Size = new System.Drawing.Size(187, 23);
             this.eSTADOComboBox.TabIndex = 33;
             // 
             // btnGguardar
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(530, 106);
+            this.btnGguardar.Location = new System.Drawing.Point(373, 189);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(70, 59);
+            this.btnGguardar.Size = new System.Drawing.Size(69, 67);
             this.btnGguardar.TabIndex = 34;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click_1);
@@ -174,8 +174,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(622, 177);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(446, 265);
             this.Controls.Add(this.btnGguardar);
             this.Controls.Add(this.eSTADOComboBox);
             this.Controls.Add(this.iD_UBICACIONTextBox);
@@ -192,7 +192,7 @@ namespace _1ParcialJP
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAUbicacion";
-            this.Text = "FrmAUbicacion";
+            this.Text = "Agregar Ubicacion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAUbicacion_FormClosed);
             this.Load += new System.EventHandler(this.FrmAUbicacion_Load);
             this.ResumeLayout(false);

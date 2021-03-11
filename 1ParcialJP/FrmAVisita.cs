@@ -19,10 +19,8 @@ namespace _1ParcialJP
 
         private DataTable combolista(string id, string tabla)
         {
-            string sql = $"SELECT {id} FROM {tabla}";
-            DataTable dt = Helper.DoQueryReceiver(sql);
-
-            return dt;
+            SqlCommand command = new SqlCommand($"SELECT {id} FROM {tabla}");
+            return Helper.DoQueryReceiverLimpio(command);
         }
 
         private void FrmAVisita_Load(object sender, EventArgs e)
@@ -33,26 +31,28 @@ namespace _1ParcialJP
                 nOMBRE_MEDICOComboBox.Items.Clear();
                 CBXPACIENTE.Items.Clear();
                 DataTable dt = new DataTable();
+
                 //COMBOBOX nombre medico
                 dt = combolista("NOMBRE", "MEDICO");
-                foreach (DataRow dr in dt.Rows)
-                {
-                    nOMBRE_MEDICOComboBox.Items.Add(dr["NOMBRE"].ToString());
-                }
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        nOMBRE_MEDICOComboBox.Items.Add(dr["NOMBRE"].ToString());
+                    }
+
                 //COMBOBOX nombre paciente
                 dt.Clear();
                 dt = combolista("NOMBRE", "PACIENTE");
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    CBXPACIENTE.Items.Add(dr["NOMBRE"].ToString());
-                }
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        CBXPACIENTE.Items.Add(dr["NOMBRE"].ToString());
+                    }
 
             }
             catch (Exception er)
             {
                 MessageBox.Show("Error al obtener las opciones" + er);
             }
+
             nOMBRE_MEDICOComboBox.SelectedIndex = 0;
             CBXPACIENTE.SelectedIndex = 0;
 
@@ -63,9 +63,18 @@ namespace _1ParcialJP
             
             try
             {
-                string sql = $"INSERT INTO VISITA VALUES ('{nOMBRE_MEDICOComboBox.Text}', '{CBXPACIENTE.Text}', '{fECHADateTimePicker.Text}', '{hORADateTimePicker.Text}'" +
-                    $", '{sINTOMASTextBox.Text}', '{mEDICAMENTOSTextBox.Text}', '{rECOMENDACIONESTextBox.Text}', '{eSTADOTextBox.Text}')";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"INSERT INTO VISITA VALUES (@nombremedico, @nombrepaciente, @fecha, @hora" +
+                    $", @sintomas, @medicamentos, @estado, @recomendaciones)";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@nombremedico", nOMBRE_MEDICOComboBox.Text);
+                command.Parameters.AddWithValue("@nombrepaciente", CBXPACIENTE.Text);
+                command.Parameters.AddWithValue("@fecha", fECHADateTimePicker.Text);
+                command.Parameters.AddWithValue("@hora", hORADateTimePicker.Text);
+                command.Parameters.AddWithValue("@sintomas", sINTOMASTextBox.Text);
+                command.Parameters.AddWithValue("@medicamentos", mEDICAMENTOSTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOTextBox.Text);
+                command.Parameters.AddWithValue("@recomendaciones", rECOMENDACIONESTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
             }

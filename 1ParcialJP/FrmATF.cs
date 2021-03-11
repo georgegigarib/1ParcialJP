@@ -16,9 +16,6 @@ namespace _1ParcialJP
         {
             InitializeComponent();
         }
-
-       
-
         private void FrmATF_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmTipoFarmaco fmTipoFarmaco = new FrmTipoFarmaco();
@@ -34,7 +31,7 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"INSERT INTO TIPO_FARMACO VALUES (@descripcion, @estado";
+                string sql = $"INSERT INTO TIPO_FARMACO VALUES ( @descripcion , @estado )";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);

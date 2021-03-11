@@ -65,10 +65,6 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
-            
-
-
-
         }
 
         public static string GetSha3Hash(string texto)
@@ -112,10 +108,6 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
-
-           
-
-
         }
         public static void DoQueryExecuterLimpio(SqlCommand query)
         {
@@ -165,6 +157,12 @@ namespace _1ParcialJP
             {
                 con.Close();
             }
+            return dt;
+        }
+        public static DataTable QueryTraerTabla(string tabla)
+        {
+            SqlCommand command = new SqlCommand($"SELECT * FROM {tabla}");
+            DataTable dt = DoQueryReceiverLimpio(command);
             return dt;
         }
 

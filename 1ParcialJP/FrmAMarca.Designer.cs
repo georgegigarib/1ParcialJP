@@ -119,7 +119,7 @@ namespace _1ParcialJP
             // 
             this.btnGuardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(318, 56);
+            this.btnGuardar.Location = new System.Drawing.Point(365, 95);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 67);
             this.btnGuardar.TabIndex = 4;
@@ -130,8 +130,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(405, 181);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(452, 169);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(eSTADOLabel);
             this.Controls.Add(this.eSTADOComboBox);

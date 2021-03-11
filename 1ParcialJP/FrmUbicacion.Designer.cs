@@ -87,7 +87,7 @@ namespace _1ParcialJP
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(287, 55);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(320, 55);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 4;
@@ -114,7 +114,7 @@ namespace _1ParcialJP
             // cELDALabel
             // 
             cELDALabel.AutoSize = true;
-            cELDALabel.Location = new System.Drawing.Point(19, 121);
+            cELDALabel.Location = new System.Drawing.Point(19, 129);
             cELDALabel.Name = "cELDALabel";
             cELDALabel.Size = new System.Drawing.Size(51, 15);
             cELDALabel.TabIndex = 10;
@@ -123,11 +123,21 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(287, 21);
+            eSTADOLabel.Location = new System.Drawing.Point(320, 19);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 12;
             eSTADOLabel.Text = "ESTADO:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(18, 191);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(164, 17);
+            label1.TabIndex = 24;
+            label1.Text = "REALIZAR CONSULTA";
             // 
             // pARCIALJPDataSet
             // 
@@ -173,10 +183,9 @@ namespace _1ParcialJP
             this.uBICACIONDataGridView.Location = new System.Drawing.Point(0, 0);
             this.uBICACIONDataGridView.Name = "uBICACIONDataGridView";
             this.uBICACIONDataGridView.ReadOnly = true;
-            this.uBICACIONDataGridView.Size = new System.Drawing.Size(777, 260);
+            this.uBICACIONDataGridView.Size = new System.Drawing.Size(709, 260);
             this.uBICACIONDataGridView.TabIndex = 1;
-            this.uBICACIONDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick);
-            this.uBICACIONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick_1);
+            this.uBICACIONDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick_1);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -227,64 +236,72 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.uBICACIONDataGridView);
-            this.panel1.Location = new System.Drawing.Point(15, 197);
+            this.panel1.Location = new System.Drawing.Point(9, 238);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 260);
+            this.panel1.Size = new System.Drawing.Size(709, 260);
             this.panel1.TabIndex = 2;
             // 
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "DESCRIPCION", true));
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(391, 52);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(424, 52);
             this.dESCRIPCIONTextBox.MaxLength = 200;
             this.dESCRIPCIONTextBox.Multiline = true;
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
-            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(215, 85);
+            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(210, 92);
             this.dESCRIPCIONTextBox.TabIndex = 5;
             // 
             // eSTANTETextBox
             // 
             this.eSTANTETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "ESTANTE", true));
+            this.eSTANTETextBox.Enabled = false;
             this.eSTANTETextBox.Location = new System.Drawing.Point(122, 52);
             this.eSTANTETextBox.MaxLength = 20;
             this.eSTANTETextBox.Name = "eSTANTETextBox";
-            this.eSTANTETextBox.Size = new System.Drawing.Size(140, 22);
+            this.eSTANTETextBox.ReadOnly = true;
+            this.eSTANTETextBox.Size = new System.Drawing.Size(182, 22);
             this.eSTANTETextBox.TabIndex = 7;
             // 
             // tRAMOTextBox
             // 
             this.tRAMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "TRAMO", true));
+            this.tRAMOTextBox.Enabled = false;
             this.tRAMOTextBox.Location = new System.Drawing.Point(122, 88);
             this.tRAMOTextBox.MaxLength = 20;
             this.tRAMOTextBox.Name = "tRAMOTextBox";
-            this.tRAMOTextBox.Size = new System.Drawing.Size(140, 22);
+            this.tRAMOTextBox.ReadOnly = true;
+            this.tRAMOTextBox.Size = new System.Drawing.Size(182, 22);
             this.tRAMOTextBox.TabIndex = 9;
             // 
             // cELDATextBox
             // 
             this.cELDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "CELDA", true));
-            this.cELDATextBox.Location = new System.Drawing.Point(122, 118);
+            this.cELDATextBox.Enabled = false;
+            this.cELDATextBox.Location = new System.Drawing.Point(122, 126);
             this.cELDATextBox.MaxLength = 20;
             this.cELDATextBox.Name = "cELDATextBox";
-            this.cELDATextBox.Size = new System.Drawing.Size(140, 22);
+            this.cELDATextBox.ReadOnly = true;
+            this.cELDATextBox.Size = new System.Drawing.Size(182, 22);
             this.cELDATextBox.TabIndex = 11;
             // 
             // iD_UBICACIONTextBox
             // 
             this.iD_UBICACIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "ID_UBICACION", true));
+            this.iD_UBICACIONTextBox.Enabled = false;
             this.iD_UBICACIONTextBox.Location = new System.Drawing.Point(122, 16);
+            this.iD_UBICACIONTextBox.MaxLength = 5;
             this.iD_UBICACIONTextBox.Name = "iD_UBICACIONTextBox";
             this.iD_UBICACIONTextBox.ReadOnly = true;
-            this.iD_UBICACIONTextBox.Size = new System.Drawing.Size(140, 22);
+            this.iD_UBICACIONTextBox.Size = new System.Drawing.Size(182, 22);
             this.iD_UBICACIONTextBox.TabIndex = 14;
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(723, 16);
+            this.btnEliminar.Location = new System.Drawing.Point(654, 152);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(64, 59);
+            this.btnEliminar.Size = new System.Drawing.Size(64, 63);
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -293,9 +310,9 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(644, 16);
+            this.btnGguardar.Location = new System.Drawing.Point(654, 83);
             this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(70, 60);
+            this.btnGguardar.Size = new System.Drawing.Size(64, 63);
             this.btnGguardar.TabIndex = 18;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
@@ -304,9 +321,9 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(688, 81);
+            this.btnAgregar.Location = new System.Drawing.Point(654, 12);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(66, 59);
+            this.btnAgregar.Size = new System.Drawing.Size(64, 65);
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -321,26 +338,16 @@ namespace _1ParcialJP
             "NO DISPONIBLE",
             "LLENO",
             "VACIO"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(395, 17);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(424, 16);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(210, 23);
             this.eSTADOComboBox.TabIndex = 20;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(24, 150);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(111, 17);
-            label1.TabIndex = 24;
-            label1.Text = "Realizar Consulta";
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(597, 143);
+            this.button2.Location = new System.Drawing.Point(591, 184);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(49, 48);
             this.button2.TabIndex = 23;
@@ -349,7 +356,7 @@ namespace _1ParcialJP
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(242, 169);
+            this.txtsearch.Location = new System.Drawing.Point(236, 210);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(349, 22);
             this.txtsearch.TabIndex = 22;
@@ -364,7 +371,7 @@ namespace _1ParcialJP
             "CELDA",
             "ESTADO",
             "DESCRIPCION"});
-            this.selectsearch.Location = new System.Drawing.Point(18, 168);
+            this.selectsearch.Location = new System.Drawing.Point(12, 209);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(218, 23);
             this.selectsearch.TabIndex = 21;
@@ -373,8 +380,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(815, 460);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(726, 504);
             this.Controls.Add(label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtsearch);

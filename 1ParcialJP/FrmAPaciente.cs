@@ -30,9 +30,6 @@ namespace _1ParcialJP
             FrmPaciente fmPaciente = new FrmPaciente();
             fmPaciente.Show();
         }
-
-        
-
         private void btnGguardar_Click_1(object sender, EventArgs e)
         {
 
@@ -61,10 +58,6 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
-
-            
         }
-
-        
     }
 }

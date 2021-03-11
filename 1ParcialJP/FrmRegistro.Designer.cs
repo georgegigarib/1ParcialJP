@@ -65,7 +65,7 @@ namespace _1ParcialJP
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(576, 250);
+            this.groupBox1.Size = new System.Drawing.Size(622, 229);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -75,9 +75,9 @@ namespace _1ParcialJP
             this.GBTCU.Controls.Add(this.cbxtipo);
             this.GBTCU.Controls.Add(this.label6);
             this.GBTCU.Controls.Add(this.label5);
-            this.GBTCU.Location = new System.Drawing.Point(357, 47);
+            this.GBTCU.Location = new System.Drawing.Point(373, 43);
             this.GBTCU.Name = "GBTCU";
-            this.GBTCU.Size = new System.Drawing.Size(200, 100);
+            this.GBTCU.Size = new System.Drawing.Size(239, 100);
             this.GBTCU.TabIndex = 17;
             this.GBTCU.TabStop = false;
             // 
@@ -90,7 +90,7 @@ namespace _1ParcialJP
             "I",
             "B",
             "S"});
-            this.cbxestado.Location = new System.Drawing.Point(116, 63);
+            this.cbxestado.Location = new System.Drawing.Point(146, 62);
             this.cbxestado.Name = "cbxestado";
             this.cbxestado.Size = new System.Drawing.Size(69, 24);
             this.cbxestado.TabIndex = 16;
@@ -103,7 +103,7 @@ namespace _1ParcialJP
             this.cbxtipo.Items.AddRange(new object[] {
             "U",
             "A"});
-            this.cbxtipo.Location = new System.Drawing.Point(116, 23);
+            this.cbxtipo.Location = new System.Drawing.Point(146, 22);
             this.cbxtipo.Name = "cbxtipo";
             this.cbxtipo.Size = new System.Drawing.Size(69, 24);
             this.cbxtipo.TabIndex = 13;
@@ -111,26 +111,28 @@ namespace _1ParcialJP
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label6.Location = new System.Drawing.Point(14, 66);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.Size = new System.Drawing.Size(112, 15);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Estado Cuenta";
+            this.label6.Text = "ESTADO CUENTA:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label5.Location = new System.Drawing.Point(14, 26);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 16);
+            this.label5.Size = new System.Drawing.Size(97, 15);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Tipo Usuario";
+            this.label5.Text = "TIPO USUARIO:";
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(167, 168);
+            this.txtnombre.Location = new System.Drawing.Point(184, 164);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombre.MaxLength = 30;
             this.txtnombre.Name = "txtnombre";
@@ -140,16 +142,17 @@ namespace _1ParcialJP
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 173);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.label4.Location = new System.Drawing.Point(29, 168);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 16);
+            this.label4.Size = new System.Drawing.Size(130, 15);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Nombre Completo";
+            this.label4.Text = "NOMBRE COMPLETO";
             // 
             // txtpassword2
             // 
-            this.txtpassword2.Location = new System.Drawing.Point(167, 126);
+            this.txtpassword2.Location = new System.Drawing.Point(184, 122);
             this.txtpassword2.Margin = new System.Windows.Forms.Padding(4);
             this.txtpassword2.MaxLength = 30;
             this.txtpassword2.Name = "txtpassword2";
@@ -160,16 +163,17 @@ namespace _1ParcialJP
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 131);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.label3.Location = new System.Drawing.Point(29, 126);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
+            this.label3.Size = new System.Drawing.Size(147, 15);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Repetir Contraseña";
+            this.label3.Text = "REPETIR CONTRASEÑA:";
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(167, 87);
+            this.txtpassword.Location = new System.Drawing.Point(184, 83);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtpassword.MaxLength = 30;
             this.txtpassword.Name = "txtpassword";
@@ -180,7 +184,7 @@ namespace _1ParcialJP
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(441, 209);
+            this.button2.Location = new System.Drawing.Point(496, 184);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 33);
@@ -191,7 +195,7 @@ namespace _1ParcialJP
             // 
             // txtusername
             // 
-            this.txtusername.Location = new System.Drawing.Point(167, 47);
+            this.txtusername.Location = new System.Drawing.Point(184, 43);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtusername.MaxLength = 20;
             this.txtusername.Name = "txtusername";
@@ -201,29 +205,31 @@ namespace _1ParcialJP
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 92);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.label2.Location = new System.Drawing.Point(29, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña:";
+            this.label2.Text = "CONTRASEÑA:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label1.Location = new System.Drawing.Point(29, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.Size = new System.Drawing.Size(66, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario: ";
+            this.label1.Text = "USUARIO:";
             // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(593, 265);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(632, 233);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -22,9 +22,7 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM MEDICO";
-                DataTable dt = Helper.DoQueryReceiver(sql);
-                mEDICODataGridView.DataSource = dt;
+                mEDICODataGridView.DataSource = Helper.QueryTraerTabla("MEDICO");
                 mEDICODataGridView.Refresh();
             }
             catch (Exception er)
@@ -39,37 +37,20 @@ namespace _1ParcialJP
             menu.Show();
         }
 
-        private void mEDICOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mEDICOBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
-        }
-
         private void FrmMedico_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.MEDICO' table. You can move, or remove it, as needed.
             refrescargrid();
             selectsearch.SelectedIndex = 0;
-        }
-
-        private void iD_MEDICOLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iD_MEDICOTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"DELETE FROM MEDICO WHERE ID_MEDICO = '{iD_MEDICOTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM MEDICO WHERE ID_MEDICO = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_MEDICOTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -106,16 +87,12 @@ namespace _1ParcialJP
                 {
                     MessageBox.Show("Error al Eliminar registro: " + er);
                 }
-
             }
             else
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
-           
         }
-
-
         private void mEDICODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             iD_MEDICOTextBox.Text = mEDICODataGridView[0, e.RowIndex].Value.ToString();
@@ -135,12 +112,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MEDICO WHERE @select LIKE @search";
+            string sql = $"SELECT * FROM MEDICO WHERE {selectsearch.Text} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            command.Parameters.AddWithValue("@select", selectsearch.Text);
-            DataTable dt = Helper.DoQueryReceiverLimpio(command);
-            mEDICODataGridView.DataSource = dt;
+            mEDICODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICODataGridView.Refresh();
         }
     }

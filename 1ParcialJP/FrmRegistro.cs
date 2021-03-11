@@ -40,7 +40,6 @@ namespace _1ParcialJP
                     {
 
                         string query = $"SELECT COUNT(*) FROM USUARIO WHERE USERNAME = '{username}'";
-
                         SqlCommand cmd = new SqlCommand(query, con);
                         Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
                         if (count == 0)
@@ -74,7 +73,6 @@ namespace _1ParcialJP
                             {
                                 MessageBox.Show("No se pudo registrar " + er);
                             }
-                            
                         }
                         else
                         {
@@ -96,11 +94,7 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Datos incompletos");
             }
-
         }
-
-
-
 
         private void FrmRegistro_FormClosed(object sender, FormClosedEventArgs e)
         {

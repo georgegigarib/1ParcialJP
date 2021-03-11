@@ -65,7 +65,7 @@ namespace _1ParcialJP
             // 
             iD_TFLabel.AutoSize = true;
             iD_TFLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_TFLabel.Location = new System.Drawing.Point(15, 145);
+            iD_TFLabel.Location = new System.Drawing.Point(15, 212);
             iD_TFLabel.Name = "iD_TFLabel";
             iD_TFLabel.Size = new System.Drawing.Size(104, 15);
             iD_TFLabel.TabIndex = 28;
@@ -75,7 +75,7 @@ namespace _1ParcialJP
             // 
             iD_MARCALabel.AutoSize = true;
             iD_MARCALabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_MARCALabel.Location = new System.Drawing.Point(332, 65);
+            iD_MARCALabel.Location = new System.Drawing.Point(15, 175);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(58, 15);
             iD_MARCALabel.TabIndex = 29;
@@ -85,7 +85,7 @@ namespace _1ParcialJP
             // 
             iD_UBBICACIONLabel.AutoSize = true;
             iD_UBBICACIONLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_UBBICACIONLabel.Location = new System.Drawing.Point(332, 29);
+            iD_UBBICACIONLabel.Location = new System.Drawing.Point(15, 135);
             iD_UBBICACIONLabel.Name = "iD_UBBICACIONLabel";
             iD_UBBICACIONLabel.Size = new System.Drawing.Size(79, 15);
             iD_UBBICACIONLabel.TabIndex = 30;
@@ -95,7 +95,7 @@ namespace _1ParcialJP
             // 
             dOSISLabel.AutoSize = true;
             dOSISLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dOSISLabel.Location = new System.Drawing.Point(15, 61);
+            dOSISLabel.Location = new System.Drawing.Point(15, 58);
             dOSISLabel.Name = "dOSISLabel";
             dOSISLabel.Size = new System.Drawing.Size(52, 16);
             dOSISLabel.TabIndex = 31;
@@ -105,7 +105,7 @@ namespace _1ParcialJP
             // 
             eSTADOLabel.AutoSize = true;
             eSTADOLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            eSTADOLabel.Location = new System.Drawing.Point(15, 97);
+            eSTADOLabel.Location = new System.Drawing.Point(15, 100);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 33;
@@ -115,7 +115,7 @@ namespace _1ParcialJP
             // 
             this.CBXtipoFarmaco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXtipoFarmaco.FormattingEnabled = true;
-            this.CBXtipoFarmaco.Location = new System.Drawing.Point(125, 140);
+            this.CBXtipoFarmaco.Location = new System.Drawing.Point(125, 207);
             this.CBXtipoFarmaco.Name = "CBXtipoFarmaco";
             this.CBXtipoFarmaco.Size = new System.Drawing.Size(198, 21);
             this.CBXtipoFarmaco.TabIndex = 37;
@@ -124,7 +124,7 @@ namespace _1ParcialJP
             // 
             this.CBXMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXMarca.FormattingEnabled = true;
-            this.CBXMarca.Location = new System.Drawing.Point(442, 61);
+            this.CBXMarca.Location = new System.Drawing.Point(125, 171);
             this.CBXMarca.Name = "CBXMarca";
             this.CBXMarca.Size = new System.Drawing.Size(198, 21);
             this.CBXMarca.TabIndex = 36;
@@ -133,7 +133,7 @@ namespace _1ParcialJP
             // 
             this.CBXUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXUbicacion.FormattingEnabled = true;
-            this.CBXUbicacion.Location = new System.Drawing.Point(442, 26);
+            this.CBXUbicacion.Location = new System.Drawing.Point(125, 132);
             this.CBXUbicacion.Name = "CBXUbicacion";
             this.CBXUbicacion.Size = new System.Drawing.Size(198, 21);
             this.CBXUbicacion.TabIndex = 35;
@@ -149,28 +149,28 @@ namespace _1ParcialJP
             "NO DISPONIBLE"});
             this.eSTADOComboBox.Location = new System.Drawing.Point(125, 94);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
-            this.eSTADOComboBox.Size = new System.Drawing.Size(194, 21);
+            this.eSTADOComboBox.Size = new System.Drawing.Size(198, 21);
             this.eSTADOComboBox.TabIndex = 34;
             // 
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(125, 23);
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
-            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(194, 20);
+            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(198, 20);
             this.dESCRIPCIONTextBox.TabIndex = 27;
             // 
             // dOSISTextBox
             // 
             this.dOSISTextBox.Location = new System.Drawing.Point(125, 58);
             this.dOSISTextBox.Name = "dOSISTextBox";
-            this.dOSISTextBox.Size = new System.Drawing.Size(194, 20);
+            this.dOSISTextBox.Size = new System.Drawing.Size(198, 20);
             this.dOSISTextBox.TabIndex = 32;
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(565, 97);
+            this.btnGuardar.Location = new System.Drawing.Point(368, 175);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 67);
             this.btnGuardar.TabIndex = 38;
@@ -181,8 +181,8 @@ namespace _1ParcialJP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(652, 185);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(455, 254);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.CBXtipoFarmaco);
             this.Controls.Add(this.CBXMarca);

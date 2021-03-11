@@ -21,9 +21,7 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM TIPO_FARMACO";
-                DataTable dt = Helper.DoQueryReceiver(sql);
-                tIPO_FARMACODataGridView.DataSource = dt;
+                tIPO_FARMACODataGridView.DataSource = Helper.QueryTraerTabla("TIPO_FARMACO");
                 tIPO_FARMACODataGridView.Refresh();
             }
             catch (Exception er)
@@ -31,43 +29,32 @@ namespace _1ParcialJP
                 MessageBox.Show("Error al obtener registros de la base de datos: " + er);
             }
         }
-        private void tIPO_FARMACOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.tIPO_FARMACOBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
-        }
 
         private void FrmTipoFarmaco_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.TIPO_FARMACO' table. You can move, or remove it, as needed.
             refrescargrid();
             selectsearch.SelectedIndex = 0;
         }
 
-        private void tIPO_FARMACODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void tIPO_FARMACODataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             iD_TFTextBox.Text = tIPO_FARMACODataGridView[0, e.RowIndex].Value.ToString();
             dESCRIPCIONTextBox.Text = tIPO_FARMACODataGridView[1, e.RowIndex].Value.ToString();
             eSTADOComboBox.Text = tIPO_FARMACODataGridView[2, e.RowIndex].Value.ToString();
-            
+
         }
 
         private void btnGguardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"UPDATE TIPO_FARMACO SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_MARCA = @id ";
+                string sql = $"UPDATE TIPO_FARMACO SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_TF = @id ";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
                 command.Parameters.AddWithValue("@id", iD_TFTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 refrescargrid();
             }
@@ -81,7 +68,7 @@ namespace _1ParcialJP
         {
             FrmATF fmATF = new FrmATF();
             this.Hide();
-            fmATF.ShowDialog();
+            fmATF.Show();
         }
 
         private void FrmTipoFarmaco_FormClosed(object sender, FormClosedEventArgs e)
@@ -94,8 +81,10 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"DELETE FROM TIPO_FARMACO WHERE ID_TF = '{iD_TFTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM TIPO_FARMACO WHERE ID_TF = @id ";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_TFTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -103,17 +92,16 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Error al Eliminar registro: " + er);
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM TIPO_FARMACO WHERE @select LIKE @search";
+            string sql = $"SELECT * FROM TIPO_FARMACO WHERE {selectsearch.Text} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            command.Parameters.AddWithValue("@select", selectsearch.Text);
-            DataTable dt = Helper.DoQueryReceiverLimpio(command);
-            tIPO_FARMACODataGridView.DataSource = dt;
-                tIPO_FARMACODataGridView.Refresh();
+            tIPO_FARMACODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
+            tIPO_FARMACODataGridView.Refresh();
             
         }
     }

@@ -23,18 +23,8 @@ namespace _1ParcialJP
             InitializeComponent();
 
         }
-
-        private void mARCABindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mARCABindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-
-        }
-       
         public void FrmMarca_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pARCIALJPDataSet.MARCA' table. You can move, or remove it, as needed.
             refrescargrid();
             selectsearch.SelectedIndex = 0;
             
@@ -49,9 +39,7 @@ namespace _1ParcialJP
            
             try
             {
-                string sql = "SELECT * FROM MARCA";
-                DataTable dt = Helper.DoQueryReceiver(sql);
-                mARCADataGridView.DataSource = dt;
+                mARCADataGridView.DataSource = Helper.QueryTraerTabla("MARCA");
                 mARCADataGridView.Refresh();
             }
             catch (Exception er)
@@ -65,7 +53,6 @@ namespace _1ParcialJP
             iD_MARCATextBox.Text = mARCADataGridView[0, e.RowIndex].Value.ToString();
             dESCRIPCIONTextBox.Text = mARCADataGridView[1, e.RowIndex].Value.ToString();
             eSTADOComboBox.Text = mARCADataGridView[2, e.RowIndex].Value.ToString();
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,8 +86,10 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"DELETE FROM MARCA WHERE ID_MARCA = '{iD_MARCATextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM MARCA WHERE ID_MARCA = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_MARCATextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -112,28 +101,12 @@ namespace _1ParcialJP
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE @select LIKE @search";
+            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            command.Parameters.AddWithValue("@select", selectsearch.Text);
-            DataTable dt = Helper.DoQueryReceiverLimpio(command);
-            mARCADataGridView.DataSource = dt;
+            mARCADataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mARCADataGridView.Refresh();
         }
 
-        private void txtsearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void selectsearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

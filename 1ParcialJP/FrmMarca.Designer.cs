@@ -66,20 +66,20 @@ namespace _1ParcialJP
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(14, 83);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(14, 104);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
-            dESCRIPCIONLabel.Size = new System.Drawing.Size(74, 15);
+            dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 3;
-            dESCRIPCIONLabel.Text = "Descripcion:";
+            dESCRIPCIONLabel.Text = "DESCRIPCION:";
             // 
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(14, 53);
+            eSTADOLabel.Location = new System.Drawing.Point(14, 62);
             eSTADOLabel.Name = "eSTADOLabel";
-            eSTADOLabel.Size = new System.Drawing.Size(44, 15);
+            eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 5;
-            eSTADOLabel.Text = "Estado";
+            eSTADOLabel.Text = "ESTADO:";
             // 
             // iD_MARCALabel
             // 
@@ -89,6 +89,15 @@ namespace _1ParcialJP
             iD_MARCALabel.Size = new System.Drawing.Size(23, 15);
             iD_MARCALabel.TabIndex = 6;
             iD_MARCALabel.Text = "ID:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(14, 217);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(140, 15);
+            label1.TabIndex = 16;
+            label1.Text = "REALIZAR CONSULTA:";
             // 
             // pARCIALJPDataSet
             // 
@@ -169,11 +178,11 @@ namespace _1ParcialJP
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mARCABindingSource, "DESCRIPCION", true));
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(98, 80);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(110, 101);
             this.dESCRIPCIONTextBox.MaxLength = 200;
             this.dESCRIPCIONTextBox.Multiline = true;
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
-            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(245, 133);
+            this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(182, 113);
             this.dESCRIPCIONTextBox.TabIndex = 4;
             // 
             // eSTADOComboBox
@@ -185,7 +194,7 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Items.AddRange(new object[] {
             "ACTIVA",
             "INACTIVA"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(98, 48);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(110, 57);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(182, 23);
             this.eSTADOComboBox.TabIndex = 12;
@@ -193,7 +202,7 @@ namespace _1ParcialJP
             // iD_MARCATextBox
             // 
             this.iD_MARCATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mARCABindingSource, "ID_MARCA", true));
-            this.iD_MARCATextBox.Location = new System.Drawing.Point(98, 20);
+            this.iD_MARCATextBox.Location = new System.Drawing.Point(110, 20);
             this.iD_MARCATextBox.Name = "iD_MARCATextBox";
             this.iD_MARCATextBox.ReadOnly = true;
             this.iD_MARCATextBox.Size = new System.Drawing.Size(182, 22);
@@ -210,23 +219,21 @@ namespace _1ParcialJP
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(132, 23);
             this.selectsearch.TabIndex = 13;
-            this.selectsearch.SelectedIndexChanged += new System.EventHandler(this.selectsearch_SelectedIndexChanged);
             // 
             // txtsearch
             // 
             this.txtsearch.Location = new System.Drawing.Point(155, 236);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(239, 22);
+            this.txtsearch.Size = new System.Drawing.Size(231, 22);
             this.txtsearch.TabIndex = 14;
-            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(400, 223);
+            this.button2.Location = new System.Drawing.Point(392, 217);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 34);
+            this.button2.Size = new System.Drawing.Size(41, 40);
             this.button2.TabIndex = 15;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -235,7 +242,7 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(359, 138);
+            this.btnEliminar.Location = new System.Drawing.Point(372, 146);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(61, 55);
             this.btnEliminar.TabIndex = 11;
@@ -246,7 +253,7 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(359, 75);
+            this.btnGguardar.Location = new System.Drawing.Point(372, 83);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(61, 57);
             this.btnGguardar.TabIndex = 10;
@@ -257,29 +264,19 @@ namespace _1ParcialJP
             // 
             this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(359, 12);
+            this.button1.Location = new System.Drawing.Point(372, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 56);
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(23, 217);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(99, 15);
-            label1.TabIndex = 16;
-            label1.Text = "Realizar Consulta";
-            label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // FrmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(450, 501);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(447, 506);
             this.Controls.Add(label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtsearch);

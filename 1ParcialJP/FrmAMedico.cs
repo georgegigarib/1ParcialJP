@@ -16,16 +16,12 @@ namespace _1ParcialJP
         {
             InitializeComponent();
         }
-
-      
-
         private void FrmAMedico_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMedico fmmedico = new FrmMedico();
             fmmedico.Show();
 
         }
-
         private void FrmAMedico_Load(object sender, EventArgs e)
         {
             eSTADOComboBox.SelectedIndex = 0;
@@ -33,13 +29,11 @@ namespace _1ParcialJP
        
         private void btnGguardar_Click_1(object sender, EventArgs e)
         {
-
-
+           
             string cedula = cEDULATextBox.Text;
 
             if (ValidacionCedula.validaCedula(cedula))
             {
-
                 try
                 {
                     string sql = $"INSERT INTO MEDICO VALUES ( @nombre , @cedula, @tanda , @especialidad, @estado)";

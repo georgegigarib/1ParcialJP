@@ -21,23 +21,13 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = "SELECT * FROM VISITA";
-                DataTable dt = Helper.DoQueryReceiver(sql);
-                vISITADataGridView.DataSource = dt;
+                vISITADataGridView.DataSource = Helper.QueryTraerTabla("VISITA");
                 vISITADataGridView.Refresh();
             }
             catch (Exception er)
             {
                 MessageBox.Show("Error al obtener registros de la base de datos: " + er);
             }
-        }
-        
-        private void vISITABindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.vISITABindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
-           
         }
 
         private void FrmVisitas_Load(object sender, EventArgs e)
@@ -69,8 +59,6 @@ namespace _1ParcialJP
                 MessageBox.Show("Error al obtener las opciones" + er);
             }
             finally { refrescargrid(); }
-
-            
         }
 
         private void FrmVisitas_FormClosed(object sender, FormClosedEventArgs e)
@@ -78,17 +66,11 @@ namespace _1ParcialJP
             FrmMenu menu = new FrmMenu();
             menu.Show();
         }
-
- 
         private DataTable combolista(string id, string tabla)
         {
-            string sql = $"SELECT {id} FROM {tabla}";
-            DataTable dt = Helper.DoQueryReceiver(sql);
-
-            return dt;
+            SqlCommand command = new SqlCommand($"SELECT {id} FROM {tabla}");
+            return Helper.DoQueryReceiverLimpio(command);
         }
-       
-
         private void btnGguardar_Click(object sender, EventArgs e)
         {
             try
@@ -122,8 +104,10 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"DELETE FROM VISITA WHERE ID_VISITA = '{iD_VISITATextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"DELETE FROM VISITA WHERE ID_VISITA = @id ";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@id", iD_VISITATextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Eliminado con exito");
                 refrescargrid();
             }
@@ -133,12 +117,6 @@ namespace _1ParcialJP
             }
         }
 
-
-        private void vISITADataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAVisita fmAVisita = new FrmAVisita();
@@ -146,18 +124,7 @@ namespace _1ParcialJP
             this.Hide();
         }
 
-        private void vISITADataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            iD_VISITATextBox.Text = vISITADataGridView[0, e.RowIndex].Value.ToString();
-            nOMBRE_MEDICOComboBox.Text = vISITADataGridView[1, e.RowIndex].Value.ToString();
-            CBXPACIENTE.Text = vISITADataGridView[2, e.RowIndex].Value.ToString();
-            fECHADateTimePicker.Text = vISITADataGridView[3, e.RowIndex].Value.ToString();
-            hORADateTimePicker.Text = vISITADataGridView[4, e.RowIndex].Value.ToString();
-            sINTOMASTextBox.Text = vISITADataGridView[5, e.RowIndex].Value.ToString();
-            mEDICAMENTOSTextBox.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
-            rECOMENDACIONESTextBox.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
-            eSTADOTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
-        }
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -166,19 +133,16 @@ namespace _1ParcialJP
             {
                
                 case 6:
-                    sql = $"SELECT * FROM MARCA WHERE @select >= @search";
+                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.Text} >= @search";
                     break;
             default:
-                    sql = $"SELECT * FROM MARCA WHERE @select LIKE @search";
+                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE @search";
                     break;
             }
 
-
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            command.Parameters.AddWithValue("@select", selectsearch.Text);
-            DataTable dt = Helper.DoQueryReceiverLimpio(command);
-            vISITADataGridView.DataSource = dt;
+            vISITADataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             vISITADataGridView.Refresh();
         }
 
@@ -195,6 +159,19 @@ namespace _1ParcialJP
                 txtfecha.Visible = false;
                 txtsearch.Visible = true;
             }
+        }
+
+        private void vISITADataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            iD_VISITATextBox.Text = vISITADataGridView[0, e.RowIndex].Value.ToString();
+            nOMBRE_MEDICOComboBox.Text = vISITADataGridView[1, e.RowIndex].Value.ToString();
+            CBXPACIENTE.Text = vISITADataGridView[2, e.RowIndex].Value.ToString();
+            fECHADateTimePicker.Text = vISITADataGridView[3, e.RowIndex].Value.ToString();
+            hORADateTimePicker.Text = vISITADataGridView[4, e.RowIndex].Value.ToString();
+            sINTOMASTextBox.Text = vISITADataGridView[5, e.RowIndex].Value.ToString();
+            mEDICAMENTOSTextBox.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
+            rECOMENDACIONESTextBox.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
+            eSTADOTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
         }
     }
 }
