@@ -43,7 +43,6 @@ namespace _1ParcialJP
         private void FrmVisitas_Load(object sender, EventArgs e)
         {
             selectsearch.SelectedIndex = 0;
-
             try
             {
                 nOMBRE_MEDICOComboBox.Items.Clear();
@@ -94,11 +93,21 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"UPDATE VISITA SET NOMBRE_MEDICO ='{nOMBRE_MEDICOComboBox.Text}', NOMBRE_PACIENTE ='{CBXPACIENTE.Text}', " +
-                    $"FECHA='{fECHADateTimePicker.Text}', HORA ='{hORADateTimePicker.Text}', SINTOMAS='{sINTOMASTextBox.Text}'," +
-                    $" MEDICAMENTOS='{mEDICAMENTOSTextBox.Text}', ESTADO='{eSTADOTextBox.Text}', RECOMENDACIONES='{rECOMENDACIONESTextBox.Text}'" +
-                    $"WHERE ID_VISITA ='{iD_VISITATextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"UPDATE VISITA SET NOMBRE_MEDICO = @nombremedico, NOMBRE_PACIENTE = @nombrepaciente, " +
+                    $"FECHA= @fecha, HORA = @hora, SINTOMAS= @sintomas," +
+                    $" MEDICAMENTOS= @medicamentos, ESTADO= @estado, RECOMENDACIONES= @recomendaciones" +
+                    $"WHERE ID_VISITA = @id";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@nombrebedico", nOMBRE_MEDICOComboBox.Text);
+                command.Parameters.AddWithValue("@nombrepaciente", CBXPACIENTE.Text);
+                command.Parameters.AddWithValue("@fecha", fECHADateTimePicker.Text);
+                command.Parameters.AddWithValue("@hora", hORADateTimePicker.Text);
+                command.Parameters.AddWithValue("@sintomas", sINTOMASTextBox.Text);
+                command.Parameters.AddWithValue("@medicamentos", mEDICAMENTOSTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOTextBox.Text);
+                command.Parameters.AddWithValue("@recomendaciones", rECOMENDACIONESTextBox.Text);
+                command.Parameters.AddWithValue("@id", iD_VISITATextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 //refrescargrid();
             }
@@ -157,17 +166,17 @@ namespace _1ParcialJP
             {
                
                 case 6:
-                    sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} >= @search";
+                    sql = $"SELECT * FROM MARCA WHERE @select >= @search";
                     break;
             default:
-                    sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+                    sql = $"SELECT * FROM MARCA WHERE @select LIKE @search";
                     break;
             }
 
-           
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            command.Parameters.AddWithValue("@select", selectsearch.Text);
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             vISITADataGridView.DataSource = dt;
             vISITADataGridView.Refresh();

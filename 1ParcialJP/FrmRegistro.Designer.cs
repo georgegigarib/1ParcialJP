@@ -32,8 +32,8 @@ namespace _1ParcialJP
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistro));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GBTCU = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxestado = new System.Windows.Forms.ComboBox();
+            this.cbxtipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -71,8 +71,8 @@ namespace _1ParcialJP
             // 
             // GBTCU
             // 
-            this.GBTCU.Controls.Add(this.comboBox2);
-            this.GBTCU.Controls.Add(this.comboBox1);
+            this.GBTCU.Controls.Add(this.cbxestado);
+            this.GBTCU.Controls.Add(this.cbxtipo);
             this.GBTCU.Controls.Add(this.label6);
             this.GBTCU.Controls.Add(this.label5);
             this.GBTCU.Location = new System.Drawing.Point(357, 47);
@@ -81,31 +81,32 @@ namespace _1ParcialJP
             this.GBTCU.TabIndex = 17;
             this.GBTCU.TabStop = false;
             // 
-            // comboBox2
+            // cbxestado
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxestado.FormattingEnabled = true;
+            this.cbxestado.Items.AddRange(new object[] {
             "A",
             "I",
             "B",
             "S"});
-            this.comboBox2.Location = new System.Drawing.Point(116, 63);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(69, 24);
-            this.comboBox2.TabIndex = 16;
+            this.cbxestado.Location = new System.Drawing.Point(116, 63);
+            this.cbxestado.Name = "cbxestado";
+            this.cbxestado.Size = new System.Drawing.Size(69, 24);
+            this.cbxestado.TabIndex = 16;
+            this.cbxestado.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cbxtipo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A",
-            "U"});
-            this.comboBox1.Location = new System.Drawing.Point(116, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 24);
-            this.comboBox1.TabIndex = 13;
+            this.cbxtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxtipo.FormattingEnabled = true;
+            this.cbxtipo.Items.AddRange(new object[] {
+            "U",
+            "A"});
+            this.cbxtipo.Location = new System.Drawing.Point(116, 23);
+            this.cbxtipo.Name = "cbxtipo";
+            this.cbxtipo.Size = new System.Drawing.Size(69, 24);
+            this.cbxtipo.TabIndex = 13;
             // 
             // label6
             // 
@@ -251,10 +252,10 @@ namespace _1ParcialJP
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxestado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxtipo;
         private System.Windows.Forms.GroupBox GBTCU;
     }
 }

@@ -74,10 +74,11 @@ namespace _1ParcialJP
             // prueba de sanitizacion
             try
             {
-            string sql = $"UPDATE MARCA SET ESTADO = '{eSTADOComboBox.Text}', DESCRIPCION = @descripcion WHERE ID_MARCA ='{iD_MARCATextBox.Text}'";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+            string sql = $"UPDATE MARCA SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_MARCA = @id ";
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+            command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+            command.Parameters.AddWithValue("@id", iD_MARCATextBox.Text);
             Helper.DoQueryExecuterLimpio(command);
             MessageBox.Show("Registro Guardado con exito");
             refrescargrid();
@@ -111,10 +112,10 @@ namespace _1ParcialJP
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
-            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%" );
+            string sql = $"SELECT * FROM MARCA WHERE @select LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
+            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            command.Parameters.AddWithValue("@select", selectsearch.Text);
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             mARCADataGridView.DataSource = dt;
             mARCADataGridView.Refresh();

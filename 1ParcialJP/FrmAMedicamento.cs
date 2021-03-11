@@ -23,8 +23,7 @@ namespace _1ParcialJP
             {
                 string sql = $"INSERT INTO MEDICAMENTO VALUES ( @descripcion, @tipoF, @marca, @ubicacion" +
                     $", @dosis , @estado)" ;
-                SqlCommand command = new SqlCommand();
-                command.CommandText = sql;
+                SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
                 command.Parameters.AddWithValue("@marca", CBXMarca.Text);

@@ -63,9 +63,11 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"UPDATE TIPO_FARMACO SET ESTADO ='{eSTADOComboBox.Text}', DESCRIPCION ='{dESCRIPCIONTextBox.Text}' " +
-                    $"WHERE ID_TF ='{iD_TFTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"UPDATE TIPO_FARMACO SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_MARCA = @id ";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@id", iD_TFTextBox.Text);
                 MessageBox.Show("Registro Guardado con exito");
                 refrescargrid();
             }
@@ -105,10 +107,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+            string sql = $"SELECT * FROM TIPO_FARMACO WHERE @select LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            command.Parameters.AddWithValue("@select", selectsearch.Text);
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             tIPO_FARMACODataGridView.DataSource = dt;
                 tIPO_FARMACODataGridView.Refresh();

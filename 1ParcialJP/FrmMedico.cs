@@ -90,14 +90,14 @@ namespace _1ParcialJP
                 {
                     string sql = $"UPDATE MEDICO SET NOMBRE = @nombre , CEDULA = @cedula , " +
                         $"ESTADO= @estado , ESPECIALIDAD = @especialidad , TANDA_LABOR = @tanda " +
-                        $"WHERE ID_MEDICO ='{iD_MEDICOTextBox.Text}'";
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sql;
+                        $"WHERE ID_MEDICO = @id";
+                    SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);
                     command.Parameters.AddWithValue("@especialidad", eSPECIALIDADTextBox.Text);
                     command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@id", iD_MEDICOTextBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro Guardado con exito");
                     refrescargrid();
@@ -135,10 +135,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+            string sql = $"SELECT * FROM MEDICO WHERE @select LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            command.Parameters.AddWithValue("@select", selectsearch.Text);
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             mEDICODataGridView.DataSource = dt;
             mEDICODataGridView.Refresh();

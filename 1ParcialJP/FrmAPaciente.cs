@@ -41,16 +41,14 @@ namespace _1ParcialJP
             {
                 try
                 {
-                    string sql = $"INSERT INTO PACIENTE VALUES (@nombre, @cedula , @carnet , @tipo , @estado )";
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sql;
+                    string sql = $"INSERT INTO PACIENTE VALUES (@nombre, @cedula , @carnet , @tipo , @estado)";
+                    SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@carnet", nUM_CARNETTextBox.Text);
                     command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.Text);
                     command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
-                    Helper.DoQueryExecuter(sql);
                     MessageBox.Show("Registro guardado con exito");
                     this.Close();
                 }

@@ -35,8 +35,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = $"INSERT INTO MARCA VALUES (@descripcion, '{eSTADOComboBox.Text}' ) ";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = sql;
+                SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");

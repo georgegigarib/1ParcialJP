@@ -43,8 +43,7 @@ namespace _1ParcialJP
                 try
                 {
                     string sql = $"INSERT INTO MEDICO VALUES ( @nombre , @cedula, @tanda , @especialidad, @estado)";
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sql;
+                    SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);

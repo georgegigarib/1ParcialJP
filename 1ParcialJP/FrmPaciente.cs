@@ -72,15 +72,13 @@ namespace _1ParcialJP
                     string sql = $"UPDATE PACIENTE SET NOMBRE = @nombre , CEDULA = @cedula , " +
                         $"ESTADO = @estado , NUM_CARNET = @carnet , TIPO_PACIENTE= @tipo " +
                         $"WHERE ID_PACIENTE ='{iD_PACIENTETextBox.Text}'";
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = sql;
+                    SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@carnet", nUM_CARNETTextBox.Text);
                     command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.Text);
                     command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
-                    Helper.DoQueryExecuter(sql);
                     MessageBox.Show("Registro Guardado con exito");
                     refrescargrid();
                 }
@@ -125,8 +123,7 @@ namespace _1ParcialJP
         private void button2_Click(object sender, EventArgs e)
         {
             string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             pACIENTEDataGridView.DataSource = dt;

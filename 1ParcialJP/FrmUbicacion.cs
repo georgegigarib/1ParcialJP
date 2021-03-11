@@ -93,10 +93,17 @@ namespace _1ParcialJP
 
             try
             {
-                string sql = $"UPDATE UBICACION SET DESCRIPCION ='{dESCRIPCIONTextBox.Text}', ESTANTE ='{eSTANTETextBox.Text}', " +
-                    $"TRAMO='{tRAMOTextBox.Text}', CELDA ='{cELDATextBox.Text}', ESTADO='{eSTADOComboBox.Text}' " +
-                    $"WHERE ID_UBICACION ='{iD_UBICACIONTextBox.Text}'";
-                Helper.DoQueryExecuter(sql);
+                string sql = $"UPDATE UBICACION SET DESCRIPCION = @descripcion, ESTANTE = @estante, " +
+                    $"TRAMO= @tramo , CELDA = @celda , ESTADO= @estado " +
+                    $"WHERE ID_UBICACION = @id ";
+                SqlCommand command = new SqlCommand(sql);
+                command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estante", eSTANTETextBox.Text);
+                command.Parameters.AddWithValue("@tramo", tRAMOTextBox.Text);
+                command.Parameters.AddWithValue("@celda", cELDATextBox.Text);
+                command.Parameters.AddWithValue("@id", iD_UBICACIONTextBox.Text);
+                Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 refrescargrid();
             }
@@ -115,10 +122,10 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
-            SqlCommand command = new SqlCommand();
-            command.CommandText = sql;
+            string sql = $"SELECT * FROM UBICACION WHERE @select LIKE @search";
+            SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+            command.Parameters.AddWithValue("@select", selectsearch.Text);
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             uBICACIONDataGridView.DataSource = dt;
             uBICACIONDataGridView.Refresh();
