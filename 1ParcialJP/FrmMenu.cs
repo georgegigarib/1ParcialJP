@@ -18,14 +18,37 @@ namespace _1ParcialJP
         {
             InitializeComponent();
         }
-
+        
         
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             if(Program.tipo != "A")
             {
-                lblAU.Visible = false;
                 btnAU.Visible = false;
+            }
+            IsMdiContainer = true;
+            button3.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.pngkey_com_location_png_104244, new Size(30, 35)));
+            btnMedicamento.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources._234735, new Size(35, 35)));
+            btnMedico.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.medico, new Size(40, 40)));
+            btnMedicamento.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources._234735, new Size(35, 35)));
+            btnMarca.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.unnamed__3_1, new Size(40, 40)));
+            btnVisitas.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources._172ddc045ae1707a415adeae0543a5f0_icono_de_trazo_de_color_del_paciente_by_vexels, new Size(35, 35)));
+            btnAU.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.d1f3ccc7e836617fb6e5db7fed1ae90b, new Size(30, 35)));
+            button1.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.user_no_photo_300x3001, new Size(35, 35)));
+            button2.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.pngjoy_com_medicamentos_salud_a_nivel_mundial_transparent_png_6610358, new Size(40, 40)));
+            abrirMenu();
+            this.BackColor = System.Drawing.Color.Black;
+            foreach (Control control in this.Controls)
+            {
+                // #2
+                MdiClient client = control as MdiClient;
+                if (!(client == null))
+                {
+                    // #3
+                    client.BackColor = Color.FromArgb(153, 180, 209);
+                    // 4#
+                    break;
+                }
             }
         }
        
@@ -36,7 +59,7 @@ namespace _1ParcialJP
             Program.tipo = "";
             FrmLogin fmLogin = new FrmLogin();
             fmLogin.Show();
-            this.Hide();
+            //  this.Hide();
         }
 
         
@@ -44,58 +67,102 @@ namespace _1ParcialJP
         private void btnMedicamento_Click(object sender, EventArgs e)
         {
             FrmMedicamento fmmedico = new FrmMedicamento();
-            fmmedico.Show();
-            this.Hide();
+            abrirForm(fmmedico);
+            // _1ParcialJP.Properties.Resources._234735
+            //  //  this.Hide();
         }
 
         private void btnMedico_Click(object sender, EventArgs e)
         {
             FrmMedico fmmedico = new FrmMedico();
-            fmmedico.Show();
-            this.Hide();
+            abrirForm(fmmedico);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources.medico
         }
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
             FrmMarca fmmarca = new FrmMarca();
-            fmmarca.Show();
-            this.Hide();
+            abrirForm(fmmarca);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources.unnamed__3_1
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmPaciente fmPaciente = new FrmPaciente();
-            fmPaciente.Show();
-            this.Hide();
+            abrirForm(fmPaciente);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources.user_no_photo_300x3001
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             FrmTipoFarmaco fmTipoFarmaco = new FrmTipoFarmaco();
-            fmTipoFarmaco.Show();
-            this.Hide();
+            abrirForm(fmTipoFarmaco);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources.pngjoy_com_medicamentos_salud_a_nivel_mundial_transparent_png_6610358
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             FrmUbicacion fmUbicacion = new FrmUbicacion();
-            fmUbicacion.Show();
-            this.Hide();
+            abrirForm(fmUbicacion);
+            //  this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             FrmVisitas fmvisitas = new FrmVisitas();
-            fmvisitas.Show();
-            this.Hide();
-
+            abrirForm(fmvisitas);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources._172ddc045ae1707a415adeae0543a5f0_icono_de_trazo_de_color_del_paciente_by_vexels
         }
 
         private void btnAU_Click(object sender, EventArgs e)
         {
             FrmUsuario fmusuario = new FrmUsuario();
-            fmusuario.Show();
-            this.Hide();
+            abrirForm(fmusuario);
+            //  this.Hide();
+            // _1ParcialJP.Properties.Resources.d1f3ccc7e836617fb6e5db7fed1ae90b
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            abrirMenu();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            cerrarMenu();
+        }
+        public  void abrirMenu()
+        {
+            button4.Visible = false;
+            GBMenu.Show();
+            btnMenu.Visible = true;
+        }
+        public void cerrarMenu()
+        {
+            button4.Visible = true;
+            GBMenu.Hide();
+            btnMenu.Visible = false;
+        }
+        public void abrirForm(Form form)
+        {
+            FrmMenu fmMenu = new FrmMenu();
+            int formCount = this.MdiChildren.Count();
+            if(formCount != 0)
+            {
+                foreach (Form c in this.MdiChildren)
+                {
+                    c.Close();
+                }
+            }
+            form.MdiParent = FrmMenu.ActiveForm;
+            form.WindowState = FormWindowState.Maximized;
+            form.ControlBox = false;
+            form.Show();
         }
     }
 }

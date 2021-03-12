@@ -47,6 +47,8 @@ namespace _1ParcialJP
             this.dataGridViewUsuario = new System.Windows.Forms.DataGridView();
             this.txtEC = new System.Windows.Forms.ComboBox();
             this.txtIdU = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
@@ -54,13 +56,14 @@ namespace _1ParcialJP
             label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            label1.Location = new System.Drawing.Point(4, 186);
+            label1.Location = new System.Drawing.Point(6, 183);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(137, 15);
@@ -71,7 +74,7 @@ namespace _1ParcialJP
             // 
             iD_MARCALabel.AutoSize = true;
             iD_MARCALabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_MARCALabel.Location = new System.Drawing.Point(7, 21);
+            iD_MARCALabel.Location = new System.Drawing.Point(9, 18);
             iD_MARCALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(23, 15);
@@ -82,7 +85,7 @@ namespace _1ParcialJP
             // 
             dESCRIPCIONLabel.AutoSize = true;
             dESCRIPCIONLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(7, 59);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(9, 56);
             dESCRIPCIONLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(63, 15);
@@ -93,7 +96,7 @@ namespace _1ParcialJP
             // 
             eSTADOLabel.AutoSize = true;
             eSTADOLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            eSTADOLabel.Location = new System.Drawing.Point(7, 99);
+            eSTADOLabel.Location = new System.Drawing.Point(9, 96);
             eSTADOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(97, 15);
@@ -104,7 +107,7 @@ namespace _1ParcialJP
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            label2.Location = new System.Drawing.Point(7, 141);
+            label2.Location = new System.Drawing.Point(9, 138);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(112, 15);
@@ -113,7 +116,7 @@ namespace _1ParcialJP
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(204, 208);
+            this.txtsearch.Location = new System.Drawing.Point(206, 205);
             this.txtsearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(217, 22);
@@ -127,7 +130,7 @@ namespace _1ParcialJP
             "NOMBRE",
             "TIPO",
             "ESTADO"});
-            this.selectsearch.Location = new System.Drawing.Point(2, 208);
+            this.selectsearch.Location = new System.Drawing.Point(4, 205);
             this.selectsearch.Margin = new System.Windows.Forms.Padding(4);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(194, 24);
@@ -140,7 +143,7 @@ namespace _1ParcialJP
             this.txtTU.Items.AddRange(new object[] {
             "A",
             "U"});
-            this.txtTU.Location = new System.Drawing.Point(134, 95);
+            this.txtTU.Location = new System.Drawing.Point(136, 92);
             this.txtTU.Margin = new System.Windows.Forms.Padding(4);
             this.txtTU.Name = "txtTU";
             this.txtTU.Size = new System.Drawing.Size(241, 24);
@@ -148,7 +151,7 @@ namespace _1ParcialJP
             // 
             // txtNombreU
             // 
-            this.txtNombreU.Location = new System.Drawing.Point(134, 55);
+            this.txtNombreU.Location = new System.Drawing.Point(136, 52);
             this.txtNombreU.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreU.MaxLength = 200;
             this.txtNombreU.Multiline = true;
@@ -160,7 +163,7 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(429, 184);
+            this.button2.Location = new System.Drawing.Point(431, 181);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 46);
@@ -172,7 +175,7 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(484, 161);
+            this.btnEliminar.Location = new System.Drawing.Point(486, 158);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(64, 64);
@@ -184,7 +187,7 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(484, 89);
+            this.btnGguardar.Location = new System.Drawing.Point(486, 86);
             this.btnGguardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(64, 64);
@@ -196,7 +199,7 @@ namespace _1ParcialJP
             // 
             this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(484, 17);
+            this.button1.Location = new System.Drawing.Point(486, 14);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 64);
@@ -207,21 +210,24 @@ namespace _1ParcialJP
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridViewUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(2, 240);
+            this.groupBox1.Location = new System.Drawing.Point(4, 237);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(554, 250);
+            this.groupBox1.Size = new System.Drawing.Size(554, 327);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
             // dataGridViewUsuario
             // 
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuario.Location = new System.Drawing.Point(5, 10);
+            this.dataGridViewUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewUsuario.Location = new System.Drawing.Point(4, 19);
             this.dataGridViewUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
-            this.dataGridViewUsuario.Size = new System.Drawing.Size(541, 232);
+            this.dataGridViewUsuario.ReadOnly = true;
+            this.dataGridViewUsuario.Size = new System.Drawing.Size(546, 304);
             this.dataGridViewUsuario.TabIndex = 0;
             this.dataGridViewUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuario_CellContentClick);
             // 
@@ -234,7 +240,7 @@ namespace _1ParcialJP
             "I",
             "B",
             "S"});
-            this.txtEC.Location = new System.Drawing.Point(134, 137);
+            this.txtEC.Location = new System.Drawing.Point(136, 134);
             this.txtEC.Margin = new System.Windows.Forms.Padding(4);
             this.txtEC.Name = "txtEC";
             this.txtEC.Size = new System.Drawing.Size(241, 24);
@@ -242,35 +248,62 @@ namespace _1ParcialJP
             // 
             // txtIdU
             // 
-            this.txtIdU.Location = new System.Drawing.Point(134, 17);
+            this.txtIdU.Location = new System.Drawing.Point(136, 14);
             this.txtIdU.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdU.Name = "txtIdU";
             this.txtIdU.ReadOnly = true;
             this.txtIdU.Size = new System.Drawing.Size(241, 22);
             this.txtIdU.TabIndex = 21;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtEC);
+            this.groupBox2.Controls.Add(this.txtTU);
+            this.groupBox2.Controls.Add(label2);
+            this.groupBox2.Controls.Add(eSTADOLabel);
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.txtNombreU);
+            this.groupBox2.Controls.Add(label1);
+            this.groupBox2.Controls.Add(dESCRIPCIONLabel);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.txtIdU);
+            this.groupBox2.Controls.Add(this.txtsearch);
+            this.groupBox2.Controls.Add(iD_MARCALabel);
+            this.groupBox2.Controls.Add(this.selectsearch);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnGguardar);
+            this.groupBox2.Controls.Add(this.btnEliminar);
+            this.groupBox2.Location = new System.Drawing.Point(273, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(561, 571);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Usuarios";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(853, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 34;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(557, 493);
-            this.Controls.Add(this.txtEC);
-            this.Controls.Add(label2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.selectsearch);
-            this.Controls.Add(this.txtTU);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(iD_MARCALabel);
-            this.Controls.Add(this.txtIdU);
-            this.Controls.Add(dESCRIPCIONLabel);
-            this.Controls.Add(this.txtNombreU);
-            this.Controls.Add(eSTADOLabel);
+            this.ClientSize = new System.Drawing.Size(1031, 628);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -280,8 +313,9 @@ namespace _1ParcialJP
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -299,5 +333,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridView dataGridViewUsuario;
         private System.Windows.Forms.ComboBox txtEC;
         private System.Windows.Forms.TextBox txtIdU;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button3;
     }
 }

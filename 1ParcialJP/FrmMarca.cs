@@ -14,29 +14,29 @@ namespace _1ParcialJP
     public partial class FrmMarca : Form
 
     {
-
         public SqlConnection con { get; set; }
-        FrmAMarca aMarca = new FrmAMarca();
 
         public FrmMarca()
         {
             InitializeComponent();
 
         }
+        FrmMenu menu = new FrmMenu();
         public void FrmMarca_Load(object sender, EventArgs e)
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
-            
+            this.ControlBox = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            aMarca.ShowDialog();
+            FrmAMarca fmAMarca = new FrmAMarca();
+            this.Close();
+            FrmMenu fmmenu = new FrmMenu();
+            fmmenu.abrirForm(fmAMarca);
         }
         public void refrescargrid()
         {
-           
             try
             {
                 mARCADataGridView.DataSource = Helper.QueryTraerTabla("MARCA");
@@ -78,8 +78,8 @@ namespace _1ParcialJP
 
         private void FrmMarca_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
+            FrmMenu fmMenu = new FrmMenu();
+            fmMenu.abrirMenu();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -108,5 +108,9 @@ namespace _1ParcialJP
             mARCADataGridView.Refresh();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

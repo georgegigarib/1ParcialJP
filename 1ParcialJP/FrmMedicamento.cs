@@ -38,7 +38,7 @@ namespace _1ParcialJP
         }
         private void FrmMedicamento_Load(object sender, EventArgs e)
         {
-           
+             this.ControlBox = false;
             try
             {
                 CBXUbicacion.Items.Clear();
@@ -78,8 +78,7 @@ namespace _1ParcialJP
         }
         private void FrmMedicamento_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
+            
         }
 
         private DataTable combolista(string id, string tabla)
@@ -131,8 +130,9 @@ namespace _1ParcialJP
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAMedicamento frmAM = new FrmAMedicamento();
-            frmAM.Show();
-            this.Hide();
+            FrmMenu fmmenu = new FrmMenu();
+            fmmenu.abrirForm(frmAM);
+            this.Close();
         }
 
         private void mEDICAMENTODataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -155,6 +155,9 @@ namespace _1ParcialJP
             mEDICAMENTODataGridView.Refresh();
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

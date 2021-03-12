@@ -34,16 +34,9 @@ namespace _1ParcialJP
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
-
-        private void tIPO_FARMACODataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            iD_TFTextBox.Text = tIPO_FARMACODataGridView[0, e.RowIndex].Value.ToString();
-            dESCRIPCIONTextBox.Text = tIPO_FARMACODataGridView[1, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = tIPO_FARMACODataGridView[2, e.RowIndex].Value.ToString();
-
-        }
 
         private void btnGguardar_Click(object sender, EventArgs e)
         {
@@ -67,14 +60,12 @@ namespace _1ParcialJP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmATF fmATF = new FrmATF();
-            this.Hide();
-            fmATF.Show();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmATF);
         }
 
         private void FrmTipoFarmaco_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -103,6 +94,11 @@ namespace _1ParcialJP
             tIPO_FARMACODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             tIPO_FARMACODataGridView.Refresh();
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -39,18 +39,21 @@ namespace _1ParcialJP
             this.tableAdapterManager = new _1ParcialJP.PARCIALJPDataSetTableAdapters.TableAdapterManager();
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
             dESCRIPCIONLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(12, 56);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(16, 61);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 0;
@@ -60,7 +63,7 @@ namespace _1ParcialJP
             // 
             eSTADOLabel.AutoSize = true;
             eSTADOLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            eSTADOLabel.Location = new System.Drawing.Point(12, 22);
+            eSTADOLabel.Location = new System.Drawing.Point(16, 27);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 2;
@@ -95,7 +98,7 @@ namespace _1ParcialJP
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mARCABindingSource, "DESCRIPCION", true));
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(103, 53);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(107, 58);
             this.dESCRIPCIONTextBox.Multiline = true;
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
             this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(198, 109);
@@ -110,42 +113,73 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Items.AddRange(new object[] {
             "ACTIVA",
             "INACTIVA"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(103, 19);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(107, 24);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(198, 21);
             this.eSTADOComboBox.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dESCRIPCIONTextBox);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(dESCRIPCIONLabel);
+            this.groupBox1.Controls.Add(eSTADOLabel);
+            this.groupBox1.Controls.Add(this.eSTADOComboBox);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(458, 183);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agregar Marca";
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(365, 95);
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.Location = new System.Drawing.Point(369, 100);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 67);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.red_go_back_arrow;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(752, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmAMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(452, 169);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(eSTADOLabel);
-            this.Controls.Add(this.eSTADOComboBox);
-            this.Controls.Add(dESCRIPCIONLabel);
-            this.Controls.Add(this.dESCRIPCIONTextBox);
+            this.ClientSize = new System.Drawing.Size(829, 332);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAMarca";
             this.Text = "Agregar Marca";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAMarca_FormClosed);
             this.Load += new System.EventHandler(this.FrmAMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -158,5 +192,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox dESCRIPCIONTextBox;
         private System.Windows.Forms.ComboBox eSTADOComboBox;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

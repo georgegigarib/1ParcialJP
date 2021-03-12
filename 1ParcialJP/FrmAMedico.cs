@@ -19,12 +19,14 @@ namespace _1ParcialJP
         private void FrmAMedico_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMedico fmmedico = new FrmMedico();
-            fmmedico.Show();
+            FrmMenu fmmenu = new FrmMenu();
+            fmmenu.abrirForm(fmmedico);
 
         }
         private void FrmAMedico_Load(object sender, EventArgs e)
         {
             eSTADOComboBox.SelectedIndex = 0;
+            this.ControlBox = false;
         }
        
         private void btnGguardar_Click_1(object sender, EventArgs e)
@@ -56,6 +58,11 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

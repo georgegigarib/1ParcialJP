@@ -33,21 +33,21 @@ namespace _1ParcialJP
         {
             selectsearch.SelectedIndex = 0;
             refrescargrid();
+            this.ControlBox = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAPaciente frmAPaciente = new FrmAPaciente();
-            this.Hide();
-            frmAPaciente.ShowDialog();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(frmAPaciente);
         }
 
         
 
         private void FrmPaciente_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
+            
         }
 
         private void btnGguardar_Click(object sender, EventArgs e)
@@ -119,6 +119,9 @@ namespace _1ParcialJP
             pACIENTEDataGridView.Refresh();
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

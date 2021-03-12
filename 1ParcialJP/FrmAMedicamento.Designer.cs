@@ -43,19 +43,22 @@ namespace _1ParcialJP
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.dOSISTextBox = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
             iD_UBBICACIONLabel = new System.Windows.Forms.Label();
             dOSISLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
             dESCRIPCIONLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(15, 26);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(18, 22);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 26;
@@ -65,7 +68,7 @@ namespace _1ParcialJP
             // 
             iD_TFLabel.AutoSize = true;
             iD_TFLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_TFLabel.Location = new System.Drawing.Point(15, 212);
+            iD_TFLabel.Location = new System.Drawing.Point(18, 208);
             iD_TFLabel.Name = "iD_TFLabel";
             iD_TFLabel.Size = new System.Drawing.Size(104, 15);
             iD_TFLabel.TabIndex = 28;
@@ -75,7 +78,7 @@ namespace _1ParcialJP
             // 
             iD_MARCALabel.AutoSize = true;
             iD_MARCALabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_MARCALabel.Location = new System.Drawing.Point(15, 175);
+            iD_MARCALabel.Location = new System.Drawing.Point(18, 171);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(58, 15);
             iD_MARCALabel.TabIndex = 29;
@@ -85,7 +88,7 @@ namespace _1ParcialJP
             // 
             iD_UBBICACIONLabel.AutoSize = true;
             iD_UBBICACIONLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            iD_UBBICACIONLabel.Location = new System.Drawing.Point(15, 135);
+            iD_UBBICACIONLabel.Location = new System.Drawing.Point(18, 131);
             iD_UBBICACIONLabel.Name = "iD_UBBICACIONLabel";
             iD_UBBICACIONLabel.Size = new System.Drawing.Size(79, 15);
             iD_UBBICACIONLabel.TabIndex = 30;
@@ -95,7 +98,7 @@ namespace _1ParcialJP
             // 
             dOSISLabel.AutoSize = true;
             dOSISLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dOSISLabel.Location = new System.Drawing.Point(15, 58);
+            dOSISLabel.Location = new System.Drawing.Point(18, 54);
             dOSISLabel.Name = "dOSISLabel";
             dOSISLabel.Size = new System.Drawing.Size(52, 16);
             dOSISLabel.TabIndex = 31;
@@ -105,7 +108,7 @@ namespace _1ParcialJP
             // 
             eSTADOLabel.AutoSize = true;
             eSTADOLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            eSTADOLabel.Location = new System.Drawing.Point(15, 100);
+            eSTADOLabel.Location = new System.Drawing.Point(18, 96);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 33;
@@ -115,7 +118,7 @@ namespace _1ParcialJP
             // 
             this.CBXtipoFarmaco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXtipoFarmaco.FormattingEnabled = true;
-            this.CBXtipoFarmaco.Location = new System.Drawing.Point(125, 207);
+            this.CBXtipoFarmaco.Location = new System.Drawing.Point(128, 203);
             this.CBXtipoFarmaco.Name = "CBXtipoFarmaco";
             this.CBXtipoFarmaco.Size = new System.Drawing.Size(198, 21);
             this.CBXtipoFarmaco.TabIndex = 37;
@@ -124,7 +127,7 @@ namespace _1ParcialJP
             // 
             this.CBXMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXMarca.FormattingEnabled = true;
-            this.CBXMarca.Location = new System.Drawing.Point(125, 171);
+            this.CBXMarca.Location = new System.Drawing.Point(128, 167);
             this.CBXMarca.Name = "CBXMarca";
             this.CBXMarca.Size = new System.Drawing.Size(198, 21);
             this.CBXMarca.TabIndex = 36;
@@ -133,7 +136,7 @@ namespace _1ParcialJP
             // 
             this.CBXUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXUbicacion.FormattingEnabled = true;
-            this.CBXUbicacion.Location = new System.Drawing.Point(125, 132);
+            this.CBXUbicacion.Location = new System.Drawing.Point(128, 128);
             this.CBXUbicacion.Name = "CBXUbicacion";
             this.CBXUbicacion.Size = new System.Drawing.Size(198, 21);
             this.CBXUbicacion.TabIndex = 35;
@@ -147,21 +150,21 @@ namespace _1ParcialJP
             "DESCONTINUADO",
             "AGOTADO",
             "NO DISPONIBLE"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(125, 94);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(128, 90);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(198, 21);
             this.eSTADOComboBox.TabIndex = 34;
             // 
             // dESCRIPCIONTextBox
             // 
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(125, 23);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(128, 19);
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
             this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(198, 20);
             this.dESCRIPCIONTextBox.TabIndex = 27;
             // 
             // dOSISTextBox
             // 
-            this.dOSISTextBox.Location = new System.Drawing.Point(125, 58);
+            this.dOSISTextBox.Location = new System.Drawing.Point(128, 54);
             this.dOSISTextBox.Name = "dOSISTextBox";
             this.dOSISTextBox.Size = new System.Drawing.Size(198, 20);
             this.dOSISTextBox.TabIndex = 32;
@@ -170,39 +173,67 @@ namespace _1ParcialJP
             // 
             this.btnGuardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(368, 175);
+            this.btnGuardar.Location = new System.Drawing.Point(371, 171);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 67);
             this.btnGuardar.TabIndex = 38;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dESCRIPCIONTextBox);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(eSTADOLabel);
+            this.groupBox1.Controls.Add(this.CBXtipoFarmaco);
+            this.groupBox1.Controls.Add(this.dOSISTextBox);
+            this.groupBox1.Controls.Add(this.CBXMarca);
+            this.groupBox1.Controls.Add(dOSISLabel);
+            this.groupBox1.Controls.Add(this.CBXUbicacion);
+            this.groupBox1.Controls.Add(iD_UBBICACIONLabel);
+            this.groupBox1.Controls.Add(this.eSTADOComboBox);
+            this.groupBox1.Controls.Add(iD_MARCALabel);
+            this.groupBox1.Controls.Add(dESCRIPCIONLabel);
+            this.groupBox1.Controls.Add(iD_TFLabel);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(457, 251);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agregar Medicamento";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.red_go_back_arrow;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(765, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 40;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmAMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(455, 254);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.CBXtipoFarmaco);
-            this.Controls.Add(this.CBXMarca);
-            this.Controls.Add(this.CBXUbicacion);
-            this.Controls.Add(this.eSTADOComboBox);
-            this.Controls.Add(dESCRIPCIONLabel);
-            this.Controls.Add(this.dESCRIPCIONTextBox);
-            this.Controls.Add(iD_TFLabel);
-            this.Controls.Add(iD_MARCALabel);
-            this.Controls.Add(iD_UBBICACIONLabel);
-            this.Controls.Add(dOSISLabel);
-            this.Controls.Add(this.dOSISTextBox);
-            this.Controls.Add(eSTADOLabel);
+            this.ClientSize = new System.Drawing.Size(1041, 456);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAMedicamento";
             this.Text = "Agregar Medicamento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAMedicamento_FormClosed);
             this.Load += new System.EventHandler(this.FrmAMedicamento_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -215,5 +246,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox dESCRIPCIONTextBox;
         private System.Windows.Forms.TextBox dOSISTextBox;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

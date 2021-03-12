@@ -61,7 +61,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.txtusername);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, -2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -137,7 +137,7 @@ namespace _1ParcialJP
             this.txtnombre.MaxLength = 30;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(228, 22);
-            this.txtnombre.TabIndex = 12;
+            this.txtnombre.TabIndex = 3;
             // 
             // label4
             // 
@@ -158,7 +158,7 @@ namespace _1ParcialJP
             this.txtpassword2.Name = "txtpassword2";
             this.txtpassword2.PasswordChar = '*';
             this.txtpassword2.Size = new System.Drawing.Size(175, 22);
-            this.txtpassword2.TabIndex = 10;
+            this.txtpassword2.TabIndex = 2;
             // 
             // label3
             // 
@@ -179,7 +179,7 @@ namespace _1ParcialJP
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(175, 22);
-            this.txtpassword.TabIndex = 5;
+            this.txtpassword.TabIndex = 1;
             // 
             // button2
             // 
@@ -188,7 +188,7 @@ namespace _1ParcialJP
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 33);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Registrar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -200,7 +200,7 @@ namespace _1ParcialJP
             this.txtusername.MaxLength = 20;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(175, 22);
-            this.txtusername.TabIndex = 4;
+            this.txtusername.TabIndex = 0;
             // 
             // label2
             // 
@@ -229,7 +229,7 @@ namespace _1ParcialJP
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(632, 233);
+            this.ClientSize = new System.Drawing.Size(634, 236);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -33,14 +33,14 @@ namespace _1ParcialJP
 
         private void FrmMedico_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
+            
         }
 
         private void FrmMedico_Load(object sender, EventArgs e)
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -106,8 +106,9 @@ namespace _1ParcialJP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAMedico frmAMedico= new FrmAMedico();
-            this.Hide();
-            frmAMedico.ShowDialog();
+            FrmMenu fmmenu = new FrmMenu();
+            fmmenu.abrirForm(frmAMedico);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -117,6 +118,11 @@ namespace _1ParcialJP
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             mEDICODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICODataGridView.Refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

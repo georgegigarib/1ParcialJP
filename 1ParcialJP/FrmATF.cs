@@ -19,12 +19,14 @@ namespace _1ParcialJP
         private void FrmATF_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmTipoFarmaco fmTipoFarmaco = new FrmTipoFarmaco();
-            fmTipoFarmaco.Show();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmTipoFarmaco);
         }
 
         private void FrmATF_Load(object sender, EventArgs e)
         {
             eSTADOComboBox.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void btnGguardar_Click_1(object sender, EventArgs e)
@@ -43,6 +45,11 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Error al guardar registro: " + er);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

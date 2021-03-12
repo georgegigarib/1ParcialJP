@@ -23,12 +23,14 @@ namespace _1ParcialJP
         {
             eSTADOComboBox.SelectedIndex = 0;
             tIPO_PACIENTEComboBox.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void FrmAPaciente_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmPaciente fmPaciente = new FrmPaciente();
-            fmPaciente.Show();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmPaciente);
         }
         private void btnGguardar_Click_1(object sender, EventArgs e)
         {
@@ -58,6 +60,11 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Cedula Incorrecta");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

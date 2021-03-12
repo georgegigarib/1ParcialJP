@@ -145,9 +145,6 @@
   <data name="add-1-icon--flatastic-1-iconset--custom-icon-design-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-1-icon--flatastic-1-iconset--custom-icon-design-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_no_photo_300x3001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_no_photo_300x3001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="234735" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\234735.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,14 +157,26 @@
   <data name="unnamed (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="red-go-back-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red-go-back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_no_photo_300x300" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_no_photo_300x300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1362420-png-red-cross-png-260_260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1362420-png-red-cross-png-260_260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngkey.com-location-png-104244" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngkey.com-location-png-104244.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unnamed (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unnamed (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_no_photo_300x3002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_no_photo_300x3002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_no_photo_300x3001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_no_photo_300x3001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PinClipart.com_menu-clip-art_5328945" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinClipart.com_menu-clip-art_5328945.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +184,10 @@
   <data name="add-1-icon--flatastic-1-iconset--custom-icon-design-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-1-icon--flatastic-1-iconset--custom-icon-design-0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_no_photo_300x3002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_no_photo_300x3002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="unnamed (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unnamed (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x-png-33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-png-33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

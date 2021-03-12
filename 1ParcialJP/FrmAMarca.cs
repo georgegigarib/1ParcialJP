@@ -18,17 +18,11 @@ namespace _1ParcialJP
         {
             InitializeComponent();
         }
-        private void mARCABindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mARCABindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pARCIALJPDataSet);
 
-        }
         private void FrmAMarca_Load(object sender, EventArgs e)
         {
             eSTADOComboBox.SelectedIndex = 0;
-
+            this.ControlBox = false;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -49,8 +43,14 @@ namespace _1ParcialJP
         }
         private void FrmAMarca_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMarca fmload = new FrmMarca();
-            fmload.Show();
+            FrmMenu fmmenu = new FrmMenu();
+            FrmMarca fmMarca = new FrmMarca();
+            fmmenu.abrirForm(fmMarca);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

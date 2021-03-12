@@ -73,6 +73,16 @@ namespace _1ParcialJP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1362420_png_red_cross_png_260_260 {
+            get {
+                object obj = ResourceManager.GetObject("1362420-png-red-cross-png-260_260", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _172ddc045ae1707a415adeae0543a5f0_icono_de_trazo_de_color_del_paciente_by_vexels {
             get {
                 object obj = ResourceManager.GetObject("172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels", resourceCulture);
@@ -143,6 +153,16 @@ namespace _1ParcialJP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PinClipart_com_menu_clip_art_5328945 {
+            get {
+                object obj = ResourceManager.GetObject("PinClipart.com_menu-clip-art_5328945", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_meno_mind_map_computer_network_education_plus_minus_sign_free_miscellaneous_computer_network_rectangle {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-meno-mind-map-computer-network-education-plus-minus-sign-free-mis" +
@@ -167,6 +187,16 @@ namespace _1ParcialJP.Properties {
         internal static System.Drawing.Bitmap pngkey_com_location_png_104244 {
             get {
                 object obj = ResourceManager.GetObject("pngkey.com-location-png-104244", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_go_back_arrow {
+            get {
+                object obj = ResourceManager.GetObject("red-go-back-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -257,6 +287,16 @@ namespace _1ParcialJP.Properties {
         internal static System.Drawing.Bitmap user_no_photo_300x3002 {
             get {
                 object obj = ResourceManager.GetObject("user_no_photo_300x3002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_png_33 {
+            get {
+                object obj = ResourceManager.GetObject("x-png-33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
