@@ -434,6 +434,7 @@ namespace _1ParcialJP
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMedicamento";
             this.Text = "Medicamentos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMedicamento_FormClosed);
             this.Load += new System.EventHandler(this.FrmMedicamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mEDICAMENTODataGridView)).EndInit();
