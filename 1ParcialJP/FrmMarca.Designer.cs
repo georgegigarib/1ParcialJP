@@ -49,10 +49,12 @@ namespace _1ParcialJP
             this.iD_MARCATextBox = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
+            this.GBMarca = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGguardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnGguardar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
@@ -61,12 +63,13 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mARCADataGridView)).BeginInit();
+            this.GBMarca.SuspendLayout();
             this.SuspendLayout();
             // 
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(14, 104);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(16, 105);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 3;
@@ -75,7 +78,7 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(14, 62);
+            eSTADOLabel.Location = new System.Drawing.Point(16, 63);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 5;
@@ -84,7 +87,7 @@ namespace _1ParcialJP
             // iD_MARCALabel
             // 
             iD_MARCALabel.AutoSize = true;
-            iD_MARCALabel.Location = new System.Drawing.Point(14, 23);
+            iD_MARCALabel.Location = new System.Drawing.Point(16, 24);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(23, 15);
             iD_MARCALabel.TabIndex = 6;
@@ -93,7 +96,7 @@ namespace _1ParcialJP
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(14, 217);
+            label1.Location = new System.Drawing.Point(16, 218);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(140, 15);
             label1.TabIndex = 16;
@@ -128,7 +131,7 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.mARCADataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 269);
+            this.panel1.Location = new System.Drawing.Point(16, 270);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(419, 231);
             this.panel1.TabIndex = 8;
@@ -178,7 +181,7 @@ namespace _1ParcialJP
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mARCABindingSource, "DESCRIPCION", true));
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(110, 101);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(112, 102);
             this.dESCRIPCIONTextBox.MaxLength = 200;
             this.dESCRIPCIONTextBox.Multiline = true;
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
@@ -194,7 +197,7 @@ namespace _1ParcialJP
             this.eSTADOComboBox.Items.AddRange(new object[] {
             "ACTIVA",
             "INACTIVA"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(110, 57);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(112, 58);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(182, 23);
             this.eSTADOComboBox.TabIndex = 12;
@@ -202,7 +205,7 @@ namespace _1ParcialJP
             // iD_MARCATextBox
             // 
             this.iD_MARCATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mARCABindingSource, "ID_MARCA", true));
-            this.iD_MARCATextBox.Location = new System.Drawing.Point(110, 20);
+            this.iD_MARCATextBox.Location = new System.Drawing.Point(112, 21);
             this.iD_MARCATextBox.Name = "iD_MARCATextBox";
             this.iD_MARCATextBox.ReadOnly = true;
             this.iD_MARCATextBox.Size = new System.Drawing.Size(182, 22);
@@ -215,23 +218,46 @@ namespace _1ParcialJP
             this.selectsearch.Items.AddRange(new object[] {
             "ESTADO",
             "DESCRIPCION"});
-            this.selectsearch.Location = new System.Drawing.Point(17, 235);
+            this.selectsearch.Location = new System.Drawing.Point(19, 236);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(132, 23);
             this.selectsearch.TabIndex = 13;
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(155, 236);
+            this.txtsearch.Location = new System.Drawing.Point(157, 237);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(231, 22);
             this.txtsearch.TabIndex = 14;
+            // 
+            // GBMarca
+            // 
+            this.GBMarca.Controls.Add(this.iD_MARCATextBox);
+            this.GBMarca.Controls.Add(label1);
+            this.GBMarca.Controls.Add(eSTADOLabel);
+            this.GBMarca.Controls.Add(this.button2);
+            this.GBMarca.Controls.Add(this.dESCRIPCIONTextBox);
+            this.GBMarca.Controls.Add(this.txtsearch);
+            this.GBMarca.Controls.Add(dESCRIPCIONLabel);
+            this.GBMarca.Controls.Add(this.selectsearch);
+            this.GBMarca.Controls.Add(iD_MARCALabel);
+            this.GBMarca.Controls.Add(this.eSTADOComboBox);
+            this.GBMarca.Controls.Add(this.panel1);
+            this.GBMarca.Controls.Add(this.btnEliminar);
+            this.GBMarca.Controls.Add(this.button1);
+            this.GBMarca.Controls.Add(this.btnGguardar);
+            this.GBMarca.Location = new System.Drawing.Point(273, 12);
+            this.GBMarca.Name = "GBMarca";
+            this.GBMarca.Size = new System.Drawing.Size(448, 508);
+            this.GBMarca.TabIndex = 17;
+            this.GBMarca.TabStop = false;
+            this.GBMarca.Text = "Marcas";
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(392, 217);
+            this.button2.Location = new System.Drawing.Point(394, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(41, 40);
             this.button2.TabIndex = 15;
@@ -242,57 +268,66 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(372, 146);
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Location = new System.Drawing.Point(374, 147);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(61, 55);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnGguardar
-            // 
-            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
-            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(372, 83);
-            this.btnGguardar.Name = "btnGguardar";
-            this.btnGguardar.Size = new System.Drawing.Size(61, 57);
-            this.btnGguardar.TabIndex = 10;
-            this.btnGguardar.UseVisualStyleBackColor = true;
-            this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(372, 20);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(374, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 56);
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnGguardar
+            // 
+            this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
+            this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGguardar.Location = new System.Drawing.Point(374, 84);
+            this.btnGguardar.Name = "btnGguardar";
+            this.btnGguardar.Size = new System.Drawing.Size(61, 57);
+            this.btnGguardar.TabIndex = 10;
+            this.btnGguardar.UseVisualStyleBackColor = true;
+            this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(741, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(447, 506);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.selectsearch);
-            this.Controls.Add(this.eSTADOComboBox);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(iD_MARCALabel);
-            this.Controls.Add(this.iD_MARCATextBox);
-            this.Controls.Add(dESCRIPCIONLabel);
-            this.Controls.Add(this.dESCRIPCIONTextBox);
-            this.Controls.Add(eSTADOLabel);
+            this.ClientSize = new System.Drawing.Size(817, 596);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.GBMarca);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMarca";
             this.Text = "Marcas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMarca_FormClosed);
@@ -301,8 +336,9 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mARCADataGridView)).EndInit();
+            this.GBMarca.ResumeLayout(false);
+            this.GBMarca.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -326,6 +362,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.ComboBox selectsearch;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox GBMarca;
+        private System.Windows.Forms.Button button3;
     }
 }
 

@@ -62,6 +62,8 @@ namespace _1ParcialJP
             this.button2 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             iD_PACIENTELabel = new System.Windows.Forms.Label();
             nOMBRELabel = new System.Windows.Forms.Label();
             cEDULALabel = new System.Windows.Forms.Label();
@@ -73,12 +75,13 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // iD_PACIENTELabel
             // 
             iD_PACIENTELabel.AutoSize = true;
-            iD_PACIENTELabel.Location = new System.Drawing.Point(30, 24);
+            iD_PACIENTELabel.Location = new System.Drawing.Point(38, 29);
             iD_PACIENTELabel.Name = "iD_PACIENTELabel";
             iD_PACIENTELabel.Size = new System.Drawing.Size(85, 15);
             iD_PACIENTELabel.TabIndex = 2;
@@ -87,7 +90,7 @@ namespace _1ParcialJP
             // nOMBRELabel
             // 
             nOMBRELabel.AutoSize = true;
-            nOMBRELabel.Location = new System.Drawing.Point(30, 61);
+            nOMBRELabel.Location = new System.Drawing.Point(38, 66);
             nOMBRELabel.Name = "nOMBRELabel";
             nOMBRELabel.Size = new System.Drawing.Size(63, 15);
             nOMBRELabel.TabIndex = 4;
@@ -96,7 +99,7 @@ namespace _1ParcialJP
             // cEDULALabel
             // 
             cEDULALabel.AutoSize = true;
-            cEDULALabel.Location = new System.Drawing.Point(30, 102);
+            cEDULALabel.Location = new System.Drawing.Point(38, 107);
             cEDULALabel.Name = "cEDULALabel";
             cEDULALabel.Size = new System.Drawing.Size(60, 15);
             cEDULALabel.TabIndex = 6;
@@ -105,7 +108,7 @@ namespace _1ParcialJP
             // nUM_CARNETLabel
             // 
             nUM_CARNETLabel.AutoSize = true;
-            nUM_CARNETLabel.Location = new System.Drawing.Point(30, 140);
+            nUM_CARNETLabel.Location = new System.Drawing.Point(38, 145);
             nUM_CARNETLabel.Name = "nUM_CARNETLabel";
             nUM_CARNETLabel.Size = new System.Drawing.Size(92, 15);
             nUM_CARNETLabel.TabIndex = 8;
@@ -114,7 +117,7 @@ namespace _1ParcialJP
             // tIPO_PACIENTELabel
             // 
             tIPO_PACIENTELabel.AutoSize = true;
-            tIPO_PACIENTELabel.Location = new System.Drawing.Point(378, 65);
+            tIPO_PACIENTELabel.Location = new System.Drawing.Point(386, 70);
             tIPO_PACIENTELabel.Name = "tIPO_PACIENTELabel";
             tIPO_PACIENTELabel.Size = new System.Drawing.Size(100, 15);
             tIPO_PACIENTELabel.TabIndex = 10;
@@ -123,11 +126,20 @@ namespace _1ParcialJP
             // eSTADOLabel1
             // 
             eSTADOLabel1.AutoSize = true;
-            eSTADOLabel1.Location = new System.Drawing.Point(383, 24);
+            eSTADOLabel1.Location = new System.Drawing.Point(391, 29);
             eSTADOLabel1.Name = "eSTADOLabel1";
             eSTADOLabel1.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel1.TabIndex = 20;
             eSTADOLabel1.Text = "ESTADO:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(24, 179);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(140, 15);
+            label1.TabIndex = 33;
+            label1.Text = "REALIZAR CONSULTA:";
             // 
             // pARCIALJPDataSet
             // 
@@ -230,7 +242,7 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.pACIENTEDataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 237);
+            this.panel1.Location = new System.Drawing.Point(20, 242);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(791, 268);
             this.panel1.TabIndex = 2;
@@ -238,7 +250,7 @@ namespace _1ParcialJP
             // iD_PACIENTETextBox
             // 
             this.iD_PACIENTETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pACIENTEBindingSource, "ID_PACIENTE", true));
-            this.iD_PACIENTETextBox.Location = new System.Drawing.Point(143, 21);
+            this.iD_PACIENTETextBox.Location = new System.Drawing.Point(151, 26);
             this.iD_PACIENTETextBox.Name = "iD_PACIENTETextBox";
             this.iD_PACIENTETextBox.ReadOnly = true;
             this.iD_PACIENTETextBox.Size = new System.Drawing.Size(219, 22);
@@ -247,7 +259,7 @@ namespace _1ParcialJP
             // nOMBRETextBox
             // 
             this.nOMBRETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pACIENTEBindingSource, "NOMBRE", true));
-            this.nOMBRETextBox.Location = new System.Drawing.Point(143, 58);
+            this.nOMBRETextBox.Location = new System.Drawing.Point(151, 63);
             this.nOMBRETextBox.MaxLength = 30;
             this.nOMBRETextBox.Name = "nOMBRETextBox";
             this.nOMBRETextBox.Size = new System.Drawing.Size(219, 22);
@@ -256,7 +268,7 @@ namespace _1ParcialJP
             // cEDULATextBox
             // 
             this.cEDULATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pACIENTEBindingSource, "CEDULA", true));
-            this.cEDULATextBox.Location = new System.Drawing.Point(143, 98);
+            this.cEDULATextBox.Location = new System.Drawing.Point(151, 103);
             this.cEDULATextBox.MaxLength = 11;
             this.cEDULATextBox.Name = "cEDULATextBox";
             this.cEDULATextBox.Size = new System.Drawing.Size(219, 22);
@@ -265,7 +277,7 @@ namespace _1ParcialJP
             // nUM_CARNETTextBox
             // 
             this.nUM_CARNETTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pACIENTEBindingSource, "NUM_CARNET", true));
-            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(143, 137);
+            this.nUM_CARNETTextBox.Location = new System.Drawing.Point(151, 142);
             this.nUM_CARNETTextBox.Name = "nUM_CARNETTextBox";
             this.nUM_CARNETTextBox.Size = new System.Drawing.Size(219, 22);
             this.nUM_CARNETTextBox.TabIndex = 9;
@@ -274,7 +286,8 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(740, 155);
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Location = new System.Drawing.Point(748, 160);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(63, 64);
             this.btnEliminar.TabIndex = 19;
@@ -285,7 +298,8 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(740, 82);
+            this.btnGguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGguardar.Location = new System.Drawing.Point(748, 87);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(63, 64);
             this.btnGguardar.TabIndex = 18;
@@ -296,7 +310,8 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(740, 12);
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Location = new System.Drawing.Point(748, 17);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(63, 64);
             this.btnAgregar.TabIndex = 17;
@@ -311,7 +326,7 @@ namespace _1ParcialJP
             this.tIPO_PACIENTEComboBox.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(491, 61);
+            this.tIPO_PACIENTEComboBox.Location = new System.Drawing.Point(499, 66);
             this.tIPO_PACIENTEComboBox.Name = "tIPO_PACIENTEComboBox";
             this.tIPO_PACIENTEComboBox.Size = new System.Drawing.Size(219, 23);
             this.tIPO_PACIENTEComboBox.TabIndex = 20;
@@ -325,7 +340,7 @@ namespace _1ParcialJP
             "SALUDABLE",
             "ESTABLE",
             "GRAVE"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(491, 24);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(499, 29);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(219, 23);
             this.eSTADOComboBox.TabIndex = 21;
@@ -334,7 +349,7 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(664, 174);
+            this.button2.Location = new System.Drawing.Point(672, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 47);
             this.button2.TabIndex = 32;
@@ -343,7 +358,7 @@ namespace _1ParcialJP
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(289, 199);
+            this.txtsearch.Location = new System.Drawing.Point(297, 204);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(369, 22);
             this.txtsearch.TabIndex = 31;
@@ -358,46 +373,64 @@ namespace _1ParcialJP
             "NUM_CARNET",
             "TIPO_PACIENTE",
             "ESTADO"});
-            this.selectsearch.Location = new System.Drawing.Point(19, 198);
+            this.selectsearch.Location = new System.Drawing.Point(27, 203);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(251, 23);
             this.selectsearch.TabIndex = 30;
             // 
-            // label1
+            // groupBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(16, 174);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(140, 15);
-            label1.TabIndex = 33;
-            label1.Text = "REALIZAR CONSULTA:";
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.nOMBRETextBox);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(eSTADOLabel1);
+            this.groupBox1.Controls.Add(tIPO_PACIENTELabel);
+            this.groupBox1.Controls.Add(this.txtsearch);
+            this.groupBox1.Controls.Add(this.nUM_CARNETTextBox);
+            this.groupBox1.Controls.Add(this.selectsearch);
+            this.groupBox1.Controls.Add(nUM_CARNETLabel);
+            this.groupBox1.Controls.Add(this.eSTADOComboBox);
+            this.groupBox1.Controls.Add(this.cEDULATextBox);
+            this.groupBox1.Controls.Add(this.tIPO_PACIENTEComboBox);
+            this.groupBox1.Controls.Add(cEDULALabel);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(nOMBRELabel);
+            this.groupBox1.Controls.Add(this.btnGguardar);
+            this.groupBox1.Controls.Add(this.iD_PACIENTETextBox);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(iD_PACIENTELabel);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(819, 518);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pacientes";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(1108, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 35;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(813, 513);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(eSTADOLabel1);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.selectsearch);
-            this.Controls.Add(this.eSTADOComboBox);
-            this.Controls.Add(this.tIPO_PACIENTEComboBox);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(iD_PACIENTELabel);
-            this.Controls.Add(this.iD_PACIENTETextBox);
-            this.Controls.Add(nOMBRELabel);
-            this.Controls.Add(this.nOMBRETextBox);
-            this.Controls.Add(cEDULALabel);
-            this.Controls.Add(this.cEDULATextBox);
-            this.Controls.Add(nUM_CARNETLabel);
-            this.Controls.Add(this.nUM_CARNETTextBox);
-            this.Controls.Add(tIPO_PACIENTELabel);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1213, 610);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPaciente";
@@ -408,8 +441,9 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACIENTEDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -439,5 +473,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

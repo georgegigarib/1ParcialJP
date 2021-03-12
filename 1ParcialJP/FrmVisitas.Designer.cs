@@ -73,6 +73,9 @@ namespace _1ParcialJP
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.txtfecha = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button3 = new System.Windows.Forms.Button();
             iD_VISITALabel = new System.Windows.Forms.Label();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
@@ -87,12 +90,13 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.vISITABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vISITADataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // iD_VISITALabel
             // 
             iD_VISITALabel.AutoSize = true;
-            iD_VISITALabel.Location = new System.Drawing.Point(13, 27);
+            iD_VISITALabel.Location = new System.Drawing.Point(6, 18);
             iD_VISITALabel.Name = "iD_VISITALabel";
             iD_VISITALabel.Size = new System.Drawing.Size(66, 15);
             iD_VISITALabel.TabIndex = 2;
@@ -101,7 +105,7 @@ namespace _1ParcialJP
             // nOMBRE_MEDICOLabel
             // 
             nOMBRE_MEDICOLabel.AutoSize = true;
-            nOMBRE_MEDICOLabel.Location = new System.Drawing.Point(13, 63);
+            nOMBRE_MEDICOLabel.Location = new System.Drawing.Point(6, 54);
             nOMBRE_MEDICOLabel.Name = "nOMBRE_MEDICOLabel";
             nOMBRE_MEDICOLabel.Size = new System.Drawing.Size(115, 15);
             nOMBRE_MEDICOLabel.TabIndex = 4;
@@ -110,7 +114,7 @@ namespace _1ParcialJP
             // nOMBRE_PACIENTELabel
             // 
             nOMBRE_PACIENTELabel.AutoSize = true;
-            nOMBRE_PACIENTELabel.Location = new System.Drawing.Point(13, 97);
+            nOMBRE_PACIENTELabel.Location = new System.Drawing.Point(6, 88);
             nOMBRE_PACIENTELabel.Name = "nOMBRE_PACIENTELabel";
             nOMBRE_PACIENTELabel.Size = new System.Drawing.Size(125, 15);
             nOMBRE_PACIENTELabel.TabIndex = 6;
@@ -119,7 +123,7 @@ namespace _1ParcialJP
             // fECHALabel
             // 
             fECHALabel.AutoSize = true;
-            fECHALabel.Location = new System.Drawing.Point(414, 24);
+            fECHALabel.Location = new System.Drawing.Point(407, 15);
             fECHALabel.Name = "fECHALabel";
             fECHALabel.Size = new System.Drawing.Size(51, 15);
             fECHALabel.TabIndex = 8;
@@ -128,7 +132,7 @@ namespace _1ParcialJP
             // hORALabel
             // 
             hORALabel.AutoSize = true;
-            hORALabel.Location = new System.Drawing.Point(414, 68);
+            hORALabel.Location = new System.Drawing.Point(407, 59);
             hORALabel.Name = "hORALabel";
             hORALabel.Size = new System.Drawing.Size(46, 15);
             hORALabel.TabIndex = 10;
@@ -137,7 +141,7 @@ namespace _1ParcialJP
             // sINTOMASLabel
             // 
             sINTOMASLabel.AutoSize = true;
-            sINTOMASLabel.Location = new System.Drawing.Point(414, 100);
+            sINTOMASLabel.Location = new System.Drawing.Point(407, 91);
             sINTOMASLabel.Name = "sINTOMASLabel";
             sINTOMASLabel.Size = new System.Drawing.Size(76, 15);
             sINTOMASLabel.TabIndex = 12;
@@ -146,7 +150,7 @@ namespace _1ParcialJP
             // mEDICAMENTOSLabel
             // 
             mEDICAMENTOSLabel.AutoSize = true;
-            mEDICAMENTOSLabel.Location = new System.Drawing.Point(703, 95);
+            mEDICAMENTOSLabel.Location = new System.Drawing.Point(696, 86);
             mEDICAMENTOSLabel.Name = "mEDICAMENTOSLabel";
             mEDICAMENTOSLabel.Size = new System.Drawing.Size(112, 15);
             mEDICAMENTOSLabel.TabIndex = 14;
@@ -155,7 +159,7 @@ namespace _1ParcialJP
             // rECOMENDACIONESLabel
             // 
             rECOMENDACIONESLabel.AutoSize = true;
-            rECOMENDACIONESLabel.Location = new System.Drawing.Point(703, 23);
+            rECOMENDACIONESLabel.Location = new System.Drawing.Point(696, 14);
             rECOMENDACIONESLabel.Name = "rECOMENDACIONESLabel";
             rECOMENDACIONESLabel.Size = new System.Drawing.Size(133, 15);
             rECOMENDACIONESLabel.TabIndex = 16;
@@ -164,7 +168,7 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(13, 134);
+            eSTADOLabel.Location = new System.Drawing.Point(6, 125);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 18;
@@ -173,7 +177,7 @@ namespace _1ParcialJP
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(21, 174);
+            label1.Location = new System.Drawing.Point(14, 165);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(137, 15);
             label1.TabIndex = 20;
@@ -307,7 +311,7 @@ namespace _1ParcialJP
             // 
             this.iD_VISITATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "ID_VISITA", true));
             this.iD_VISITATextBox.Enabled = false;
-            this.iD_VISITATextBox.Location = new System.Drawing.Point(159, 23);
+            this.iD_VISITATextBox.Location = new System.Drawing.Point(152, 14);
             this.iD_VISITATextBox.Name = "iD_VISITATextBox";
             this.iD_VISITATextBox.Size = new System.Drawing.Size(233, 22);
             this.iD_VISITATextBox.TabIndex = 3;
@@ -318,7 +322,7 @@ namespace _1ParcialJP
             this.fECHADateTimePicker.CustomFormat = "dd-MM-yyyy";
             this.fECHADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "FECHA", true));
             this.fECHADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fECHADateTimePicker.Location = new System.Drawing.Point(502, 20);
+            this.fECHADateTimePicker.Location = new System.Drawing.Point(495, 11);
             this.fECHADateTimePicker.Name = "fECHADateTimePicker";
             this.fECHADateTimePicker.Size = new System.Drawing.Size(140, 22);
             this.fECHADateTimePicker.TabIndex = 9;
@@ -327,7 +331,7 @@ namespace _1ParcialJP
             // sINTOMASTextBox
             // 
             this.sINTOMASTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "SINTOMAS", true));
-            this.sINTOMASTextBox.Location = new System.Drawing.Point(502, 97);
+            this.sINTOMASTextBox.Location = new System.Drawing.Point(495, 88);
             this.sINTOMASTextBox.MaxLength = 2000;
             this.sINTOMASTextBox.Multiline = true;
             this.sINTOMASTextBox.Name = "sINTOMASTextBox";
@@ -337,7 +341,7 @@ namespace _1ParcialJP
             // mEDICAMENTOSTextBox
             // 
             this.mEDICAMENTOSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "MEDICAMENTOS", true));
-            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(849, 97);
+            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(842, 88);
             this.mEDICAMENTOSTextBox.MaxLength = 200;
             this.mEDICAMENTOSTextBox.Multiline = true;
             this.mEDICAMENTOSTextBox.Name = "mEDICAMENTOSTextBox";
@@ -347,7 +351,7 @@ namespace _1ParcialJP
             // rECOMENDACIONESTextBox
             // 
             this.rECOMENDACIONESTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "RECOMENDACIONES", true));
-            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(849, 20);
+            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(842, 11);
             this.rECOMENDACIONESTextBox.MaxLength = 200;
             this.rECOMENDACIONESTextBox.Multiline = true;
             this.rECOMENDACIONESTextBox.Name = "rECOMENDACIONESTextBox";
@@ -357,7 +361,7 @@ namespace _1ParcialJP
             // eSTADOTextBox
             // 
             this.eSTADOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "ESTADO", true));
-            this.eSTADOTextBox.Location = new System.Drawing.Point(159, 130);
+            this.eSTADOTextBox.Location = new System.Drawing.Point(152, 121);
             this.eSTADOTextBox.MaxLength = 20;
             this.eSTADOTextBox.Name = "eSTADOTextBox";
             this.eSTADOTextBox.Size = new System.Drawing.Size(233, 22);
@@ -366,7 +370,7 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.vISITADataGridView);
-            this.panel1.Location = new System.Drawing.Point(14, 221);
+            this.panel1.Location = new System.Drawing.Point(7, 212);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 275);
             this.panel1.TabIndex = 20;
@@ -376,7 +380,7 @@ namespace _1ParcialJP
             this.hORADateTimePicker.CustomFormat = "hh-mm-ss";
             this.hORADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "HORA", true));
             this.hORADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.hORADateTimePicker.Location = new System.Drawing.Point(502, 60);
+            this.hORADateTimePicker.Location = new System.Drawing.Point(495, 51);
             this.hORADateTimePicker.Name = "hORADateTimePicker";
             this.hORADateTimePicker.ShowUpDown = true;
             this.hORADateTimePicker.Size = new System.Drawing.Size(140, 22);
@@ -386,7 +390,7 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(1086, 12);
+            this.btnAgregar.Location = new System.Drawing.Point(1079, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(60, 60);
             this.btnAgregar.TabIndex = 22;
@@ -397,7 +401,7 @@ namespace _1ParcialJP
             // 
             this.CBXPACIENTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXPACIENTE.FormattingEnabled = true;
-            this.CBXPACIENTE.Location = new System.Drawing.Point(159, 93);
+            this.CBXPACIENTE.Location = new System.Drawing.Point(152, 84);
             this.CBXPACIENTE.Name = "CBXPACIENTE";
             this.CBXPACIENTE.Size = new System.Drawing.Size(233, 23);
             this.CBXPACIENTE.TabIndex = 26;
@@ -406,7 +410,7 @@ namespace _1ParcialJP
             // 
             this.nOMBRE_MEDICOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nOMBRE_MEDICOComboBox.FormattingEnabled = true;
-            this.nOMBRE_MEDICOComboBox.Location = new System.Drawing.Point(159, 60);
+            this.nOMBRE_MEDICOComboBox.Location = new System.Drawing.Point(152, 51);
             this.nOMBRE_MEDICOComboBox.Name = "nOMBRE_MEDICOComboBox";
             this.nOMBRE_MEDICOComboBox.Size = new System.Drawing.Size(233, 23);
             this.nOMBRE_MEDICOComboBox.TabIndex = 27;
@@ -416,7 +420,7 @@ namespace _1ParcialJP
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(1086, 143);
+            this.btnEliminar.Location = new System.Drawing.Point(1079, 134);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(60, 60);
             this.btnEliminar.TabIndex = 24;
@@ -428,7 +432,7 @@ namespace _1ParcialJP
             this.btnGguardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGguardar.BackgroundImage")));
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGguardar.Enabled = false;
-            this.btnGguardar.Location = new System.Drawing.Point(1086, 78);
+            this.btnGguardar.Location = new System.Drawing.Point(1079, 69);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(60, 59);
             this.btnGguardar.TabIndex = 23;
@@ -439,7 +443,7 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(849, 170);
+            this.button2.Location = new System.Drawing.Point(842, 161);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 45);
             this.button2.TabIndex = 19;
@@ -448,7 +452,7 @@ namespace _1ParcialJP
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(275, 192);
+            this.txtsearch.Location = new System.Drawing.Point(268, 183);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(421, 22);
             this.txtsearch.TabIndex = 18;
@@ -465,7 +469,7 @@ namespace _1ParcialJP
             "MEDICAMENTOS",
             "ESTADO",
             "FECHA"});
-            this.selectsearch.Location = new System.Drawing.Point(15, 192);
+            this.selectsearch.Location = new System.Drawing.Point(8, 183);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(254, 23);
             this.selectsearch.TabIndex = 17;
@@ -477,46 +481,73 @@ namespace _1ParcialJP
             this.txtfecha.CustomFormat = "dd-MM-yyyy";
             this.txtfecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "FECHA", true));
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha.Location = new System.Drawing.Point(702, 192);
+            this.txtfecha.Location = new System.Drawing.Point(695, 183);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(140, 22);
             this.txtfecha.TabIndex = 28;
             this.txtfecha.Value = new System.DateTime(2021, 2, 13, 0, 0, 0, 0);
             this.txtfecha.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtfecha);
+            this.groupBox1.Controls.Add(iD_VISITALabel);
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.eSTADOTextBox);
+            this.groupBox1.Controls.Add(this.nOMBRE_MEDICOComboBox);
+            this.groupBox1.Controls.Add(eSTADOLabel);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.rECOMENDACIONESTextBox);
+            this.groupBox1.Controls.Add(this.CBXPACIENTE);
+            this.groupBox1.Controls.Add(rECOMENDACIONESLabel);
+            this.groupBox1.Controls.Add(this.txtsearch);
+            this.groupBox1.Controls.Add(this.mEDICAMENTOSTextBox);
+            this.groupBox1.Controls.Add(this.selectsearch);
+            this.groupBox1.Controls.Add(mEDICAMENTOSLabel);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.sINTOMASTextBox);
+            this.groupBox1.Controls.Add(this.btnGguardar);
+            this.groupBox1.Controls.Add(sINTOMASLabel);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(hORALabel);
+            this.groupBox1.Controls.Add(this.hORADateTimePicker);
+            this.groupBox1.Controls.Add(this.fECHADateTimePicker);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(fECHALabel);
+            this.groupBox1.Controls.Add(nOMBRE_PACIENTELabel);
+            this.groupBox1.Controls.Add(this.iD_VISITATextBox);
+            this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1146, 497);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Visitas";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(1437, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 30;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmVisitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1170, 510);
-            this.Controls.Add(this.txtfecha);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.nOMBRE_MEDICOComboBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.CBXPACIENTE);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.selectsearch);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.hORADateTimePicker);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(iD_VISITALabel);
-            this.Controls.Add(this.iD_VISITATextBox);
-            this.Controls.Add(nOMBRE_MEDICOLabel);
-            this.Controls.Add(nOMBRE_PACIENTELabel);
-            this.Controls.Add(fECHALabel);
-            this.Controls.Add(this.fECHADateTimePicker);
-            this.Controls.Add(hORALabel);
-            this.Controls.Add(sINTOMASLabel);
-            this.Controls.Add(this.sINTOMASTextBox);
-            this.Controls.Add(mEDICAMENTOSLabel);
-            this.Controls.Add(this.mEDICAMENTOSTextBox);
-            this.Controls.Add(rECOMENDACIONESLabel);
-            this.Controls.Add(this.rECOMENDACIONESTextBox);
-            this.Controls.Add(eSTADOLabel);
-            this.Controls.Add(this.eSTADOTextBox);
+            this.ClientSize = new System.Drawing.Size(1487, 510);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVisitas";
@@ -527,8 +558,9 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.vISITABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vISITADataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -565,5 +597,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
         private System.Windows.Forms.DateTimePicker txtfecha;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button3;
     }
 }

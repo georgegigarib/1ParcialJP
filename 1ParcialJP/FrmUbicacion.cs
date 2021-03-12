@@ -35,12 +35,12 @@ namespace _1ParcialJP
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void FrmUbicacion_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -97,8 +97,8 @@ namespace _1ParcialJP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAUbicacion fmAUbicacion = new FrmAUbicacion();
-            fmAUbicacion.Show();
-            this.Hide();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmAUbicacion);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,6 +109,11 @@ namespace _1ParcialJP
             DataTable dt = Helper.DoQueryReceiverLimpio(command);
             uBICACIONDataGridView.DataSource = dt;
             uBICACIONDataGridView.Refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

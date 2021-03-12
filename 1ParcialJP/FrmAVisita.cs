@@ -26,6 +26,7 @@ namespace _1ParcialJP
         private void FrmAVisita_Load(object sender, EventArgs e)
         {
             fECHADateTimePicker.MaxDate = DateTime.Now;
+            this.ControlBox = false;
             try
             {
                 nOMBRE_MEDICOComboBox.Items.Clear();
@@ -87,8 +88,13 @@ namespace _1ParcialJP
         private void FrmAVisita_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmVisitas fmvisitas = new FrmVisitas();
-            fmvisitas.Show();
-            this.Hide();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmvisitas);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

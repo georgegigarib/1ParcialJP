@@ -42,6 +42,7 @@ namespace _1ParcialJP
 
         private void FrmAMedicamento_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
             try
             {
                 CBXUbicacion.Items.Clear();
@@ -89,9 +90,13 @@ namespace _1ParcialJP
         private void FrmAMedicamento_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMedicamento fmmedico = new FrmMedicamento();
-            fmmedico.Show();
+            FrmMenu fmmenu = new FrmMenu();
+            fmmenu.abrirForm(fmmedico);
         }
 
-      
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

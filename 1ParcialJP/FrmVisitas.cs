@@ -33,6 +33,7 @@ namespace _1ParcialJP
         private void FrmVisitas_Load(object sender, EventArgs e)
         {
             selectsearch.SelectedIndex = 0;
+            this.ControlBox = false;
             try
             {
                 nOMBRE_MEDICOComboBox.Items.Clear();
@@ -63,8 +64,6 @@ namespace _1ParcialJP
 
         private void FrmVisitas_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
         }
         private DataTable combolista(string id, string tabla)
         {
@@ -120,8 +119,8 @@ namespace _1ParcialJP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAVisita fmAVisita = new FrmAVisita();
-            fmAVisita.Show();
-            this.Hide();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmAVisita);
         }
 
       
@@ -172,6 +171,11 @@ namespace _1ParcialJP
             mEDICAMENTOSTextBox.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
             rECOMENDACIONESTextBox.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
             eSTADOTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

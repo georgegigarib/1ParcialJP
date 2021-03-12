@@ -67,6 +67,8 @@ namespace _1ParcialJP
             this.btnGguardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             iD_MEDICAMENTOLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
@@ -80,12 +82,13 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uBICACIONBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // iD_MEDICAMENTOLabel
             // 
             iD_MEDICAMENTOLabel.AutoSize = true;
-            iD_MEDICAMENTOLabel.Location = new System.Drawing.Point(19, 17);
+            iD_MEDICAMENTOLabel.Location = new System.Drawing.Point(30, 24);
             iD_MEDICAMENTOLabel.Name = "iD_MEDICAMENTOLabel";
             iD_MEDICAMENTOLabel.Size = new System.Drawing.Size(121, 15);
             iD_MEDICAMENTOLabel.TabIndex = 2;
@@ -94,7 +97,7 @@ namespace _1ParcialJP
             // dESCRIPCIONLabel
             // 
             dESCRIPCIONLabel.AutoSize = true;
-            dESCRIPCIONLabel.Location = new System.Drawing.Point(19, 54);
+            dESCRIPCIONLabel.Location = new System.Drawing.Point(30, 61);
             dESCRIPCIONLabel.Name = "dESCRIPCIONLabel";
             dESCRIPCIONLabel.Size = new System.Drawing.Size(90, 15);
             dESCRIPCIONLabel.TabIndex = 4;
@@ -103,7 +106,7 @@ namespace _1ParcialJP
             // iD_TFLabel
             // 
             iD_TFLabel.AutoSize = true;
-            iD_TFLabel.Location = new System.Drawing.Point(403, 18);
+            iD_TFLabel.Location = new System.Drawing.Point(414, 25);
             iD_TFLabel.Name = "iD_TFLabel";
             iD_TFLabel.Size = new System.Drawing.Size(104, 15);
             iD_TFLabel.TabIndex = 6;
@@ -112,7 +115,7 @@ namespace _1ParcialJP
             // iD_MARCALabel
             // 
             iD_MARCALabel.AutoSize = true;
-            iD_MARCALabel.Location = new System.Drawing.Point(403, 56);
+            iD_MARCALabel.Location = new System.Drawing.Point(414, 63);
             iD_MARCALabel.Name = "iD_MARCALabel";
             iD_MARCALabel.Size = new System.Drawing.Size(58, 15);
             iD_MARCALabel.TabIndex = 8;
@@ -121,7 +124,7 @@ namespace _1ParcialJP
             // iD_UBBICACIONLabel
             // 
             iD_UBBICACIONLabel.AutoSize = true;
-            iD_UBBICACIONLabel.Location = new System.Drawing.Point(403, 96);
+            iD_UBBICACIONLabel.Location = new System.Drawing.Point(414, 103);
             iD_UBBICACIONLabel.Name = "iD_UBBICACIONLabel";
             iD_UBBICACIONLabel.Size = new System.Drawing.Size(79, 15);
             iD_UBBICACIONLabel.TabIndex = 10;
@@ -130,7 +133,7 @@ namespace _1ParcialJP
             // dOSISLabel
             // 
             dOSISLabel.AutoSize = true;
-            dOSISLabel.Location = new System.Drawing.Point(19, 95);
+            dOSISLabel.Location = new System.Drawing.Point(30, 102);
             dOSISLabel.Name = "dOSISLabel";
             dOSISLabel.Size = new System.Drawing.Size(46, 15);
             dOSISLabel.TabIndex = 12;
@@ -139,7 +142,7 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(19, 136);
+            eSTADOLabel.Location = new System.Drawing.Point(30, 143);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 14;
@@ -148,7 +151,7 @@ namespace _1ParcialJP
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(19, 173);
+            label1.Location = new System.Drawing.Point(30, 180);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(140, 15);
             label1.TabIndex = 27;
@@ -238,7 +241,7 @@ namespace _1ParcialJP
             // iD_MEDICAMENTOTextBox
             // 
             this.iD_MEDICAMENTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICAMENTOBindingSource, "ID_MEDICAMENTO", true));
-            this.iD_MEDICAMENTOTextBox.Location = new System.Drawing.Point(147, 14);
+            this.iD_MEDICAMENTOTextBox.Location = new System.Drawing.Point(158, 21);
             this.iD_MEDICAMENTOTextBox.Name = "iD_MEDICAMENTOTextBox";
             this.iD_MEDICAMENTOTextBox.ReadOnly = true;
             this.iD_MEDICAMENTOTextBox.Size = new System.Drawing.Size(226, 22);
@@ -247,7 +250,7 @@ namespace _1ParcialJP
             // dESCRIPCIONTextBox
             // 
             this.dESCRIPCIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICAMENTOBindingSource, "DESCRIPCION", true));
-            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(147, 51);
+            this.dESCRIPCIONTextBox.Location = new System.Drawing.Point(158, 58);
             this.dESCRIPCIONTextBox.Name = "dESCRIPCIONTextBox";
             this.dESCRIPCIONTextBox.Size = new System.Drawing.Size(226, 22);
             this.dESCRIPCIONTextBox.TabIndex = 5;
@@ -255,7 +258,7 @@ namespace _1ParcialJP
             // dOSISTextBox
             // 
             this.dOSISTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICAMENTOBindingSource, "DOSIS", true));
-            this.dOSISTextBox.Location = new System.Drawing.Point(147, 91);
+            this.dOSISTextBox.Location = new System.Drawing.Point(158, 98);
             this.dOSISTextBox.Name = "dOSISTextBox";
             this.dOSISTextBox.Size = new System.Drawing.Size(226, 22);
             this.dOSISTextBox.TabIndex = 13;
@@ -270,7 +273,7 @@ namespace _1ParcialJP
             "DESCONTINUADO",
             "AGOTADO",
             "NO DISPONIBLE"});
-            this.eSTADOComboBox.Location = new System.Drawing.Point(147, 133);
+            this.eSTADOComboBox.Location = new System.Drawing.Point(158, 140);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(226, 23);
             this.eSTADOComboBox.TabIndex = 19;
@@ -278,7 +281,7 @@ namespace _1ParcialJP
             // panel1
             // 
             this.panel1.Controls.Add(this.mEDICAMENTODataGridView);
-            this.panel1.Location = new System.Drawing.Point(11, 232);
+            this.panel1.Location = new System.Drawing.Point(22, 239);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(888, 312);
             this.panel1.TabIndex = 20;
@@ -287,7 +290,7 @@ namespace _1ParcialJP
             // 
             this.CBXUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXUbicacion.FormattingEnabled = true;
-            this.CBXUbicacion.Location = new System.Drawing.Point(531, 92);
+            this.CBXUbicacion.Location = new System.Drawing.Point(540, 102);
             this.CBXUbicacion.Name = "CBXUbicacion";
             this.CBXUbicacion.Size = new System.Drawing.Size(230, 23);
             this.CBXUbicacion.TabIndex = 21;
@@ -321,7 +324,7 @@ namespace _1ParcialJP
             // 
             this.CBXMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXMarca.FormattingEnabled = true;
-            this.CBXMarca.Location = new System.Drawing.Point(531, 51);
+            this.CBXMarca.Location = new System.Drawing.Point(540, 61);
             this.CBXMarca.Name = "CBXMarca";
             this.CBXMarca.Size = new System.Drawing.Size(230, 23);
             this.CBXMarca.TabIndex = 22;
@@ -330,14 +333,14 @@ namespace _1ParcialJP
             // 
             this.CBXtipoFarmaco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXtipoFarmaco.FormattingEnabled = true;
-            this.CBXtipoFarmaco.Location = new System.Drawing.Point(531, 12);
+            this.CBXtipoFarmaco.Location = new System.Drawing.Point(540, 22);
             this.CBXtipoFarmaco.Name = "CBXtipoFarmaco";
             this.CBXtipoFarmaco.Size = new System.Drawing.Size(230, 23);
             this.CBXtipoFarmaco.TabIndex = 23;
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(279, 193);
+            this.txtsearch.Location = new System.Drawing.Point(290, 200);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(369, 22);
             this.txtsearch.TabIndex = 25;
@@ -353,7 +356,7 @@ namespace _1ParcialJP
             "ID_TF",
             "ID_MARCA",
             "ID_UBICACION"});
-            this.selectsearch.Location = new System.Drawing.Point(9, 192);
+            this.selectsearch.Location = new System.Drawing.Point(20, 199);
             this.selectsearch.Name = "selectsearch";
             this.selectsearch.Size = new System.Drawing.Size(251, 23);
             this.selectsearch.TabIndex = 24;
@@ -362,7 +365,8 @@ namespace _1ParcialJP
             // 
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(837, 151);
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Location = new System.Drawing.Point(848, 158);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(62, 58);
             this.btnEliminar.TabIndex = 18;
@@ -373,7 +377,8 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(837, 86);
+            this.btnGguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGguardar.Location = new System.Drawing.Point(848, 93);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(62, 59);
             this.btnGguardar.TabIndex = 17;
@@ -384,7 +389,8 @@ namespace _1ParcialJP
             // 
             this.button1.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(837, 20);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(848, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 59);
             this.button1.TabIndex = 16;
@@ -395,46 +401,72 @@ namespace _1ParcialJP
             // 
             this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(654, 173);
+            this.button2.Location = new System.Drawing.Point(665, 180);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(43, 42);
             this.button2.TabIndex = 26;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.iD_MEDICAMENTOTextBox);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(eSTADOLabel);
+            this.groupBox1.Controls.Add(this.txtsearch);
+            this.groupBox1.Controls.Add(this.dOSISTextBox);
+            this.groupBox1.Controls.Add(this.selectsearch);
+            this.groupBox1.Controls.Add(dOSISLabel);
+            this.groupBox1.Controls.Add(this.CBXtipoFarmaco);
+            this.groupBox1.Controls.Add(iD_UBBICACIONLabel);
+            this.groupBox1.Controls.Add(this.CBXMarca);
+            this.groupBox1.Controls.Add(iD_MARCALabel);
+            this.groupBox1.Controls.Add(this.CBXUbicacion);
+            this.groupBox1.Controls.Add(iD_TFLabel);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.dESCRIPCIONTextBox);
+            this.groupBox1.Controls.Add(this.eSTADOComboBox);
+            this.groupBox1.Controls.Add(dESCRIPCIONLabel);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(iD_MEDICAMENTOLabel);
+            this.groupBox1.Controls.Add(this.btnGguardar);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(919, 563);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Medicamentos";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(1210, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 29;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(910, 556);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtsearch);
-            this.Controls.Add(this.selectsearch);
-            this.Controls.Add(this.CBXtipoFarmaco);
-            this.Controls.Add(this.CBXMarca);
-            this.Controls.Add(this.CBXUbicacion);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.eSTADOComboBox);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(iD_MEDICAMENTOLabel);
-            this.Controls.Add(this.iD_MEDICAMENTOTextBox);
-            this.Controls.Add(dESCRIPCIONLabel);
-            this.Controls.Add(this.dESCRIPCIONTextBox);
-            this.Controls.Add(iD_TFLabel);
-            this.Controls.Add(iD_MARCALabel);
-            this.Controls.Add(iD_UBBICACIONLabel);
-            this.Controls.Add(dOSISLabel);
-            this.Controls.Add(this.dOSISTextBox);
-            this.Controls.Add(eSTADOLabel);
+            this.ClientSize = new System.Drawing.Size(1309, 584);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMedicamento";
             this.Text = "Medicamentos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMedicamento_FormClosed);
             this.Load += new System.EventHandler(this.FrmMedicamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mEDICAMENTODataGridView)).EndInit();
@@ -442,8 +474,9 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uBICACIONBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -477,5 +510,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

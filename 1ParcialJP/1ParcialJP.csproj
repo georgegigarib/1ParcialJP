@@ -324,6 +324,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\x-png-33.png" />
+    <None Include="Resources\1362420-png-red-cross-png-260_260.png" />
+    <None Include="Resources\red-go-back-arrow.png" />
     <None Include="Resources\PinClipart.com_menu-clip-art_5328945.png" />
     <None Include="Resources\user_no_photo_300x3002.png" />
     <None Include="Resources\user_no_photo_300x3001.png" />

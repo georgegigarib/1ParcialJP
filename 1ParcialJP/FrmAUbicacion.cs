@@ -20,12 +20,14 @@ namespace _1ParcialJP
         private void FrmAUbicacion_Load(object sender, EventArgs e)
         {
             eSTADOComboBox.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void FrmAUbicacion_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmUbicacion fmUbicacion = new FrmUbicacion();
-            fmUbicacion.Show();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmUbicacion);
         }
 
         private void btnGguardar_Click_1(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace _1ParcialJP
             {
                 MessageBox.Show("Error al guardar registro: " + er);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

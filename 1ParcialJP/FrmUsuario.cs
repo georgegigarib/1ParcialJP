@@ -36,21 +36,20 @@ namespace _1ParcialJP
         }
         private void FrmUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMenu menu = new FrmMenu();
-            menu.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmRegistro fmregistro = new FrmRegistro();
-            fmregistro.Show();
-            this.Hide();
+            FrmMenu menu = new FrmMenu();
+            menu.abrirForm(fmregistro);
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
+            this.ControlBox = false;
         }
 
         private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +106,9 @@ namespace _1ParcialJP
             dataGridViewUsuario.Refresh();
         }
 
-      
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

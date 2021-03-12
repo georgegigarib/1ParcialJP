@@ -13,60 +13,6 @@ namespace _1ParcialJP
    public class Helper
     {
         
-        public static DataTable DoQueryReceiver(string query)
-        {
-
-            SqlConnection con = new SqlConnection();
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-            try
-            {
-                con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
-                con.Open();
-                //query
-                da = new SqlDataAdapter(query, con);
-                da.Fill(dt);
-            }
-
-            catch (Exception er)
-            {
-                MessageBox.Show("Error al conectar con la base de datos: " + er);
-            }
-
-            finally
-            {
-                con.Close();
-            }
-            return dt;
-        }
-
-        public static void DoQueryExecuter(string query)
-        {
-
-            SqlConnection con = new SqlConnection();
-            try
-            {
-                con = new SqlConnection("Data Source=GEORGEDESK\\SQLEXPRESS;Initial Catalog=PARCIALJP;Integrated Security=True");
-                con.Open();
-                //query
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-
-            }
-
-            catch (Exception er)
-            {
-
-                MessageBox.Show("Error al conectar con la base de datos: " + er);
-
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
         public static string GetSha3Hash(string texto)
         {
             try

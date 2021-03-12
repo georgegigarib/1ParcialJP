@@ -58,8 +58,7 @@ namespace _1ParcialJP
                                 {
                                     FrmUsuario fmusuario = new FrmUsuario();
                                     MessageBox.Show("Usuario registrado con exito ");
-                                    fmusuario.Show();
-                                    this.Hide();
+                                    this.Close();
                                 }
                                 else
                                 {
@@ -100,8 +99,9 @@ namespace _1ParcialJP
         {
             if (Program.tipo != "")
             {
-                FrmUsuario fmusuario = new FrmUsuario();
-                fmusuario.Show();
+                FrmMenu menu = new FrmMenu();
+                FrmUsuario usuario = new FrmUsuario();
+                menu.abrirForm(usuario);
             }
             else
             {
@@ -117,6 +117,10 @@ namespace _1ParcialJP
             if (Program.tipo != "A")
             {
                 GBTCU.Visible = false;
+            }
+            else
+            {
+                groupBox1.Location = new Point(273, 12);
             }
             cbxtipo.SelectedIndex = 0;
             cbxestado.SelectedIndex = 0;

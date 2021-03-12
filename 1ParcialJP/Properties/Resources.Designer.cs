@@ -73,6 +73,16 @@ namespace _1ParcialJP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1362420_png_red_cross_png_260_260 {
+            get {
+                object obj = ResourceManager.GetObject("1362420-png-red-cross-png-260_260", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _172ddc045ae1707a415adeae0543a5f0_icono_de_trazo_de_color_del_paciente_by_vexels {
             get {
                 object obj = ResourceManager.GetObject("172ddc045ae1707a415adeae0543a5f0-icono-de-trazo-de-color-del-paciente-by-vexels", resourceCulture);
@@ -184,6 +194,16 @@ namespace _1ParcialJP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap red_go_back_arrow {
+            get {
+                object obj = ResourceManager.GetObject("red-go-back-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_icon {
             get {
                 object obj = ResourceManager.GetObject("save-icon", resourceCulture);
@@ -267,6 +287,16 @@ namespace _1ParcialJP.Properties {
         internal static System.Drawing.Bitmap user_no_photo_300x3002 {
             get {
                 object obj = ResourceManager.GetObject("user_no_photo_300x3002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_png_33 {
+            get {
+                object obj = ResourceManager.GetObject("x-png-33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

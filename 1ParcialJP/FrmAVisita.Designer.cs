@@ -47,6 +47,8 @@ namespace _1ParcialJP
             this.rECOMENDACIONESTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOTextBox = new System.Windows.Forms.TextBox();
             this.btnGguardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
             fECHALabel = new System.Windows.Forms.Label();
@@ -55,12 +57,13 @@ namespace _1ParcialJP
             mEDICAMENTOSLabel = new System.Windows.Forms.Label();
             rECOMENDACIONESLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nOMBRE_MEDICOLabel
             // 
             nOMBRE_MEDICOLabel.AutoSize = true;
-            nOMBRE_MEDICOLabel.Location = new System.Drawing.Point(19, 24);
+            nOMBRE_MEDICOLabel.Location = new System.Drawing.Point(16, 26);
             nOMBRE_MEDICOLabel.Name = "nOMBRE_MEDICOLabel";
             nOMBRE_MEDICOLabel.Size = new System.Drawing.Size(115, 15);
             nOMBRE_MEDICOLabel.TabIndex = 30;
@@ -69,7 +72,7 @@ namespace _1ParcialJP
             // nOMBRE_PACIENTELabel
             // 
             nOMBRE_PACIENTELabel.AutoSize = true;
-            nOMBRE_PACIENTELabel.Location = new System.Drawing.Point(19, 58);
+            nOMBRE_PACIENTELabel.Location = new System.Drawing.Point(16, 60);
             nOMBRE_PACIENTELabel.Name = "nOMBRE_PACIENTELabel";
             nOMBRE_PACIENTELabel.Size = new System.Drawing.Size(125, 15);
             nOMBRE_PACIENTELabel.TabIndex = 31;
@@ -78,7 +81,7 @@ namespace _1ParcialJP
             // fECHALabel
             // 
             fECHALabel.AutoSize = true;
-            fECHALabel.Location = new System.Drawing.Point(19, 137);
+            fECHALabel.Location = new System.Drawing.Point(16, 139);
             fECHALabel.Name = "fECHALabel";
             fECHALabel.Size = new System.Drawing.Size(51, 15);
             fECHALabel.TabIndex = 32;
@@ -87,7 +90,7 @@ namespace _1ParcialJP
             // hORALabel
             // 
             hORALabel.AutoSize = true;
-            hORALabel.Location = new System.Drawing.Point(19, 167);
+            hORALabel.Location = new System.Drawing.Point(16, 169);
             hORALabel.Name = "hORALabel";
             hORALabel.Size = new System.Drawing.Size(46, 15);
             hORALabel.TabIndex = 34;
@@ -96,7 +99,7 @@ namespace _1ParcialJP
             // sINTOMASLabel
             // 
             sINTOMASLabel.AutoSize = true;
-            sINTOMASLabel.Location = new System.Drawing.Point(19, 199);
+            sINTOMASLabel.Location = new System.Drawing.Point(16, 201);
             sINTOMASLabel.Name = "sINTOMASLabel";
             sINTOMASLabel.Size = new System.Drawing.Size(76, 15);
             sINTOMASLabel.TabIndex = 35;
@@ -105,7 +108,7 @@ namespace _1ParcialJP
             // mEDICAMENTOSLabel
             // 
             mEDICAMENTOSLabel.AutoSize = true;
-            mEDICAMENTOSLabel.Location = new System.Drawing.Point(21, 370);
+            mEDICAMENTOSLabel.Location = new System.Drawing.Point(18, 372);
             mEDICAMENTOSLabel.Name = "mEDICAMENTOSLabel";
             mEDICAMENTOSLabel.Size = new System.Drawing.Size(112, 15);
             mEDICAMENTOSLabel.TabIndex = 37;
@@ -114,7 +117,7 @@ namespace _1ParcialJP
             // rECOMENDACIONESLabel
             // 
             rECOMENDACIONESLabel.AutoSize = true;
-            rECOMENDACIONESLabel.Location = new System.Drawing.Point(19, 283);
+            rECOMENDACIONESLabel.Location = new System.Drawing.Point(16, 285);
             rECOMENDACIONESLabel.Name = "rECOMENDACIONESLabel";
             rECOMENDACIONESLabel.Size = new System.Drawing.Size(133, 15);
             rECOMENDACIONESLabel.TabIndex = 39;
@@ -123,7 +126,7 @@ namespace _1ParcialJP
             // eSTADOLabel
             // 
             eSTADOLabel.AutoSize = true;
-            eSTADOLabel.Location = new System.Drawing.Point(19, 95);
+            eSTADOLabel.Location = new System.Drawing.Point(16, 97);
             eSTADOLabel.Name = "eSTADOLabel";
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 41;
@@ -133,7 +136,7 @@ namespace _1ParcialJP
             // 
             this.nOMBRE_MEDICOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nOMBRE_MEDICOComboBox.FormattingEnabled = true;
-            this.nOMBRE_MEDICOComboBox.Location = new System.Drawing.Point(164, 21);
+            this.nOMBRE_MEDICOComboBox.Location = new System.Drawing.Point(161, 23);
             this.nOMBRE_MEDICOComboBox.Name = "nOMBRE_MEDICOComboBox";
             this.nOMBRE_MEDICOComboBox.Size = new System.Drawing.Size(233, 23);
             this.nOMBRE_MEDICOComboBox.TabIndex = 46;
@@ -142,7 +145,7 @@ namespace _1ParcialJP
             // 
             this.CBXPACIENTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBXPACIENTE.FormattingEnabled = true;
-            this.CBXPACIENTE.Location = new System.Drawing.Point(164, 54);
+            this.CBXPACIENTE.Location = new System.Drawing.Point(161, 56);
             this.CBXPACIENTE.Name = "CBXPACIENTE";
             this.CBXPACIENTE.Size = new System.Drawing.Size(233, 23);
             this.CBXPACIENTE.TabIndex = 45;
@@ -151,7 +154,7 @@ namespace _1ParcialJP
             // 
             this.hORADateTimePicker.CustomFormat = "hh-mm-ss";
             this.hORADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.hORADateTimePicker.Location = new System.Drawing.Point(164, 159);
+            this.hORADateTimePicker.Location = new System.Drawing.Point(161, 161);
             this.hORADateTimePicker.Name = "hORADateTimePicker";
             this.hORADateTimePicker.ShowUpDown = true;
             this.hORADateTimePicker.Size = new System.Drawing.Size(140, 22);
@@ -161,7 +164,7 @@ namespace _1ParcialJP
             // 
             this.fECHADateTimePicker.CustomFormat = "dd-MM-yyyy";
             this.fECHADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fECHADateTimePicker.Location = new System.Drawing.Point(164, 129);
+            this.fECHADateTimePicker.Location = new System.Drawing.Point(161, 131);
             this.fECHADateTimePicker.Name = "fECHADateTimePicker";
             this.fECHADateTimePicker.Size = new System.Drawing.Size(140, 22);
             this.fECHADateTimePicker.TabIndex = 33;
@@ -169,7 +172,7 @@ namespace _1ParcialJP
             // 
             // sINTOMASTextBox
             // 
-            this.sINTOMASTextBox.Location = new System.Drawing.Point(164, 196);
+            this.sINTOMASTextBox.Location = new System.Drawing.Point(161, 198);
             this.sINTOMASTextBox.MaxLength = 2000;
             this.sINTOMASTextBox.Multiline = true;
             this.sINTOMASTextBox.Name = "sINTOMASTextBox";
@@ -178,7 +181,7 @@ namespace _1ParcialJP
             // 
             // mEDICAMENTOSTextBox
             // 
-            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(164, 367);
+            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(161, 369);
             this.mEDICAMENTOSTextBox.MaxLength = 200;
             this.mEDICAMENTOSTextBox.Multiline = true;
             this.mEDICAMENTOSTextBox.Name = "mEDICAMENTOSTextBox";
@@ -187,7 +190,7 @@ namespace _1ParcialJP
             // 
             // rECOMENDACIONESTextBox
             // 
-            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(164, 279);
+            this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(161, 281);
             this.rECOMENDACIONESTextBox.MaxLength = 200;
             this.rECOMENDACIONESTextBox.Multiline = true;
             this.rECOMENDACIONESTextBox.Name = "rECOMENDACIONESTextBox";
@@ -196,7 +199,7 @@ namespace _1ParcialJP
             // 
             // eSTADOTextBox
             // 
-            this.eSTADOTextBox.Location = new System.Drawing.Point(164, 91);
+            this.eSTADOTextBox.Location = new System.Drawing.Point(161, 93);
             this.eSTADOTextBox.MaxLength = 20;
             this.eSTADOTextBox.Name = "eSTADOTextBox";
             this.eSTADOTextBox.Size = new System.Drawing.Size(233, 22);
@@ -206,44 +209,73 @@ namespace _1ParcialJP
             // 
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGguardar.Location = new System.Drawing.Point(421, 393);
+            this.btnGguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGguardar.Location = new System.Drawing.Point(418, 395);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(69, 68);
             this.btnGguardar.TabIndex = 47;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnGguardar);
+            this.groupBox1.Controls.Add(this.eSTADOTextBox);
+            this.groupBox1.Controls.Add(this.nOMBRE_MEDICOComboBox);
+            this.groupBox1.Controls.Add(eSTADOLabel);
+            this.groupBox1.Controls.Add(this.CBXPACIENTE);
+            this.groupBox1.Controls.Add(this.rECOMENDACIONESTextBox);
+            this.groupBox1.Controls.Add(this.hORADateTimePicker);
+            this.groupBox1.Controls.Add(rECOMENDACIONESLabel);
+            this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
+            this.groupBox1.Controls.Add(this.mEDICAMENTOSTextBox);
+            this.groupBox1.Controls.Add(nOMBRE_PACIENTELabel);
+            this.groupBox1.Controls.Add(mEDICAMENTOSLabel);
+            this.groupBox1.Controls.Add(fECHALabel);
+            this.groupBox1.Controls.Add(this.sINTOMASTextBox);
+            this.groupBox1.Controls.Add(this.fECHADateTimePicker);
+            this.groupBox1.Controls.Add(sINTOMASLabel);
+            this.groupBox1.Controls.Add(hORALabel);
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(499, 473);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registrar Visita";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(800, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 49;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FrmAVisita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(502, 473);
-            this.Controls.Add(this.btnGguardar);
-            this.Controls.Add(this.nOMBRE_MEDICOComboBox);
-            this.Controls.Add(this.CBXPACIENTE);
-            this.Controls.Add(this.hORADateTimePicker);
-            this.Controls.Add(nOMBRE_MEDICOLabel);
-            this.Controls.Add(nOMBRE_PACIENTELabel);
-            this.Controls.Add(fECHALabel);
-            this.Controls.Add(this.fECHADateTimePicker);
-            this.Controls.Add(hORALabel);
-            this.Controls.Add(sINTOMASLabel);
-            this.Controls.Add(this.sINTOMASTextBox);
-            this.Controls.Add(mEDICAMENTOSLabel);
-            this.Controls.Add(this.mEDICAMENTOSTextBox);
-            this.Controls.Add(rECOMENDACIONESLabel);
-            this.Controls.Add(this.rECOMENDACIONESTextBox);
-            this.Controls.Add(eSTADOLabel);
-            this.Controls.Add(this.eSTADOTextBox);
+            this.ClientSize = new System.Drawing.Size(1161, 603);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAVisita";
             this.Text = "Registrar Visita";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAVisita_FormClosed);
             this.Load += new System.EventHandler(this.FrmAVisita_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -258,5 +290,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox rECOMENDACIONESTextBox;
         private System.Windows.Forms.TextBox eSTADOTextBox;
         private System.Windows.Forms.Button btnGguardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
