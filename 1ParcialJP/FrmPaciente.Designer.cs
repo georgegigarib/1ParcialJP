@@ -185,7 +185,7 @@ namespace _1ParcialJP
             this.pACIENTEDataGridView.Location = new System.Drawing.Point(0, 0);
             this.pACIENTEDataGridView.Name = "pACIENTEDataGridView";
             this.pACIENTEDataGridView.ReadOnly = true;
-            this.pACIENTEDataGridView.Size = new System.Drawing.Size(791, 268);
+            this.pACIENTEDataGridView.Size = new System.Drawing.Size(791, 323);
             this.pACIENTEDataGridView.TabIndex = 1;
             this.pACIENTEDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pACIENTEDataGridView_CellContentClick_1);
             // 
@@ -244,7 +244,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.pACIENTEDataGridView);
             this.panel1.Location = new System.Drawing.Point(20, 242);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(791, 268);
+            this.panel1.Size = new System.Drawing.Size(791, 323);
             this.panel1.TabIndex = 2;
             // 
             // iD_PACIENTETextBox
@@ -402,7 +402,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(iD_PACIENTELabel);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(819, 518);
+            this.groupBox1.Size = new System.Drawing.Size(819, 571);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pacientes";

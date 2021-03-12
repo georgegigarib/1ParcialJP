@@ -143,7 +143,7 @@ namespace _1ParcialJP
             this.tIPO_FARMACODataGridView.Location = new System.Drawing.Point(0, 0);
             this.tIPO_FARMACODataGridView.Name = "tIPO_FARMACODataGridView";
             this.tIPO_FARMACODataGridView.ReadOnly = true;
-            this.tIPO_FARMACODataGridView.Size = new System.Drawing.Size(425, 268);
+            this.tIPO_FARMACODataGridView.Size = new System.Drawing.Size(425, 306);
             this.tIPO_FARMACODataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -192,7 +192,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.tIPO_FARMACODataGridView);
             this.panel1.Location = new System.Drawing.Point(18, 259);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 268);
+            this.panel1.Size = new System.Drawing.Size(425, 306);
             this.panel1.TabIndex = 8;
             // 
             // btnEliminar
@@ -291,7 +291,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(467, 544);
+            this.groupBox1.Size = new System.Drawing.Size(467, 571);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Farmaco";

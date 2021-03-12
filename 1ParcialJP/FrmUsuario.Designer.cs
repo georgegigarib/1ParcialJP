@@ -214,17 +214,20 @@ namespace _1ParcialJP
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(554, 250);
+            this.groupBox1.Size = new System.Drawing.Size(554, 327);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
             // dataGridViewUsuario
             // 
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuario.Location = new System.Drawing.Point(5, 10);
+            this.dataGridViewUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewUsuario.Location = new System.Drawing.Point(4, 19);
             this.dataGridViewUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
-            this.dataGridViewUsuario.Size = new System.Drawing.Size(541, 232);
+            this.dataGridViewUsuario.ReadOnly = true;
+            this.dataGridViewUsuario.Size = new System.Drawing.Size(546, 304);
             this.dataGridViewUsuario.TabIndex = 0;
             this.dataGridViewUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuario_CellContentClick);
             // 
@@ -272,7 +275,7 @@ namespace _1ParcialJP
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Location = new System.Drawing.Point(273, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(561, 478);
+            this.groupBox2.Size = new System.Drawing.Size(561, 571);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Usuarios";

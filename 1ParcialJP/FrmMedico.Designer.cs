@@ -185,7 +185,7 @@ namespace _1ParcialJP
             this.mEDICODataGridView.Location = new System.Drawing.Point(0, 0);
             this.mEDICODataGridView.Name = "mEDICODataGridView";
             this.mEDICODataGridView.ReadOnly = true;
-            this.mEDICODataGridView.Size = new System.Drawing.Size(766, 254);
+            this.mEDICODataGridView.Size = new System.Drawing.Size(766, 297);
             this.mEDICODataGridView.TabIndex = 1;
             this.mEDICODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICODataGridView_CellContentClick);
             // 
@@ -240,7 +240,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.mEDICODataGridView);
             this.panel1.Location = new System.Drawing.Point(16, 267);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 254);
+            this.panel1.Size = new System.Drawing.Size(766, 297);
             this.panel1.TabIndex = 2;
             // 
             // iD_MEDICOTextBox
@@ -397,7 +397,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.iD_MEDICOTextBox);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(801, 543);
+            this.groupBox1.Size = new System.Drawing.Size(801, 571);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medicos";
@@ -423,7 +423,7 @@ namespace _1ParcialJP
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1238, 567);
+            this.ClientSize = new System.Drawing.Size(1238, 588);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);

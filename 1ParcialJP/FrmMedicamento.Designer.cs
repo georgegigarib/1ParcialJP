@@ -173,7 +173,8 @@ namespace _1ParcialJP
             this.mEDICAMENTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mEDICAMENTODataGridView.Location = new System.Drawing.Point(0, 0);
             this.mEDICAMENTODataGridView.Name = "mEDICAMENTODataGridView";
-            this.mEDICAMENTODataGridView.Size = new System.Drawing.Size(888, 312);
+            this.mEDICAMENTODataGridView.ReadOnly = true;
+            this.mEDICAMENTODataGridView.Size = new System.Drawing.Size(888, 321);
             this.mEDICAMENTODataGridView.TabIndex = 1;
             this.mEDICAMENTODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICAMENTODataGridView_CellContentClick_1);
             // 
@@ -192,6 +193,7 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn2.DataPropertyName = "DESCRIPCION";
             this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 112;
             // 
             // dataGridViewTextBoxColumn3
@@ -200,6 +202,7 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ID_TF";
             this.dataGridViewTextBoxColumn3.HeaderText = "TIPO_FARMACO";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // dataGridViewTextBoxColumn4
@@ -207,6 +210,7 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ID_MARCA";
             this.dataGridViewTextBoxColumn4.HeaderText = "MARCA";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -214,6 +218,7 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_UBBICACION";
             this.dataGridViewTextBoxColumn5.HeaderText = "ID_UBBICACION";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 129;
             // 
             // dataGridViewTextBoxColumn6
@@ -221,12 +226,14 @@ namespace _1ParcialJP
             this.dataGridViewTextBoxColumn6.DataPropertyName = "DOSIS";
             this.dataGridViewTextBoxColumn6.HeaderText = "DOSIS";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ESTADO";
             this.dataGridViewTextBoxColumn7.HeaderText = "ESTADO";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // mEDICAMENTOBindingSource
             // 
@@ -283,7 +290,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.mEDICAMENTODataGridView);
             this.panel1.Location = new System.Drawing.Point(22, 239);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(888, 312);
+            this.panel1.Size = new System.Drawing.Size(888, 321);
             this.panel1.TabIndex = 20;
             // 
             // CBXUbicacion
@@ -434,7 +441,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(919, 563);
+            this.groupBox1.Size = new System.Drawing.Size(919, 571);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medicamentos";

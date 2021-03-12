@@ -133,7 +133,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.mARCADataGridView);
             this.panel1.Location = new System.Drawing.Point(16, 270);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 231);
+            this.panel1.Size = new System.Drawing.Size(419, 295);
             this.panel1.TabIndex = 8;
             // 
             // mARCADataGridView
@@ -151,7 +151,7 @@ namespace _1ParcialJP
             this.mARCADataGridView.Location = new System.Drawing.Point(0, 0);
             this.mARCADataGridView.Name = "mARCADataGridView";
             this.mARCADataGridView.ReadOnly = true;
-            this.mARCADataGridView.Size = new System.Drawing.Size(419, 231);
+            this.mARCADataGridView.Size = new System.Drawing.Size(419, 295);
             this.mARCADataGridView.TabIndex = 0;
             this.mARCADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mARCADataGridView_CellContentClick_1);
             // 
@@ -248,7 +248,7 @@ namespace _1ParcialJP
             this.GBMarca.Controls.Add(this.btnGguardar);
             this.GBMarca.Location = new System.Drawing.Point(273, 12);
             this.GBMarca.Name = "GBMarca";
-            this.GBMarca.Size = new System.Drawing.Size(448, 508);
+            this.GBMarca.Size = new System.Drawing.Size(448, 571);
             this.GBMarca.TabIndex = 17;
             this.GBMarca.TabStop = false;
             this.GBMarca.Text = "Marcas";

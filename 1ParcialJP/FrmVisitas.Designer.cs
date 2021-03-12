@@ -232,7 +232,7 @@ namespace _1ParcialJP
             this.vISITADataGridView.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.vISITADataGridView.Size = new System.Drawing.Size(1132, 275);
+            this.vISITADataGridView.Size = new System.Drawing.Size(1132, 353);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick);
             // 
@@ -372,7 +372,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.vISITADataGridView);
             this.panel1.Location = new System.Drawing.Point(7, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 275);
+            this.panel1.Size = new System.Drawing.Size(1132, 353);
             this.panel1.TabIndex = 20;
             // 
             // hORADateTimePicker
@@ -390,7 +390,7 @@ namespace _1ParcialJP
             // 
             this.btnAgregar.BackgroundImage = global::_1ParcialJP.Properties.Resources.add_1_icon__flatastic_1_iconset__custom_icon_design_0;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(1079, 3);
+            this.btnAgregar.Location = new System.Drawing.Point(1079, 15);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(60, 60);
             this.btnAgregar.TabIndex = 22;
@@ -420,7 +420,7 @@ namespace _1ParcialJP
             this.btnEliminar.BackgroundImage = global::_1ParcialJP.Properties.Resources.unnamed__2_;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(1079, 134);
+            this.btnEliminar.Location = new System.Drawing.Point(1079, 146);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(60, 60);
             this.btnEliminar.TabIndex = 24;
@@ -432,7 +432,7 @@ namespace _1ParcialJP
             this.btnGguardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGguardar.BackgroundImage")));
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGguardar.Enabled = false;
-            this.btnGguardar.Location = new System.Drawing.Point(1079, 69);
+            this.btnGguardar.Location = new System.Drawing.Point(1079, 81);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(60, 59);
             this.btnGguardar.TabIndex = 23;
@@ -519,7 +519,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1146, 497);
+            this.groupBox1.Size = new System.Drawing.Size(1146, 571);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visitas";
@@ -545,7 +545,7 @@ namespace _1ParcialJP
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1487, 510);
+            this.ClientSize = new System.Drawing.Size(1487, 594);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);

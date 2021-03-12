@@ -186,7 +186,7 @@ namespace _1ParcialJP
             this.uBICACIONDataGridView.Location = new System.Drawing.Point(0, 0);
             this.uBICACIONDataGridView.Name = "uBICACIONDataGridView";
             this.uBICACIONDataGridView.ReadOnly = true;
-            this.uBICACIONDataGridView.Size = new System.Drawing.Size(709, 260);
+            this.uBICACIONDataGridView.Size = new System.Drawing.Size(709, 328);
             this.uBICACIONDataGridView.TabIndex = 1;
             this.uBICACIONDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick_1);
             // 
@@ -241,7 +241,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.uBICACIONDataGridView);
             this.panel1.Location = new System.Drawing.Point(5, 237);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 260);
+            this.panel1.Size = new System.Drawing.Size(709, 328);
             this.panel1.TabIndex = 2;
             // 
             // dESCRIPCIONTextBox
@@ -406,7 +406,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(dESCRIPCIONLabel);
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(737, 513);
+            this.groupBox1.Size = new System.Drawing.Size(737, 571);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ubicaciones";
