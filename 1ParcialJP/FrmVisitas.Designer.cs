@@ -517,7 +517,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(nOMBRE_PACIENTELabel);
             this.groupBox1.Controls.Add(this.iD_VISITATextBox);
             this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
-            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1146, 571);
             this.groupBox1.TabIndex = 29;
@@ -532,7 +532,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(1437, 12);
+            this.button3.Location = new System.Drawing.Point(1396, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);

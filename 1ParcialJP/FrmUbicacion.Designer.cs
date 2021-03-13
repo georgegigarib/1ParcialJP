@@ -404,7 +404,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(iD_UBICACIONLabel);
             this.groupBox1.Controls.Add(this.dESCRIPCIONTextBox);
             this.groupBox1.Controls.Add(dESCRIPCIONLabel);
-            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(737, 571);
             this.groupBox1.TabIndex = 25;
@@ -419,7 +419,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(1030, 12);
+            this.button3.Location = new System.Drawing.Point(978, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);

@@ -1,6 +1,7 @@
 ﻿
 namespace _1ParcialJP
 {
+
     partial class FrmAMedicamento
     {
         /// <summary>
@@ -195,7 +196,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(iD_MARCALabel);
             this.groupBox1.Controls.Add(dESCRIPCIONLabel);
             this.groupBox1.Controls.Add(iD_TFLabel);
-            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Location = new System.Drawing.Point(217, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(457, 251);
             this.groupBox1.TabIndex = 39;
@@ -210,7 +211,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(765, 12);
+            this.button3.Location = new System.Drawing.Point(698, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);
@@ -238,7 +239,7 @@ namespace _1ParcialJP
         }
 
         #endregion
-
+         
         private System.Windows.Forms.ComboBox CBXtipoFarmaco;
         private System.Windows.Forms.ComboBox CBXMarca;
         private System.Windows.Forms.ComboBox CBXUbicacion;

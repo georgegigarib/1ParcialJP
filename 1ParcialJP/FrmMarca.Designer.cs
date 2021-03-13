@@ -246,7 +246,7 @@ namespace _1ParcialJP
             this.GBMarca.Controls.Add(this.btnEliminar);
             this.GBMarca.Controls.Add(this.button1);
             this.GBMarca.Controls.Add(this.btnGguardar);
-            this.GBMarca.Location = new System.Drawing.Point(273, 12);
+            this.GBMarca.Location = new System.Drawing.Point(223, 12);
             this.GBMarca.Name = "GBMarca";
             this.GBMarca.Size = new System.Drawing.Size(448, 571);
             this.GBMarca.TabIndex = 17;
@@ -308,7 +308,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(741, 12);
+            this.button3.Location = new System.Drawing.Point(693, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);

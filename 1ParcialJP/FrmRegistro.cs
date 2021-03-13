@@ -120,7 +120,7 @@ namespace _1ParcialJP
             }
             else
             {
-                groupBox1.Location = new Point(273, 12);
+                groupBox1.Location = new Point(223, 12);
             }
             cbxtipo.SelectedIndex = 0;
             cbxestado.SelectedIndex = 0;

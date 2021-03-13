@@ -42,7 +42,6 @@ namespace _1ParcialJP
             this.btnVisitas = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button4 = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.GBMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,20 +212,6 @@ namespace _1ParcialJP
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMenu.BackgroundImage = global::_1ParcialJP.Properties.Resources.PinClipart_com_menu_clip_art_5328945;
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Location = new System.Drawing.Point(213, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(51, 46);
-            this.btnMenu.TabIndex = 15;
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,7 +219,6 @@ namespace _1ParcialJP
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1485, 595);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.GBMenu);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -260,7 +244,6 @@ namespace _1ParcialJP
         private System.Windows.Forms.GroupBox GBMenu;
         private System.Windows.Forms.Button btnAU;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button button4;
     }
 }
