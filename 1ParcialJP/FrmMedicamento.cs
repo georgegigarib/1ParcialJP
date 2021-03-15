@@ -149,7 +149,11 @@ namespace _1ParcialJP
         private void button2_Click(object sender, EventArgs e)
         {
             string sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE @search";
+            //string sql = $"SELECT * FROM MEDICAMENTO WHERE @select LIKE @search";
             SqlCommand command = new SqlCommand(sql);
+  /*          SqlParameter parametro = new SqlParameter();
+            parametro.DbType*/
+            //command.Parameters.AddWithValue("@select", selectsearch.Text);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICAMENTODataGridView.Refresh();

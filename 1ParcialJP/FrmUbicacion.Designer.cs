@@ -290,7 +290,6 @@ namespace _1ParcialJP
             // iD_UBICACIONTextBox
             // 
             this.iD_UBICACIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uBICACIONBindingSource, "ID_UBICACION", true));
-            this.iD_UBICACIONTextBox.Enabled = false;
             this.iD_UBICACIONTextBox.Location = new System.Drawing.Point(118, 15);
             this.iD_UBICACIONTextBox.MaxLength = 5;
             this.iD_UBICACIONTextBox.Name = "iD_UBICACIONTextBox";
