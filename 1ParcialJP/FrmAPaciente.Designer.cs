@@ -10,7 +10,7 @@ namespace _1ParcialJP
 
         /// <summary>
         /// Clean up any resources being used.
-        /// </summary>
+        /// </su
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -168,7 +168,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.cEDULATextBox);
             this.groupBox1.Controls.Add(nOMBRELabel);
             this.groupBox1.Controls.Add(cEDULALabel);
-            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(492, 233);
             this.groupBox1.TabIndex = 37;
@@ -183,7 +183,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(791, 12);
+            this.button3.Location = new System.Drawing.Point(749, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);

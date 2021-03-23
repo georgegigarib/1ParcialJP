@@ -120,7 +120,9 @@ namespace _1ParcialJP
             }
             else
             {
-                groupBox1.Location = new Point(273, 12);
+                groupBox1.Location = new Point(223, 12);
+                this.ControlBox = false;
+                this.Text = "Registrar usuario";
             }
             cbxtipo.SelectedIndex = 0;
             cbxestado.SelectedIndex = 0;

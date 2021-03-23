@@ -40,7 +40,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.vISITABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -230,8 +230,8 @@ namespace _1ParcialJP
             this.vISITADataGridView.Location = new System.Drawing.Point(0, 0);
             this.vISITADataGridView.Name = "vISITADataGridView";
             this.vISITADataGridView.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.vISITADataGridView.Size = new System.Drawing.Size(1132, 353);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick);
@@ -310,7 +310,6 @@ namespace _1ParcialJP
             // iD_VISITATextBox
             // 
             this.iD_VISITATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vISITABindingSource, "ID_VISITA", true));
-            this.iD_VISITATextBox.Enabled = false;
             this.iD_VISITATextBox.Location = new System.Drawing.Point(152, 14);
             this.iD_VISITATextBox.Name = "iD_VISITATextBox";
             this.iD_VISITATextBox.Size = new System.Drawing.Size(233, 22);
@@ -517,7 +516,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(nOMBRE_PACIENTELabel);
             this.groupBox1.Controls.Add(this.iD_VISITATextBox);
             this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
-            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1146, 571);
             this.groupBox1.TabIndex = 29;
@@ -532,7 +531,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(1437, 12);
+            this.button3.Location = new System.Drawing.Point(1396, 12);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(41, 40);

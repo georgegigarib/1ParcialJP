@@ -10,8 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace _1ParcialJP
 {
+   
     public partial class FrmAMedicamento : Form
     {
+        
         public FrmAMedicamento()
         {
             InitializeComponent();

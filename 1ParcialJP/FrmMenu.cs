@@ -140,13 +140,11 @@ namespace _1ParcialJP
         {
             button4.Visible = false;
             GBMenu.Show();
-            btnMenu.Visible = true;
         }
         public void cerrarMenu()
         {
             button4.Visible = true;
             GBMenu.Hide();
-            btnMenu.Visible = false;
         }
         public void abrirForm(Form form)
         {
