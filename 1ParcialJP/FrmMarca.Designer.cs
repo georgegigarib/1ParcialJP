@@ -50,11 +50,12 @@ namespace _1ParcialJP
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.GBMarca = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGguardar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
@@ -232,6 +233,7 @@ namespace _1ParcialJP
             // 
             // GBMarca
             // 
+            this.GBMarca.Controls.Add(this.button4);
             this.GBMarca.Controls.Add(this.iD_MARCATextBox);
             this.GBMarca.Controls.Add(label1);
             this.GBMarca.Controls.Add(eSTADOLabel);
@@ -252,6 +254,34 @@ namespace _1ParcialJP
             this.GBMarca.TabIndex = 17;
             this.GBMarca.TabStop = false;
             this.GBMarca.Text = "Marcas";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(693, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::_1ParcialJP.Properties.Resources.Microsoft_Excel_2013_logo_svg_;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Location = new System.Drawing.Point(329, 195);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(39, 38);
+            this.button4.TabIndex = 17;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -299,22 +329,6 @@ namespace _1ParcialJP
             this.btnGguardar.TabIndex = 10;
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(693, 12);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 40);
-            this.button3.TabIndex = 19;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FrmMarca
             // 
@@ -364,6 +378,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox GBMarca;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
+
 namespace _1ParcialJP
 {
     
@@ -99,18 +102,57 @@ namespace _1ParcialJP
             }
         }
 
+
+
+        // de aqui en adelante
+        DataTable dt = null;
         private void button2_Click_1(object sender, EventArgs e)
         {
             string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            mARCADataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
+            dt = Helper.DoQueryReceiverLimpio(command);
+            mARCADataGridView.DataSource = dt;
             mARCADataGridView.Refresh();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        string filePath = "c:/algo";
+        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            writeFileHeader("sep=,");
+            writeFileHeader("ID_MARCA, DESCRIPCION, ESTADO");
+
+            foreach (DataRow row in mARCADataGridView.Rows)
+            {
+                string linea = "";
+
+                foreach (DataColumn dc in mARCADataGridView.Columns)
+                {
+                    linea += row[dc].ToString() + ",";
+                }
+                writeFileLine(linea);
+            }
+
+            Process.Start(filePath);
+        }
+        private void writeFileLine(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.AppendText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+        private void writeFileHeader(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.CreateText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
         }
     }
 }

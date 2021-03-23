@@ -324,6 +324,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Microsoft_Excel_2013_logo.svg_.png" />
     <None Include="Resources\x-png-33.png" />
     <None Include="Resources\1362420-png-red-cross-png-260_260.png" />
     <None Include="Resources\red-go-back-arrow.png" />

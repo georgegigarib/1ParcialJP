@@ -40,7 +40,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.vISITABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -230,9 +230,9 @@ namespace _1ParcialJP
             this.vISITADataGridView.Location = new System.Drawing.Point(0, 0);
             this.vISITADataGridView.Name = "vISITADataGridView";
             this.vISITADataGridView.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.vISITADataGridView.Size = new System.Drawing.Size(1132, 353);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.vISITADataGridView.Size = new System.Drawing.Size(1144, 353);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick);
             // 
@@ -371,7 +371,7 @@ namespace _1ParcialJP
             this.panel1.Controls.Add(this.vISITADataGridView);
             this.panel1.Location = new System.Drawing.Point(7, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 353);
+            this.panel1.Size = new System.Drawing.Size(1144, 353);
             this.panel1.TabIndex = 20;
             // 
             // hORADateTimePicker
@@ -518,7 +518,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
             this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1146, 571);
+            this.groupBox1.Size = new System.Drawing.Size(1157, 571);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visitas";

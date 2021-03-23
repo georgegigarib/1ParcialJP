@@ -121,6 +121,9 @@
   <data name="unnamed (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="x-png-33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-png-33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1024px-Search_Icon.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1024px-Search_Icon.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,7 +190,7 @@
   <data name="unnamed (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x-png-33" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x-png-33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Microsoft_Excel_2013_logo.svg_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft_Excel_2013_logo.svg_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
