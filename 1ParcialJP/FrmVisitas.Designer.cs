@@ -40,7 +40,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitas));
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.vISITABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -230,8 +230,8 @@ namespace _1ParcialJP
             this.vISITADataGridView.Location = new System.Drawing.Point(0, 0);
             this.vISITADataGridView.Name = "vISITADataGridView";
             this.vISITADataGridView.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.vISITADataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.vISITADataGridView.Size = new System.Drawing.Size(1132, 353);
             this.vISITADataGridView.TabIndex = 1;
             this.vISITADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vISITADataGridView_CellContentClick);
@@ -547,7 +547,7 @@ namespace _1ParcialJP
             this.ClientSize = new System.Drawing.Size(1487, 594);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVisitas";
             this.Text = "Visitas";

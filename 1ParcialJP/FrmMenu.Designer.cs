@@ -52,10 +52,10 @@ namespace _1ParcialJP
             this.GBMenu.Controls.Add(this.btnAU);
             this.GBMenu.Controls.Add(this.button1);
             this.GBMenu.Controls.Add(this.btnMarca);
-            this.GBMenu.Controls.Add(this.button3);
-            this.GBMenu.Controls.Add(this.button2);
-            this.GBMenu.Controls.Add(this.btnMedicamento);
             this.GBMenu.Controls.Add(this.btnVisitas);
+            this.GBMenu.Controls.Add(this.button3);
+            this.GBMenu.Controls.Add(this.btnMedicamento);
+            this.GBMenu.Controls.Add(this.button2);
             this.GBMenu.Location = new System.Drawing.Point(0, 0);
             this.GBMenu.Name = "GBMenu";
             this.GBMenu.Size = new System.Drawing.Size(214, 602);
@@ -68,7 +68,7 @@ namespace _1ParcialJP
             this.btnMedico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedico.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedico.Location = new System.Drawing.Point(0, 405);
+            this.btnMedico.Location = new System.Drawing.Point(0, 164);
             this.btnMedico.Margin = new System.Windows.Forms.Padding(0);
             this.btnMedico.Name = "btnMedico";
             this.btnMedico.Size = new System.Drawing.Size(214, 55);
@@ -84,7 +84,7 @@ namespace _1ParcialJP
             this.btnAU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAU.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAU.Location = new System.Drawing.Point(0, 525);
+            this.btnAU.Location = new System.Drawing.Point(0, 219);
             this.btnAU.Margin = new System.Windows.Forms.Padding(0);
             this.btnAU.Name = "btnAU";
             this.btnAU.Size = new System.Drawing.Size(214, 55);
@@ -100,7 +100,7 @@ namespace _1ParcialJP
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 299);
+            this.button1.Location = new System.Drawing.Point(0, 109);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 55);
@@ -116,7 +116,7 @@ namespace _1ParcialJP
             this.btnMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarca.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarca.Location = new System.Drawing.Point(0, 352);
+            this.btnMarca.Location = new System.Drawing.Point(0, 435);
             this.btnMarca.Margin = new System.Windows.Forms.Padding(0);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(214, 55);
@@ -124,6 +124,7 @@ namespace _1ParcialJP
             this.btnMarca.Text = "Marcas";
             this.btnMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMarca.UseVisualStyleBackColor = true;
+            this.btnMarca.Visible = false;
             this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
             // 
             // button3
@@ -132,7 +133,7 @@ namespace _1ParcialJP
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 140);
+            this.button3.Location = new System.Drawing.Point(0, 274);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -141,6 +142,7 @@ namespace _1ParcialJP
             this.button3.Text = "Ubicacion";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
@@ -149,7 +151,7 @@ namespace _1ParcialJP
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 193);
+            this.button2.Location = new System.Drawing.Point(0, 327);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(214, 55);
@@ -158,6 +160,7 @@ namespace _1ParcialJP
             this.button2.Text = "Tipo de Farmacos";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMedicamento
@@ -166,7 +169,7 @@ namespace _1ParcialJP
             this.btnMedicamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedicamento.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedicamento.Location = new System.Drawing.Point(0, 246);
+            this.btnMedicamento.Location = new System.Drawing.Point(0, 380);
             this.btnMedicamento.Margin = new System.Windows.Forms.Padding(0);
             this.btnMedicamento.Name = "btnMedicamento";
             this.btnMedicamento.Size = new System.Drawing.Size(214, 55);
@@ -174,6 +177,7 @@ namespace _1ParcialJP
             this.btnMedicamento.Text = "Medicamentos";
             this.btnMedicamento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMedicamento.UseVisualStyleBackColor = true;
+            this.btnMedicamento.Visible = false;
             this.btnMedicamento.Click += new System.EventHandler(this.btnMedicamento_Click);
             // 
             // btnVisitas
