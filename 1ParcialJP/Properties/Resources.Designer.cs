@@ -153,6 +153,16 @@ namespace _1ParcialJP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Microsoft_Excel_2013_logo_svg_ {
+            get {
+                object obj = ResourceManager.GetObject("Microsoft_Excel_2013_logo.svg_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PinClipart_com_menu_clip_art_5328945 {
             get {
                 object obj = ResourceManager.GetObject("PinClipart.com_menu-clip-art_5328945", resourceCulture);

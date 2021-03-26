@@ -32,6 +32,9 @@ namespace _1ParcialJP
 
         private void FrmVisitas_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "ID", "Nombre del Medico", "Nombre del Paciente", "Sintomas", "Recomendaciones", "Medicamentos", "Estado", "Fecha" };
+            String[] ArrayValues = { "ID_VISITA", "NOMBRE_MEDICO", "NOMBRE_PACIENTE", "SINTOMAS", "RECOMENDACIONES", "MEDICAMENTOS", "ESTADO", "FECHA" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos, ArrayValues);
             selectsearch.SelectedIndex = 0;
             this.ControlBox = false;
             try
@@ -131,11 +134,11 @@ namespace _1ParcialJP
             switch (selectsearch.SelectedIndex)
             {
                
-                case 6:
-                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.Text} >= @search";
+                case 7:
+                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.SelectedValue.ToString()} >= @search";
                     break;
             default:
-                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.Text} LIKE @search";
+                    sql = $"SELECT * FROM VISITA WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
                     break;
             }
 

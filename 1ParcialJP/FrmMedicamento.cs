@@ -39,6 +39,16 @@ namespace _1ParcialJP
         private void FrmMedicamento_Load(object sender, EventArgs e)
         {
              this.ControlBox = false;
+
+            String[] ArrayTitulos = { "Disponible", "Descontinuado", "Agotado", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "AGOTADO", "NO DISPONIBLE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+
+            String[] ArrayTitulos1 = {  "Descripcion", "Tipo de Farmaco", "Marca", "Ubicacion", "Dosis", "Estado" };
+            String[] ArrayValues1 = {  "DESCRIPCION", "ID_TF", "ID_MARCA", "ID_UBBICACION", "DOSIS", "ESTADO" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
+
+         
             try
             {
                 CBXUbicacion.Items.Clear();
@@ -115,7 +125,7 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@marca", CBXMarca.Text);
                 command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
                 command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                 command.Parameters.AddWithValue("@id", iD_MEDICAMENTOTextBox.Text);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
@@ -148,12 +158,8 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.Text} LIKE @search";
-            //string sql = $"SELECT * FROM MEDICAMENTO WHERE @select LIKE @search";
+            string sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
-  /*          SqlParameter parametro = new SqlParameter();
-            parametro.DbType*/
-            //command.Parameters.AddWithValue("@select", selectsearch.Text);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
             mEDICAMENTODataGridView.Refresh();

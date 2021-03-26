@@ -33,6 +33,12 @@ namespace _1ParcialJP
 
         private void FrmUbicacion_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Disponible", "No Disponible", "Lleno", "Vacio" };
+            String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "LLENO", "VACIO" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "ID", "Estante", "Tramo", "Celda", "Estado", "Descripcion" };
+            String[] ArrayValues1 = { "ID_UBICACION", "ESTANTE", "TRAMO", "CELDA", "ESTADO", "DESCRIPCION" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
             refrescargrid();
             selectsearch.SelectedIndex = 0;
             this.ControlBox = false;
@@ -79,7 +85,7 @@ namespace _1ParcialJP
                     $"WHERE ID_UBICACION = @id ";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                 command.Parameters.AddWithValue("@estante", eSTANTETextBox.Text);
                 command.Parameters.AddWithValue("@tramo", tRAMOTextBox.Text);
                 command.Parameters.AddWithValue("@celda", cELDATextBox.Text);
@@ -103,7 +109,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM UBICACION WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM UBICACION WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             DataTable dt = Helper.DoQueryReceiverLimpio(command);

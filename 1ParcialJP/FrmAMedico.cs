@@ -27,6 +27,13 @@ namespace _1ParcialJP
         {
             eSTADOComboBox.SelectedIndex = 0;
             this.ControlBox = false;
+            String[] ArrayTitulos = { "Disponible", "Vacaciones", "Licencia", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "VACACIONES", "LICENCIA", "NO DISPONIBLE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Matutino", "Vespertino", "Nocturno" };
+            String[] ArrayValues1 = { "MATUTINO", "VESPERTINO", "NOCTURNO" };
+            Helper.llenarCBX(tANDA_LABORTextBox, ArrayTitulos1, ArrayValues1);
+
         }
        
         private void btnGguardar_Click_1(object sender, EventArgs e)
@@ -42,9 +49,9 @@ namespace _1ParcialJP
                     SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
-                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);
+                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.SelectedValue.ToString());
                     command.Parameters.AddWithValue("@especialidad", eSPECIALIDADTextBox.Text);
-                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString()); ;
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro guardado con exito");
                     this.Close();

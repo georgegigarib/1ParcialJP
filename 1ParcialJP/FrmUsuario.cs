@@ -47,9 +47,18 @@ namespace _1ParcialJP
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-            refrescargrid();
+            String[] ArrayTitulos = { "Administrador", "Usuario Regular" };
+            String[] ArrayValues = { "A", "U", };
+            Helper.llenarCBX(txtTU, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Activa", "Inactiva","Bloqueada","Suspendida" };
+            String[] ArrayValues1 = { "A", "I", "B", "S" };
+            Helper.llenarCBX(txtEC, ArrayTitulos1, ArrayValues1);
+            String[] ArrayTitulos2 = { "ID", "Nombre", "Tipo de Usuario", "Estado de Cuenta" };
+            String[] ArrayValues2 = { "ID_USUARIO", "NOMBRE","TIPO", "ESTADO" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos2, ArrayValues2);
             selectsearch.SelectedIndex = 0;
             this.ControlBox = false;
+            refrescargrid();
         }
 
         private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,8 +93,8 @@ namespace _1ParcialJP
                 string sql = $"UPDATE USUARIO SET NOMBRE = @nombre, TIPO = @tipo, ESTADO= @estado WHERE ID_USUARIO = @id";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@nombre", txtNombreU.Text);
-                command.Parameters.AddWithValue("@tipo", txtTU.Text);
-                command.Parameters.AddWithValue("@estado", txtEC.Text);
+                command.Parameters.AddWithValue("@tipo", txtTU.SelectedValue.ToString());
+                command.Parameters.AddWithValue("@estado", txtEC.SelectedValue.ToString());
                 command.Parameters.AddWithValue("@id", txtIdU.Text);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
@@ -99,7 +108,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM USUARIO WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM USUARIO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             dataGridViewUsuario.DataSource = Helper.DoQueryReceiverLimpio(command);

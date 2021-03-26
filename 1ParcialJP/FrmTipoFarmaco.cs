@@ -32,6 +32,13 @@ namespace _1ParcialJP
 
         private void FrmTipoFarmaco_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Disponible", "No Disponible", "Descontinuado", "En Prueba" };
+            String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "DESCONTINUADO", "EN PRUEBA" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "ID", "Descripcion", "Estado" };
+            String[] ArrayValues1 = { "ID_TF", "DESCRIPCION", "ESTADO" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
+
             refrescargrid();
             selectsearch.SelectedIndex = 0;
             this.ControlBox = false;
@@ -45,7 +52,7 @@ namespace _1ParcialJP
                 string sql = $"UPDATE TIPO_FARMACO SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_TF = @id ";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString()) ;
                 command.Parameters.AddWithValue("@id", iD_TFTextBox.Text);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
@@ -88,7 +95,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM TIPO_FARMACO WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM TIPO_FARMACO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             tIPO_FARMACODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
@@ -99,6 +106,13 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tIPO_FARMACODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            iD_TFTextBox.Text = tIPO_FARMACODataGridView[0, e.RowIndex].Value.ToString();
+            dESCRIPCIONTextBox.Text = tIPO_FARMACODataGridView[1, e.RowIndex].Value.ToString();
+            eSTADOComboBox.Text = tIPO_FARMACODataGridView[2, e.RowIndex].Value.ToString();
         }
     }
 }

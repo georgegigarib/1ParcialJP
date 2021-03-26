@@ -23,15 +23,19 @@ namespace _1ParcialJP
         {
             eSTADOComboBox.SelectedIndex = 0;
             this.ControlBox = false;
+
+            String[] ArrayTitulos = { "Activa", "Inactiva" };
+            String[] ArrayValues = { "ACTIVA", "INACTIVA" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string sql = $"INSERT INTO MARCA VALUES (@descripcion, @estadoo ) ";
+                string sql = $"INSERT INTO MARCA VALUES (@descripcion, @estadoo )";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
-                command.Parameters.AddWithValue("@estadoo", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estadoo", eSTADOComboBox.SelectedValue.ToString()); ;
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro Guardado con exito");
                 this.Close();
@@ -51,6 +55,11 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(eSTADOComboBox.SelectedValue.ToString());
         }
     }
 }

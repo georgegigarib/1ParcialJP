@@ -21,6 +21,12 @@ namespace _1ParcialJP
 
         private void FrmAPaciente_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Saludable", "Estable", "Grave" };
+            String[] ArrayValues = { "SALUDABLE", "ESTABLE", "GRAVE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Activo", "Inactivo" };
+            String[] ArrayValues1 = { "ACTIVO", "INACTIVO" };
+            Helper.llenarCBX(tIPO_PACIENTEComboBox, ArrayTitulos1, ArrayValues1);
             eSTADOComboBox.SelectedIndex = 0;
             tIPO_PACIENTEComboBox.SelectedIndex = 0;
             this.ControlBox = false;
@@ -45,8 +51,8 @@ namespace _1ParcialJP
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@carnet", nUM_CARNETTextBox.Text);
-                    command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.Text);
-                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.SelectedValue.ToString());
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro guardado con exito");
                     this.Close();

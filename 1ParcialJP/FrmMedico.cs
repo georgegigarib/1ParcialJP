@@ -39,6 +39,15 @@ namespace _1ParcialJP
         private void FrmMedico_Load(object sender, EventArgs e)
         {
             refrescargrid();
+            String[] ArrayTitulos = { "Disponible", "Vacaciones", "Licencia", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "VACACIONES", "LICENCIA", "NO DISPONIBLE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Matutino", "Vespertino", "Nocturno" };
+            String[] ArrayValues1 = { "MATUTINO", "VESPERTINO", "NOCTURNO" };
+            Helper.llenarCBX(tANDA_LABORTextBox, ArrayTitulos1, ArrayValues1);
+            String[] ArrayTitulos2 = { "Nombre", "Cedula", "Estado","Especialidad","Tanda de Labor" };
+            String[] ArrayValues2 = { "NOMBRE", "CEDULA", "ESTADO", "ESPECIALIDAD", "TANDA_LABOR" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos2, ArrayValues2);
             selectsearch.SelectedIndex = 0;
             this.ControlBox = false;
         }
@@ -75,9 +84,9 @@ namespace _1ParcialJP
                     SqlCommand command = new SqlCommand(sql);
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
-                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.Text);
+                    command.Parameters.AddWithValue("@tanda", tANDA_LABORTextBox.SelectedValue.ToString());
                     command.Parameters.AddWithValue("@especialidad", eSPECIALIDADTextBox.Text);
-                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                     command.Parameters.AddWithValue("@id", iD_MEDICOTextBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro Guardado con exito");
@@ -113,7 +122,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MEDICO WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM MEDICO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             mEDICODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);

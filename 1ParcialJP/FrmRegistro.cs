@@ -51,8 +51,8 @@ namespace _1ParcialJP
 
                                 SqlCommand command = new SqlCommand(sql);
                                 command.Parameters.AddWithValue("@nombre", txtnombre.Text);
-                                command.Parameters.AddWithValue("@tipo", cbxtipo.Text);
-                                command.Parameters.AddWithValue("@estado", cbxestado.Text);
+                                command.Parameters.AddWithValue("@tipo", cbxtipo.SelectedValue.ToString());
+                                command.Parameters.AddWithValue("@estado", cbxestado.SelectedValue.ToString());
                                 Helper.DoQueryExecuterLimpio(command);
                                 if (Program.tipo != "")
                                 {
@@ -114,6 +114,12 @@ namespace _1ParcialJP
 
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Administrador", "Usuario Regular" };
+            String[] ArrayValues = { "A", "U", };
+            Helper.llenarCBX(cbxtipo, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Activa", "Inactiva", "Bloqueada", "Suspendida" };
+            String[] ArrayValues1 = { "A", "I", "B", "S" };
+            Helper.llenarCBX(cbxestado, ArrayTitulos1, ArrayValues1);
             if (Program.tipo != "A")
             {
                 GBTCU.Visible = false;

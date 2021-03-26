@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Diagnostics;
+
 namespace _1ParcialJP
 {
     
@@ -26,8 +29,18 @@ namespace _1ParcialJP
         {
             refrescargrid();
             selectsearch.SelectedIndex = 0;
+            String[] ArrayTitulos = {"Activa", "Inactiva" };
+            String[] ArrayValues = { "ACTIVA", "INACTIVA" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = {"ID", "Estado", "Descripcion" };
+            String[] ArrayValues1 = { "ID_MARCA", "ESTADO", "DESCRIPCION" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
+
             this.ControlBox = false;
         }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAMarca fmAMarca = new FrmAMarca();
@@ -52,7 +65,16 @@ namespace _1ParcialJP
         {
             iD_MARCATextBox.Text = mARCADataGridView[0, e.RowIndex].Value.ToString();
             dESCRIPCIONTextBox.Text = mARCADataGridView[1, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = mARCADataGridView[2, e.RowIndex].Value.ToString();
+            if(mARCADataGridView[2, e.RowIndex].Value.ToString() == "ACTIVA")
+            {
+                eSTADOComboBox.Text = "Activa";
+            }
+            else
+            {
+                eSTADOComboBox.Text = "Inactiva";
+            }
+            
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +86,7 @@ namespace _1ParcialJP
             string sql = $"UPDATE MARCA SET ESTADO = @estado, DESCRIPCION = @descripcion WHERE ID_MARCA = @id ";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
-            command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+            command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
             command.Parameters.AddWithValue("@id", iD_MARCATextBox.Text);
             Helper.DoQueryExecuterLimpio(command);
             MessageBox.Show("Registro Guardado con exito");
@@ -99,18 +121,62 @@ namespace _1ParcialJP
             }
         }
 
+
+
+        // de aqui en adelante
+        DataTable dt = null;
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM MARCA WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            mARCADataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
+            dt = Helper.DoQueryReceiverLimpio(command);
+            mARCADataGridView.DataSource = dt;
             mARCADataGridView.Refresh();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        string filePath = "c:/algo";
+        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            writeFileHeader("sep=,");
+            writeFileHeader("ID_MARCA, DESCRIPCION, ESTADO");
+
+            foreach (DataRow row in mARCADataGridView.Rows)
+            {
+                string linea = "";
+
+                foreach (DataColumn dc in mARCADataGridView.Columns)
+                {
+                    linea += row[dc].ToString() + ",";
+                }
+                writeFileLine(linea);
+            }
+
+            Process.Start(filePath);
+        }
+        private void writeFileLine(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.AppendText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+        private void writeFileHeader(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.CreateText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(eSTADOComboBox.SelectedValue.ToString());
         }
     }
 }
