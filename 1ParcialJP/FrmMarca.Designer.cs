@@ -41,9 +41,6 @@ namespace _1ParcialJP
             this.tableAdapterManager = new _1ParcialJP.PARCIALJPDataSetTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mARCADataGridView = new System.Windows.Forms.DataGridView();
-            this.iDMARCADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dESCRIPCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOComboBox = new System.Windows.Forms.ComboBox();
             this.iD_MARCATextBox = new System.Windows.Forms.TextBox();
@@ -56,7 +53,9 @@ namespace _1ParcialJP
             this.button1 = new System.Windows.Forms.Button();
             this.btnGguardar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.iDMARCADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRIPCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
@@ -143,6 +142,7 @@ namespace _1ParcialJP
             this.mARCADataGridView.AllowUserToAddRows = false;
             this.mARCADataGridView.AllowUserToDeleteRows = false;
             this.mARCADataGridView.AutoGenerateColumns = false;
+            this.mARCADataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.mARCADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mARCADataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDMARCADataGridViewTextBoxColumn,
@@ -151,34 +151,12 @@ namespace _1ParcialJP
             this.mARCADataGridView.DataSource = this.mARCABindingSource;
             this.mARCADataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mARCADataGridView.Location = new System.Drawing.Point(0, 0);
+            this.mARCADataGridView.MultiSelect = false;
             this.mARCADataGridView.Name = "mARCADataGridView";
             this.mARCADataGridView.ReadOnly = true;
             this.mARCADataGridView.Size = new System.Drawing.Size(419, 295);
             this.mARCADataGridView.TabIndex = 0;
             this.mARCADataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mARCADataGridView_CellContentClick_1);
-            // 
-            // iDMARCADataGridViewTextBoxColumn
-            // 
-            this.iDMARCADataGridViewTextBoxColumn.DataPropertyName = "ID_MARCA";
-            this.iDMARCADataGridViewTextBoxColumn.HeaderText = "ID_MARCA";
-            this.iDMARCADataGridViewTextBoxColumn.Name = "iDMARCADataGridViewTextBoxColumn";
-            this.iDMARCADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dESCRIPCIONDataGridViewTextBoxColumn
-            // 
-            this.dESCRIPCIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dESCRIPCIONDataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCION";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.HeaderText = "DESCRIPCION";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.Name = "dESCRIPCIONDataGridViewTextBoxColumn";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dESCRIPCIONDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // eSTADODataGridViewTextBoxColumn
-            // 
-            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
-            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
-            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
-            this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dESCRIPCIONTextBox
             // 
@@ -328,15 +306,28 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
+            // iDMARCADataGridViewTextBoxColumn
             // 
-            this.button5.Location = new System.Drawing.Point(709, 159);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.iDMARCADataGridViewTextBoxColumn.DataPropertyName = "ID_MARCA";
+            this.iDMARCADataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDMARCADataGridViewTextBoxColumn.Name = "iDMARCADataGridViewTextBoxColumn";
+            this.iDMARCADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dESCRIPCIONDataGridViewTextBoxColumn
+            // 
+            this.dESCRIPCIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dESCRIPCIONDataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCION";
+            this.dESCRIPCIONDataGridViewTextBoxColumn.HeaderText = "DESCRIPCION";
+            this.dESCRIPCIONDataGridViewTextBoxColumn.Name = "dESCRIPCIONDataGridViewTextBoxColumn";
+            this.dESCRIPCIONDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dESCRIPCIONDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // eSTADODataGridViewTextBoxColumn
+            // 
+            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
+            this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmMarca
             // 
@@ -344,7 +335,6 @@ namespace _1ParcialJP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(817, 596);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.GBMarca);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
@@ -379,16 +369,15 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox dESCRIPCIONTextBox;
         private System.Windows.Forms.ComboBox eSTADOComboBox;
         private System.Windows.Forms.TextBox iD_MARCATextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMARCADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox selectsearch;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox GBMarca;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMARCADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
     }
 }
 

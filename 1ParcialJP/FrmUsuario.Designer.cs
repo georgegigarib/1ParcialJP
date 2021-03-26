@@ -220,11 +220,13 @@ namespace _1ParcialJP
             // 
             // dataGridViewUsuario
             // 
+            this.dataGridViewUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewUsuario.Location = new System.Drawing.Point(4, 19);
             this.dataGridViewUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewUsuario.MultiSelect = false;
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
             this.dataGridViewUsuario.ReadOnly = true;
             this.dataGridViewUsuario.Size = new System.Drawing.Size(546, 304);

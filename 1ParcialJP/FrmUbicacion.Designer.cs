@@ -43,12 +43,6 @@ namespace _1ParcialJP
             this.uBICACIONTableAdapter = new _1ParcialJP.PARCIALJPDataSetTableAdapters.UBICACIONTableAdapter();
             this.tableAdapterManager = new _1ParcialJP.PARCIALJPDataSetTableAdapters.TableAdapterManager();
             this.uBICACIONDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dESCRIPCIONTextBox = new System.Windows.Forms.TextBox();
             this.eSTANTETextBox = new System.Windows.Forms.TextBox();
@@ -64,6 +58,12 @@ namespace _1ParcialJP
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             iD_UBICACIONLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTANTELabel = new System.Windows.Forms.Label();
@@ -173,6 +173,7 @@ namespace _1ParcialJP
             this.uBICACIONDataGridView.AllowUserToAddRows = false;
             this.uBICACIONDataGridView.AllowUserToDeleteRows = false;
             this.uBICACIONDataGridView.AutoGenerateColumns = false;
+            this.uBICACIONDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uBICACIONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uBICACIONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -184,57 +185,12 @@ namespace _1ParcialJP
             this.uBICACIONDataGridView.DataSource = this.uBICACIONBindingSource;
             this.uBICACIONDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uBICACIONDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.uBICACIONDataGridView.MultiSelect = false;
             this.uBICACIONDataGridView.Name = "uBICACIONDataGridView";
             this.uBICACIONDataGridView.ReadOnly = true;
             this.uBICACIONDataGridView.Size = new System.Drawing.Size(709, 328);
             this.uBICACIONDataGridView.TabIndex = 1;
             this.uBICACIONDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uBICACIONDataGridView_CellContentClick_1);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_UBICACION";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_UBICACION";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 121;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 112;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ESTANTE";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ESTANTE";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TRAMO";
-            this.dataGridViewTextBoxColumn4.HeaderText = "TRAMO";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CELDA";
-            this.dataGridViewTextBoxColumn5.HeaderText = "CELDA";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ESTADO";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ESTADO";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // panel1
             // 
@@ -426,6 +382,52 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_UBICACION";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 112;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ESTANTE";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ESTANTE";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TRAMO";
+            this.dataGridViewTextBoxColumn4.HeaderText = "TRAMO";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CELDA";
+            this.dataGridViewTextBoxColumn5.HeaderText = "CELDA";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ESTADO";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ESTADO";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
             // FrmUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -467,16 +469,16 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button btnGguardar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox eSTADOComboBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox selectsearch;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
     }
 }

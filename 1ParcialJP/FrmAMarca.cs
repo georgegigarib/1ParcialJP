@@ -32,7 +32,7 @@ namespace _1ParcialJP
         {
             try
             {
-                string sql = $"INSERT INTO MARCA VALUES (@descripcion, @estadoo ) ";
+                string sql = $"INSERT INTO MARCA VALUES (@descripcion, @estadoo )";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 command.Parameters.AddWithValue("@estadoo", eSTADOComboBox.SelectedValue.ToString()); ;

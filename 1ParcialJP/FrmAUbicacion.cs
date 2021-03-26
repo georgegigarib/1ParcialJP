@@ -19,6 +19,9 @@ namespace _1ParcialJP
 
         private void FrmAUbicacion_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Disponible", "No Disponible", "Lleno", "Vacio" };
+            String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "LLENO", "VACIO" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
             eSTADOComboBox.SelectedIndex = 0;
             this.ControlBox = false;
         }
@@ -41,7 +44,7 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@estante", eSTANTETextBox.Text);
                 command.Parameters.AddWithValue("@tramo", tRAMOTextBox.Text);
                 command.Parameters.AddWithValue("@celda", cELDATextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();

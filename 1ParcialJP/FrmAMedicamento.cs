@@ -31,7 +31,7 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@marca", CBXMarca.Text);
                 command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
                 command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
@@ -45,6 +45,10 @@ namespace _1ParcialJP
         private void FrmAMedicamento_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            String[] ArrayTitulos = { "Disponible", "Descontinuado", "Agotado", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "AGOTADO", "NO DISPONIBLE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+
             try
             {
                 CBXUbicacion.Items.Clear();

@@ -25,6 +25,9 @@ namespace _1ParcialJP
 
         private void FrmATF_Load(object sender, EventArgs e)
         {
+            String[] ArrayTitulos = { "Disponible", "No Disponible", "Descontinuado", "En Prueba" };
+            String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "DESCONTINUADO", "EN PRUEBA" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
             eSTADOComboBox.SelectedIndex = 0;
             this.ControlBox = false;
         }
@@ -36,7 +39,7 @@ namespace _1ParcialJP
                 string sql = $"INSERT INTO TIPO_FARMACO VALUES ( @descripcion , @estado )";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();

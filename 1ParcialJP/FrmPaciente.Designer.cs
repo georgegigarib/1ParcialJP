@@ -43,12 +43,6 @@ namespace _1ParcialJP
             this.pACIENTETableAdapter = new _1ParcialJP.PARCIALJPDataSetTableAdapters.PACIENTETableAdapter();
             this.tableAdapterManager = new _1ParcialJP.PARCIALJPDataSetTableAdapters.TableAdapterManager();
             this.pACIENTEDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iD_PACIENTETextBox = new System.Windows.Forms.TextBox();
             this.nOMBRETextBox = new System.Windows.Forms.TextBox();
@@ -64,6 +58,12 @@ namespace _1ParcialJP
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             iD_PACIENTELabel = new System.Windows.Forms.Label();
             nOMBRELabel = new System.Windows.Forms.Label();
             cEDULALabel = new System.Windows.Forms.Label();
@@ -172,6 +172,7 @@ namespace _1ParcialJP
             this.pACIENTEDataGridView.AllowUserToAddRows = false;
             this.pACIENTEDataGridView.AllowUserToDeleteRows = false;
             this.pACIENTEDataGridView.AutoGenerateColumns = false;
+            this.pACIENTEDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pACIENTEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pACIENTEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -183,61 +184,12 @@ namespace _1ParcialJP
             this.pACIENTEDataGridView.DataSource = this.pACIENTEBindingSource;
             this.pACIENTEDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pACIENTEDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.pACIENTEDataGridView.MultiSelect = false;
             this.pACIENTEDataGridView.Name = "pACIENTEDataGridView";
             this.pACIENTEDataGridView.ReadOnly = true;
             this.pACIENTEDataGridView.Size = new System.Drawing.Size(791, 323);
             this.pACIENTEDataGridView.TabIndex = 1;
             this.pACIENTEDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pACIENTEDataGridView_CellContentClick_1);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_PACIENTE";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_PACIENTE";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 111;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NOMBRE";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NOMBRE";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CEDULA";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CEDULA";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NUM_CARNET";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NUM_CARNET";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 119;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "TIPO_PACIENTE";
-            this.dataGridViewTextBoxColumn5.HeaderText = "TIPO_PACIENTE";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 126;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ESTADO";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ESTADO";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 81;
             // 
             // panel1
             // 
@@ -423,6 +375,56 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_PACIENTE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NOMBRE";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NOMBRE";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CEDULA";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CEDULA";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NUM_CARNET";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NUMERO CARNET";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TIPO_PACIENTE";
+            this.dataGridViewTextBoxColumn5.HeaderText = "TIPO DE PACIENTE";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 129;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ESTADO";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ESTADO";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 81;
+            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -464,16 +466,16 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox tIPO_PACIENTEComboBox;
         private System.Windows.Forms.ComboBox eSTADOComboBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox selectsearch;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
     }
 }

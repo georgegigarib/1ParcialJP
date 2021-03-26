@@ -38,15 +38,9 @@ namespace _1ParcialJP
             System.Windows.Forms.Label dOSISLabel;
             System.Windows.Forms.Label eSTADOLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedicamento));
             this.mEDICAMENTODataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mEDICAMENTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
             this.iD_MEDICAMENTOTextBox = new System.Windows.Forms.TextBox();
@@ -69,6 +63,13 @@ namespace _1ParcialJP
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             iD_MEDICAMENTOLabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
@@ -159,7 +160,10 @@ namespace _1ParcialJP
             // 
             // mEDICAMENTODataGridView
             // 
+            this.mEDICAMENTODataGridView.AllowUserToAddRows = false;
+            this.mEDICAMENTODataGridView.AllowUserToDeleteRows = false;
             this.mEDICAMENTODataGridView.AutoGenerateColumns = false;
+            this.mEDICAMENTODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.mEDICAMENTODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mEDICAMENTODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -172,68 +176,12 @@ namespace _1ParcialJP
             this.mEDICAMENTODataGridView.DataSource = this.mEDICAMENTOBindingSource;
             this.mEDICAMENTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mEDICAMENTODataGridView.Location = new System.Drawing.Point(0, 0);
+            this.mEDICAMENTODataGridView.MultiSelect = false;
             this.mEDICAMENTODataGridView.Name = "mEDICAMENTODataGridView";
             this.mEDICAMENTODataGridView.ReadOnly = true;
             this.mEDICAMENTODataGridView.Size = new System.Drawing.Size(888, 321);
             this.mEDICAMENTODataGridView.TabIndex = 1;
             this.mEDICAMENTODataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mEDICAMENTODataGridView_CellContentClick_1);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_MEDICAMENTO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_MEDICAMENTO";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 147;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 112;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID_TF";
-            this.dataGridViewTextBoxColumn3.HeaderText = "TIPO_FARMACO";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ID_MARCA";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MARCA";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_UBBICACION";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID_UBBICACION";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 129;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DOSIS";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DOSIS";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ESTADO";
-            this.dataGridViewTextBoxColumn7.HeaderText = "ESTADO";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // mEDICAMENTOBindingSource
             // 
@@ -275,11 +223,6 @@ namespace _1ParcialJP
             this.eSTADOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mEDICAMENTOBindingSource, "ESTADO", true));
             this.eSTADOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.eSTADOComboBox.FormattingEnabled = true;
-            this.eSTADOComboBox.Items.AddRange(new object[] {
-            "DISPONIBLE",
-            "DESCONTINUADO",
-            "AGOTADO",
-            "NO DISPONIBLE"});
             this.eSTADOComboBox.Location = new System.Drawing.Point(158, 140);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(226, 23);
@@ -462,6 +405,66 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_MEDICAMENTO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DESCRIPCION";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 112;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID_TF";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn3.HeaderText = "TIPO DE FARMACO";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 132;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ID_MARCA";
+            this.dataGridViewTextBoxColumn4.HeaderText = "MARCA";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_UBBICACION";
+            this.dataGridViewTextBoxColumn5.HeaderText = "UBICACION";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DOSIS";
+            this.dataGridViewTextBoxColumn6.HeaderText = "DOSIS";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ESTADO";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ESTADO";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
             // FrmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -507,6 +510,11 @@ namespace _1ParcialJP
         private System.Windows.Forms.ComboBox CBXUbicacion;
         private System.Windows.Forms.ComboBox CBXMarca;
         private System.Windows.Forms.ComboBox CBXtipoFarmaco;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.ComboBox selectsearch;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -514,10 +522,5 @@ namespace _1ParcialJP
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox selectsearch;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
     }
 }

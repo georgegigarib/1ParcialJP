@@ -214,6 +214,7 @@ namespace _1ParcialJP
             this.vISITADataGridView.AllowUserToAddRows = false;
             this.vISITADataGridView.AllowUserToDeleteRows = false;
             this.vISITADataGridView.AutoGenerateColumns = false;
+            this.vISITADataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vISITADataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vISITADataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

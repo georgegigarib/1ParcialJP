@@ -34,6 +34,16 @@ namespace _1ParcialJP
             selectsearch.SelectedIndex = 0;
             refrescargrid();
             this.ControlBox = false;
+            String[] ArrayTitulos = { "Saludable", "Estable", "Grave" };
+            String[] ArrayValues = { "SALUDABLE", "ESTABLE", "GRAVE" };
+            Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
+            String[] ArrayTitulos1 = { "Activo", "Inactivo"};
+            String[] ArrayValues1 = { "ACTIVO", "INACTIVO" };
+            Helper.llenarCBX(tIPO_PACIENTEComboBox, ArrayTitulos1, ArrayValues1);
+            String[] ArrayTitulos2 = { "Nombre", "Cedula", "Numero de Carnet", "Tipo de Paciente", "Estado" };
+            String[] ArrayValues2 = { "NOMBRE", "CEDULA", "NUM_CARNET", "TIPO_PACIENTE", "ESTADO" };
+            Helper.llenarCBX(selectsearch, ArrayTitulos2, ArrayValues2);
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -65,8 +75,8 @@ namespace _1ParcialJP
                     command.Parameters.AddWithValue("@nombre", nOMBRETextBox.Text);
                     command.Parameters.AddWithValue("@cedula", cEDULATextBox.Text);
                     command.Parameters.AddWithValue("@carnet", nUM_CARNETTextBox.Text);
-                    command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.Text);
-                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.Text);
+                    command.Parameters.AddWithValue("@tipo", tIPO_PACIENTEComboBox.SelectedValue.ToString());
+                    command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
                     command.Parameters.AddWithValue("@id", iD_PACIENTETextBox.Text);
                     Helper.DoQueryExecuterLimpio(command);
                     MessageBox.Show("Registro Guardado con exito");
@@ -112,7 +122,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM PACIENTE WHERE {selectsearch.Text} LIKE @search";
+            string sql = $"SELECT * FROM PACIENTE WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             pACIENTEDataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
