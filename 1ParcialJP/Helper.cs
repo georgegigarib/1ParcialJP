@@ -111,6 +111,21 @@ namespace _1ParcialJP
             DataTable dt = DoQueryReceiverLimpio(command);
             return dt;
         }
-
+        public static void llenarCBX(ComboBox cbx, String[] ArrayTitulos, String[] ArrayValues)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("IdCombo");
+            dt.Columns.Add("NombreCombo");
+            for (int i = 0; i < ArrayTitulos.Length; i++)
+            {
+                DataRow fila = dt.NewRow();
+                fila["IdCombo"] = ArrayValues[i].ToString();
+                fila["NombreCombo"] = ArrayTitulos[i].ToString();
+                dt.Rows.Add(fila);
+            }
+            cbx.DataSource = dt;
+            cbx.DisplayMember = "NombreCombo";
+            cbx.ValueMember = "IdCombo";
+        }
     }
 }

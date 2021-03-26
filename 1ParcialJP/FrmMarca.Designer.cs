@@ -50,12 +50,13 @@ namespace _1ParcialJP
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.GBMarca = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGguardar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
@@ -195,9 +196,6 @@ namespace _1ParcialJP
             this.eSTADOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mARCABindingSource, "ESTADO", true));
             this.eSTADOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.eSTADOComboBox.FormattingEnabled = true;
-            this.eSTADOComboBox.Items.AddRange(new object[] {
-            "ACTIVA",
-            "INACTIVA"});
             this.eSTADOComboBox.Location = new System.Drawing.Point(112, 58);
             this.eSTADOComboBox.Name = "eSTADOComboBox";
             this.eSTADOComboBox.Size = new System.Drawing.Size(182, 23);
@@ -254,22 +252,6 @@ namespace _1ParcialJP
             this.GBMarca.TabIndex = 17;
             this.GBMarca.TabStop = false;
             this.GBMarca.Text = "Marcas";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(693, 12);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 40);
-            this.button3.TabIndex = 19;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -330,12 +312,39 @@ namespace _1ParcialJP
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.BackgroundImage = global::_1ParcialJP.Properties.Resources.x_png_33;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Location = new System.Drawing.Point(693, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 40);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(709, 159);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // FrmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(817, 596);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.GBMarca);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F);
@@ -379,6 +388,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.GroupBox GBMarca;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
