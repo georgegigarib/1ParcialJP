@@ -40,12 +40,12 @@ namespace _1ParcialJP
         {
              this.ControlBox = false;
 
-            String[] ArrayTitulos = { "Disponible", "Descontinuado", "Agotado", "No Disponible" };
-            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "AGOTADO", "NO DISPONIBLE" };
+            String[] ArrayTitulos = { "Disponible", "Descontinuado", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "NO DISPONIBLE" };
             Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
 
-            String[] ArrayTitulos1 = {  "Descripcion", "Tipo de Farmaco", "Marca", "Ubicacion", "Dosis", "Estado" };
-            String[] ArrayValues1 = {  "DESCRIPCION", "ID_TF", "ID_MARCA", "ID_UBBICACION", "DOSIS", "ESTADO" };
+            String[] ArrayTitulos1 = {  "Descripcion", "Tipo de Farmaco", "Marca", "Ubicacion", "Dosis", "Estado", "Cantidad" };
+            String[] ArrayValues1 = {  "DESCRIPCION", "ID_TF", "ID_MARCA", "ID_UBBICACION", "DOSIS", "ESTADO", "CANTIDAD" };
             Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
 
          
@@ -117,7 +117,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = $"UPDATE MEDICAMENTO SET DESCRIPCION = @descripcion, ID_TF = @tipoF, " +
-                    $"ESTADO= @estado, ID_UBBICACION = @ubicacion, DOSIS= @dosis, ID_MARCA = @marca " +
+                    $"ESTADO= @estado, ID_UBBICACION = @ubicacion, DOSIS= @dosis, ID_MARCA = @marca, CANTIDAD = @cantidad " +
                     $"WHERE ID_MEDICAMENTO = @id";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
@@ -126,6 +126,7 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
                 command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
                 command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
+                command.Parameters.AddWithValue("@cantidad", txtcantidad.Value);
                 command.Parameters.AddWithValue("@id", iD_MEDICAMENTOTextBox.Text);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
@@ -145,7 +146,47 @@ namespace _1ParcialJP
             this.Close();
         }
 
-        private void mEDICAMENTODataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql;
+            SqlCommand command;
+            switch (selectsearch.SelectedIndex)
+            {
+
+                case 6:
+                    if (int.TryParse(txtsearch.Text, out int result))
+                    {
+                        sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.SelectedValue.ToString()} <= @search";
+                        command = new SqlCommand(sql);
+                        command.Parameters.AddWithValue("@search", Int32.Parse(txtsearch.Text));
+                        mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
+                        mEDICAMENTODataGridView.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Asegurese de solo escribir numeros.");
+                    }
+                    break;
+                default:
+                    sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
+                    command = new SqlCommand(sql);
+                    command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
+                    mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
+                    mEDICAMENTODataGridView.Refresh();
+                    break;
+            }
+            
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mEDICAMENTODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             iD_MEDICAMENTOTextBox.Text = mEDICAMENTODataGridView[0, e.RowIndex].Value.ToString();
             dESCRIPCIONTextBox.Text = mEDICAMENTODataGridView[1, e.RowIndex].Value.ToString();
@@ -154,20 +195,7 @@ namespace _1ParcialJP
             CBXUbicacion.Text = mEDICAMENTODataGridView[4, e.RowIndex].Value.ToString();
             dOSISTextBox.Text = mEDICAMENTODataGridView[5, e.RowIndex].Value.ToString();
             eSTADOComboBox.Text = mEDICAMENTODataGridView[6, e.RowIndex].Value.ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string sql = $"SELECT * FROM MEDICAMENTO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
-            SqlCommand command = new SqlCommand(sql);
-            command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
-            mEDICAMENTODataGridView.DataSource = Helper.DoQueryReceiverLimpio(command);
-            mEDICAMENTODataGridView.Refresh();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            txtcantidad.Text = mEDICAMENTODataGridView[7, e.RowIndex].Value.ToString();
         }
     }
 }

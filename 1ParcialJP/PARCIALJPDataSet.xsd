@@ -52,7 +52,7 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_MEDICAMENTO, DESCRIPCION, ID_TF, ID_MARCA, ID_UBBICACION, DOSIS, ESTADO FROM dbo.MEDICAMENTO</CommandText>
+                    <CommandText>SELECT ID_MEDICAMENTO, DESCRIPCION, ID_TF, ID_MARCA, ID_UBBICACION, DOSIS, ESTADO FROM MEDICAMENTO</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -267,7 +267,7 @@
   <xs:element name="PARCIALJPDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PARCIALJPDataSet" msprop:Generator_UserDSName="PARCIALJPDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MARCA" msprop:Generator_TableClassName="MARCADataTable" msprop:Generator_TableVarName="tableMARCA" msprop:Generator_RowChangedName="MARCARowChanged" msprop:Generator_TablePropName="MARCA" msprop:Generator_RowDeletingName="MARCARowDeleting" msprop:Generator_RowChangingName="MARCARowChanging" msprop:Generator_RowEvHandlerName="MARCARowChangeEventHandler" msprop:Generator_RowDeletedName="MARCARowDeleted" msprop:Generator_RowClassName="MARCARow" msprop:Generator_UserTableName="MARCA" msprop:Generator_RowEvArgName="MARCARowChangeEvent">
+        <xs:element name="MARCA" msprop:Generator_TableClassName="MARCADataTable" msprop:Generator_TableVarName="tableMARCA" msprop:Generator_TablePropName="MARCA" msprop:Generator_RowDeletingName="MARCARowDeleting" msprop:Generator_RowChangingName="MARCARowChanging" msprop:Generator_RowEvHandlerName="MARCARowChangeEventHandler" msprop:Generator_RowDeletedName="MARCARowDeleted" msprop:Generator_UserTableName="MARCA" msprop:Generator_RowChangedName="MARCARowChanged" msprop:Generator_RowEvArgName="MARCARowChangeEvent" msprop:Generator_RowClassName="MARCARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_MARCA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_MARCA" msprop:Generator_ColumnPropNameInRow="ID_MARCA" msprop:Generator_ColumnPropNameInTable="ID_MARCAColumn" msprop:Generator_UserColumnName="ID_MARCA" type="xs:int" />
@@ -288,7 +288,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MEDICAMENTO" msprop:Generator_TableClassName="MEDICAMENTODataTable" msprop:Generator_TableVarName="tableMEDICAMENTO" msprop:Generator_RowChangedName="MEDICAMENTORowChanged" msprop:Generator_TablePropName="MEDICAMENTO" msprop:Generator_RowDeletingName="MEDICAMENTORowDeleting" msprop:Generator_RowChangingName="MEDICAMENTORowChanging" msprop:Generator_RowEvHandlerName="MEDICAMENTORowChangeEventHandler" msprop:Generator_RowDeletedName="MEDICAMENTORowDeleted" msprop:Generator_RowClassName="MEDICAMENTORow" msprop:Generator_UserTableName="MEDICAMENTO" msprop:Generator_RowEvArgName="MEDICAMENTORowChangeEvent">
+        <xs:element name="MEDICAMENTO" msprop:Generator_TableClassName="MEDICAMENTODataTable" msprop:Generator_TableVarName="tableMEDICAMENTO" msprop:Generator_TablePropName="MEDICAMENTO" msprop:Generator_RowDeletingName="MEDICAMENTORowDeleting" msprop:Generator_RowChangingName="MEDICAMENTORowChanging" msprop:Generator_RowEvHandlerName="MEDICAMENTORowChangeEventHandler" msprop:Generator_RowDeletedName="MEDICAMENTORowDeleted" msprop:Generator_UserTableName="MEDICAMENTO" msprop:Generator_RowChangedName="MEDICAMENTORowChanged" msprop:Generator_RowEvArgName="MEDICAMENTORowChangeEvent" msprop:Generator_RowClassName="MEDICAMENTORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_MEDICAMENTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_MEDICAMENTO" msprop:Generator_ColumnPropNameInRow="ID_MEDICAMENTO" msprop:Generator_ColumnPropNameInTable="ID_MEDICAMENTOColumn" msprop:Generator_UserColumnName="ID_MEDICAMENTO" type="xs:int" />
@@ -334,10 +334,11 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="CANTIDAD" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD" msprop:Generator_ColumnPropNameInRow="CANTIDAD" msprop:Generator_ColumnPropNameInTable="CANTIDADColumn" msprop:Generator_UserColumnName="CANTIDAD" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MEDICO" msprop:Generator_TableClassName="MEDICODataTable" msprop:Generator_TableVarName="tableMEDICO" msprop:Generator_RowChangedName="MEDICORowChanged" msprop:Generator_TablePropName="MEDICO" msprop:Generator_RowDeletingName="MEDICORowDeleting" msprop:Generator_RowChangingName="MEDICORowChanging" msprop:Generator_RowEvHandlerName="MEDICORowChangeEventHandler" msprop:Generator_RowDeletedName="MEDICORowDeleted" msprop:Generator_RowClassName="MEDICORow" msprop:Generator_UserTableName="MEDICO" msprop:Generator_RowEvArgName="MEDICORowChangeEvent">
+        <xs:element name="MEDICO" msprop:Generator_TableClassName="MEDICODataTable" msprop:Generator_TableVarName="tableMEDICO" msprop:Generator_TablePropName="MEDICO" msprop:Generator_RowDeletingName="MEDICORowDeleting" msprop:Generator_RowChangingName="MEDICORowChanging" msprop:Generator_RowEvHandlerName="MEDICORowChangeEventHandler" msprop:Generator_RowDeletedName="MEDICORowDeleted" msprop:Generator_UserTableName="MEDICO" msprop:Generator_RowChangedName="MEDICORowChanged" msprop:Generator_RowEvArgName="MEDICORowChangeEvent" msprop:Generator_RowClassName="MEDICORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_MEDICO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_MEDICO" msprop:Generator_ColumnPropNameInRow="ID_MEDICO" msprop:Generator_ColumnPropNameInTable="ID_MEDICOColumn" msprop:Generator_UserColumnName="ID_MEDICO" type="xs:int" />
@@ -379,7 +380,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PACIENTE" msprop:Generator_TableClassName="PACIENTEDataTable" msprop:Generator_TableVarName="tablePACIENTE" msprop:Generator_RowChangedName="PACIENTERowChanged" msprop:Generator_TablePropName="PACIENTE" msprop:Generator_RowDeletingName="PACIENTERowDeleting" msprop:Generator_RowChangingName="PACIENTERowChanging" msprop:Generator_RowEvHandlerName="PACIENTERowChangeEventHandler" msprop:Generator_RowDeletedName="PACIENTERowDeleted" msprop:Generator_RowClassName="PACIENTERow" msprop:Generator_UserTableName="PACIENTE" msprop:Generator_RowEvArgName="PACIENTERowChangeEvent">
+        <xs:element name="PACIENTE" msprop:Generator_TableClassName="PACIENTEDataTable" msprop:Generator_TableVarName="tablePACIENTE" msprop:Generator_TablePropName="PACIENTE" msprop:Generator_RowDeletingName="PACIENTERowDeleting" msprop:Generator_RowChangingName="PACIENTERowChanging" msprop:Generator_RowEvHandlerName="PACIENTERowChangeEventHandler" msprop:Generator_RowDeletedName="PACIENTERowDeleted" msprop:Generator_UserTableName="PACIENTE" msprop:Generator_RowChangedName="PACIENTERowChanged" msprop:Generator_RowEvArgName="PACIENTERowChangeEvent" msprop:Generator_RowClassName="PACIENTERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_PACIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_PACIENTE" msprop:Generator_ColumnPropNameInRow="ID_PACIENTE" msprop:Generator_ColumnPropNameInTable="ID_PACIENTEColumn" msprop:Generator_UserColumnName="ID_PACIENTE" type="xs:int" />
@@ -409,7 +410,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TIPO_FARMACO" msprop:Generator_TableClassName="TIPO_FARMACODataTable" msprop:Generator_TableVarName="tableTIPO_FARMACO" msprop:Generator_RowChangedName="TIPO_FARMACORowChanged" msprop:Generator_TablePropName="TIPO_FARMACO" msprop:Generator_RowDeletingName="TIPO_FARMACORowDeleting" msprop:Generator_RowChangingName="TIPO_FARMACORowChanging" msprop:Generator_RowEvHandlerName="TIPO_FARMACORowChangeEventHandler" msprop:Generator_RowDeletedName="TIPO_FARMACORowDeleted" msprop:Generator_RowClassName="TIPO_FARMACORow" msprop:Generator_UserTableName="TIPO_FARMACO" msprop:Generator_RowEvArgName="TIPO_FARMACORowChangeEvent">
+        <xs:element name="TIPO_FARMACO" msprop:Generator_TableClassName="TIPO_FARMACODataTable" msprop:Generator_TableVarName="tableTIPO_FARMACO" msprop:Generator_TablePropName="TIPO_FARMACO" msprop:Generator_RowDeletingName="TIPO_FARMACORowDeleting" msprop:Generator_RowChangingName="TIPO_FARMACORowChanging" msprop:Generator_RowEvHandlerName="TIPO_FARMACORowChangeEventHandler" msprop:Generator_RowDeletedName="TIPO_FARMACORowDeleted" msprop:Generator_UserTableName="TIPO_FARMACO" msprop:Generator_RowChangedName="TIPO_FARMACORowChanged" msprop:Generator_RowEvArgName="TIPO_FARMACORowChangeEvent" msprop:Generator_RowClassName="TIPO_FARMACORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_TF" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_TF" msprop:Generator_ColumnPropNameInRow="ID_TF" msprop:Generator_ColumnPropNameInTable="ID_TFColumn" msprop:Generator_UserColumnName="ID_TF" type="xs:int" />
@@ -430,7 +431,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UBICACION" msprop:Generator_TableClassName="UBICACIONDataTable" msprop:Generator_TableVarName="tableUBICACION" msprop:Generator_RowChangedName="UBICACIONRowChanged" msprop:Generator_TablePropName="UBICACION" msprop:Generator_RowDeletingName="UBICACIONRowDeleting" msprop:Generator_RowChangingName="UBICACIONRowChanging" msprop:Generator_RowEvHandlerName="UBICACIONRowChangeEventHandler" msprop:Generator_RowDeletedName="UBICACIONRowDeleted" msprop:Generator_RowClassName="UBICACIONRow" msprop:Generator_UserTableName="UBICACION" msprop:Generator_RowEvArgName="UBICACIONRowChangeEvent">
+        <xs:element name="UBICACION" msprop:Generator_TableClassName="UBICACIONDataTable" msprop:Generator_TableVarName="tableUBICACION" msprop:Generator_TablePropName="UBICACION" msprop:Generator_RowDeletingName="UBICACIONRowDeleting" msprop:Generator_RowChangingName="UBICACIONRowChanging" msprop:Generator_RowEvHandlerName="UBICACIONRowChangeEventHandler" msprop:Generator_RowDeletedName="UBICACIONRowDeleted" msprop:Generator_UserTableName="UBICACION" msprop:Generator_RowChangedName="UBICACIONRowChanged" msprop:Generator_RowEvArgName="UBICACIONRowChangeEvent" msprop:Generator_RowClassName="UBICACIONRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_UBICACION" msdata:ReadOnly="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_UBICACION" msprop:Generator_ColumnPropNameInRow="ID_UBICACION" msprop:Generator_ColumnPropNameInTable="ID_UBICACIONColumn" msprop:Generator_UserColumnName="ID_UBICACION">
@@ -478,7 +479,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VISITA" msprop:Generator_TableClassName="VISITADataTable" msprop:Generator_TableVarName="tableVISITA" msprop:Generator_RowChangedName="VISITARowChanged" msprop:Generator_TablePropName="VISITA" msprop:Generator_RowDeletingName="VISITARowDeleting" msprop:Generator_RowChangingName="VISITARowChanging" msprop:Generator_RowEvHandlerName="VISITARowChangeEventHandler" msprop:Generator_RowDeletedName="VISITARowDeleted" msprop:Generator_RowClassName="VISITARow" msprop:Generator_UserTableName="VISITA" msprop:Generator_RowEvArgName="VISITARowChangeEvent">
+        <xs:element name="VISITA" msprop:Generator_TableClassName="VISITADataTable" msprop:Generator_TableVarName="tableVISITA" msprop:Generator_TablePropName="VISITA" msprop:Generator_RowDeletingName="VISITARowDeleting" msprop:Generator_RowChangingName="VISITARowChanging" msprop:Generator_RowEvHandlerName="VISITARowChangeEventHandler" msprop:Generator_RowDeletedName="VISITARowDeleted" msprop:Generator_UserTableName="VISITA" msprop:Generator_RowChangedName="VISITARowChanged" msprop:Generator_RowEvArgName="VISITARowChangeEvent" msprop:Generator_RowClassName="VISITARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_VISITA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_VISITA" msprop:Generator_ColumnPropNameInRow="ID_VISITA" msprop:Generator_ColumnPropNameInTable="ID_VISITAColumn" msprop:Generator_UserColumnName="ID_VISITA" type="xs:int" />

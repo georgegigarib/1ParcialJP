@@ -30,7 +30,7 @@ namespace _1ParcialJP
                 return "";
             }
         }
-        public static void soloFila(string query)
+        public static string soloFila(string query)
         {
 
             SqlConnection con = new SqlConnection();
@@ -44,7 +44,7 @@ namespace _1ParcialJP
                 SqlDataReader reader = elcomando.ExecuteReader();
                 reader.Read();
                 //seteando variable en session
-                Program.tipo = reader[0].ToString();
+                return reader[0].ToString();
             }
             catch(Exception er)
             {
@@ -52,8 +52,10 @@ namespace _1ParcialJP
             }
             finally
             {
+
                 con.Close();
             }
+            return "U";
         }
         public static void DoQueryExecuterLimpio(SqlCommand query)
         {

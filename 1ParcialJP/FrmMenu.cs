@@ -24,7 +24,7 @@ namespace _1ParcialJP
         {
             if(Program.tipo != "A")
             {
-                // btnAU.Visible = false;
+                btnAU.Visible = false;
             }
             IsMdiContainer = true;
             button3.Image = (Image)(new Bitmap(_1ParcialJP.Properties.Resources.pngkey_com_location_png_104244, new Size(30, 35)));
