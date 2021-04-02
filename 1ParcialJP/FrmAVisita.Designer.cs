@@ -37,18 +37,20 @@ namespace _1ParcialJP
             System.Windows.Forms.Label mEDICAMENTOSLabel;
             System.Windows.Forms.Label rECOMENDACIONESLabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAVisita));
             this.nOMBRE_MEDICOComboBox = new System.Windows.Forms.ComboBox();
             this.CBXPACIENTE = new System.Windows.Forms.ComboBox();
             this.hORADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fECHADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.sINTOMASTextBox = new System.Windows.Forms.TextBox();
-            this.mEDICAMENTOSTextBox = new System.Windows.Forms.TextBox();
             this.rECOMENDACIONESTextBox = new System.Windows.Forms.TextBox();
             this.eSTADOTextBox = new System.Windows.Forms.TextBox();
             this.btnGguardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.cbxMedicamento = new System.Windows.Forms.ComboBox();
+            this.txtcantidadVisita = new System.Windows.Forms.NumericUpDown();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
             fECHALabel = new System.Windows.Forms.Label();
@@ -57,7 +59,9 @@ namespace _1ParcialJP
             mEDICAMENTOSLabel = new System.Windows.Forms.Label();
             rECOMENDACIONESLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidadVisita)).BeginInit();
             this.SuspendLayout();
             // 
             // nOMBRE_MEDICOLabel
@@ -179,15 +183,6 @@ namespace _1ParcialJP
             this.sINTOMASTextBox.Size = new System.Drawing.Size(194, 67);
             this.sINTOMASTextBox.TabIndex = 36;
             // 
-            // mEDICAMENTOSTextBox
-            // 
-            this.mEDICAMENTOSTextBox.Location = new System.Drawing.Point(161, 369);
-            this.mEDICAMENTOSTextBox.MaxLength = 200;
-            this.mEDICAMENTOSTextBox.Multiline = true;
-            this.mEDICAMENTOSTextBox.Name = "mEDICAMENTOSTextBox";
-            this.mEDICAMENTOSTextBox.Size = new System.Drawing.Size(189, 94);
-            this.mEDICAMENTOSTextBox.TabIndex = 38;
-            // 
             // rECOMENDACIONESTextBox
             // 
             this.rECOMENDACIONESTextBox.Location = new System.Drawing.Point(161, 281);
@@ -210,7 +205,7 @@ namespace _1ParcialJP
             this.btnGguardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGguardar.Location = new System.Drawing.Point(418, 395);
+            this.btnGguardar.Location = new System.Drawing.Point(415, 413);
             this.btnGguardar.Name = "btnGguardar";
             this.btnGguardar.Size = new System.Drawing.Size(69, 68);
             this.btnGguardar.TabIndex = 47;
@@ -219,6 +214,9 @@ namespace _1ParcialJP
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.txtcantidadVisita);
+            this.groupBox1.Controls.Add(this.cbxMedicamento);
             this.groupBox1.Controls.Add(this.btnGguardar);
             this.groupBox1.Controls.Add(this.eSTADOTextBox);
             this.groupBox1.Controls.Add(this.nOMBRE_MEDICOComboBox);
@@ -228,7 +226,6 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.hORADateTimePicker);
             this.groupBox1.Controls.Add(rECOMENDACIONESLabel);
             this.groupBox1.Controls.Add(nOMBRE_MEDICOLabel);
-            this.groupBox1.Controls.Add(this.mEDICAMENTOSTextBox);
             this.groupBox1.Controls.Add(nOMBRE_PACIENTELabel);
             this.groupBox1.Controls.Add(mEDICAMENTOSLabel);
             this.groupBox1.Controls.Add(fECHALabel);
@@ -238,7 +235,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(hORALabel);
             this.groupBox1.Location = new System.Drawing.Point(223, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 473);
+            this.groupBox1.Size = new System.Drawing.Size(499, 493);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar Visita";
@@ -259,6 +256,31 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // cbxMedicamento
+            // 
+            this.cbxMedicamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedicamento.FormattingEnabled = true;
+            this.cbxMedicamento.Location = new System.Drawing.Point(161, 369);
+            this.cbxMedicamento.Name = "cbxMedicamento";
+            this.cbxMedicamento.Size = new System.Drawing.Size(233, 23);
+            this.cbxMedicamento.TabIndex = 48;
+            // 
+            // txtcantidadVisita
+            // 
+            this.txtcantidadVisita.Location = new System.Drawing.Point(161, 413);
+            this.txtcantidadVisita.Name = "txtcantidadVisita";
+            this.txtcantidadVisita.Size = new System.Drawing.Size(120, 22);
+            this.txtcantidadVisita.TabIndex = 49;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(18, 422);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 15);
+            label1.TabIndex = 50;
+            label1.Text = "CANTIDAD:";
+            // 
             // FrmAVisita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -275,6 +297,7 @@ namespace _1ParcialJP
             this.Load += new System.EventHandler(this.FrmAVisita_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidadVisita)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,11 +309,12 @@ namespace _1ParcialJP
         private System.Windows.Forms.DateTimePicker hORADateTimePicker;
         private System.Windows.Forms.DateTimePicker fECHADateTimePicker;
         private System.Windows.Forms.TextBox sINTOMASTextBox;
-        private System.Windows.Forms.TextBox mEDICAMENTOSTextBox;
         private System.Windows.Forms.TextBox rECOMENDACIONESTextBox;
         private System.Windows.Forms.TextBox eSTADOTextBox;
         private System.Windows.Forms.Button btnGguardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown txtcantidadVisita;
+        private System.Windows.Forms.ComboBox cbxMedicamento;
     }
 }

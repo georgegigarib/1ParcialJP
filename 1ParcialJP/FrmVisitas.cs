@@ -57,6 +57,13 @@ namespace _1ParcialJP
                     CBXPACIENTE.Items.Add(dr["NOMBRE"].ToString());
                 }
 
+                dt.Clear();
+                dt = combolista("DESCRIPCION", "MEDICAMENTO");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cbxMedicamento.Items.Add(dr["DESCRIPCION"].ToString());
+                }
+
             }
             catch (Exception er)
             {
@@ -79,7 +86,7 @@ namespace _1ParcialJP
             {
                 string sql = $"UPDATE VISITA SET NOMBRE_MEDICO = @nombremedico, NOMBRE_PACIENTE = @nombrepaciente, " +
                     $"FECHA= @fecha, HORA = @hora, SINTOMAS= @sintomas," +
-                    $" MEDICAMENTOS= @medicamentos, ESTADO= @estado, RECOMENDACIONES= @recomendaciones" +
+                    $" MEDICAMENTOS= @medicamentos, CANTIDAD_VISITA= @cantidad, ESTADO= @estado, RECOMENDACIONES= @recomendaciones" +
                     $"WHERE ID_VISITA = @id";
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@nombrebedico", nOMBRE_MEDICOComboBox.Text);
@@ -87,7 +94,8 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@fecha", fECHADateTimePicker.Text);
                 command.Parameters.AddWithValue("@hora", hORADateTimePicker.Text);
                 command.Parameters.AddWithValue("@sintomas", sINTOMASTextBox.Text);
-                command.Parameters.AddWithValue("@medicamentos", mEDICAMENTOSTextBox.Text);
+                command.Parameters.AddWithValue("@medicamentos", cbxMedicamento.Text);
+                command.Parameters.AddWithValue("@cantidad", txtcantidadVisita.Value);
                 command.Parameters.AddWithValue("@estado", eSTADOTextBox.Text);
                 command.Parameters.AddWithValue("@recomendaciones", rECOMENDACIONESTextBox.Text);
                 command.Parameters.AddWithValue("@id", iD_VISITATextBox.Text);
@@ -171,9 +179,10 @@ namespace _1ParcialJP
             fECHADateTimePicker.Text = vISITADataGridView[3, e.RowIndex].Value.ToString();
             hORADateTimePicker.Text = vISITADataGridView[4, e.RowIndex].Value.ToString();
             sINTOMASTextBox.Text = vISITADataGridView[5, e.RowIndex].Value.ToString();
-            mEDICAMENTOSTextBox.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
-            rECOMENDACIONESTextBox.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
-            eSTADOTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
+            cbxMedicamento.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
+            txtcantidadVisita.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
+            rECOMENDACIONESTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
+            eSTADOTextBox.Text = vISITADataGridView[9, e.RowIndex].Value.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)

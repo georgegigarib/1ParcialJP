@@ -40,7 +40,7 @@ namespace _1ParcialJP
                         //  MessageBox.Show("Bienvenido " +  txtusername.Text);
                         //seteando variable de sesion
                         query = $"SELECT TIPO FROM USUARIO WHERE USERNAME = '{username}'";
-                        Helper.soloFila(query);
+                        Program.tipo = Helper.soloFila(query);
                         FrmMenu fmMenu = new FrmMenu();
                         fmMenu.Show();
                         this.Hide();

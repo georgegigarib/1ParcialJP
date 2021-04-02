@@ -24,7 +24,7 @@ namespace _1ParcialJP
             try
             {
                 string sql = $"INSERT INTO MEDICAMENTO VALUES ( @descripcion, @tipoF, @marca, @ubicacion" +
-                    $", @dosis , @estado)" ;
+                    $", @dosis , @estado, @cantidad)" ;
                 SqlCommand command = new SqlCommand(sql);
                 command.Parameters.AddWithValue("@descripcion", dESCRIPCIONTextBox.Text);
                 command.Parameters.AddWithValue("@tipoF", CBXtipoFarmaco.Text);
@@ -32,6 +32,7 @@ namespace _1ParcialJP
                 command.Parameters.AddWithValue("@ubicacion", CBXUbicacion.Text);
                 command.Parameters.AddWithValue("@dosis", dOSISTextBox.Text);
                 command.Parameters.AddWithValue("@estado", eSTADOComboBox.SelectedValue.ToString());
+                command.Parameters.AddWithValue("@cantidad", txtcantidad.Value);
                 Helper.DoQueryExecuterLimpio(command);
                 MessageBox.Show("Registro guardado con exito");
                 this.Close();
@@ -45,8 +46,8 @@ namespace _1ParcialJP
         private void FrmAMedicamento_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            String[] ArrayTitulos = { "Disponible", "Descontinuado", "Agotado", "No Disponible" };
-            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "AGOTADO", "NO DISPONIBLE" };
+            String[] ArrayTitulos = { "Disponible", "Descontinuado", "No Disponible" };
+            String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "NO DISPONIBLE" };
             Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
 
             try

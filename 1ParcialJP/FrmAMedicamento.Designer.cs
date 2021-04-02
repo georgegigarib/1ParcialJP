@@ -36,6 +36,7 @@ namespace _1ParcialJP
             System.Windows.Forms.Label iD_UBBICACIONLabel;
             System.Windows.Forms.Label dOSISLabel;
             System.Windows.Forms.Label eSTADOLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAMedicamento));
             this.CBXtipoFarmaco = new System.Windows.Forms.ComboBox();
             this.CBXMarca = new System.Windows.Forms.ComboBox();
@@ -46,13 +47,16 @@ namespace _1ParcialJP
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtcantidad = new System.Windows.Forms.NumericUpDown();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
             iD_UBBICACIONLabel = new System.Windows.Forms.Label();
             dOSISLabel = new System.Windows.Forms.Label();
             eSTADOLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // dESCRIPCIONLabel
@@ -174,7 +178,7 @@ namespace _1ParcialJP
             // 
             this.btnGuardar.BackgroundImage = global::_1ParcialJP.Properties.Resources.save_icon;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(371, 171);
+            this.btnGuardar.Location = new System.Drawing.Point(366, 192);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 67);
             this.btnGuardar.TabIndex = 38;
@@ -183,6 +187,8 @@ namespace _1ParcialJP
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtcantidad);
+            this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(this.dESCRIPCIONTextBox);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(eSTADOLabel);
@@ -198,7 +204,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(iD_TFLabel);
             this.groupBox1.Location = new System.Drawing.Point(217, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 251);
+            this.groupBox1.Size = new System.Drawing.Size(457, 280);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Medicamento";
@@ -219,6 +225,23 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            label1.Location = new System.Drawing.Point(18, 244);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 15);
+            label1.TabIndex = 39;
+            label1.Text = "CANTIDAD:";
+            // 
+            // txtcantidad
+            // 
+            this.txtcantidad.Location = new System.Drawing.Point(128, 238);
+            this.txtcantidad.Name = "txtcantidad";
+            this.txtcantidad.Size = new System.Drawing.Size(139, 20);
+            this.txtcantidad.TabIndex = 40;
+            // 
             // FrmAMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +257,7 @@ namespace _1ParcialJP
             this.Load += new System.EventHandler(this.FrmAMedicamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +273,6 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown txtcantidad;
     }
 }

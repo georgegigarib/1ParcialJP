@@ -785,6 +785,8 @@ namespace _1ParcialJP {
             
             private global::System.Data.DataColumn columnESTADO;
             
+            private global::System.Data.DataColumn columnCANTIDAD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MEDICAMENTODataTable() {
@@ -876,6 +878,14 @@ namespace _1ParcialJP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CANTIDADColumn {
+                get {
+                    return this.columnCANTIDAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -911,7 +921,7 @@ namespace _1ParcialJP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MEDICAMENTORow AddMEDICAMENTORow(string DESCRIPCION, string ID_TF, string ID_MARCA, string ID_UBBICACION, string DOSIS, string ESTADO) {
+            public MEDICAMENTORow AddMEDICAMENTORow(string DESCRIPCION, string ID_TF, string ID_MARCA, string ID_UBBICACION, string DOSIS, string ESTADO, int CANTIDAD) {
                 MEDICAMENTORow rowMEDICAMENTORow = ((MEDICAMENTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -920,7 +930,8 @@ namespace _1ParcialJP {
                         ID_MARCA,
                         ID_UBBICACION,
                         DOSIS,
-                        ESTADO};
+                        ESTADO,
+                        CANTIDAD};
                 rowMEDICAMENTORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMEDICAMENTORow);
                 return rowMEDICAMENTORow;
@@ -950,6 +961,7 @@ namespace _1ParcialJP {
                 this.columnID_UBBICACION = base.Columns["ID_UBBICACION"];
                 this.columnDOSIS = base.Columns["DOSIS"];
                 this.columnESTADO = base.Columns["ESTADO"];
+                this.columnCANTIDAD = base.Columns["CANTIDAD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -969,6 +981,8 @@ namespace _1ParcialJP {
                 base.Columns.Add(this.columnDOSIS);
                 this.columnESTADO = new global::System.Data.DataColumn("ESTADO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnESTADO);
+                this.columnCANTIDAD = new global::System.Data.DataColumn("CANTIDAD", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDAD);
                 this.columnID_MEDICAMENTO.AutoIncrement = true;
                 this.columnID_MEDICAMENTO.AutoIncrementSeed = -1;
                 this.columnID_MEDICAMENTO.AutoIncrementStep = -1;
@@ -2942,6 +2956,22 @@ namespace _1ParcialJP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CANTIDAD {
+                get {
+                    try {
+                        return ((int)(this[this.tableMEDICAMENTO.CANTIDADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CANTIDAD\' in table \'MEDICAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMEDICAMENTO.CANTIDADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDESCRIPCIONNull() {
                 return this.IsNull(this.tableMEDICAMENTO.DESCRIPCIONColumn);
             }
@@ -3010,6 +3040,18 @@ namespace _1ParcialJP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetESTADONull() {
                 this[this.tableMEDICAMENTO.ESTADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCANTIDADNull() {
+                return this.IsNull(this.tableMEDICAMENTO.CANTIDADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCANTIDADNull() {
+                this[this.tableMEDICAMENTO.CANTIDADColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4480,7 +4522,7 @@ namespace _1ParcialJP.PARCIALJPDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_MEDICAMENTO, DESCRIPCION, ID_TF, ID_MARCA, ID_UBBICACION, DOSIS, ESTADO" +
-                " FROM dbo.MEDICAMENTO";
+                " FROM MEDICAMENTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

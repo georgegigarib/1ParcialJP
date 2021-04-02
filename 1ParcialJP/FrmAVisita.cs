@@ -31,6 +31,7 @@ namespace _1ParcialJP
             {
                 nOMBRE_MEDICOComboBox.Items.Clear();
                 CBXPACIENTE.Items.Clear();
+                cbxMedicamento.Items.Clear();
                 DataTable dt = new DataTable();
 
                 //COMBOBOX nombre medico
@@ -47,6 +48,12 @@ namespace _1ParcialJP
                     {
                         CBXPACIENTE.Items.Add(dr["NOMBRE"].ToString());
                     }
+                dt.Clear();
+                dt = combolista("DESCRIPCION", "MEDICAMENTO");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cbxMedicamento.Items.Add(dr["DESCRIPCION"].ToString());
+                }
 
             }
             catch (Exception er)
@@ -54,35 +61,51 @@ namespace _1ParcialJP
                 MessageBox.Show("Error al obtener las opciones" + er);
             }
 
-            nOMBRE_MEDICOComboBox.SelectedIndex = 0;
-            CBXPACIENTE.SelectedIndex = 0;
 
         }
 
         private void btnGguardar_Click(object sender, EventArgs e)
         {
-            
-            try
+            string query = $"select CANTIDAD from MEDICAMENTO where DESCRIPCION = '{cbxMedicamento.Text}'";
+            if (Int32.Parse(Helper.soloFila(query)) >= txtcantidadVisita.Value)
             {
-                string sql = $"INSERT INTO VISITA VALUES (@nombremedico, @nombrepaciente, @fecha, @hora" +
-                    $", @sintomas, @medicamentos, @estado, @recomendaciones)";
+                //update a valor cantidad de medicamento
+                string sql = $"update MEDICAMENTO set CANTIDAD = CANTIDAD - @cantidad where DESCRIPCION = @medicamentos ";
                 SqlCommand command = new SqlCommand(sql);
-                command.Parameters.AddWithValue("@nombremedico", nOMBRE_MEDICOComboBox.Text);
-                command.Parameters.AddWithValue("@nombrepaciente", CBXPACIENTE.Text);
-                command.Parameters.AddWithValue("@fecha", fECHADateTimePicker.Text);
-                command.Parameters.AddWithValue("@hora", hORADateTimePicker.Text);
-                command.Parameters.AddWithValue("@sintomas", sINTOMASTextBox.Text);
-                command.Parameters.AddWithValue("@medicamentos", mEDICAMENTOSTextBox.Text);
-                command.Parameters.AddWithValue("@estado", eSTADOTextBox.Text);
-                command.Parameters.AddWithValue("@recomendaciones", rECOMENDACIONESTextBox.Text);
+                command.Parameters.AddWithValue("@medicamentos", cbxMedicamento.Text);
+                command.Parameters.AddWithValue("@cantidad", txtcantidadVisita.Value);
                 Helper.DoQueryExecuterLimpio(command);
-                MessageBox.Show("Registro guardado con exito");
-                this.Close();
+
+
+                try
+                {
+                     sql = $"INSERT INTO VISITA VALUES (@nombremedico, @nombrepaciente, @fecha, @hora" +
+                        $", @sintomas, @medicamentos, @cantidad, @estado, @recomendaciones)";
+                    command = new SqlCommand(sql);
+                    command.Parameters.AddWithValue("@nombremedico", nOMBRE_MEDICOComboBox.Text);
+                    command.Parameters.AddWithValue("@nombrepaciente", CBXPACIENTE.Text);
+                    command.Parameters.AddWithValue("@fecha", fECHADateTimePicker.Text);
+                    command.Parameters.AddWithValue("@hora", hORADateTimePicker.Text);
+                    command.Parameters.AddWithValue("@sintomas", sINTOMASTextBox.Text);
+                    command.Parameters.AddWithValue("@medicamentos", cbxMedicamento.Text);
+                    command.Parameters.AddWithValue("@cantidad", txtcantidadVisita.Value);
+                    command.Parameters.AddWithValue("@estado", eSTADOTextBox.Text);
+                    command.Parameters.AddWithValue("@recomendaciones", rECOMENDACIONESTextBox.Text);
+                    Helper.DoQueryExecuterLimpio(command);
+                    MessageBox.Show("Registro guardado con exito");
+                    this.Close();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error al guardar registro: " + er);
+                }
+
             }
-            catch (Exception er)
+            else
             {
-                MessageBox.Show("Error al guardar registro: " + er);
+                MessageBox.Show("La cantidad introducida excede el stock.");
             }
+           
         }
 
         private void FrmAVisita_FormClosed(object sender, FormClosedEventArgs e)
