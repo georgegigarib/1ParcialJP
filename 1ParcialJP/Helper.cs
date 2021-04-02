@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
+using System.Diagnostics;
 
 namespace _1ParcialJP
 {
@@ -128,6 +130,39 @@ namespace _1ParcialJP
             cbx.DataSource = dt;
             cbx.DisplayMember = "NombreCombo";
             cbx.ValueMember = "IdCombo";
+        }
+
+        //funciones para exportar
+        string filePath = @"C:\prueba\marca.csv";
+        private void writeFileLine(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.AppendText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+        private void writeFileHeader(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.CreateText(filePath))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+        public void Exportar(string header, DataGridView elgrid, int columnas)
+        {
+            writeFileHeader(header);
+
+            string linea = "";
+            foreach (DataGridViewRow rows in elgrid.Rows)
+            {
+                linea = "";
+                for (int i = 0; i < columnas; i++)
+                {
+                    linea += rows.Cells[i].Value.ToString() + ",";
+                }
+                writeFileLine(linea);
+            }
+            Process.Start(filePath);
         }
     }
 }

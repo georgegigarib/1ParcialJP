@@ -29,6 +29,7 @@ namespace _1ParcialJP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label iD_MARCALabel;
             System.Windows.Forms.Label dESCRIPCIONLabel;
@@ -48,7 +49,10 @@ namespace _1ParcialJP
             this.txtEC = new System.Windows.Forms.ComboBox();
             this.txtIdU = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.pARCIALJPDataSet = new _1ParcialJP.PARCIALJPDataSet();
+            this.pARCIALJPDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label1 = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
@@ -57,6 +61,8 @@ namespace _1ParcialJP
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -220,6 +226,8 @@ namespace _1ParcialJP
             // 
             // dataGridViewUsuario
             // 
+            this.dataGridViewUsuario.AllowUserToAddRows = false;
+            this.dataGridViewUsuario.AllowUserToDeleteRows = false;
             this.dataGridViewUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -259,6 +267,7 @@ namespace _1ParcialJP
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnExportar);
             this.groupBox2.Controls.Add(this.txtEC);
             this.groupBox2.Controls.Add(this.txtTU);
             this.groupBox2.Controls.Add(label2);
@@ -282,6 +291,18 @@ namespace _1ParcialJP
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Usuarios";
             // 
+            // btnExportar
+            // 
+            this.btnExportar.BackgroundImage = global::_1ParcialJP.Properties.Resources.Microsoft_Excel_2013_logo_svg_;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.Location = new System.Drawing.Point(440, 14);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(39, 38);
+            this.btnExportar.TabIndex = 35;
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -297,6 +318,16 @@ namespace _1ParcialJP
             this.button3.TabIndex = 34;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pARCIALJPDataSet
+            // 
+            this.pARCIALJPDataSet.DataSetName = "PARCIALJPDataSet";
+            this.pARCIALJPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pARCIALJPDataSetBindingSource
+            // 
+            this.pARCIALJPDataSetBindingSource.DataSource = this.pARCIALJPDataSet;
+            this.pARCIALJPDataSetBindingSource.Position = 0;
             // 
             // FrmUsuario
             // 
@@ -317,6 +348,8 @@ namespace _1ParcialJP
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,5 +370,8 @@ namespace _1ParcialJP
         private System.Windows.Forms.TextBox txtIdU;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnExportar;
+        private PARCIALJPDataSet pARCIALJPDataSet;
+        private System.Windows.Forms.BindingSource pARCIALJPDataSetBindingSource;
     }
 }

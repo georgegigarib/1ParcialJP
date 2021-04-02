@@ -31,6 +31,10 @@ namespace _1ParcialJP
         }
         private void FrmPaciente_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in pACIENTEDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             selectsearch.SelectedIndex = 0;
             refrescargrid();
             this.ControlBox = false;
@@ -112,12 +116,15 @@ namespace _1ParcialJP
 
         private void pACIENTEDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            iD_PACIENTETextBox.Text = pACIENTEDataGridView[0, e.RowIndex].Value.ToString();
-            nOMBRETextBox.Text = pACIENTEDataGridView[1, e.RowIndex].Value.ToString();
-            cEDULATextBox.Text = pACIENTEDataGridView[2, e.RowIndex].Value.ToString();
-            nUM_CARNETTextBox.Text = pACIENTEDataGridView[3, e.RowIndex].Value.ToString();
-            tIPO_PACIENTEComboBox.Text = pACIENTEDataGridView[4, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = pACIENTEDataGridView[5, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_PACIENTETextBox.Text = pACIENTEDataGridView[0, e.RowIndex].Value.ToString();
+                nOMBRETextBox.Text = pACIENTEDataGridView[1, e.RowIndex].Value.ToString();
+                cEDULATextBox.Text = pACIENTEDataGridView[2, e.RowIndex].Value.ToString();
+                nUM_CARNETTextBox.Text = pACIENTEDataGridView[3, e.RowIndex].Value.ToString();
+                tIPO_PACIENTEComboBox.Text = pACIENTEDataGridView[4, e.RowIndex].Value.ToString();
+                eSTADOComboBox.Text = pACIENTEDataGridView[5, e.RowIndex].Value.ToString();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -132,6 +139,12 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, NOMBRE, CEDULA, CARNET, TIPO DE PACIENTE, ESTADO", pACIENTEDataGridView, 6);
         }
     }
 }

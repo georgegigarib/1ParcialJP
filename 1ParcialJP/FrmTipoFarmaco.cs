@@ -32,6 +32,10 @@ namespace _1ParcialJP
 
         private void FrmTipoFarmaco_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in tIPO_FARMACODataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             String[] ArrayTitulos = { "Disponible", "No Disponible", "Descontinuado", "En Prueba" };
             String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "DESCONTINUADO", "EN PRUEBA" };
             Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
@@ -110,9 +114,18 @@ namespace _1ParcialJP
 
         private void tIPO_FARMACODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            iD_TFTextBox.Text = tIPO_FARMACODataGridView[0, e.RowIndex].Value.ToString();
-            dESCRIPCIONTextBox.Text = tIPO_FARMACODataGridView[1, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = tIPO_FARMACODataGridView[2, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_TFTextBox.Text = tIPO_FARMACODataGridView[0, e.RowIndex].Value.ToString();
+                dESCRIPCIONTextBox.Text = tIPO_FARMACODataGridView[1, e.RowIndex].Value.ToString();
+                eSTADOComboBox.Text = tIPO_FARMACODataGridView[2, e.RowIndex].Value.ToString();
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, DESCRIPCION, ESTADO", tIPO_FARMACODataGridView, 3);
         }
     }
 }

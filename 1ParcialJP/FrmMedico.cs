@@ -38,6 +38,10 @@ namespace _1ParcialJP
 
         private void FrmMedico_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in mEDICODataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             refrescargrid();
             String[] ArrayTitulos = { "Disponible", "Vacaciones", "Licencia", "No Disponible" };
             String[] ArrayValues = { "DISPONIBLE", "VACACIONES", "LICENCIA", "NO DISPONIBLE" };
@@ -104,12 +108,15 @@ namespace _1ParcialJP
         }
         private void mEDICODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            iD_MEDICOTextBox.Text = mEDICODataGridView[0, e.RowIndex].Value.ToString();
-            nOMBRETextBox.Text = mEDICODataGridView[1, e.RowIndex].Value.ToString();
-            cEDULATextBox.Text = mEDICODataGridView[2, e.RowIndex].Value.ToString();
-            tANDA_LABORTextBox.Text = mEDICODataGridView[3, e.RowIndex].Value.ToString();
-            eSPECIALIDADTextBox.Text = mEDICODataGridView[4, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = mEDICODataGridView[5, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_MEDICOTextBox.Text = mEDICODataGridView[0, e.RowIndex].Value.ToString();
+                nOMBRETextBox.Text = mEDICODataGridView[1, e.RowIndex].Value.ToString();
+                cEDULATextBox.Text = mEDICODataGridView[2, e.RowIndex].Value.ToString();
+                tANDA_LABORTextBox.Text = mEDICODataGridView[3, e.RowIndex].Value.ToString();
+                eSPECIALIDADTextBox.Text = mEDICODataGridView[4, e.RowIndex].Value.ToString();
+                eSTADOComboBox.Text = mEDICODataGridView[5, e.RowIndex].Value.ToString();
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -132,6 +139,12 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, NOMBRE, CEDULA, TANDA, ESPECIALIDAD, ESTADO", mEDICODataGridView, 6);
         }
     }
 }

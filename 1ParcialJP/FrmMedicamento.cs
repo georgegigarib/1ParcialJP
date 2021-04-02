@@ -38,7 +38,12 @@ namespace _1ParcialJP
         }
         private void FrmMedicamento_Load(object sender, EventArgs e)
         {
-             this.ControlBox = false;
+            foreach (DataGridViewColumn column in mEDICAMENTODataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            this.ControlBox = false;
 
             String[] ArrayTitulos = { "Disponible", "Descontinuado", "No Disponible" };
             String[] ArrayValues = { "DISPONIBLE", "DESCONTINUADO", "NO DISPONIBLE" };
@@ -188,14 +193,23 @@ namespace _1ParcialJP
 
         private void mEDICAMENTODataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            iD_MEDICAMENTOTextBox.Text = mEDICAMENTODataGridView[0, e.RowIndex].Value.ToString();
-            dESCRIPCIONTextBox.Text = mEDICAMENTODataGridView[1, e.RowIndex].Value.ToString();
-            CBXtipoFarmaco.Text = mEDICAMENTODataGridView[2, e.RowIndex].Value.ToString();
-            CBXMarca.Text = mEDICAMENTODataGridView[3, e.RowIndex].Value.ToString();
-            CBXUbicacion.Text = mEDICAMENTODataGridView[4, e.RowIndex].Value.ToString();
-            dOSISTextBox.Text = mEDICAMENTODataGridView[5, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = mEDICAMENTODataGridView[6, e.RowIndex].Value.ToString();
-            txtcantidad.Text = mEDICAMENTODataGridView[7, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_MEDICAMENTOTextBox.Text = mEDICAMENTODataGridView[0, e.RowIndex].Value.ToString();
+                dESCRIPCIONTextBox.Text = mEDICAMENTODataGridView[1, e.RowIndex].Value.ToString();
+                CBXtipoFarmaco.Text = mEDICAMENTODataGridView[2, e.RowIndex].Value.ToString();
+                CBXMarca.Text = mEDICAMENTODataGridView[3, e.RowIndex].Value.ToString();
+                CBXUbicacion.Text = mEDICAMENTODataGridView[4, e.RowIndex].Value.ToString();
+                dOSISTextBox.Text = mEDICAMENTODataGridView[5, e.RowIndex].Value.ToString();
+                eSTADOComboBox.Text = mEDICAMENTODataGridView[6, e.RowIndex].Value.ToString();
+                txtcantidad.Text = mEDICAMENTODataGridView[7, e.RowIndex].Value.ToString();
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, DESCRIPCION, TIPO DE FARMACO, MARCA, UBICACION, DOSIS, ESTADO, CANTIDAD", mEDICAMENTODataGridView, 8);
         }
     }
 }

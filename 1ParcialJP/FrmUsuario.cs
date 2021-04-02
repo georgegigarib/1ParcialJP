@@ -47,6 +47,11 @@ namespace _1ParcialJP
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dataGridViewUsuario.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
             String[] ArrayTitulos = { "Administrador", "Usuario Regular" };
             String[] ArrayValues = { "A", "U", };
             Helper.llenarCBX(txtTU, ArrayTitulos, ArrayValues);
@@ -63,10 +68,13 @@ namespace _1ParcialJP
 
         private void dataGridViewUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIdU.Text = dataGridViewUsuario[0, e.RowIndex].Value.ToString();
-            txtNombreU.Text = dataGridViewUsuario[1, e.RowIndex].Value.ToString();
-            txtTU.Text = dataGridViewUsuario[2, e.RowIndex].Value.ToString();
-            txtEC.Text = dataGridViewUsuario[3, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                txtIdU.Text = dataGridViewUsuario[0, e.RowIndex].Value.ToString();
+                txtNombreU.Text = dataGridViewUsuario[1, e.RowIndex].Value.ToString();
+                txtTU.SelectedValue = dataGridViewUsuario[2, e.RowIndex].Value.ToString();
+                txtEC.SelectedValue = dataGridViewUsuario[3, e.RowIndex].Value.ToString();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -108,7 +116,7 @@ namespace _1ParcialJP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"SELECT * FROM USUARIO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
+            string sql = $"SELECT ID_USUARIO, NOMBRE, TIPO, ESTADO FROM USUARIO WHERE {selectsearch.SelectedValue.ToString()} LIKE @search";
             SqlCommand command = new SqlCommand(sql);
             command.Parameters.AddWithValue("@search", "%" + txtsearch.Text + "%");
             dataGridViewUsuario.DataSource = Helper.DoQueryReceiverLimpio(command);
@@ -118,6 +126,12 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, NOMBRE, TIPO DE USUARIO, ESTADO DE CUENTA", dataGridViewUsuario, 4);
         }
     }
 }

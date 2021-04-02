@@ -33,6 +33,11 @@ namespace _1ParcialJP
 
         private void FrmUbicacion_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in uBICACIONDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
             String[] ArrayTitulos = { "Disponible", "No Disponible", "Lleno", "Vacio" };
             String[] ArrayValues = { "DISPONIBLE", "NO DISPNIBLE", "LLENO", "VACIO" };
             Helper.llenarCBX(eSTADOComboBox, ArrayTitulos, ArrayValues);
@@ -68,12 +73,15 @@ namespace _1ParcialJP
 
         private void uBICACIONDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            iD_UBICACIONTextBox.Text = uBICACIONDataGridView[0, e.RowIndex].Value.ToString();
-            dESCRIPCIONTextBox.Text = uBICACIONDataGridView[1, e.RowIndex].Value.ToString();
-            eSTANTETextBox.Text = uBICACIONDataGridView[2, e.RowIndex].Value.ToString();
-            tRAMOTextBox.Text = uBICACIONDataGridView[3, e.RowIndex].Value.ToString();
-            cELDATextBox.Text = uBICACIONDataGridView[4, e.RowIndex].Value.ToString();
-            eSTADOComboBox.Text = uBICACIONDataGridView[5, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_UBICACIONTextBox.Text = uBICACIONDataGridView[0, e.RowIndex].Value.ToString();
+                dESCRIPCIONTextBox.Text = uBICACIONDataGridView[1, e.RowIndex].Value.ToString();
+                eSTANTETextBox.Text = uBICACIONDataGridView[2, e.RowIndex].Value.ToString();
+                tRAMOTextBox.Text = uBICACIONDataGridView[3, e.RowIndex].Value.ToString();
+                cELDATextBox.Text = uBICACIONDataGridView[4, e.RowIndex].Value.ToString();
+                eSTADOComboBox.Text = uBICACIONDataGridView[5, e.RowIndex].Value.ToString();
+            }
         }
 
         private void btnGguardar_Click(object sender, EventArgs e)
@@ -120,6 +128,12 @@ namespace _1ParcialJP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, DESCRIPCION, ESTANDO, TRAMO, CELDA, ESTADO", uBICACIONDataGridView, 6);
         }
     }
 }

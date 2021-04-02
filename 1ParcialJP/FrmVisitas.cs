@@ -32,6 +32,10 @@ namespace _1ParcialJP
 
         private void FrmVisitas_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in vISITADataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             String[] ArrayTitulos = { "ID", "Nombre del Medico", "Nombre del Paciente", "Sintomas", "Recomendaciones", "Medicamentos", "Estado", "Fecha" };
             String[] ArrayValues = { "ID_VISITA", "NOMBRE_MEDICO", "NOMBRE_PACIENTE", "SINTOMAS", "RECOMENDACIONES", "MEDICAMENTOS", "ESTADO", "FECHA" };
             Helper.llenarCBX(selectsearch, ArrayTitulos, ArrayValues);
@@ -173,21 +177,30 @@ namespace _1ParcialJP
 
         private void vISITADataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            iD_VISITATextBox.Text = vISITADataGridView[0, e.RowIndex].Value.ToString();
-            nOMBRE_MEDICOComboBox.Text = vISITADataGridView[1, e.RowIndex].Value.ToString();
-            CBXPACIENTE.Text = vISITADataGridView[2, e.RowIndex].Value.ToString();
-            fECHADateTimePicker.Text = vISITADataGridView[3, e.RowIndex].Value.ToString();
-            hORADateTimePicker.Text = vISITADataGridView[4, e.RowIndex].Value.ToString();
-            sINTOMASTextBox.Text = vISITADataGridView[5, e.RowIndex].Value.ToString();
-            cbxMedicamento.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
-            txtcantidadVisita.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
-            rECOMENDACIONESTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
-            eSTADOTextBox.Text = vISITADataGridView[9, e.RowIndex].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                iD_VISITATextBox.Text = vISITADataGridView[0, e.RowIndex].Value.ToString();
+                nOMBRE_MEDICOComboBox.Text = vISITADataGridView[1, e.RowIndex].Value.ToString();
+                CBXPACIENTE.Text = vISITADataGridView[2, e.RowIndex].Value.ToString();
+                fECHADateTimePicker.Text = vISITADataGridView[3, e.RowIndex].Value.ToString();
+                hORADateTimePicker.Text = vISITADataGridView[4, e.RowIndex].Value.ToString();
+                sINTOMASTextBox.Text = vISITADataGridView[5, e.RowIndex].Value.ToString();
+                cbxMedicamento.Text = vISITADataGridView[6, e.RowIndex].Value.ToString();
+                txtcantidadVisita.Text = vISITADataGridView[7, e.RowIndex].Value.ToString();
+                rECOMENDACIONESTextBox.Text = vISITADataGridView[8, e.RowIndex].Value.ToString();
+                eSTADOTextBox.Text = vISITADataGridView[9, e.RowIndex].Value.ToString();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper();
+            help.Exportar("ID, NOMBRE PACIENTE, NOMBRE MEDICO, FECHA, HORA, SINTOMAS, MEDICAMENTO RECETADO, CANTIDAD, RECOMENDACIONES, ESTADO", vISITADataGridView, 10);
         }
     }
 }

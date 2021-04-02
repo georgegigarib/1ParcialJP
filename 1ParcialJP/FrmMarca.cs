@@ -37,10 +37,12 @@ namespace _1ParcialJP
             Helper.llenarCBX(selectsearch, ArrayTitulos1, ArrayValues1);
 
             this.ControlBox = false;
+
+            foreach (DataGridViewColumn column in mARCADataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             FrmAMarca fmAMarca = new FrmAMarca();
@@ -63,20 +65,21 @@ namespace _1ParcialJP
 
         private void mARCADataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            iD_MARCATextBox.Text = mARCADataGridView[0, e.RowIndex].Value.ToString();
-            dESCRIPCIONTextBox.Text = mARCADataGridView[1, e.RowIndex].Value.ToString();
-            if(mARCADataGridView[2, e.RowIndex].Value.ToString() == "ACTIVA")
+            if (e.RowIndex >= 0)
             {
-                eSTADOComboBox.Text = "Activa";
+                iD_MARCATextBox.Text = mARCADataGridView[0, e.RowIndex].Value.ToString();
+                dESCRIPCIONTextBox.Text = mARCADataGridView[1, e.RowIndex].Value.ToString();
+                if (mARCADataGridView[2, e.RowIndex].Value.ToString() == "ACTIVA")
+                {
+                    eSTADOComboBox.Text = "Activa";
+                }
+                else
+                {
+                    eSTADOComboBox.Text = "Inactiva";
+                }
             }
-            else
-            {
-                eSTADOComboBox.Text = "Inactiva";
-            }
-            
-            
-        }
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
            
@@ -139,44 +142,18 @@ namespace _1ParcialJP
         {
             this.Close();
         }
-        string filePath = "c:/algo";
+
+
+        /// <summary>
+        /// //////////////////////EXPORTAR///////////////////////
+        /// </summary>
         
         private void button4_Click(object sender, EventArgs e)
         {
-            writeFileHeader("sep=,");
-            writeFileHeader("ID_MARCA, DESCRIPCION, ESTADO");
-
-            foreach (DataRow row in mARCADataGridView.Rows)
-            {
-                string linea = "";
-
-                foreach (DataColumn dc in mARCADataGridView.Columns)
-                {
-                    linea += row[dc].ToString() + ",";
-                }
-                writeFileLine(linea);
-            }
-
-            Process.Start(filePath);
-        }
-        private void writeFileLine(string pLine)
-        {
-            using (System.IO.StreamWriter w = File.AppendText(filePath))
-            {
-                w.WriteLine(pLine);
-            }
-        }
-        private void writeFileHeader(string pLine)
-        {
-            using (System.IO.StreamWriter w = File.CreateText(filePath))
-            {
-                w.WriteLine(pLine);
-            }
+            Helper help = new Helper();
+            help.Exportar("ID, DESCRIPCION, ESTADO", mARCADataGridView, 3);
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(eSTADOComboBox.SelectedValue.ToString());
-        }
+
     }
 }
