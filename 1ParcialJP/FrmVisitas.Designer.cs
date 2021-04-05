@@ -70,16 +70,16 @@ namespace _1ParcialJP
             this.nOMBRE_MEDICOComboBox = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGguardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnsearch = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.selectsearch = new System.Windows.Forms.ComboBox();
             this.txtfecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.cbxMedicamento = new System.Windows.Forms.ComboBox();
             this.txtcantidadVisita = new System.Windows.Forms.NumericUpDown();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnExportar = new System.Windows.Forms.Button();
             iD_VISITALabel = new System.Windows.Forms.Label();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
@@ -454,16 +454,16 @@ namespace _1ParcialJP
             this.btnGguardar.UseVisualStyleBackColor = true;
             this.btnGguardar.Click += new System.EventHandler(this.btnGguardar_Click);
             // 
-            // button2
+            // btnsearch
             // 
-            this.button2.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(842, 161);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 45);
-            this.button2.TabIndex = 19;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnsearch.BackgroundImage = global::_1ParcialJP.Properties.Resources._1024px_Search_Icon_svg;
+            this.btnsearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnsearch.Location = new System.Drawing.Point(842, 161);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(45, 45);
+            this.btnsearch.TabIndex = 19;
+            this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // txtsearch
             // 
@@ -493,7 +493,7 @@ namespace _1ParcialJP
             // txtfecha
             // 
             this.txtfecha.Checked = false;
-            this.txtfecha.CustomFormat = "dd-MM-yyyy";
+            this.txtfecha.CustomFormat = "yyyy-MM-dd";
             this.txtfecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vISITABindingSource, "FECHA", true));
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtfecha.Location = new System.Drawing.Point(695, 183);
@@ -515,7 +515,7 @@ namespace _1ParcialJP
             this.groupBox1.Controls.Add(this.eSTADOTextBox);
             this.groupBox1.Controls.Add(this.nOMBRE_MEDICOComboBox);
             this.groupBox1.Controls.Add(eSTADOLabel);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnsearch);
             this.groupBox1.Controls.Add(this.rECOMENDACIONESTextBox);
             this.groupBox1.Controls.Add(this.CBXPACIENTE);
             this.groupBox1.Controls.Add(rECOMENDACIONESLabel);
@@ -541,6 +541,18 @@ namespace _1ParcialJP
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visitas";
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackgroundImage = global::_1ParcialJP.Properties.Resources.Microsoft_Excel_2013_logo_svg_;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.Location = new System.Drawing.Point(1037, 11);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(39, 38);
+            this.btnExportar.TabIndex = 36;
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // cbxMedicamento
             // 
@@ -574,18 +586,6 @@ namespace _1ParcialJP
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnExportar
-            // 
-            this.btnExportar.BackgroundImage = global::_1ParcialJP.Properties.Resources.Microsoft_Excel_2013_logo_svg_;
-            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.Location = new System.Drawing.Point(1037, 11);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(39, 38);
-            this.btnExportar.TabIndex = 36;
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
             // FrmVisitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -598,7 +598,6 @@ namespace _1ParcialJP
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVisitas";
             this.Text = "Visitas";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmVisitas_FormClosed);
             this.Load += new System.EventHandler(this.FrmVisitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vISITABindingSource)).EndInit();
@@ -630,7 +629,7 @@ namespace _1ParcialJP
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox CBXPACIENTE;
         private System.Windows.Forms.ComboBox nOMBRE_MEDICOComboBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.ComboBox selectsearch;
         private System.Windows.Forms.DateTimePicker txtfecha;

@@ -94,7 +94,6 @@ namespace _1ParcialJP
             this.cbxestado.Name = "cbxestado";
             this.cbxestado.Size = new System.Drawing.Size(69, 24);
             this.cbxestado.TabIndex = 16;
-            this.cbxestado.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // cbxtipo
             // 

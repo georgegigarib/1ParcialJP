@@ -342,7 +342,6 @@ namespace _1ParcialJP
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUsuario";
             this.Text = "Usuarios";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUsuario_FormClosed);
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).EndInit();

@@ -46,8 +46,8 @@ namespace _1ParcialJP
             this.dOSISTextBox = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
+            this.button3 = new System.Windows.Forms.Button();
             dESCRIPCIONLabel = new System.Windows.Forms.Label();
             iD_TFLabel = new System.Windows.Forms.Label();
             iD_MARCALabel = new System.Windows.Forms.Label();
@@ -118,6 +118,16 @@ namespace _1ParcialJP
             eSTADOLabel.Size = new System.Drawing.Size(59, 15);
             eSTADOLabel.TabIndex = 33;
             eSTADOLabel.Text = "ESTADO:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            label1.Location = new System.Drawing.Point(18, 244);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 15);
+            label1.TabIndex = 39;
+            label1.Text = "CANTIDAD:";
             // 
             // CBXtipoFarmaco
             // 
@@ -209,6 +219,13 @@ namespace _1ParcialJP
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Medicamento";
             // 
+            // txtcantidad
+            // 
+            this.txtcantidad.Location = new System.Drawing.Point(128, 238);
+            this.txtcantidad.Name = "txtcantidad";
+            this.txtcantidad.Size = new System.Drawing.Size(139, 20);
+            this.txtcantidad.TabIndex = 40;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -224,23 +241,6 @@ namespace _1ParcialJP
             this.button3.TabIndex = 40;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            label1.Location = new System.Drawing.Point(18, 244);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(77, 15);
-            label1.TabIndex = 39;
-            label1.Text = "CANTIDAD:";
-            // 
-            // txtcantidad
-            // 
-            this.txtcantidad.Location = new System.Drawing.Point(128, 238);
-            this.txtcantidad.Name = "txtcantidad";
-            this.txtcantidad.Size = new System.Drawing.Size(139, 20);
-            this.txtcantidad.TabIndex = 40;
             // 
             // FrmAMedicamento
             // 

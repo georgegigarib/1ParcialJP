@@ -343,7 +343,6 @@ namespace _1ParcialJP
             this.MinimizeBox = false;
             this.Name = "FrmMarca";
             this.Text = "Marcas";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMarca_FormClosed);
             this.Load += new System.EventHandler(this.FrmMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARCABindingSource)).EndInit();

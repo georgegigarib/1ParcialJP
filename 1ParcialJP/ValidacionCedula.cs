@@ -8,8 +8,6 @@ namespace _1ParcialJP
 {
     class ValidacionCedula
     {
-
-
         public static bool validaCedula(string pCedula)
 
         {

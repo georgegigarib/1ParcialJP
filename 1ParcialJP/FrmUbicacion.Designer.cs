@@ -454,7 +454,6 @@ namespace _1ParcialJP
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUbicacion";
             this.Text = "Ubicacion";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUbicacion_FormClosed);
             this.Load += new System.EventHandler(this.FrmUbicacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBICACIONBindingSource)).EndInit();

@@ -48,9 +48,9 @@ namespace _1ParcialJP
             this.eSTADOTextBox = new System.Windows.Forms.TextBox();
             this.btnGguardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.cbxMedicamento = new System.Windows.Forms.ComboBox();
             this.txtcantidadVisita = new System.Windows.Forms.NumericUpDown();
+            this.cbxMedicamento = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             nOMBRE_MEDICOLabel = new System.Windows.Forms.Label();
             nOMBRE_PACIENTELabel = new System.Windows.Forms.Label();
             fECHALabel = new System.Windows.Forms.Label();
@@ -136,6 +136,15 @@ namespace _1ParcialJP
             eSTADOLabel.TabIndex = 41;
             eSTADOLabel.Text = "ESTADO:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(18, 422);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 15);
+            label1.TabIndex = 50;
+            label1.Text = "CANTIDAD:";
+            // 
             // nOMBRE_MEDICOComboBox
             // 
             this.nOMBRE_MEDICOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -166,7 +175,7 @@ namespace _1ParcialJP
             // 
             // fECHADateTimePicker
             // 
-            this.fECHADateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.fECHADateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.fECHADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fECHADateTimePicker.Location = new System.Drawing.Point(161, 131);
             this.fECHADateTimePicker.Name = "fECHADateTimePicker";
@@ -240,6 +249,22 @@ namespace _1ParcialJP
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar Visita";
             // 
+            // txtcantidadVisita
+            // 
+            this.txtcantidadVisita.Location = new System.Drawing.Point(161, 413);
+            this.txtcantidadVisita.Name = "txtcantidadVisita";
+            this.txtcantidadVisita.Size = new System.Drawing.Size(120, 22);
+            this.txtcantidadVisita.TabIndex = 49;
+            // 
+            // cbxMedicamento
+            // 
+            this.cbxMedicamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedicamento.FormattingEnabled = true;
+            this.cbxMedicamento.Location = new System.Drawing.Point(161, 369);
+            this.cbxMedicamento.Name = "cbxMedicamento";
+            this.cbxMedicamento.Size = new System.Drawing.Size(233, 23);
+            this.cbxMedicamento.TabIndex = 48;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -255,31 +280,6 @@ namespace _1ParcialJP
             this.button3.TabIndex = 49;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // cbxMedicamento
-            // 
-            this.cbxMedicamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMedicamento.FormattingEnabled = true;
-            this.cbxMedicamento.Location = new System.Drawing.Point(161, 369);
-            this.cbxMedicamento.Name = "cbxMedicamento";
-            this.cbxMedicamento.Size = new System.Drawing.Size(233, 23);
-            this.cbxMedicamento.TabIndex = 48;
-            // 
-            // txtcantidadVisita
-            // 
-            this.txtcantidadVisita.Location = new System.Drawing.Point(161, 413);
-            this.txtcantidadVisita.Name = "txtcantidadVisita";
-            this.txtcantidadVisita.Size = new System.Drawing.Size(120, 22);
-            this.txtcantidadVisita.TabIndex = 49;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(18, 422);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(77, 15);
-            label1.TabIndex = 50;
-            label1.Text = "CANTIDAD:";
             // 
             // FrmAVisita
             // 

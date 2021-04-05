@@ -341,7 +341,6 @@ namespace _1ParcialJP
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoFarmaco";
             this.Text = "Tipo Farmaco";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTipoFarmaco_FormClosed);
             this.Load += new System.EventHandler(this.FrmTipoFarmaco_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pARCIALJPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tIPO_FARMACOBindingSource)).EndInit();
