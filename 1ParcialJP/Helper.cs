@@ -186,7 +186,6 @@ namespace _1ParcialJP
          * 1-Un string con todos los titulos 
          * 2-El data grid view que se exportará
          * 3- el numero de columnas que tendra el archivo
-         *
          */
         public void Exportar(string header, DataGridView elgrid, int columnas)
         {
@@ -211,7 +210,7 @@ namespace _1ParcialJP
                 //por ultimo escribe la linea
                 writeFileLine(linea);
             }
-            //para concluir crea el archivo y abrelo
+            //para concluir, crea el archivo y abrelo
             Process.Start(filePath);
         }
     }
